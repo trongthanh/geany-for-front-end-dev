@@ -1,0 +1,296 @@
+# format=pipe
+## DOM Objects constructor
+HTMLHtmlElement|||
+HTMLHeadElement|||
+HTMLLinkElement|||
+HTMLTitleElement|||
+HTMLMetaElement|||
+HTMLBaseElement|||
+HTMLIsIndexElement|||
+HTMLStyleElement|||
+HTMLBodyElement|||
+HTMLFormElement|||
+HTMLSelectElement|||
+HTMLInputElement|||
+HTMLTextAreaElement|||
+HTMLButtonElement|||
+HTMLLabelElement|||
+HTMLFieldSetElement|||
+HTMLLegendElement|||
+HTMLUListElement|||
+HTMLOListElement|||
+HTMLDListElement|||
+HTMLDirectoryElement|||
+HTMLMenuElement|||
+HTMLLIElement|||
+HTMLDivElement|||
+HTMLParagraphElement|||
+HTMLHeadingElement|||
+HTMLQuoteElement|||
+HTMLPreElement|||
+HTMLBRElement|||
+HTMLBaseFontElement|||
+HTMLFontElement|||
+HTMLHRElement|||
+HTMLModElement|||
+HTMLAnchorElement|||
+HTMLImageElement|||
+HTMLObjectElement|||
+HTMLParamElement|||
+HTMLAppletElement|||
+HTMLMapElement|||
+HTMLAreaElement|||
+HTMLScriptElement|||
+HTMLTableElement|||
+HTMLTableCaptionElement|||
+HTMLTableColElement|||
+HTMLTableSectionElement|||
+HTMLTableRowElement|||
+HTMLTableCellElement|||
+HTMLFrameSetElement|||
+HTMLFrameElement|||
+HTMLIFrameElement|||
+##Document properties
+document.activeElement|||
+document.alinkColor|||
+document.all|||
+document.anchors|||
+document.applets|||
+document.async|||
+document.baseURIObject|||
+document.bgColor|||
+document.body|||
+document.characterSet|||
+document.compatMode|||
+document.contentType|||
+document.cookie|||
+document.currentScript|||
+document.defaultView|||
+document.designMode|||
+document.dir|||
+document.doctype|||
+document.documentElement|||
+document.documentURI|||
+document.documentURIObject|||
+document.domain|||
+document.embeds|||
+document.fgColor|||
+document.fileSize|||
+document.forms|||
+document.head|||
+document.height|||
+document.images|||
+document.implementation|||
+document.inputEncoding|||
+document.lastModified|||
+document.lastStyleSheetSet|||
+document.linkColor|||
+document.links|||
+document.location|||
+document.mozFullScreen|||
+document.mozFullScreenElement|||
+document.mozFullScreenEnabled|||
+document.mozSyntheticDocument|||
+document.plugins|||
+document.popupNode|||
+document.preferredStyleSheetSet|||
+document.readyState|||
+document.referrer|||
+document.scripts|||
+document.selectedStyleSheetSet|||
+document.styleSheets|||
+document.styleSheetSets|||
+document.title|||
+document.tooltipNode|||
+document.URL|||
+## Document functions
+adoptNode|document.|()|
+captureEvents|document.|()|
+close|document.|()|
+createAttribute|document.|()|
+createAttributeNS|document.|()|
+createCDATASection|document.|()|
+createComment|document.|()|
+createDocumentFragment|document.|()|
+createElement|document.|()|
+createElementNS|document.|()|
+createEntityReference|document.|()|
+createEvent|document.|()|
+createExpression|document.|()|
+createNSResolver|document.|()|
+createProcessingInstruction|document.|()|
+createRange|document.|()|
+createTextNode|document.|()|
+createTreeWalker|document.|()|
+elementFromPoint|document.|()|
+enableStyleSheetsForSet|document.|()|
+evaluate|document.|()|
+execCommand|document.|()|
+execCommandShowHelp|document.|()|
+getElementById|document.|()|
+getElementsByClassName|document.|()|
+getElementsByName|document.|()|
+getElementsByTagName|document.|()|
+getElementsByTagNameNS|document.|()|
+getSelection|document.|()|
+hasFocus|document.|()|
+importNode|document.|()|
+load|document.|()|
+loadOverlay|document.|()|
+normalizeDocument|document.|()|
+open|document.|()|
+queryCommandEnabled|document.|()|
+queryCommandIndeterm|document.|()|
+queryCommandState|document.|()|
+queryCommandSupported|document.|()|
+queryCommandValue|document.|()|
+querySelector|document.|()|
+querySelectorAll|document.|()|
+releaseCapture|document.|()|
+releaseEvents|document.|()|
+removeEventListener|document.|()|
+routeEvent|document.|()|
+write|document.|()|
+writeln|document.|()|
+## Dom Node properties/functions
+attributes|||
+baseURI|||
+child|||
+firstChild|||
+lastChild|||
+localName|||
+namespaceURI|||
+nextSibling|||
+name|||
+principal|||
+type|||
+value|||
+ownerDocument|||
+parent||
+prefix|||
+previousSibling|||
+textContent|||
+appendChild||( )|
+clone|( )|
+compareDocumentPosition||( )|
+contains||( )|
+getUserData||( )|
+hasAttributes||( )|
+hasChild||( )|
+insertBefore||( )|
+isDefaultNamespace||( )|
+isEqual|( )|
+isSupported||( )|
+lookupPrefix||( )|
+lookupNamespaceURI||( )|
+normalize||( )|
+removeChild||( )|
+replaceChild||( )|
+setUserData||( )|
+## DOM Element properties
+attributes|||All attributes associated with an element.	NamedNodeMap	All
+baseURI|||Base URI as a string	String	HTML, XUL
+baseURIObject|||New in Firefox 3	The read-only nsIURI object representing the base URI for the element.	nsIURI	All (with UniversalXPConnect privileges)
+childElementCount|||New in Firefox 3.5	The number of child nodes that are elements.	Number	HTML, XUL
+childNodes|||All child nodes of an element. A live nsIDOMNodeList of the current child elements.	NodeList	All
+children|||Requires Gecko 1.9	All child nodes of an element as a collection.	HTMLCollection	HTML, XUL
+classList|||Requires Gecko 1.9.2	Token list of class attribute	DOMTokenList	HTML
+className|||Gets/sets the class of the element.	String	HTML, XUL
+clientHeight|||The inner height of an element.	Number	HTML
+clientLeft|||The width of the left border of an element.	Number	HTML
+clientTop|||The width of the top border of an element.	Number	HTML
+clientWidth|||The inner width of an element.	Number	HTML
+contentEditable|||Requires Gecko 1.9	Gets/sets whether or not the element is editable.	String	HTML, XUL
+dataset|||Allows access to read and write custom data attributes on the element.	DOMStringMap	HTML
+dir|||Gets/sets the directionality of the element.	String	HTML, XUL
+firstChild|||The first direct child node of an element, or null if this element has no child nodes.	Node	All
+firstElementChild|||Requires Gecko 1.9	The first direct child element of an element, or null if the element has no child elements.	Element	HTML, XUL
+id|||Gets/sets the id of the element.	String	HTML, XUL
+innerHTML|||Gets/sets the markup of the element's content.	String	HTML
+isContentEditable|||Requires Gecko 2	Indicates whether or not the content of the element can be edited. Read only.	Boolean	HTML, XUL
+lang|||Gets/sets the language of an element's attributes, text, and element contents.	String	HTML
+lastChild|||The last direct child node of an element, or null if this element has no child nodes.	Node	All
+lastElementChild|||Requires Gecko 1.9	The last direct child element of an element, or null if the element has no child elements.	Element	HTML, XUL
+localName|||The local part of the qualified name of an element. In Firefox 3.5 and earlier, the property upper-cases the local name for HTML elements (but not XHTML elements). In later versions, this does not happen, so the property is in lower case for both HTML and XHTML. Requires Gecko 1.9.2	String	All
+name|||Gets/sets the name attribute of an element.	String	HTML
+namespaceURI|||The namespace URI of this node, or null if it is no namespace. In Firefox 3.5 and earlier, HTML elements are in no namespace. In later versions, HTML elements are in the www.w3.org/1999/xhtml namespace in both HTML and XML trees. Requires Gecko 1.9.2	String	All
+nextSibling|||The node immediately following the given one in the tree, or null if there is no sibling node.	Node	All
+nextElementSibling|||New in Firefox 3.5	The element immediately following the given one in the tree, or null if there's no sibling node.	Element	HTML, XUL
+nodeName|||The name of the node.	String	All
+nodePrincipal|||New in Firefox 3	The node's principal.	nsIPrincipal	All (with UniversalXPConnect privileges)
+nodeType|||A number representing the type of the node. Is always equal to 1 for DOM elements.	Number	All
+nodeValue|||The value of the node. Is always equal to null for DOM elements.	String	All
+offsetHeight|||The height of an element, relative to the layout.	Number	HTML
+offsetLeft|||The distance from this element's left border to its offsetParent's left border.	Number	HTML
+offsetParent|||The element from which all offset calculations are currently computed.	Element	HTML
+offsetTop|||The distance from this element's top border to its offsetParent's top border.	Number	HTML
+offsetWidth|||The width of an element, relative to the layout.	Number	HTML
+outerHTML|||Requires Gecko 11	Gets the markup of the element including its content. When used as a setter, replaces the element with nodes parsed from the given string.	String	HTML
+ownerDocument|||The document that this node is in, or null if the node is not inside of one.	Document	All
+parentNode|||The parent element of this node, or null if the node is not inside of a DOM Document .	Node	All
+prefix|||The namespace prefix of the node, or null if no prefix is specified.	String	All
+previousSibling|||The node immediately preceding the given one in the tree, or null if there is no sibling node.	Node	All
+previousElementSibling|||New in Firefox 3.5	The element immediately preceding the given one in the tree, or null if there is no sibling element.	Element	HTML, XUL
+schemaTypeInfo|||Returns TypeInfo regarding schema information for the element (also available on Attr ).	TypeInfo	Not supported
+scrollHeight|||The scroll view height of an element.	Number	HTML
+scrollLeft|||Gets/sets the left scroll offset of an element.	Number	HTML
+scrollTop|||Gets/sets the top scroll offset of an element.	Number	HTML
+scrollWidth|||The scroll view width of an element.	Number	HTML
+spellcheck|||Controls spell-checking (present on all HTML elements)	Boolean	HTML
+style|||An object representing the declarations of an element's style attributes.	CSSStyleDeclaration	HTML, XUL
+tabIndex|||Gets/sets the position of the element in the tabbing order.	Number	HTML
+tagName|||The name of the tag for the given element.	String	All
+textContent|||Gets/sets the textual contents of an element and all its descendants.	String	All
+title|||A string that appears in a popup box when mouse is over the element.	String	HTML
+##DOM Element Functions
+addEventListener||( type, listener, useCapture )|
+appendChild|Node|( appendedNode )|
+blur||()|
+click||()|
+cloneNode|Node|( deep )|
+compareDocumentPosition|Numer|( otherNode )|
+dispatchEvent|Boolean|( event )|
+focus||()|
+getAttribute|Object|( name )|
+getAttributeNS|Object|( namespace, name )|
+getAttributeNode|Attr|( name )|
+getAttributeNodeNS|Attr|( namespace, name )|
+getBoundingClientRect||( )|
+getClientRects||( )|
+getElementsByClassName|NodeList|( )|
+getElementsByTagName|NodeList|( name )|
+getElementsByTagNameNS|NodeList|( namespace, name )|
+getFeature|Object|( feature, version )|
+getUserData|DOMUserData|( key )|
+hasAttribute|Boolean|( name )|
+hasAttributeNS|Boolean|( namespace, name )|
+hasAttributes|Boolean|()|
+hasChildNodes|Boolean|()|
+insertBefore|Node|( insertedNode , adjacentNode )|
+isDefaultNamespace|Boolean|( namespaceURI )|
+isEqualNode|Boolean|( nodeArg )|		All
+isSameNode|Boolean|( otherNode )| 		All
+isSupported|Boolean|( feature, version )|		All
+lookupNamespaceURI|String|( prefix )|		All
+mozMatchesSelector|Boolean|( selector )| Non-standard 
+mozRequestFullScreen||( )| Non-standard 
+normalize||()|
+querySelector|Node|( selectors[, nsresolver] )|
+querySelectorAll|NodeList|( selectors[, nsresolver] )|
+removeAttribute||( name )|
+removeAttributeNS||( namespace, name )|
+removeAttributeNode||( attrNode )|
+removeChild|Node|( removedNode )|
+removeEventListener||( type, handler, useCapture )|
+replaceChild|Node|( insertedNode , replacedNode )|
+scrollIntoView||( alignWithTop )|
+setAttribute||( name, value )|
+setAttributeNS||( namespace, name, value )|
+setAttributeNode||( name, attrNode )|
+setAttributeNodeNS||( namespace, name, attrNode )|
+setCapture||( retargetToElement )|
+setIdAttribute||(name, isIdBoolean)|
+setIdAttributeNS||( namespaceURI, localName, isIdBoolean )|
+setIdAttributeNode||( idAttr, isIdBoolean )|
+setUserData|DOMUserData|( key, data , handler )|
+insertAdjacentHTML||( position , text )|
