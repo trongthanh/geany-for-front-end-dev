@@ -4,12 +4,12 @@ Array|||
 ArrayBuffer|||
 Boolean|||
 Date|||
-decodeURI|String|(encodedURI)|
-decodeURIComponent|String|(encodedURI)|
-encodeURI|String|(URI)|
-encodeURIComponent|String|(str)|
+decodeURI||(encodedURI): string|
+decodeURIComponent||(encodedURI): string|
+encodeURI||(URI): string|
+encodeURIComponent||(str): string|
 Error|||
-eval||(string)|
+eval||(string): void|
 EvalError|||
 Float32Array|||
 Float64Array|||
@@ -18,16 +18,16 @@ Infinity|||
 Int16Array|||
 Int32Array|||
 Int8Array|||
-isFinite|Boolean|(number)|
-isNaN|Boolean|(object))|
+isFinite||(number): boolean|
+isNaN||(object): boolean|
 Iterator|||
 JSON|||
 Math|||
 NaN|||
 Number|||
 Object|||
-parseFloat|Number|(string)|
-parseInt|Number|(string))|
+parseFloat||(string): number|
+parseInt||(string): number|
 RangeError|||
 ReferenceError|||
 RegExp|||
@@ -43,166 +43,169 @@ undefined|||
 uneval|||
 URIError|||
 ## Array
-Array.isArray|Boolean|(Object obj)|[Requires JavaScript 1.8.5] Return true if a variable is an array, if not false.
-length|Number||Reflects the number of elements in an array.
-pop|Array|()|Removes the last element from an array and returns that element.
-push|Number|(Object element1, ..., Object elementN)|Adds one or more elements to the end of an array and returns the new length of the array.
-reverse|Array|()|Reverses the order of the elements of an array -- the first becomes the last, and the last becomes the first.
-shift|Object|()|Removes the first element from an array and returns that element.
-sort|Array|([compareFunction])|Sorts the elements of an array.
-splice|Array|(Number index[, Number howMany[, Object element1[, ...[, Object elementN]]]])|Adds and/or removes elements from an array.
-unshift|Number|(Object element1, ..., Object elementN)|Adds one or more elements to the front of an array and returns the new length of the array.
-concat|Array|(Object value1, Object value2, ..., Object valueN)|Returns a new array comprised of this array joined with other array(s) and/or value(s).
-join|Array|(String separator)|Joins all elements of an array into a string.
-slice|Array|(Number begin[, Number end])|Extracts a section of an array and returns a new array.
-indexOf|Number|(Object element)|[Requires JavaScript 1.6]Returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found.
-lastIndexOf|Number|(Object element)|[Requires JavaScript 1.6]Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found.
-filter|Array|(Function callback[, Object thisObject])|[Requires JavaScript 1.6]Creates a new array with all of the elements of this array for which the provided filtering function returns true.
-forEach|Array|(Function callback[, Object thisObject])|[Requires JavaScript 1.6]Calls a function for each element in the array.
-every|Boolean|(Function callback[, Object thisObject])|[Requires JavaScript 1.6]Returns true if every element in this array satisfies the provided testing function.
-map|Array|(Function callback[, Object thisObject])|[Requires JavaScript 1.6]Creates a new array with the results of calling a provided function on every element in this array.
-some|Boolean|(Function callback[, Object thisObject])|[Requires JavaScript 1.6]Returns true if at least one element in this array satisfies the provided testing function.
-reduce|Object|(Function callback[, Object initialValue])|[Requires JavaScript 1.8] Apply a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value.
-reduceRight|Object|(Function callback[, Object initialValue])|[Requires JavaScript 1.8] Apply a function simultaneously against two values of the array (from right-to-left) as to reduce it to a single value.
+isArray|[static] Array.|(obj: Object): Boolean|[Requires JavaScript 1.8.5] Return true if a variable is an array, if not false.
+length|Array.||Reflects the number of elements in an array.
+pop|Array.|(): Array|Removes the last element from an array and returns that element.
+push|Array.|(element1: Object, ..., elementN: Object): Number|Adds one or more elements to the end of an array and returns the new length of the array.
+reverse|Array.|(): Array|Reverses the order of the elements of an array -- the first becomes the last, and the last becomes the first.
+shift|Array.|(): Object|Removes the first element from an array and returns that element.
+sort|Array.|([compareFunction]): Array|Sorts the elements of an array.
+splice|Array.|(index: number[, howMany: number[, element1: Object[, ...[, elementN: Object]]]]): Array|Adds and/or removes elements from an array.
+unshift|Array.|(element1: Object, ..., elementN: Object): Number|Adds one or more elements to the front of an array and returns the new length of the array.
+concat|Array.|(value1: Object, value2: Object, ..., valueN: Object): Array|Returns a new array comprised of this array joined with other array(s) and/or value(s).
+join|Array.|(separator: string): Array|Joins all elements of an array into a string.
+slice|Array.|(begin: number[, end: number]): Array|Extracts a section of an array and returns a new array.
+indexOf|Array.|(element: Object): Number|[Requires JavaScript 1.6]Returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found.
+lastIndexOf|Array.|(element: Object): Number|[Requires JavaScript 1.6]Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found.
+filter|Array.|(callback: Function[, thisObject: Object]): Array|[Requires JavaScript 1.6]Creates a new array with all of the elements of this array for which the provided filtering function returns true.
+forEach|Array.|(callback: Function[, thisObject: Object]): Array|[Requires JavaScript 1.6]Calls a function for each element in the array.
+every|Array.|(callback: Function[, thisObject: Object]): Boolean|[Requires JavaScript 1.6]Returns true if every element in this array satisfies the provided testing function.
+map|Array.|(callback: Function[, thisObject: Object]): Array|[Requires JavaScript 1.6]Creates a new array with the results of calling a provided function on every element in this array.
+some|Array.|(callback: Function[, thisObject: Object]): Boolean|[Requires JavaScript 1.6]Returns true if at least one element in this array satisfies the provided testing function.
+reduce|Array.|(callback: Function[, initialValue: Object]): Object|[Requires JavaScript 1.8] Apply a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value.
+reduceRight|Array.|(callback: Function[, initialValue: Object]): Object|[Requires JavaScript 1.8] Apply a function simultaneously against two values of the array (from right-to-left) as to reduce it to a single value.
 ## Date
-Date.now||()|Returns the numeric value corresponding to the current time.
-Date.parse||()|Parses a string representation of a JavaScript date, and returns the number of milliseconds since January 1, 1970, 00:00:00, local time.
-Date.UTC||()|Accepts the same parameters as the longest form of the constructor, and returns the number of milliseconds in a JavaScript Date object since January 1, 1970, 00:00:00, universal time.
-getDate||()|Returns the day of the month (1-31) for the specified date according to local time.
-getDay||()|Returns the day of the week (0-6) for the specified date according to local time.
-getFullYear||()|Returns the year (4 digits for 4-digit years) of the specified date according to local time.
-getHours||()|Returns the hour (0-23) in the specified date according to local time.
-getMilliseconds||()|Returns the milliseconds (0-999) in the specified date according to local time.
-getMinutes||()|Returns the minutes (0-59) in the specified date according to local time.
-getMonth||()|Returns the month (0-11) in the specified date according to local time.
-getSeconds||()|Returns the seconds (0-59) in the specified date according to local time.
-getTime||()|Returns the numeric value of the specified date as the number of milliseconds since January 1, 1970, 00:00:00 UTC (negative for prior times).
-getTimezoneOffset||()|Returns the time-zone offset in minutes for the current locale.
-getUTCDate||()|Returns the day (date) of the month (1-31) in the specified date according to universal time.
-getUTCDay||()|Returns the day of the week (0-6) in the specified date according to universal time.
-getUTCFullYear||()|Returns the year (4 digits for 4-digit years) in the specified date according to universal time.
-getUTCHours||()|Returns the hours (0-23) in the specified date according to universal time.
-getUTCMilliseconds||()|Returns the milliseconds (0-999) in the specified date according to universal time.
-getUTCMinutes||()|Returns the minutes (0-59) in the specified date according to universal time.
-getUTCMonth||()|Returns the month (0-11) in the specified date according to universal time.
-getUTCSeconds||()|Returns the seconds (0-59) in the specified date according to universal time.
-getYear||()|[Deprecated] Returns the year (usually 2-3 digits) in the specified date according to local time. Use getFullYear instead.
-setFullYear||(year, [month], [day])|Sets the year of the Date object. (year: 4 digit year).
-setMonth||(month, [day])|Sets the month of the Date object. (month: 0-11)
-setDate||(day_of_month)|Sets the day of the month of the Date object. (day_of_month: 1-31).
-setHours||(hours, [minutes], [seconds], [millisec])|Sets the hour of the Date object. (hours: 0-23).
-setMinutes||(minutes, [seconds], [millisec])|Sets the minutes of the Date object. (minutes: 0-59).
-setSeconds||(seconds, [millisec])|Sets the seconds of the Date object. (seconds: 0-59).
-setMilliseconds||(milli)|Sets the milliseconds field of the Date object. (milli: 0-999)
-setTime||(milli)|Sets the value of the Date object in terms of milliseconds elapsed since 1/1/1970 GMT.
-setUTCFullYear||(year, [month], [day])|Sets the year of the Date object in Universal time.
-setUTCMonth||(month, [day])|Sets the month in Universal time.
-setUTCDate||(day_of_month)|Sets the day of the month in Universal time.
-setUTCHours||(hours, [minutes], [seconds], [millisec])|Sets the hours in Universal time.
-setUTCMinutes||(minutes, [seconds], [millisec])|Sets the minutes in Universal time.
-setUTCSeconds||(seconds, [millisec])|Sets the seconds in Universal time.
-setUTCMilliseconds||(milli)|Sets the milliseconds in Universal time.
-setYear||(year)|[Deprecated] Sets the year (usually 2-3 digits) for a specified date according to local time. Use setFullYear instead.
-toDateString||()|Returns the "date" portion of the Date as a human-readable string.
-toISOString||()|Converts a date to a string following the ISO 8601 Extended Format.
-toGMTString||()|[Deprecated] Converts a date to a string, using the Internet GMT conventions. Use toUTCString instead.
-toLocaleDateString||()|Returns the "date" portion of the Date as a string, using the current locale's conventions.
-toLocaleFormat||()|[Non-standard] Converts a date to a string, using a format string.
-toLocaleString||()|Converts a date to a string, using the current locale's conventions. Overrides the Object.toLocaleString method.
-toLocaleTimeString||()|Returns the "time" portion of the Date as a string, using the current locale's conventions.
-toSource||()|[Non-standard] Returns a string representing the source for an equivalent Date object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.
-toString||()|Returns a string representing the specified Date object. Overrides the Object.prototype.toString method.
-toTimeString||()|Returns the "time" portion of the Date as a human-readable string.
-toUTCString||()|Converts a date to a string, using the universal time convention.
+now|[static] Date.|(): void|Returns the numeric value corresponding to the current time.
+parse|[static] Date.|(): number|Parses a string representation of a JavaScript date, and returns the number of milliseconds since January 1, 1970, 00:00:00, local time.
+UTC|[static] Date.|(): number|Accepts the same parameters as the longest form of the constructor, and returns the number of milliseconds in a JavaScript Date object since January 1, 1970, 00:00:00, universal time.
+getDate|Date.|(): number|Returns the day of the month (1-31) for the specified date according to local time.
+getDay|Date.|(): number|Returns the day of the week (0-6) for the specified date according to local time.
+getFullYear|Date.|(): number|Returns the year (4 digits for 4-digit years) of the specified date according to local time.
+getHours|Date.|(): number|Returns the hour (0-23) in the specified date according to local time.
+getMilliseconds|Date.|(): number|Returns the milliseconds (0-999) in the specified date according to local time.
+getMinutes|Date.|(): number|Returns the minutes (0-59) in the specified date according to local time.
+getMonth|Date.|(): number|Returns the month (0-11) in the specified date according to local time.
+getSeconds|Date.|(): number|Returns the seconds (0-59) in the specified date according to local time.
+getTime|Date.|(): number|Returns the numeric value of the specified date as the number of milliseconds since January 1, 1970, 00:00:00 UTC (negative for prior times).
+getTimezoneOffset|Date.|(): number|Returns the time-zone offset in minutes for the current locale.
+getUTCDate|Date.|(): number|Returns the day (date) of the month (1-31) in the specified date according to universal time.
+getUTCDay|Date.|(): number|Returns the day of the week (0-6) in the specified date according to universal time.
+getUTCFullYear|Date.|(): number|Returns the year (4 digits for 4-digit years) in the specified date according to universal time.
+getUTCHours|Date.|(): number|Returns the hours (0-23) in the specified date according to universal time.
+getUTCMilliseconds|Date.|(): number|Returns the milliseconds (0-999) in the specified date according to universal time.
+getUTCMinutes|Date.|(): number|Returns the minutes (0-59) in the specified date according to universal time.
+getUTCMonth|Date.|(): number|Returns the month (0-11) in the specified date according to universal time.
+getUTCSeconds|Date.|(): number|Returns the seconds (0-59) in the specified date according to universal time.
+getYear|Date.|(): number|[Deprecated] Returns the year (usually 2-3 digits) in the specified date according to local time. Use getFullYear instead.
+setFullYear|Date.|(year, [month], [day]): void|Sets the year of the Date object. (year: 4 digit year).
+setMonth|Date.|(month, [day]): void|Sets the month of the Date object. (month: 0-11)
+setDate|Date.|(day_of_month): void|Sets the day of the month of the Date object. (day_of_month: 1-31).
+setHours|Date.|(hours, [minutes], [seconds], [millisec]): void|Sets the hour of the Date object. (hours: 0-23).
+setMinutes|Date.|(minutes, [seconds], [millisec]): void|Sets the minutes of the Date object. (minutes: 0-59).
+setSeconds|Date.|(seconds, [millisec]): void|Sets the seconds of the Date object. (seconds: 0-59).
+setMilliseconds|Date.|(milli): void|Sets the milliseconds field of the Date object. (milli: 0-999)
+setTime|Date.|(milli): void|Sets the value of the Date object in terms of milliseconds elapsed since 1/1/1970 GMT.
+setUTCFullYear|Date.|(year, [month], [day]): void|Sets the year of the Date object in Universal time.
+setUTCMonth|Date.|(month, [day]): void|Sets the month in Universal time.
+setUTCDate|Date.|(day_of_month): void|Sets the day of the month in Universal time.
+setUTCHours|Date.|(hours, [minutes], [seconds], [millisec]): void|Sets the hours in Universal time.
+setUTCMinutes|Date.|(minutes, [seconds], [millisec]): void|Sets the minutes in Universal time.
+setUTCSeconds|Date.|(seconds, [millisec]): void|Sets the seconds in Universal time.
+setUTCMilliseconds|Date.|(milli): void|Sets the milliseconds in Universal time.
+setYear|Date.|(year): void|[Deprecated] Sets the year (usually 2-3 digits) for a specified date according to local time. Use setFullYear instead.
+toDateString|Date.|(): string|Returns the "date" portion of the Date as a human-readable string.
+toISOString|Date.|(): string|Converts a date to a string following the ISO 8601 Extended Format.
+toGMTString|Date.|(): string|[Deprecated] Converts a date to a string, using the Internet GMT conventions. Use toUTCString instead.
+toLocaleDateString|Date.|(): string|Returns the "date" portion of the Date as a string, using the current locale's conventions.
+toLocaleFormat|Date.|(): string|[Non-standard] Converts a date to a string, using a format string.
+toLocaleString|Date.|(): string|Converts a date to a string, using the current locale's conventions. Overrides the Object.toLocaleString method.
+toLocaleTimeString|Date.|(): string|Returns the "time" portion of the Date as a string, using the current locale's conventions.
+toSource|Date.|(): string|[Non-standard] Returns a string representing the source for an equivalent Date object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.
+toString|Date.|(): string|Returns a string representing the specified Date object. Overrides the Object.prototype.toString method.
+toTimeString|Date.|(): string|Returns the "time" portion of the Date as a human-readable string.
+toUTCString|Date.|(): string|Converts a date to a string, using the universal time convention.
 ## Function
-arguments|||[Deprecated] An array corresponding to the arguments passed to a function. This is deprecated as property of Function, use the arguments object available within the function instead.
-caller|||[Non-standard] Specifies the function that invoked the currently executing function.
-apply|||Applies the method of another object in the context of a different object (the calling object); arguments can be passed as an Array object.
-bind|||[Requires JavaScript 1.8.5] Creates a new function which, when called, itself calls this function in the context of the provided value, with a given sequence of arguments preceding any provided when the new function was called.
-call|||Calls (executes) a method of another object in the context of a different object (the calling object); arguments can be passed as they are.
-isGenerator|||[Requires JavaScript 1.8.6] Returns true if the function is a generator; otherwise returns false.
+arguments|function(){|: Object}|An array corresponding to the arguments passed to a function. This is deprecated as property of Function, use the arguments object available within the function instead.
+arguments.callee|||Reference to the currently executing function.
+arguments.caller|||[Obsolete] Reference to the function that invoked the currently executing function.
+arguments.length|||Reference to the number of arguments passed to the function.
+length|Function.|: number|Specifies the number of arguments expected by the function.
+apply|Function.|(thisArg[, argsArray]): void|Applies the method of another object in the context of a different object (the calling object); arguments can be passed as an Array object.
+bind|Function.|(thisArg[, arg1[, arg2[, ...]]]): Function|[Requires JavaScript 1.8.5] Creates a new function which, when called, itself calls this function in the context of the provided value, with a given sequence of arguments preceding any provided when the new function was called.
+call|Function.|(thisArg[, arg1[, arg2[, ...]]]): void|Calls (executes) a method of another object in the context of a different object (the calling object); arguments can be passed as they are.
+isGenerator|Function.|(): boolean)|[Requires JavaScript 1.8.6] Returns true if the function is a generator; otherwise returns false.
 ## Math
-Math.E|||Euler's constant and the base of natural logarithms, approximately 2.718.
-Math.LN2|||Natural logarithm of 2, approximately 0.693.
-Math.LN10|||Natural logarithm of 10, approximately 2.302.
-Math.LOG2E|||Base 2 logarithm of E, approximately 1.442.
-Math.LOG10E|||Base 10 logarithm of E, approximately 0.434.
-Math.PI|||Ratio of the circumference of a circle to its diameter, approximately 3.14159.
-Math.SQRT1_2|||Square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.
-Math.SQRT2|||Square root of 2, approximately 1.414.
-Math.abs|Number|(Number x)|Returns the absolute value (modulus) of a number.
-Math.acos|Number|(Number x)|Returns the arccosine of a number.
-Math.asin|Number|(Number x)|Returns the arcsine of a number.
-Math.atan|Number|(Number x)|Returns the arctangent of a number.
-Math.atan2|Number|(Number y, Number x)|Returns the arctangent of the quotient of its arguments.
-Math.ceil|Number|(Number x)|Returns the smallest integer greater than or equal to a number.
-Math.cos|Number|(Number x)|Returns the cosine of a number.
-Math.exp|Number|(Number x)|Returns Enumber, where number is the argument, and E is Euler's constant (2.718...), the base of the natural logarithm.
-Math.floor|Number|(Number x)|Returns the largest integer less than or equal to a number.
-Math.log|Number|(Number x)|Returns the natural logarithm (loge, also ln) of a number.
-Math.max|Number|(Number a, Number b)|Returns the largest of zero or more numbers.
-Math.min|Number|(Number a, Number b)|Returns the smallest of zero or more numbers.
-Math.pow|Number|(Number x, Number y)|Returns base to the exponent power, that is, baseexponent.
-Math.random|Number|()|Returns a pseudo-random number between 0 and 1.
-Math.round|Number|(Number x)|Returns the value of a number rounded to the nearest integer.
-Math.sin|Number|(Number x)|Returns the sine of a number.
-Math.sqrt|Number|(Number x)|Returns the positive square root of a number.
-Math.tan|Number|(Number x)|Returns the tangent of a number.
+E|[static] Math.||Euler's constant and the base of natural logarithms, approximately 2.718.
+LN2|[static] Math.||Natural logarithm of 2, approximately 0.693.
+LN10|[static] Math.||Natural logarithm of 10, approximately 2.302.
+LOG2E|[static] Math.||Base 2 logarithm of E, approximately 1.442.
+LOG10E|[static] Math.||Base 10 logarithm of E, approximately 0.434.
+PI|[static] Math.||Ratio of the circumference of a circle to its diameter, approximately 3.14159.
+SQRT1_2|[static] Math.||Square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.
+SQRT2|[static] Math.||Square root of 2, approximately 1.414.
+abs|[static] Math.|(x: number): number|Returns the absolute value (modulus) of a number.
+acos|[static] Math.|(x: number): number|Returns the arccosine of a number.
+asin|[static] Math.|(x: number): number|Returns the arcsine of a number.
+atan|[static] Math.|(x: number): number|Returns the arctangent of a number.
+atan2|[static] Math.|(y: number, x: number): number|Returns the arctangent of the quotient of its arguments.
+ceil|[static] Math.|(x: number): number|Returns the smallest integer greater than or equal to a number.
+cos|[static] Math.|(x: number): number|Returns the cosine of a number.
+exp|[static] Math.|(x: number): number|Returns Enumber, where number is the argument, and E is Euler's constant (2.718...), the base of the natural logarithm.
+floor|[static] Math.|(x: number): number|Returns the largest integer less than or equal to a number.
+log|[static] Math.|(x: number): number|Returns the natural logarithm (loge, also ln) of a number.
+max|[static] Math.|(a: number, b: number): number|Returns the largest of zero or more numbers.
+min|[static] Math.|(a: number, b: number): number|Returns the smallest of zero or more numbers.
+pow|[static] Math.|(x: number, y: number): number|Returns base to the exponent power, that is, baseexponent.
+random|[static] Math.|(): number|Returns a pseudo-random number between 0 and 1.
+round|[static] Math.|(x: number): number|Returns the value of a number rounded to the nearest integer.
+sin|[static] Math.|(x: number): number|Returns the sine of a number.
+sqrt|[static] Math.|(x: number): number|Returns the positive square root of a number.
+tan|[static] Math.|(x: number): number|Returns the tangent of a number.
 ## Number
-Number.MAX_VALUE|||The largest positive representable number.  The largest negative representable number is -MAX_VALUE.
-Number.MIN_VALUE|||The smallest positive representable number -- that is, the positive number closest to zero (without actually being zero).  The smallest negative representable number is -MIN_VALUE.
-Number.NEGATIVE_INFINITY|||Special value representing negative infinity; returned on overflow.
-Number.POSITIVE_INFINITY|||Special value representing infinity; returned on overflow.
-toExponential|String|(Number x)|Returns a string representing the number in exponential notation.
-toFixed|String|(Number trail)|Returns a string representing the number in fixed-point notation.
-toPrecision|String|(Number length)|Returns a string representing the number to a specified precision in fixed-point or exponential notation.
+MAX_VALUE|[static] Number.||The largest positive representable number.  The largest negative representable number is -MAX_VALUE.
+MIN_VALUE|[static] Number.||The smallest positive representable number -- that is, the positive number closest to zero (without actually being zero).  The smallest negative representable number is -MIN_VALUE.
+NEGATIVE_INFINITY|[static] Number.||Special value representing negative infinity; returned on overflow.
+POSITIVE_INFINITY|[static] Number.||Special value representing infinity; returned on overflow.
+toExponential|Number.|(x: number): string|Returns a string representing the number in exponential notation.
+toFixed|Number.|(trail: number): string|Returns a string representing the number in fixed-point notation.
+toPrecision|Number.|(length: number): string|Returns a string representing the number to a specified precision in fixed-point or exponential notation.
 ## Object
-Object.create||()|[Requires JavaScript 1.8.5] Creates a new object with the specified prototype object and properties.
-Object.defineProperty||()|[Requires JavaScript 1.8.5] Adds the named property described by a given descriptor to an object.
-Object.defineProperties||()|[Requires JavaScript 1.8.5] Adds the named properties described by the given descriptors to an object.
-Object.getOwnPropertyDescriptor||()|[Requires JavaScript 1.8.5] Returns a property descriptor for a named property on an object.
-Object.keys|Array|(obj)|[Requires JavaScript 1.8.5] Returns an array containing the names of all of the given object's own enumerable properties.
-Object.getOwnPropertyNames|Array|(Object obj)|[Requires JavaScript 1.8.5] Returns an array containing the names of all of the given object's own enumerable and non-enumerable properties.
-Object.getPrototypeOf||()|[Requires JavaScript 1.8.1] Returns the prototype of the specified object.
-Object.preventExtensions||()|[Requires JavaScript 1.8.5] Prevents any extensions of an object.
-Object.isExtensible||()|[Requires JavaScript 1.8.5] Determine if extending of an object is allowed.
-Object.seal||()|[Requires JavaScript 1.8.5] Prevents other code from deleting properties of an object.
-Object.isSealed||()|[Requires JavaScript 1.8.5] Determine if an object is sealed.
-Object.freeze||()|[Requires JavaScript 1.8.5] Freezes an object: other code can't delete or change any properties.
-Object.isFrozen||()|[Requires JavaScript 1.8.5] Determine if an object was frozen.
-constructor||()|Specifies the function that creates an object's prototype.
-hasOwnProperty|Boolean|(String prop)|Returns a boolean indicating whether an object contains the specified property as a direct property of that object and not inherited through the prototype chain.
-isPrototypeOf|Boolean|(Object obj)|Returns a boolean indication whether the specified object is in the prototype chain of the object this method is called upon.
-propertyIsEnumerable|Boolean|(String prop)|Returns a boolean indicating if the internal ECMAScript DontEnum attribute is set.
-toLocaleString|String|()|Calls toString.
-toString|String|()|Returns a string representation of the object.
-valueOf|Object|()|Returns the primitive value of the specified object.
+create|[static] Object.|(proto [, propertiesObject ]): Object|[Requires JavaScript 1.8.5] Creates a new object with the specified prototype object and properties.
+defineProperty|[static] Object.|(obj, prop, descriptor): Object|[Requires JavaScript 1.8.5] Adds the named property described by a given descriptor to an object.
+defineProperties|[static] Object.|(obj, props): Object|[Requires JavaScript 1.8.5] Adds the named properties described by the given descriptors to an object.
+getOwnPropertyDescriptor|[static] Object.|(obj, prop): Object|[Requires JavaScript 1.8.5] Returns a property descriptor for a named property on an object.
+keys|[static] Object.|(obj): Array|[Requires JavaScript 1.8.5] Returns an array containing the names of all of the given object's own enumerable properties.
+getOwnPropertyNames|[static] Object.|(obj: Object): Array|[Requires JavaScript 1.8.5] Returns an array containing the names of all of the given object's own enumerable and non-enumerable properties.
+getPrototypeOf|[static] Object.|(obj): Object|[Requires JavaScript 1.8.1] Returns the prototype of the specified object.
+preventExtensions|[static] Object.|(obj): Object|[Requires JavaScript 1.8.5] Prevents any extensions of an object.
+isExtensible|[static] Object.|(): boolean|[Requires JavaScript 1.8.5] Determine if extending of an object is allowed.
+seal|[static] Object.|(obj): Object|[Requires JavaScript 1.8.5] Prevents other code from deleting properties of an object.
+isSealed|[static] Object.|(): boolean|[Requires JavaScript 1.8.5] Determine if an object is sealed.
+freeze|[static] Object.|()|[Requires JavaScript 1.8.5] Freezes an object: other code can't delete or change any properties.
+isFrozen|[static] Object.|(): boolean|[Requires JavaScript 1.8.5] Determine if an object was frozen.
+constructor|Object.||Specifies the function that creates an object's prototype.
+hasOwnProperty|Object.|(prop: string): boolean|Returns a boolean indicating whether an object contains the specified property as a direct property of that object and not inherited through the prototype chain.
+isPrototypeOf|Object.|(obj: Object): boolean|Returns a boolean indication whether the specified object is in the prototype chain of the object this method is called upon.
+propertyIsEnumerable|Object.|(prop: string): boolean|Returns a boolean indicating if the internal ECMAScript DontEnum attribute is set.
+toLocaleString|Object.|(): string|Calls toString.
+toString|Object.|(): string|Returns a string representation of the object.
+valueOf|Object.|(): Object|Returns the primitive value of the specified object.
 ## RegExp
-RegExp.global|||Whether to test the regular expression against all possible matches in a string, or only against the first.
-RegExp.ignoreCase|||Whether to ignore case while attempting a match in a string.
-RegExp.lastIndex|||The index at which to start the next match.
-RegExp.multiline|||Whether or not to search in strings across multiple lines.
-exec|Array|(String str)|Executes a search for a match in its string parameter.
-test|Boolean|(String str)|Tests for a match in its string parameter.
+global|[static] RegExp.||Whether to test the regular expression against all possible matches in a string, or only against the first.
+ignoreCase|[static] RegExp.||Whether to ignore case while attempting a match in a string.
+lastIndex|[static] RegExp.||The index at which to start the next match.
+multiline|[static] RegExp.||Whether or not to search in strings across multiple lines.
+exec|RegExp.|(str: string): Array|Executes a search for a match in its string parameter.
+test|RegExp.|(str: string): boolean|Tests for a match in its string parameter.
 ## String
-String.fromCharCode|||Returns a string created by using the specified sequence of Unicode values.
-charAt|String|(Number index)|Returns the character at the specified index.
-charCodeAt|Number|(Number index)|Returns a number indicating the Unicode value of the character at the given index.
-concat|String|(Object v1,..., Object vN)|Combines the text of two strings and returns a new string.
-indexOf|Number|(String substr, [Number start])|Returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found.
-lastIndexOf|Number|(String substr, [Number start])|Returns the index within the calling String object of the last occurrence of the specified value, or -1 if not found.
-localeCompare|||Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order.
-match|Array|(RegExp regexp)|Used to match a regular expression against a string.
-replace|String|(RegExp regexp, String replacement)|Used to find a match between a regular expression and a string, and to replace the matched substring with a new substring.
-search|Number|(RegExp regexp)|Executes the search for a match between a regular expression and a specified string.
-slice|String|(Number start, Number end)|Extracts a section of a string and returns a new string.
-split|Array|(String delimiter, [Number limit])|Splits a String object into an array of strings by separating the string into substrings.
-substr|String|(Number start[, Number length])|Returns the characters in a string beginning at the specified location through the specified number of characters.
-substring|String|(Number from[, Number to])|Returns the characters in a string between two indexes into the string.
-toLocaleLowerCase|String|()|The characters within a string are converted to lower case while respecting the current locale. For most languages, this will return the same as toLowerCase.
-toLocaleUpperCase|String|()|The characters within a string are converted to upper case while respecting the current locale. For most languages, this will return the same as toUpperCase.
-toLowerCase|String|()|Returns the calling string value converted to lower case.
-toUpperCase|String|()|Returns the calling string value converted to uppercase.
-trim|String|()|[Requires JavaScript 1.8.1] Trims whitespace from the beginning and end of the string. Part of the ECMAScript 5 standard.
-trimLeft|String|()|[Requires JavaScript 1.8.1 Non-standard] Trims whitespace from the left side of the string.
-trimRight|String|()|[Requires JavaScript 1.8.1 Non-standard] Trims whitespace from the right side of the string.
+fromCharCode|[static] String.|(num1, ..., numN): string|Returns a string created by using the specified sequence of Unicode values.
+charAt|String.|(index: number): String|Returns the character at the specified index.
+charCodeAt|String.|(index: number): Number|Returns a number indicating the Unicode value of the character at the given index.
+concat|String.|(v1: Object,..., vN: Object): String|Combines the text of two strings and returns a new string.
+indexOf|String.|(substr: string, [start: number]): Number|Returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found.
+lastIndexOf|String.|(substr: string, [start: number]): Number|Returns the index within the calling String object of the last occurrence of the specified value, or -1 if not found.
+localeCompare|String.|(compareString: string): number|Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order.
+match|String.|(RegExp regexp): Array|Used to match a regular expression against a string.
+replace|String.|(RegExp regexp, replacement: string): String|Used to find a match between a regular expression and a string, and to replace the matched substring with a new substring.
+search|String.|(RegExp regexp): Number|Executes the search for a match between a regular expression and a specified string.
+slice|String.|(start: number, end: number): String|Extracts a section of a string and returns a new string.
+split|String.|(delimiter: string, [limit: number]): Array|Splits a String object into an array of strings by separating the string into substrings.
+substr|String.|(start: number[, length: number]): String|Returns the characters in a string beginning at the specified location through the specified number of characters.
+substring|String.|(from: number[, to: number]): String|Returns the characters in a string between two indexes into the string.
+toLocaleLowerCase|String.|(): String|The characters within a string are converted to lower case while respecting the current locale. For most languages, this will return the same as toLowerCase.
+toLocaleUpperCase|String.|(): String|The characters within a string are converted to upper case while respecting the current locale. For most languages, this will return the same as toUpperCase.
+toLowerCase|String.|(): String|Returns the calling string value converted to lower case.
+toUpperCase|String.|(): String|Returns the calling string value converted to uppercase.
+trim|String.|(): String|[Requires JavaScript 1.8.1] Trims whitespace from the beginning and end of the string. Part of the ECMAScript 5 standard.
+trimLeft|String.|(): String|[Requires JavaScript 1.8.1 Non-standard] Trims whitespace from the left side of the string.
+trimRight|String.|(): String|[Requires JavaScript 1.8.1 Non-standard] Trims whitespace from the right side of the string.
