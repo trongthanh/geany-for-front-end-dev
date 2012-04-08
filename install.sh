@@ -42,22 +42,37 @@ echo "\nCopying: latest css properties highlighting"
 copy_config_file $m "filedefs/filetypes.css"
 ##standard css tags (with CSS3)
 echo "\nCopying: standard css property tags (with latest CSS3)"
-copy_config_file $m "tags/standard.css.tags"
+copy_config_file $m "tags/std.css.tags"
 ##prefixed CSS properties tags
 echo "\nCopying: vendor's prefixed css property tags (without leading -)"
 copy_config_file $m "tags/prefixed.css.tags"
 
 #Javascript
 echo "\n-------------------- Javascript --------------------"
+##Javascript highlighting (the patch to allow $ as word character doesn't work)
+#echo "\nCopying: patches to Javascript highlighting"
+#copy_config_file $m "filedefs/filetypes.javascript"
 ##standard js tags
 echo "\nCopying: standard js property & function tags"
-copy_config_file $m "tags/standard.js.tags"
+copy_config_file $m "tags/std.js.tags"
 ##Browser's DOM objects tags
 echo "\nCopying: browser's DOM objects tags"
 copy_config_file $m "tags/dom.js.tags"
 ##standard style's name
 echo "\nCopying: standard js Style object property tags (equivalent to CSS properties list)"
 copy_config_file $m "tags/styles.js.tags"
+
+#Optional
+##Mootools Core
+echo -n "\nCopying: core Mootools API (y/n)"
+read mootools_core;
+
+if [ $mootools_core = "y" ]
+then
+  copy_config_file $m "tags/mootools-core.js.tags"
+else
+  echo "Aborted!"
+fi
 
 #Skip action script for now echo "Copying: standard flash.* Classes highlighting"
 #copy_config_file $m "filedefs/filetypes.actionscript"

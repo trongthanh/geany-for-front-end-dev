@@ -1,0 +1,23 @@
+
+* Extract all Mootools functions:
+- Search for
+[\s\S]*?((\w+\.implement)|([\.\w]+.[:=].function\(.*\)))[\s\S]*?
+-Replace with:
+\n\1\n
+
+* Transform prototype functions to instance function tags
+- Search [Document, Element].prototype.contains: function(element)
+(.*?)prototype\.(\w+): function(.*)
+- Replace
+\2\|\1\|\3\|
+
+
+* Transform functions to function tags (static / instances)
+- (.*?)\.(\w+)\s?[:=] function(.*)
+- \2\|\1\|\3\|
+
+* Adding [static] to all tags
+
+* Remove static and prototype from tags
+- \|\[static\] ([\w\.\]\[\,\s]+\.)prototype\|
+- \|\1\|

@@ -1,0 +1,257 @@
+# format=pipe
+##Mootools 1.4.1
+typeOf|(Mootools 1.4)|(item)|
+instanceOf|(Mootools 1.4)|(item, object)|
+Class|(Mootools 1.4)|(defObj)|
+extend|(Mootools 1.4) Function.|(key, value)|
+implement|(Mootools 1.4) Function.|(key, value)|
+from|(Mootools 1.4) [static] Function.|(item)|
+from|(Mootools 1.4) [static] Array.|(item)|
+from|(Mootools 1.4) [static] Number.|(item)|
+from|(Mootools 1.4) [static] String.|(item)|
+hide|(Mootools 1.4) Function.|()|
+protect|(Mootools 1.4) Function.|()|
+Type|(Mootools 1.4)|(name, object)|
+isEnumerable|(Mootools 1.4) [static] Type.|(item)|
+implement|(Mootools 1.4) Type.|(name, method)|
+extend|(Mootools 1.4) Type.|(name, method)|
+alias|(Mootools 1.4) Type.|(name, existing)|
+mirror|(Mootools 1.4) Type.|(hook)|
+forEach|(Mootools 1.4) Array.|(fn, bind)|
+each|(Mootools 1.4) Array.|(fn, bind)|
+merge|(Mootools 1.4) Array.|(source, k, v)|
+clone|(Mootools 1.4) Array.|(object)|
+append|(Mootools 1.4) Array.|(original)|
+every|(Mootools 1.4) Array.|(fn, bind)|
+filter|(Mootools 1.4) Array.|(fn, bind)|
+indexOf|(Mootools 1.4) Array.|(item, from)|
+map|(Mootools 1.4) Array.|(fn, bind)|
+some|(Mootools 1.4) Array.|(fn, bind)|
+clean|(Mootools 1.4) Array.|()|
+invoke|(Mootools 1.4) Array.|(methodName)|
+associate|(Mootools 1.4) Array.|(keys)|
+link|(Mootools 1.4) Array.|(object)|
+contains|(Mootools 1.4) Array.|(item, from)|
+append|(Mootools 1.4) Array.|(array)|
+getLast|(Mootools 1.4) Array.|()|
+getRandom|(Mootools 1.4) Array.|()|
+include|(Mootools 1.4) Array.|(item)|
+combine|(Mootools 1.4) Array.|(array)|
+erase|(Mootools 1.4) Array.|(item)|
+empty|(Mootools 1.4) Array.|()|
+flatten|(Mootools 1.4) Array.|()|
+pick|(Mootools 1.4) Array.|()|
+hexToRgb|(Mootools 1.4) Array.|(array)|
+rgbToHex|(Mootools 1.4) Array.|(array)|
+test|(Mootools 1.4) String.|(regex, params)|
+contains|(Mootools 1.4) String.|(string, separator)|
+trim|(Mootools 1.4) String.|()|
+clean|(Mootools 1.4) String.|()|
+camelCase|(Mootools 1.4) String.|()|
+hyphenate|(Mootools 1.4) String.|()|
+capitalize|(Mootools 1.4) String.|()|
+escapeRegExp|(Mootools 1.4) String.|()|
+toInt|(Mootools 1.4) String.|(base)|
+toFloat|(Mootools 1.4) String.|()|
+hexToRgb|(Mootools 1.4) String.|(array)|
+rgbToHex|(Mootools 1.4) String.|(array)|
+substitute|(Mootools 1.4) String.|(object, regexp)|
+limit|(Mootools 1.4) Number.|(min, max)|
+round|(Mootools 1.4) Number.|(precision)|
+times|(Mootools 1.4) Number.|(fn, bind)|
+toFloat|(Mootools 1.4) Number.|()|
+toInt|(Mootools 1.4) Number.|(base)|
+attempt|(Mootools 1.4) Number.|()|
+attempt|(Mootools 1.4) Function.|(args, bind)|
+bind|(Mootools 1.4) Function.|(that)|
+bound|(Mootools 1.4) Function.|()|
+pass|(Mootools 1.4) Function.|(args, bind)|
+delay|(Mootools 1.4) Function.|(delay, bind, args)|
+periodical|(Mootools 1.4) Function.|(periodical, bind, args)|
+subset|(Mootools 1.4) Function.|(object, keys)|
+map|(Mootools 1.4) Function.|(object, fn, bind)|
+filter|(Mootools 1.4) Function.|(object, fn, bind)|
+every|(Mootools 1.4) Function.|(object, fn, bind)|
+some|(Mootools 1.4) Function.|(object, fn, bind)|
+keys|(Mootools 1.4) Function.|(object)|
+values|(Mootools 1.4) Function.|(object)|
+getLength|(Mootools 1.4) Function.|(object)|
+keyOf|(Mootools 1.4) Function.|(object, value)|
+contains|(Mootools 1.4) Function.|(object, value)|
+toQueryString|(Mootools 1.4) Function.|(object, base)|
+stop|(Mootools 1.4) DOMEvent.|()|
+stopPropagation|(Mootools 1.4) DOMEvent.|()|
+preventDefault|(Mootools 1.4) DOMEvent.|()|
+defineKey|(Mootools 1.4) [static] DOMEvent.|(code, key)|
+Extends|(Mootools 1.4) Class.|(parent)|
+Implements|(Mootools 1.4) Class.|(items)|
+chain|(Mootools 1.4) Chain.|()|
+callChain|(Mootools 1.4) Chain.|()|
+clearChain|(Mootools 1.4) Chain.|()|
+addEvent|(Mootools 1.4) Events.|(type, fn, internal)|
+addEvents|(Mootools 1.4) Events.|(events)|
+fireEvent|(Mootools 1.4) Events.|(type, args, delay)|
+removeEvent|(Mootools 1.4) Events.|(type, fn)|
+removeEvents|(Mootools 1.4) Events.|(events)|
+setOptions|(Mootools 1.4) Options.|()|
+parse|(Mootools 1.4) [static] Slick.|(expression)|
+search|(Mootools 1.4) [static] Slick.|(context, expression, append)|
+find|(Mootools 1.4) [static] Slick.|(context, expression)|
+contains|(Mootools 1.4) [static] Slick.|(container, node)|
+getAttribute|(Mootools 1.4) [static] Slick.|(node, name)|
+hasAttribute|(Mootools 1.4) [static] Slick.|(node, name)|
+match|(Mootools 1.4) [static] Slick.|(node, selector)|
+definePseudo|(Mootools 1.4) [static] Slick.|(name, fn)|
+lookupPseudo|(Mootools 1.4) [static] Slick.|(name)|
+override|(Mootools 1.4) [static] Slick.|(regexp, fn)|
+Element|(Mootools 1.4)|(tag, props)|
+Elements|(Mootools 1.4)|(nodes)|
+filter|(Mootools 1.4) Elements.|(filter, bind)|
+push|(Mootools 1.4) Elements.|()|
+unshift|(Mootools 1.4) Elements.|()|
+concat|(Mootools 1.4) Elements.|()|
+append|(Mootools 1.4) Elements.|(collection)|
+empty|(Mootools 1.4) Elements.|()|
+newElement|(Mootools 1.4) Document.|(tag, props)|
+newTextNode|(Mootools 1.4) Document.|(text)|
+getDocument|(Mootools 1.4) Document.|()|
+getWindow|(Mootools 1.4) Document.|()|
+id|(Mootools 1.4) Document.|()|
+getDocument|(Mootools 1.4) Window.|()|
+getWindow|(Mootools 1.4) Window.|()|
+getElements|(Mootools 1.4) [Document, Element].|(expression)|
+getElement|(Mootools 1.4) [Document, Element].|(expression)|
+contains|(Mootools 1.4) [Document, Element].|(element)|
+getFirst|(Mootools 1.4) Element.|(expression)|
+getLast|(Mootools 1.4) Element.|(expression)|
+getWindow|(Mootools 1.4) Element.|()|
+getDocument|(Mootools 1.4) Element.|()|
+getElementById|(Mootools 1.4) Element.|(id)|
+match|(Mootools 1.4) Element.|(expression)|
+$$|Window.prototype|(selector)|
+setProperty|(Mootools 1.4) Element.|(name, value)|
+setProperties|(Mootools 1.4) Element.|(attributes)|
+getProperty|(Mootools 1.4) Element.|(name)|
+getProperties|(Mootools 1.4) Element.|()|
+removeProperty|(Mootools 1.4) Element.|(name)|
+removeProperties|(Mootools 1.4) Element.|()|
+set|(Mootools 1.4) Element.|(prop, value)|
+get|(Mootools 1.4) Element.|(prop)|
+erase|(Mootools 1.4) Element.|(prop)|
+hasClass|(Mootools 1.4) Element.|(className)|
+addClass|(Mootools 1.4) Element.|(className)|
+removeClass|(Mootools 1.4) Element.|(className)|
+toggleClass|(Mootools 1.4) Element.|(className, force)|
+adopt|(Mootools 1.4) Element.|()|
+appendText|(Mootools 1.4) Element.|(text, where)|
+grab|(Mootools 1.4) Element.|(el, where)|
+inject|(Mootools 1.4) Element.|(el, where)|
+replaces|(Mootools 1.4) Element.|(el)|
+wraps|(Mootools 1.4) Element.|(el, where)|
+getSelected|(Mootools 1.4) Element.|()|
+toQueryString|(Mootools 1.4) Element.|()|
+destroy|(Mootools 1.4) Element.|()|
+empty|(Mootools 1.4) Element.|()|
+dispose|(Mootools 1.4) Element.|()|
+clone|(Mootools 1.4) Element.|(contents, keepid)|
+addListener|(Mootools 1.4) [Element, Window, Document].|(type, fn)|
+removeListener|(Mootools 1.4) [Element, Window, Document].|(type, fn)|
+retrieve|(Mootools 1.4) [Element, Window, Document].|(property, dflt)|
+store|(Mootools 1.4) [Element, Window, Document].|(property, value)|
+eliminate|(Mootools 1.4) [Element, Window, Document].|(property)|
+getComputedStyle|(Mootools 1.4) Element.|(property)|
+setStyle|(Mootools 1.4) Element.|(property, value)|
+getStyle|(Mootools 1.4) Element.|(property)|
+setStyles|(Mootools 1.4) Element.|(styles)|
+getStyles|(Mootools 1.4) Element.|()|
+addEvent|(Mootools 1.4) [static] [Element, Window, Document]|(type, fn)|
+condition|(Mootools 1.4) [static] [Element, Window, Document]|(event)|
+removeEvent|(Mootools 1.4) [static] [Element, Window, Document]|(type, fn)|
+addEvents|(Mootools 1.4) [static] [Element, Window, Document]|(events)|
+removeEvents|(Mootools 1.4) [static] [Element, Window, Document]|(events)|
+fireEvent|(Mootools 1.4) [static] [Element, Window, Document]|(type, args, delay)|
+cloneEvents|(Mootools 1.4) [static] [Element, Window, Document]|(from, type)|
+scrollTo|(Mootools 1.4) Element.|(x, y)|
+getSize|(Mootools 1.4) Element.|()|
+getScrollSize|(Mootools 1.4) Element.|()|
+getScroll|(Mootools 1.4) Element.|()|
+getScrolls|(Mootools 1.4) Element.|()|
+getOffsets|(Mootools 1.4) Element.|()|
+getPosition|(Mootools 1.4) Element.|(relative)|
+getCoordinates|(Mootools 1.4) Element.|(element)|
+computePosition|(Mootools 1.4) Element.|(obj)|
+setPosition|(Mootools 1.4) Element.|(obj)|
+getSize|(Mootools 1.4) [Document, Window].|()|
+getScroll|(Mootools 1.4) [Document, Window].|()|
+getScrollSize|(Mootools 1.4) [Document, Window].|()|
+getPosition|(Mootools 1.4) [Document, Window].|()|
+getCoordinates|(Mootools 1.4) [Document, Window].|()|
+getHeight|(Mootools 1.4) [Window, Document, Element].|()|
+getWidth|(Mootools 1.4) [Window, Document, Element].|()|
+getScrollTop|(Mootools 1.4) [Window, Document, Element].|()|
+getScrollLeft|(Mootools 1.4) [Window, Document, Element].|()|
+getScrollHeight|(Mootools 1.4) [Window, Document, Element].|()|
+getScrollWidth|(Mootools 1.4) [Window, Document, Element].|()|
+getTop|(Mootools 1.4) [Window, Document, Element].|()|
+getLeft|(Mootools 1.4) [Window, Document, Element].|()|
+getTransition|(Mootools 1.4) Fx.|()|
+step|(Mootools 1.4) Fx.|(now)|
+set|(Mootools 1.4) Fx.|(now)|
+compute|(Mootools 1.4) Fx.|(from, to, delta)|
+check|(Mootools 1.4) Fx.|()|
+start|(Mootools 1.4) Fx.|(from, to)|
+stop|(Mootools 1.4) Fx.|()|
+cancel|(Mootools 1.4) Fx.|()|
+pause|(Mootools 1.4) Fx.|()|
+resume|(Mootools 1.4) Fx.|()|
+isRunning|(Mootools 1.4) Fx.|()|
+compute|(Mootools 1.4) [static] Fx.|(from, to, delta)|
+set|(Mootools 1.4) Fx.Tween.|(property, now)|
+start|(Mootools 1.4) Fx.Tween.|(property, from, to)|
+tween|(Mootools 1.4) Element.|(property, from, to)|
+fade|(Mootools 1.4) Element.|(how)|
+highlight|(Mootools 1.4) Element.|(start, end)|
+set|(Mootools 1.4) Fx.Morph.|(now)|
+compute|(Mootools 1.4) Fx.Morph.|(from, to, delta)|
+start|(Mootools 1.4) Fx.Morph.|(properties)|
+morph|(Mootools 1.4) Element.|(props)|
+getTransition|(Mootools 1.4) Fx.|()|
+easeIn|(Mootools 1.4) [static] Fx.Transition.||
+easeOut|(Mootools 1.4) [static] Fx.Transition.||
+easeInOut|(Mootools 1.4) [static] Fx.Transition.||
+linear|(Mootools 1.4) [static] Fx.Transitions.||
+Pow|(Mootools 1.4) [static] Fx.Transitions.||
+Expo|(Mootools 1.4) [static] Fx.Transitions.||
+Circ|(Mootools 1.4) [static] Fx.Transitions.||
+Sine|(Mootools 1.4) [static] Fx.Transitions.||
+Back|(Mootools 1.4) [static] Fx.Transitions.||
+Bounce|(Mootools 1.4) [static] Fx.Transitions.||
+Elastic|(Mootools 1.4) [static] Fx.Transitions.||
+Quad|(Mootools 1.4) [static] Fx.Transitions.||
+Cubic|(Mootools 1.4) [static] Fx.Transitions.||
+Quart|(Mootools 1.4) [static] Fx.Transitions.||
+Quint|(Mootools 1.4) [static] Fx.Transitions.||
+isRunning|(Mootools 1.4) Request.|()|
+setHeader|(Mootools 1.4) Request.|(name, value)|
+getHeader|(Mootools 1.4) Request.|(name)|
+send|(Mootools 1.4) Request.|(options)|
+get|(Mootools 1.4) Request.|(options)|
+post|(Mootools 1.4) Request.|(options)|
+put|(Mootools 1.4) Request.|(options)|
+delete|(Mootools 1.4) Request.|(options)|
+GET|(Mootools 1.4) Request.|(options)|
+POST|(Mootools 1.4) Request.|(options)|
+PUT|(Mootools 1.4) Request.|(options)|
+DELETE|(Mootools 1.4) Request.|(options)|
+cancel|(Mootools 1.4) Request.|()|
+send|(Mootools 1.4) Element.|(url)|
+load|(Mootools 1.4) Element.|()|
+validate|(Mootools 1.4) [static] JSON.|(string)|
+decode|(Mootools 1.4) [static] JSON.|(string, secure)|
+write|(Mootools 1.4) Cookie.|(value)|
+read|(Mootools 1.4) Cookie.|()|
+dispose|(Mootools 1.4) Cookie.|()|
+write|(Mootools 1.4) [static] Cookie.|(key, value, options)|
+read|(Mootools 1.4) [static] Cookie.|(key)|
+dispose|(Mootools 1.4) [static] Cookie.|(key, options)|
+remote|(Mootools 1.4) [static] Swiff.|(obj, fn)|
