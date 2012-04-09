@@ -2,7 +2,9 @@
 
 ## Introduction
 
-[Geany](http://geany.org) is a lightweight & fast IDE that is based on Scintilla source code editing component and uses GTK2 toolkit for GUI. Geany runs on Linux, Windows & Mac OS.
+[Geany](http://geany.org) is a lightweight & fast IDE that is based on Scintilla source code editing component and uses GTK2 toolkit for GUI. Geany can run on Linux, Windows & Mac OS.
+
+By default, Geany has some basic code highlighting for JavaScript & other front-end languages (quite comparable with the acclaimed SublimeText 2) but it leaves a lot of room for improvement via user-defined configuration files.
 
 This package is a collection of configuration files to enhance Geany's source code highlighting and autocompletion for HTML/CSS/JavaScript, languages of front-end developers. (ActionScript is to be considered later).
 
@@ -10,12 +12,20 @@ This package is a collection of configuration files to enhance Geany's source co
 
 These config files were tested with the dev build of Geany, version 1.22. Although they may also work for latest stable build 0.21.
 
-To install the latest nightly build of Geany, refer to [this link](http://nightly.geany.org).
+Binary builds for latest Geany in Linux & Windows can be found [here](http://nightly.geany.org).
 
 ## How to install these supplement files
 
 - Copy the files in 'config/geany' folder to equivalent Geany's user config folder.
-- On Linux, the Geany's user config folder is at */home/username/.config/geany*
+- On Linux, the Geany's user config folder is at **/home/username/.config/geany**
+    - I have written an **install.sh** script to conveniently install the files on Linux:
+
+        Open terminal and cd to the source of this project. Then
+       
+        ```shell
+        chmod +x install.sh
+        ./install.sh
+```
 - For other OS, refer to [this manual](http://www.geany.org/manual/current/index.html#configuration-file-paths) to identify user's config folder.
 
 -----------------------------------
@@ -24,11 +34,11 @@ To install the latest nightly build of Geany, refer to [this link](http://nightl
 
 ## 1. Snippets
 
-With snippets, you can complete a whole block of code from short string like `in` or `for`. More on Geany's snippets configuration file at [this link](http://www.geany.org/manual/current/index.html#user-definable-snippets).
+With snippets, you can complete a whole block of code from short string like `if` or `for`. More on Geany's snippets configuration file at [this link](http://www.geany.org/manual/current/index.html#user-definable-snippets).
 
 ### The file:
 
-- **snippets.conf**: The javascript section of this file has been modified so that braces are inserted and alignments are made according to common Javascript convention. [Link to convention needed]
+- **snippets.conf**: The javascript section of this file has been modified so that braces are inserted and alignments are made according to common Javascript convention.
 
 ### How To:
 
@@ -46,13 +56,10 @@ Language specific syntax highlighting are defined in filetype definition files i
 
 ### The files:
 
-- **filedefs/filetypes.css**: This file lets Geany highlight latest CSS keywords properly. It contains up-to-date standard CSS1/2/3 as well as browser specific keywords. Source of reference: [Insert CSS reference link]
-    
-    [Insert photo of new CSS3 keywords highlighting]
+- **filedefs/filetypes.css**: This file lets Geany highlight latest CSS keywords properly. It contains up-to-date standard CSS1/2/3 as well as browser specific keywords. Besides, minor coloring rules have been patched to make CSS3 & prefixed keywords distinct from CSS1/2 ones.  
+    ![Better CSS highlighting](ref/img/css_highlighting.png)
 
-    Besides, minor coloring rules have been patched to make CSS3 & prefixed keywords distinct from CSS1/2 ones.
-
-    [Insert photo of CSS1/2/3/prefixed keywords highlighting]
+    Source of reference: [meiert.com](http://meiert.com/en/indices/css-properties/)
 
 ## 3. Code Hinting
 
@@ -69,7 +76,7 @@ To learn more about Geany's tags, refer to [this section](http://www.geany.org/m
 - **tags/styles.js.tags**: This file supplement JS property names of CSSStyleDeclaration object which are directly converted from the stadard CSS property names.
 - **tags/mootools-core.js.tags**: (Extra) Code hinting for JS Mootools 1.4 framework
 
-To dig in how to create these file, jump to the creator's guide section. [Local link needed]
+Source of references: [MDN](https://developer.mozilla.org/en/JavaScript/Reference), [JavaScript Kit](http://www.javascriptkit.com/jsref/), [Mootools Doc](http://mootools.net/docs/core)
 
 ### How To:
 
@@ -78,9 +85,10 @@ To dig in how to create these file, jump to the creator's guide section. [Local 
   - press Up/Down to select a keyword; 
   - press Enter to complete the whole keyword;
   - press Tab to complete a word portion 
-  - press press escape to close the pop 
-    [Insert image of codehint popup]
-- For function keywords, there is function parameters hint box to be displayed as soon as you type in function call bracket "(". [Insert image of function parameter hint]
+  - press press escape to close the pop  
+    ![JS code hinting](ref/img/js-code-hinting.png)
+- For function keywords, there is function parameters hint box to be displayed as soon as you type in function call bracket "(".
+![JS function parameter hinting](ref/img/js-function-hinting.png)
 - You can call this parameters hint box by pressing Ctrl-Shift-Space while the cursor is within brackets.
 - If a function keyword has duplicated entries, the hinting box will be shown with arrow button to select.
 
@@ -97,14 +105,19 @@ Go to Preferences of Geany (shortcut Ctrl-Alt-P), do:
 - Editor > Completions > Auto complete all words
 - Editor > Features > Comment toggle marker: clear the text box
 
+![Editor completion preferences](ref/img/editor-completion-preferences.png)
+
 You may also want to change these key binding to make Geany behave similarly to SublimeText or Webstorm
 
 - Key Bindings > Format > Toggle line commentation: <Primary>slash
 - Key Bindings > Editor > Move line(s) up: <Primary><Shift>Up
 - Key Bindings > Editor > Move line(s) down: <Primary><Shift>Down
 
+> Note: **<Primary>** is actually Ctrl on Linux/Windows
+
 -----------------------------------
 
 # Creator's Guide
 
 [To be written]
+
