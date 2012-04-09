@@ -48,7 +48,7 @@ Supported snippets in this package:
 `if`, `else`, `for`, `forin`, `while`, `do`, `switch`, `try`, `function` (NEW), `copyright` (NEW), 
 `author` (NEW). 
 
-Please edit your `author` name and `copyright` at [Default] section.
+Please edit your 'author' name and 'copyright' at [Default] section in snippet.conf. If you use install.sh, it will prompt you to enter text for those snippets.
 
 ## 2. Keywords Highlighting
 
@@ -57,7 +57,7 @@ Language specific syntax highlighting are defined in filetype definition files i
 ### The files:
 
 - **filedefs/filetypes.css**: This file lets Geany highlight latest CSS keywords properly. It contains up-to-date standard CSS1/2/3 as well as browser specific keywords. Besides, minor coloring rules have been patched to make CSS3 & prefixed keywords distinct from CSS1/2 ones.  
-    ![Better CSS highlighting](ref/img/css_highlighting.png)
+    ![Better CSS highlighting](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/css-highlighting.png)
 
     Source of reference: [meiert.com](http://meiert.com/en/indices/css-properties/)
 
@@ -86,11 +86,11 @@ Source of references: [MDN](https://developer.mozilla.org/en/JavaScript/Referenc
   - press Enter to complete the whole keyword;
   - press Tab to complete a word portion 
   - press press escape to close the pop  
-    ![JS code hinting](ref/img/js-code-hinting.png)
+    ![JS code hinting](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/js-code-hinting.png)
 - For function keywords, there is function parameters hint box to be displayed as soon as you type in function call bracket "(".
-![JS function parameter hinting](ref/img/js-function-hinting.png)
 - You can call this parameters hint box by pressing Ctrl-Shift-Space while the cursor is within brackets.
-- If a function keyword has duplicated entries, the hinting box will be shown with arrow button to select.
+- If a function keyword has duplicated entries, the hinting box will be shown with arrow button to select.  
+  ![JS function parameter hinting](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/js-function-hinting.png)
 
 ## 4. Additional settings for ease of use
 
@@ -105,19 +105,18 @@ Go to Preferences of Geany (shortcut Ctrl-Alt-P), do:
 - Editor > Completions > Auto complete all words
 - Editor > Features > Comment toggle marker: clear the text box
 
-![Editor completion preferences](ref/img/editor-completion-preferences.png)
+![Editor completion preferences](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/editor-completion-preferences.png)
 
 You may also want to change these key binding to make Geany behave similarly to SublimeText or Webstorm
 
-- Key Bindings > Format > Toggle line commentation: <Primary>slash
-- Key Bindings > Editor > Move line(s) up: <Primary><Shift>Up
-- Key Bindings > Editor > Move line(s) down: <Primary><Shift>Down
+- Key Bindings > Format > Toggle line commentation: &lt;Primary&gt;slash
+- Key Bindings > Editor > Move line(s) up: &lt;Primary&gt;&lt;Shift&gt;Up
+- Key Bindings > Editor > Move line(s) down: &lt;Primary&gt;&lt;Shift&gt;Down
 
-> Note: **<Primary>** is actually Ctrl on Linux/Windows
+> Note: **&lt;Primary&gt;** is actually Ctrl on Linux/Windows
 
 -----------------------------------
 
 # Creator's Guide
 
 [To be written]
-
