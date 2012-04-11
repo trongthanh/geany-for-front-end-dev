@@ -63,7 +63,7 @@ Language specific syntax highlighting are defined in filetype definition files i
 
 ## 3. Code Hinting
 
-**geany/tags** folder contains Geany's global tag files. These files will allow code-hinting and keywords auto-completion in Geany editor for a targeted filetype.
+Geany provide some dynamic context code hinting from opened files in the session. Besides, Geany allows users to create predefined global tag files that assist code hint and completion of symbols (e.g. function names, CSS properties...) for targeted file types. Global tag files are placed in  **geany/tags** folder and preloaded when Geany is started.
 
 To learn more about Geany's tags, refer to [this section](http://www.geany.org/manual/current/index.html#tags) of the mannual.
 
@@ -95,7 +95,8 @@ Source of references: [MDN](https://developer.mozilla.org/en/JavaScript/Referenc
 ## 4. Additional settings for ease of use
 
 ### Additional color schemes:
-Visit [this github project](https://github.com/codebrainz/geany-themes) to download more color schemes for Geany 1.22+
+Visit [this github project](https://github.com/codebrainz/geany-themes) to download more color schemes for Geany 1.22+.  
+I'm using the "Dark" color scheme from above theme sets to make the screenshots.
 
 ### Recommended preferences:
 Go to Preferences of Geany (shortcut Ctrl-Alt-P), do:
@@ -119,4 +120,51 @@ You may also want to change these key binding to make Geany behave similarly to 
 
 # Creator's Guide
 
-[To be written]
+My patching files generally comply to the [Geany mannual](http://www.geany.org/manual/current/index.html) except some tweaks in the tags files.
+
+## Tags file
+
+As explained in the mannual, each entry of the tag file:
+
+> ```shell
+> basename|string|(string path [, string suffix])|
+> ```
+> The first field is the tag name (usually a function name).  
+> The second field is the type of the return value.  
+> The third field is the argument list for this tag.  
+> The fourth field is the description for this tag but currently unused and should be left empty.
+
+I have come up with my own convention (or tweak) to show extra info of the JS functions:
+
+```shell
+function_name | [(library_name)] [[static]] [attached_symbol.] | ([param1[: Type1][, ..., paramN[: TypeN]]])[: Return_Type] |
+```
+Basically, the first field is still the property or function name.  
+The second field comprises of: name of the library (e.g. Mootools), static or not, and lastly, the Class that function is attached to.  
+The third field contains optional parameters with/without type and the function returned type. The ": Type" notation is borrowed from ActionScript. If you leave this field empty, the symbol is considered property, not function, and it has different color in the hinting list.
+
+For example:
+
+```
+slice|Array.|(begin: number[, end: number]): Array|
+```
+
+The hint popup will show like this:
+
+<table>
+  <tr>
+    <td>Array. slice (begin: number[, end: number]): Array</td>
+  </tr>
+</table>
+
+And `setProperty|(Mootools 1.4) Element.|(name, value)|` will be output as:
+
+<table>
+  <tr>
+    <td>(Mootools 1.4) Element. setProperty (name, value)</td>
+  </tr>
+</table>
+
+That is the best notation format I can think of for the function hint with current limitations of Geany. For property names, there's no way to show extra info of them exept the name.
+
+When Geany is improved and can handle tags better, I will revise and adapt this convention.
