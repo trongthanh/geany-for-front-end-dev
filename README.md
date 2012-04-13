@@ -98,6 +98,16 @@ Source of references: [MDN](https://developer.mozilla.org/en/JavaScript/Referenc
 Visit [this github project](https://github.com/codebrainz/geany-themes) to download more color schemes for Geany 1.22+.  
 I'm using the "Dark" color scheme from above theme sets to make the screenshots.
 
+### Additional plugins:
+I recommend you to enable these plugins in from the plugin manager (menu Tools > Plugin Manager):
+
+- XML Snippets ([info](http://plugins.geany.org/xmlsnippets.html))
+- HTML Characters (built-in)
+- Tree Browser ([info](http://plugins.geany.org/treebrowser.html))
+- Geany Lipsum ([info](http://plugins.geany.org/geanylipsum.html))
+
+And [other plugins](http://plugins.geany.org) that you may find useful to yourself.
+
 ### Recommended preferences:
 Go to Preferences of Geany (shortcut Ctrl-Alt-P), do:
 
