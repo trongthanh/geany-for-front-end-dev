@@ -103,7 +103,8 @@ I recommend you to enable these plugins in from the plugin manager (menu Tools >
 
 - XML Snippets ([info](http://plugins.geany.org/xmlsnippets.html))
 - HTML Characters (built-in)
-- Tree Browser ([info](http://plugins.geany.org/treebrowser.html))
+- Tree Browser ([info](http://plugins.geany.org/treebrowser.html)  
+Note: Remember to access the plugin settings to change its "External open command" to the file explorer of your OS (Nautilus/Finder/Explorer...)
 - Geany Lipsum ([info](http://plugins.geany.org/geanylipsum.html))
 
 And [other plugins](http://plugins.geany.org) that you may find useful to yourself.
