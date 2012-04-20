@@ -164,13 +164,13 @@ setStyle|(Mootools 1.4) Element.|(property, value)|
 getStyle|(Mootools 1.4) Element.|(property)|
 setStyles|(Mootools 1.4) Element.|(styles)|
 getStyles|(Mootools 1.4) Element.|()|
-addEvent|(Mootools 1.4) [static] [Element, Window, Document]|(type, fn)|
-condition|(Mootools 1.4) [static] [Element, Window, Document]|(event)|
-removeEvent|(Mootools 1.4) [static] [Element, Window, Document]|(type, fn)|
-addEvents|(Mootools 1.4) [static] [Element, Window, Document]|(events)|
-removeEvents|(Mootools 1.4) [static] [Element, Window, Document]|(events)|
-fireEvent|(Mootools 1.4) [static] [Element, Window, Document]|(type, args, delay)|
-cloneEvents|(Mootools 1.4) [static] [Element, Window, Document]|(from, type)|
+addEvent|(Mootools 1.4) [Element, Window, Document]|(type, fn)|
+condition|(Mootools 1.4) [Element, Window, Document]|(event)|
+removeEvent|(Mootools 1.4) [Element, Window, Document]|(type, fn)|
+addEvents|(Mootools 1.4) [Element, Window, Document]|(events)|
+removeEvents|(Mootools 1.4) [Element, Window, Document]|(events)|
+fireEvent|(Mootools 1.4) [Element, Window, Document]|(type, args, delay)|
+cloneEvents|(Mootools 1.4) [Element, Window, Document]|(from, type)|
 scrollTo|(Mootools 1.4) Element.|(x, y)|
 getSize|(Mootools 1.4) Element.|()|
 getScrollSize|(Mootools 1.4) Element.|()|
