@@ -263,7 +263,7 @@ appendChild|Element.|( appendedNode ): Node|
 blur|Element.|()|
 click|Element.|()|
 cloneNode|Element.|( deep ): Node|
-compareDocumentPosition|Element.|( otherNode ): Numer|
+compareDocumentPosition|Element.|( otherNode ): number|
 dispatchEvent|Element.|( event ): Boolean|
 focus|Element.|()|
 getAttribute|Element.|( name ): Object|
@@ -309,3 +309,15 @@ setIdAttributeNS|Element.|( namespaceURI, localName, isIdBoolean )|
 setIdAttributeNode|Element.|( idAttr, isIdBoolean )|
 setUserData|Element.|( key, data , handler ): DOMUserData|
 insertAdjacentHTML|Element.|( position , text )|
+##Location object
+hash|Location.||the part of the URL that follows the # symbol, including the # symbol. You can listen for the hashchange event to get notified of changes to the hash in supporting browsers. E.g.:#test
+host|Location.||the host name and port number. E.g.:[www.example.com]:80
+hostname|Location.||the host name (without the port number or square brackets). E.g.:www.example.com
+href|Location.||the entire URL. E.g.:http://[www.example.com]:80/search?q=devmo#test
+pathname|Location.||the path (relative to the host). E.g.:/search
+port|Location.||the port number of the URL. E.g.:80
+protocol|Location.||the protocol of the URL. E.g.:http:
+search|Location.||the part of the URL that follows the ? symbol, including the ? symbol. E.g.:?q=devmo
+assign|Location.|(url: string): void|Load the document at the provided URL.
+reload|Location.|(forceget: boolean): void|Reload the document from the current URL. forceget is a boolean, which, when it is true, causes the page to always be reloaded from the server. If it is false or not specified, the browser may reload the page from its cache.
+replace|Location.|(url: string): void|Replace the current document with the one at the provided URL. The difference from the assign() method is that after using replace() the current page will not be saved in session history, meaning the user won't be able to use the Back button to navigate to it.
