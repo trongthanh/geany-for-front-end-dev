@@ -56,19 +56,26 @@ copy_config_file $m "snippets.conf"
 snippet_path="$g_config_dir/snippets.conf"
 if [ -f $snippet_path ]
 then
-  echo "\nPlease enter your line for the 'copyright' snippet:"
-  read sn_copyright
+  echo "***** Open $snippet_path to edit your own copyright & author snippets *****"
+  sleep 1
+  #echo "\nPlease enter your line for the 'copyright' snippet:"
+  #read sn_copyright
 
-  sed -i "s/\${copyright}/$sn_copyright/" "$snippet_path"
-  echo "Copyright written"
+  #sed -i "s/\${copyright}/$sn_copyright/" "$snippet_path"
+  #echo "Copyright written"
 
-  echo "\nPlease enter your line for the 'author' snippet:"
-  read sn_author
+  #echo "\nPlease enter your line for the 'author' snippet:"
+  #read sn_author
 
-  sed -i "s/\${author}/$sn_author/" "$snippet_path"
-  echo "Author written"
+  #sed -i "s/\${author}/$sn_author/" "$snippet_path"
+  #echo "Author written"
 fi
 
+#HTML
+echo -n "\n-------------------- HTML --------------------"
+##HTML syntax highlighting
+echo -n "\nCopying: latest HTML properties highlighting"
+copy_config_file $m "filedefs/filetypes.html"
 #CSS
 echo -n "\n-------------------- CSS --------------------"
 ##CSS highlighting
