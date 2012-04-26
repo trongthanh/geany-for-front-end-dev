@@ -5,10 +5,10 @@ instanceOf|(Mootools 1.4)|(item, object)|
 Class|(Mootools 1.4)|(defObj)|
 extend|(Mootools 1.4) Function.|(key, value)|
 implement|(Mootools 1.4) Function.|(key, value)|
-from|(Mootools 1.4) [static] Function.|(item)|
-from|(Mootools 1.4) [static] Array.|(item)|
-from|(Mootools 1.4) [static] Number.|(item)|
-from|(Mootools 1.4) [static] String.|(item)|
+from|(Mootools 1.4) [static] Function.|(item): Function|
+from|(Mootools 1.4) [static] Array.|(item): Array|
+from|(Mootools 1.4) [static] Number.|(item): number|
+from|(Mootools 1.4) [static] String.|(item): string|
 hide|(Mootools 1.4) Function.|()|
 protect|(Mootools 1.4) Function.|()|
 Type|(Mootools 1.4)|(name, object)|
