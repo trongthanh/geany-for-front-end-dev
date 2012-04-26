@@ -65,7 +65,104 @@ HTMLUnknownElement||()|implemented by: <bgsound>,<isindex>,<bq>,<nextid>,<multic
 HTMLCanvasElement||()|implemented by the <canvas> element.
 HTMLAudioElement||()|implemented by the HTML5 <audio>  element.
 HTMLVideoElement||()|implemented by the HTML5 <video>  element.
-##Document properties
+##window properties
+applicationCache|window.||An nsIDOMOfflineResourceList object providing access to the offline resources for the window.
+closed|window.||This property indicates whether the current window is closed or not.
+Components|window.||The entry point to many XPCOM features. Some properties, e.g. classes, are only available to sufficiently privileged code.
+content|window.||Returns a reference to the content element in the current window. The variant with underscore is deprecated.
+controllers|window.||Returns the XUL controller objects for the current chrome window.
+crypto|window.||Returns the browser crypto object.
+defaultStatus|window.||Gets/sets the status bar text for the given window.
+dialogArguments|window.||Gets the arguments passed to the window (if it's a dialog box) at the time window.showModalDialog() was called. This is an nsIArray .
+directories Obsolete|window.||Synonym of window.personalbar
+document|window.||Returns a reference to the document that the window contains.
+frameElement|window.||Returns the element in which the window is embedded, or null if the window is not embedded.
+frames|window.||Returns an array of the subframes in the current window.
+fullScreen|window.||This property indicates whether the window is displayed in full screen or not.
+history|window.||Returns a reference to the history object.
+innerHeight|window.||Gets the height of the content area of the browser window including, if rendered, the horizontal scrollbar.
+innerWidth|window.||Gets the width of the content area of the browser window including, if rendered, the vertical scrollbar.
+length|window.||Returns the number of frames in the window. See also window.frames .
+location|window.||Gets/sets the location, or current URL, of the window object.
+locationbar|window.||Returns the locationbar object, whose visibility can be toggled in the window.
+localStorage|window.||Returns a reference to the local storage object used to store data that may only be accessed by the origin that created it.
+menubar|window.||Returns the menubar object, whose visibility can be toggled in the window.
+messageManager|window.||Returns the message manager object for this window.
+mozAnimationStartTime|window.||The time in milliseconds since epoch at which the current animation cycle began.
+mozInnerScreenX|window.||Returns the horizontal (X) coordinate of the top-left corner of the window's viewport, in screen coordinates. This value is reported in CSS pixels. See mozScreenPixelsPerCSSPixel in nsIDOMWindowUtils for a conversion factor to adapt to screen pixels if needed.
+mozInnerScreenY|window.||Returns the vertical (Y) coordinate of the top-left corner of the window's viewport, in screen coordinates. This value is reported in CSS pixels. See mozScreenPixelsPerCSSPixel for a conversion factor to adapt to screen pixels if needed.
+mozPaintCount|window.||Returns the number of times the current document has been rendered to the screen in this window. This can be used to compute rendering performance.
+name|window.||Gets/sets the name of the window.
+navigator|window.||Returns a reference to the navigator object.
+opener|window.||Returns a reference to the window that opened this current window.
+outerHeight|window.||Gets the height of the outside of the browser window.
+outerWidth|window.||Gets the width of the outside of the browser window.
+pageXOffset|window.||An alias for window.scrollX .
+pageYOffset|window.||An alias for window.scrollY
+parent|window.||Returns a reference to the parent of the current window or subframe.
+performance|window.||Provides a hosting area for performance related attributes.
+personalbar|window.||Returns the personalbar object, whose visibility can be toggled in the window.
+pkcs11 Obsolete|window.||Formerly provided access to install and remove PKCS11 modules. Now this property is always null.
+returnValue|window.||The return value to be returned to the function that called window.showModalDialog() to display the window as a modal dialog.
+screen|window.||Returns a reference to the screen object associated with the window.
+screen.availTop|window.||Specifies the y-coordinate of the first pixel that is not allocated to permanent or semipermanent user interface features.
+screen.availLeft|window.||Returns the first available pixel available from the left side of the screen.
+screen.availHeight|window.||Specifies the height of the screen, in pixels, minus permanent or semipermanent user interface features displayed by the operating system, such as the Taskbar on Windows.
+screen.availWidth|window.||Returns the amount of horizontal space in pixels available to the window.
+screen.colorDepth|window.||Returns the color depth of the screen.
+screen.height|window.||Returns the height of the screen in pixels.
+screen.left|window.||Returns the current distance in pixels from the left side of the screen.
+screen.pixelDepth|window.||Gets the bit depth of the screen.
+screen.top|window.||Returns the distance from the top of the screen.
+screen.width|window.||Returns the width of the screen.
+screenX|window.||Returns the horizontal distance of the left border of the user's browser from the left side of the screen.
+screenY|window.||Returns the vertical distance of the top border of the user's browser from the top side of the screen.
+scrollbars|window.||Returns the scrollbars object, whose visibility can be toggled in the window.
+scrollMaxX|window.||The maximum offset that the window can be scrolled to horizontally. (i.e., the document width minus the viewport width)
+scrollMaxY|window.||The maximum offset that the window can be scrolled to vertically (i.e., the document height minus the viewport height).
+scrollX|window.||Returns the number of pixels that the document has already been scrolled horizontally.
+scrollY|window.||Returns the number of pixels that the document has already been scrolled vertically.
+self|window.||Returns an object reference to the window object itself.
+sessionStorage New in Firefox 2.0|window.||A storage object for storing data within a single page session.
+sidebar|window.||Returns a reference to the window object of the sidebar.
+status|window.||Gets/sets the text in the statusbar at the bottom of the browser.
+statusbar|window.||Returns the statusbar object, whose visibility can be toggled in the window.
+toolbar|window.||Returns the toolbar object, whose visibility can be toggled in the window.
+top|window.||Returns a reference to the topmost window in the window hierarchy. This property is read only.
+URL|window.||A DOM URL object, which provides the window.URL.createObjectURL() and window.URL.revokeObjectURL() methods.
+window|window.||Returns a reference to the current window.
+## window methods
+getSelection|(browser Gecko) window.|(): Selection|
+open|window.|(strUrl,strWindowName,strWindowFeatures,bReplace): window|
+print|window.|(): void|
+alert|window.|(sMesssage): void|
+atob|(browser Gecko) window.|(encodedData): void|
+btoa|(browser Gecko) window.|(decodedData): void|
+confirm|(browser Gecko) window.|(sMesssage): void|
+prompt|window.|(sMessage,sDefaultValue): void|
+clearInterval|window.|(intervalId): void|
+clearTimeout|window.|(intervalId): void|
+setInterval|window.|(vCode,iMillis): number|
+setTimeout|window.|(vCode,iMillis): number|
+ScriptEngine|(browser IE) window.|(): string|
+ScriptEngineBuildVersion|(browser IE) window.|(): string|
+ScriptEngineMajorVersion|(browser IE) window.|(): string|
+ScriptEngineMinorVersion|(browser IE) window.|(): string|
+scrollTo|window.|(x,y): void|
+scrollBy|window.|(xDelta,yDelta): void|
+moveTo|window.|(x,y): void|
+moveBy|window.|(xDelta,yDelta): void|
+resizeTo|window.|(width,height): void|
+resizeBy|window.|(widthDelta,heightDelta): void|
+getComputedStyle|(browser Gecko) window.|(element,pseudoElt): CSSStyleDeclaration|
+showModalDialog|(browser IE) window.|(sUrl,vArguments,sFeatures): Object|
+attachEvent|(browser IE) window.|(type,listener): void|
+detachEvent|(browser IE) window.|(type,listener): void|
+addEventListener|(browser Gecko) window.|(type,listener,useCapture): void|
+removeEventListener|(browser Gecko) window.|(type,listener,useCapture): void|
+execScript|(browser IE))window.|(sScript)|
+CollectGarbage|(browser IE) window.|()|
+## Document properties
 activeElement|Document.||
 alinkColor|Document.||
 all|Document.||
@@ -257,7 +354,7 @@ tabIndex|Element.||Gets/sets the position of the element in the tabbing order.	N
 tagName|Element.||The name of the tag for the given element.	String	All
 textContent|Element.||Gets/sets the textual contents of an element and all its descendants.	String	All
 title|Element.||A string that appears in a popup box when mouse is over the element.	String	HTML
-##DOM Element Functions
+## DOM Element Functions
 addEventListener|Element.|( type, listener, useCapture )|
 appendChild|Element.|( appendedNode ): Node|
 blur|Element.|()|
@@ -286,7 +383,7 @@ isDefaultNamespace|Element.|( namespaceURI ): Boolean|
 isEqualNode|Element.|( nodeArg ): Boolean|		All
 isSameNode|Element.|( otherNode ): Boolean| 		All
 isSupported|Element.|( feature, version ): Boolean|		All
-lookupNamespaceURI|Element.|( prefix ): String|		All
+lookupNamespaceURI|Element.|( prefix ): string|		All
 mozMatchesSelector|Element.|( selector ): Boolean| Non-standard 
 mozRequestFullScreen|Element.|( )| Non-standard 
 normalize|Element.|()|
@@ -309,7 +406,7 @@ setIdAttributeNS|Element.|( namespaceURI, localName, isIdBoolean )|
 setIdAttributeNode|Element.|( idAttr, isIdBoolean )|
 setUserData|Element.|( key, data , handler ): DOMUserData|
 insertAdjacentHTML|Element.|( position , text )|
-##Location object
+## Location object
 hash|Location.||the part of the URL that follows the # symbol, including the # symbol. You can listen for the hashchange event to get notified of changes to the hash in supporting browsers. E.g.:#test
 host|Location.||the host name and port number. E.g.:[www.example.com]:80
 hostname|Location.||the host name (without the port number or square brackets). E.g.:www.example.com
@@ -392,7 +489,7 @@ setShadow|(WebKit) CanvasRenderingContext2D.|(width: number, height: number, blu
 setShadow|(WebKit) CanvasRenderingContext2D.|(width: number, height: number, blur: number, grayLevel: number[, alpha: number): void|
 setShadow|(WebKit) CanvasRenderingContext2D.|(width: number, height: number, blur: number, r: number, g: number, b: number, a: number): void|
 setShadow|(WebKit) CanvasRenderingContext2D.|(width: number, height: number, blur: number, c: number, m: number, y: number, k: number, a: number): void|
-###Properties
+### Properties
 canvas|CanvasRenderingContext2D.||Back-reference to the canvas element for which this context was created. Read only.
 fillStyle|CanvasRenderingContext2D.||Color or style to use inside shapes. Default #000 (black).
 font|CanvasRenderingContext2D.||Default value 10px sans-serif.
