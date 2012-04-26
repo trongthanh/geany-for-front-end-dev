@@ -119,7 +119,7 @@ arguments|function(){|: Object}|An array corresponding to the arguments passed t
 arguments.callee|||Reference to the currently executing function.
 arguments.caller|||[Obsolete] Reference to the function that invoked the currently executing function.
 arguments.length|||Reference to the number of arguments passed to the function.
-length|Function.|: number|Specifies the number of arguments expected by the function.
+length|Function.||Specifies the number of arguments expected by the function.
 apply|Function.|(thisArg[, argsArray]): void|Applies the method of another object in the context of a different object (the calling object); arguments can be passed as an Array object.
 bind|Function.|(thisArg[, arg1[, arg2[, ...]]]): Function|[Requires JavaScript 1.8.5] Creates a new function which, when called, itself calls this function in the context of the provided value, with a given sequence of arguments preceding any provided when the new function was called.
 call|Function.|(thisArg[, arg1[, arg2[, ...]]]): void|Calls (executes) a method of another object in the context of a different object (the calling object); arguments can be passed as they are.

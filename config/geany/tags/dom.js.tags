@@ -20,7 +20,7 @@ HTMLFormElement||()|implemented by: <form>
 HTMLFrameElement||()|implemented by: <frame>
 HTMLFrameSetElement||()|implemented by: <frameset>
 HTMLHeadElement||()|implemented by: <head>
-HTMLHeadingElement||()|implemented by: <h1>||()|<h2>||()|<h3>||()|<h4>||()|<h5>||()|<h6>
+HTMLHeadingElement||()|implemented by: <h1>,<h2>,<h3>,<h4>,<h5>,<h6>
 HTMLHtmlElement||()|implemented by: <html>
 HTMLHRElement||()|implemented by: <hr>
 HTMLIFrameElement||()|implemented by: <iframe>
@@ -33,7 +33,7 @@ HTMLLinkElement||()|implemented by: <link>
 HTMLMapElement||()|implemented by: <map>
 HTMLMenuElement||()|implemented by: <menu>
 HTMLMetaElement||()|implemented by: <meta>
-HTMLModElement||()|implemented by: <del>||()|<ins>
+HTMLModElement||()|implemented by: <del>,<ins>
 HTMLObjectElement||()|implemented by: <object>
 HTMLOListElement||()|implemented by: <ol>
 HTMLOptGroupElement||()|implemented by: <optgroup>
@@ -41,8 +41,8 @@ HTMLOptionElement||()|implemented by: <option>
 HTMLOutputElement||()|implemented by: <output>
 HTMLParagraphElement||()|implemented by: <p>
 HTMLParamElement||()|implemented by: <param>
-HTMLPreElement||()|implemented by: <pre>||()|<plaintext>
-HTMLQuoteElement||()|implemented by: <q>||()|<blockquote>
+HTMLPreElement||()|implemented by: <pre>,<plaintext>
+HTMLQuoteElement||()|implemented by: <q>,<blockquote>
 HTMLScriptElement||()|implemented by: <script>
 HTMLSelectElement||()|implemented by: <select>
 HTMLSourceElement||()|implemented by: <source>
@@ -53,15 +53,15 @@ HTMLTableCaptionElement||()|implemented by: <caption>
 HTMLTableCellElement||()|
 HTMLTableDataCellElement||()|implemented by: <td>
 HTMLTableHeaderCellElement||()|implemented by: <th>
-HTMLTableColElement||()|implemented by: <col>||()|<colgroup>
+HTMLTableColElement||()|implemented by: <col>,<colgroup>
 HTMLTableRowElement||()|implemented by: <tr>
-HTMLTableSectionElement||()|implemented by: <tfoot>||()|<thead>||()|<tbody>
+HTMLTableSectionElement||()|implemented by: <tfoot>,<thead>,<tbody>
 HTMLTextAreaElement||()|implemented by: <textarea>
 HTMLTimeElement||()|implemented by: <time>
 HTMLTitleElement||()|implemented by: <title>
 HTMLTrackElement||()|implemented by: <track>
 HTMLUListElement||()|implemented by: <ul>
-HTMLUnknownElement||()|implemented by: <bgsound>||()|<isindex>||()|<bq>||()|<nextid>||()|<multicol>||()|<spacer>||()|<noframes>
+HTMLUnknownElement||()|implemented by: <bgsound>,<isindex>,<bq>,<nextid>,<multicol>,<spacer>,<noframes>
 HTMLCanvasElement||()|implemented by the <canvas> element.
 HTMLAudioElement||()|implemented by the HTML5 <audio>  element.
 HTMLVideoElement||()|implemented by the HTML5 <video>  element.
@@ -321,3 +321,100 @@ search|Location.||the part of the URL that follows the ? symbol, including the ?
 assign|Location.|(url: string): void|Load the document at the provided URL.
 reload|Location.|(forceget: boolean): void|Reload the document from the current URL. forceget is a boolean, which, when it is true, causes the page to always be reloaded from the server. If it is false or not specified, the browser may reload the page from its cache.
 replace|Location.|(url: string): void|Replace the current document with the one at the provided URL. The difference from the assign() method is that after using replace() the current page will not be saved in session history, meaning the user won't be able to use the Back button to navigate to it.
+## CanvasRenderingContext2D
+### Methods
+arc|CanvasRenderingContext2D.|(x: number, y: number, radius: number, startAngle: number, endAngle: number[, anticlockwise: boolean]): void|
+arcTo|CanvasRenderingContext2D.|(x1: number, y1: number, x2: number, y2: number, radius: number): void|
+beginPath|CanvasRenderingContext2D.|(): void|
+bezierCurveTo|CanvasRenderingContext2D.|(cp1x: number, cp1y: number, cp2x: number, cp2y: number, x: number, y: number): void|
+clearRect|CanvasRenderingContext2D.|(x: number, y: number, width: number, height: number): void|
+clip|CanvasRenderingContext2D.|(): void|
+closePath|CanvasRenderingContext2D.|(): void|
+createImageData|CanvasRenderingContext2D.|(width: number, height: number): ImageData|
+createImageData|CanvasRenderingContext2D.|(imagedata: Imagedata): ImageData|
+createLinearGradient|CanvasRenderingContext2D.|(x0: number, y0: number, x1: number, y1: number): nsIDOMCanvasGradient|
+createPattern|CanvasRenderingContext2D.|(image: nsIDOMHTMLElement, repetition: DOMString): nsIDOMCanvasPattern|
+createRadialGradient|CanvasRenderingContext2D.|(x0: number, y0: number, r0: number, x1: number, y1: number, r1: number): nsIDOMCanvasGradient|
+drawImage|CanvasRenderingContext2D.|(image: nsIDOMElement, a1: number, a2: number, [a3: number, a4: number, a5: number, a6: number,a7: number,a8: number]): void|
+drawCustomFocusRing|CanvasRenderingContext2D.|(element: Element): boolean|
+drawSystemFocusRing|CanvasRenderingContext2D.|(element: Element): void|
+fill|CanvasRenderingContext2D.|(): void|
+fillRect|CanvasRenderingContext2D.|(x: number, y: number, width: number, height: number): void|
+fillText|CanvasRenderingContext2D.|(text: DOMString, x: number, y: number[, maxWidth: number]): void|
+getImageData|CanvasRenderingContext2D.|(x: number, y: number, width: number, height: number): ImageData|
+isPointInPath|CanvasRenderingContext2D.|(x: number, y: number): boolean|
+lineTo|CanvasRenderingContext2D.|(x: number, y: number): void|
+measureText|CanvasRenderingContext2D.|(text: DOMString): nsIDOMTextMetrics|
+moveTo|CanvasRenderingContext2D.|(x: number, y: number): void|
+putImageData|CanvasRenderingContext2D.|(imagedata: ImageData, dx: number, dy: double[, dirtyX: number, dirtyY: number, dirtyWidth: number, dirtyHeight: number]): void|
+quadraticCurveTo|CanvasRenderingContext2D.|(cpx: number, cpy: number, x: number, y: number): void|
+rect|CanvasRenderingContext2D.|(x: number, y: number, width: number, height: number): void|
+restore|CanvasRenderingContext2D.|(): void|
+rotate|CanvasRenderingContext2D.|(angle: number): void|
+save|CanvasRenderingContext2D.|(): void|
+scale|CanvasRenderingContext2D.|(x: number, y: number): void|
+scrollPathIntoView|CanvasRenderingContext2D.|(): void|
+setTransform|CanvasRenderingContext2D.|(m11: number, m12: number, m21: number, m22: number, dx: number, dy: number): void|
+stroke|CanvasRenderingContext2D.|(): void|
+strokeRect|CanvasRenderingContext2D.|(x: number, y: number, w: number, h: number): void|
+strokeText|CanvasRenderingContext2D.|(text: DOMString, x: number, y: number, maxWidth: number): void|
+transform|CanvasRenderingContext2D.|(m11: number, m12: number, m21: number, m22: number, dx: number, dy: number): void|
+translate|CanvasRenderingContext2D.|(x: number, y: number): void|
+asyncDrawXULElement|(Gecko) CanvasRenderingContext2D.|(elem: nsIDOMXULElement, x: number, y: number, w: number, h: number, bgColor: DOMString[, flags: number): void| Requires Gecko 2.0
+drawWindow|(Gecko) CanvasRenderingContext2D.|(window: nsIDOMWindow, x: number, y: number, w: number, h: number, bgColor: DOMString[, flags: number]): void|
+getFillStyle_multi|(Gecko) CanvasRenderingContext2D.|(out str: DOMString, out iface: nsISupports, out type: number): void| Native code only! Requires Gecko 2.0
+getImageData_explicit|(Gecko) CanvasRenderingContext2D.|(x: number, y: number, width: number, height: number, [array, size_is(dataLen)] dataPtr: octet, dataLen: number): void| Native code only! Requires Gecko 2.0
+getStrokeStyle_multi|(Gecko) CanvasRenderingContext2D.|(out str: DOMString, out iface: nsISupports, out type: number): void| Native code only! Requires Gecko 2.0
+mozDrawText|(Gecko) CanvasRenderingContext2D.|(textToDraw: DOMString): void| Requires Gecko 1.9 (unimplemented since Gecko 7.0)
+mozMeasureText|(Gecko) CanvasRenderingContext2D.|(textToMeasure: DOMString): number| Requires Gecko 1.9 (unimplemented since Gecko 7.0)
+mozPathText|(Gecko) CanvasRenderingContext2D.|(textToPath: DOMString): void| Requires Gecko 1.9 (unimplemented since Gecko 7.0)
+mozTextAnumberPath|(Gecko) CanvasRenderingContext2D.|(textToDraw: DOMString, stroke: boolean): void| Requires Gecko 1.9 (unimplemented since Gecko 7.0)
+putImageData_explicit|(Gecko) CanvasRenderingContext2D.|(x: number, y: number, width: number, height: number, [array, size_is(dataLen)] dataPtr: octet, dataLen: number, hasDirtyRect: boolean, dirtyX: number, dirtyY: number, dirtyWidth: number, dirtyHeight: number): void| Native code only! Requires Gecko 2.0
+setFillStyle_multi|(Gecko) CanvasRenderingContext2D.|(str: DOMString, iface: nsISupports): void| Native code only! Requires Gecko 2.0
+setStrokeStyle_multi|(Gecko) CanvasRenderingContext2D.|(str: DOMString, iface: nsISupports): void| Native code only! Requires Gecko 2.0
+clearShadow|(WebKit) CanvasRenderingContext2D.|(): void|
+drawImageFromRect|(WebKit) CanvasRenderingContext2D.|(image: HTMLImageElement[, sx: number, sy: number, sw: number, sh: number, dx: number, dy: number, dw: number, dh: number, compositeOperation: DOMString]): void|
+setAlpha|(WebKit) CanvasRenderingContext2D.|(): void|
+setCompositeOperation|(WebKit) CanvasRenderingContext2D.|(compositeOperation: DOMString): void|
+setLineWidth|(WebKit) CanvasRenderingContext2D.|(width: number): void|
+setLineCap|(WebKit) CanvasRenderingContext2D.|(cap: DOMString): void|
+setLineJoin|(WebKit) CanvasRenderingContext2D.|(join: DOMString): void|
+setMiterLimit|(WebKit) CanvasRenderingContext2D.|(limit: number): void|
+setStrokeColor|(WebKit) CanvasRenderingContext2D.|(color: DOMString[, alpha: number]): void|
+setStrokeColor|(WebKit) CanvasRenderingContext2D.|(grayLevel: number[, alpha: number]): void|
+setStrokeColor|(WebKit) CanvasRenderingContext2D.|(r: number, g: number, b: number, a: number): void|
+setStrokeColor|(WebKit) CanvasRenderingContext2D.|(c: number, m: number, y: number, k: number, a: number): void|
+setFillColor|(WebKit) CanvasRenderingContext2D.|(color: DOMString[, alpha: number]): void|
+setFillColor|(WebKit) CanvasRenderingContext2D.|(grayLevel: number[, alpha: number]): void|
+setFillColor|(WebKit) CanvasRenderingContext2D.|(r: number, g: number, b: number, a: number): void|
+setFillColor|(WebKit) CanvasRenderingContext2D.|(c: number, m: number, y: number, k: number, a: number): void|
+setShadow|(WebKit) CanvasRenderingContext2D.|(width: number, height: number, blur: number[, color: DOMString, alpha: number]): void|
+setShadow|(WebKit) CanvasRenderingContext2D.|(width: number, height: number, blur: number, grayLevel: number[, alpha: number): void|
+setShadow|(WebKit) CanvasRenderingContext2D.|(width: number, height: number, blur: number, r: number, g: number, b: number, a: number): void|
+setShadow|(WebKit) CanvasRenderingContext2D.|(width: number, height: number, blur: number, c: number, m: number, y: number, k: number, a: number): void|
+###Properties
+canvas|CanvasRenderingContext2D.||Back-reference to the canvas element for which this context was created. Read only.
+fillStyle|CanvasRenderingContext2D.||Color or style to use inside shapes. Default #000 (black).
+font|CanvasRenderingContext2D.||Default value 10px sans-serif.
+globalAlpha|CanvasRenderingContext2D.||Alpha value that is applied to shapes and images before they are composited onto the canvas. Default 1.0 (opaque).
+globalCompositeOperation|CanvasRenderingContext2D.||With globalAplpha applied this sets how shapes and images are drawn onto the existing bitmap. Possible values:source-atop|source-in|source-out|source-over (default)|destination-atop|destination-in|destination-out|destination-over|lighter|xor|
+lineCap|CanvasRenderingContext2D.||Type of endings on the end of lines. Possible values: butt (default), round, square
+lineJoin|CanvasRenderingContext2D.||Defines the type of corners where two lines meet. Possible values: round, bevel, miter (default)
+lineWidth|CanvasRenderingContext2D.||Width of lines. Default 1.0
+miterLimit|CanvasRenderingContext2D.||Default 10.
+shadowBlur|CanvasRenderingContext2D.||Specifies the blurring effect. Default 0
+shadowColor|CanvasRenderingContext2D.||Color of the shadow. Default fully-transparent black.
+shadowOffsetX|CanvasRenderingContext2D.||Horizontal distance the shadow will be offset. Default 0.
+shadowOffsetY|CanvasRenderingContext2D.||Vertical distance the shadow will be offset. Default 0.
+strokeStyle|CanvasRenderingContext2D.||Color or style to use for the lines around shapes. Default #000 (black).
+textAlign|CanvasRenderingContext2D.||Possible values: start (default), end, left, right or center.
+textBaseLine|CanvasRenderingContext2D.||Possible values: top, hanging, middle, alphabetic (default), ideographic, bottom
+mozCurrentTransform|(Gecko) CanvasRenderingContext2D.||Sets or gets the current transformation matrix. Requires Gecko 7.0
+mozCurrentTransformInverse|(Gecko) CanvasRenderingContext2D.||Set or gets the current inversed transformation matrix. Requires Gecko 7.0
+mozDash|(Gecko) CanvasRenderingContext2D.||of float    An array which specifies the lengths of alternating dashes and gaps. Requires Gecko 7.0
+mozDashOffset|(Gecko) CanvasRenderingContext2D.||Specifies where to start a dasharray on a line. Requires Gecko 7.0
+mozFillRule|(Gecko) CanvasRenderingContext2D.||The fill rule to use. This must be one of evenodd or nonzero (default).
+mozImageSmoothingEnabled|(Gecko) CanvasRenderingContext2D.||Image smoothing mode; if disabled, images will not be smoothed if scaled. Requires Gecko 1.9.2
+mozTextStyle|(Gecko) CanvasRenderingContext2D.||Requires Gecko 1.9 Deprecated Deprecated in favor of the HTML5 font attribute described above.
+webkitLineDash|(WebKit) CanvasRenderingContext2D.||of float    An array which specifies the lengths of alternating dashes and gaps.
+webkitLineDashOffset|(WebKit) CanvasRenderingContext2D.||Specifies where to start a dasharray on a line.
