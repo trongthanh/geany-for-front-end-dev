@@ -72,7 +72,7 @@ To learn more about Geany's tags, refer to [this section](http://www.geany.org/m
 - **tags/std.css.tags**: As the name implied, this tag file enables code hinting for standard CSS (including CSS3) property names.
 - **tags/prefixed.css.tags**: Code hinting for browser specific CSS property names.
 - **tags/std.js.tags**: Code hinting for standard Javascript API. [incompleted]
-- **tags/dom.js.tags**: Code hinting for Browser and DOM objects Javascript. [incompleted]
+- **tags/browser.js.tags**: Code hinting for Browser and DOM objects Javascript (with latest HTML5 specs). (renamed from dom.js.tags)
 - **tags/styles.js.tags**: This file supplement JS property names of CSSStyleDeclaration object which are directly converted from the stadard CSS property names.
 - **tags/mootools-core.js.tags**: (Extra) Code hinting for JS Mootools 1.4 framework
 

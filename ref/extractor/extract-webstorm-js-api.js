@@ -49,7 +49,7 @@ function fileReadHandler(err, data) {
 }
 
 function writeFile(fileLines) {
-  fs.writeFile('dom.js.tags', fileLines, function (err) {
+  fs.writeFile('browser.js.tags', fileLines, function (err) {
     if (err) throw err;
     console.log('It\'s saved!');
   });
@@ -70,7 +70,6 @@ function parseData (data) {
   for (i = 0; i < il; i++) {
     lines += parseClass(classes[i]);
   }
-
   
   console.log(lines);
   return lines;

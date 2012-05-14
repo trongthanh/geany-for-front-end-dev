@@ -97,8 +97,8 @@ echo "\n-------------------- Javascript --------------------"
 echo -n "\nCopying: standard js property & function tags"
 copy_config_file $m "tags/std.js.tags"
 ##Browser's DOM objects tags
-echo -n "\nCopying: browser's DOM objects tags"
-copy_config_file $m "tags/dom.js.tags"
+echo -n "\nCopying: browser's objects tags (with HTML5)"
+copy_config_file $m "tags/browser.js.tags"
 ##standard style's name
 echo -n "\nCopying: standard js Style object property tags (equivalent to CSS properties list)"
 copy_config_file $m "tags/styles.js.tags"
