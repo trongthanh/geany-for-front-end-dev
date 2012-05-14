@@ -149,9 +149,11 @@ We are going to run [JSHint via Node.js](http://www.jshint.com/platforms/). Ever
     - Go to menu **Build > Set Build Commands**
     - At JavaScript Commands, click on the first "Set menu item label" button, type in "**JSHint**"
     - For the command, type in `jshint %f`
-    - For the working directory, type in `%d`
+    - For the working directory, type in `%d` ([screenshot](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/set-jshint-command.png))
     - **OK** to apply and close the setting window
 4. From now you can run JSHint on opening JavaScript file by clicking the **Compile button** on menu bar OR go to **Build > JSHint** OR press **F8**. The output will displayed at Compiler panel at the bottom.
+
+![JSHint Executed within Geany](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/jshint-running-within-geany.png)
 
 -----------------------------------
 
