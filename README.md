@@ -136,7 +136,7 @@ We are going to run [JSHint via Node.js](http://www.jshint.com/platforms/). Ever
 1. Install Node.js & npm (Node Package Manager):
     
     ```shell
-    $ sudo apt-get install node npm
+    $ sudo apt-get install nodejs npm
 ```
 2. Install jshint (via npm):
     
