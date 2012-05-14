@@ -105,12 +105,23 @@ copy_config_file $m "tags/styles.js.tags"
 
 #Optional
 ##Mootools Core
-echo -n "\nOPTIONAL: Copying core Mootools API tags (y/n)"
+echo -n "\nOPTIONAL: Copying core Mootools 1.4.5 API tags (y/n)"
 read mootools_core;
 
 if [ $mootools_core = "y" ]
 then
   copy_config_file $m "tags/mootools-core.js.tags"
+else
+  echo "Aborted!"
+fi
+
+##jQuery Core
+echo -n "\nOPTIONAL: Copying core jQuery 1.7 API tags (y/n)"
+read jquery;
+
+if [ $jquery = "y" ]
+then
+  copy_config_file $m "tags/jquery.js.tags"
 else
   echo "Aborted!"
 fi

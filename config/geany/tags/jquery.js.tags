@@ -1,0 +1,458 @@
+# format=pipe
+# Library: jQuery
+# Extract from: jquery-api.xml
+delegateTarget|(jQuery 1.7+) event.||Type: Element
+fired|(jQuery 1.7+) callbacks.|(): Boolean|
+Callbacks|(jQuery 1.7+) [static] jQuery.|(flags: String): void|
+locked|(jQuery 1.7+) callbacks.|(): Boolean|
+empty|(jQuery 1.7+) callbacks.|(): void|
+lock|(jQuery 1.7+) callbacks.|(): void|
+fire|(jQuery 1.7+) callbacks.|(arguments: ): void|
+remove|(jQuery 1.7+) callbacks.|(callbacks: Function): void|
+add|(jQuery 1.7+) callbacks.|(callbacks: Function): void|
+disable|(jQuery 1.7+) callbacks.|(): void|
+has|(jQuery 1.7+) callbacks.|(callback: Function): Boolean|
+fireWith|(jQuery 1.7+) callbacks.|(context: *, args: *): void|
+progress|(jQuery 1.7+) deferred.|(progressCallbacks: Function): Deferred|
+notifyWith|(jQuery 1.7+) deferred.|(context: Object, args: Object): Deferred|
+notify|(jQuery 1.7+) deferred.|(args: Object): Deferred|
+off|(jQuery 1.7+) jQuery.|(events: String, selector: String, handler(eventObject): Function): jQuery|
+off|(jQuery 1.7+) jQuery.|(events-map: Map, selector: String): jQuery|
+state|(jQuery 1.7+) deferred.|(): String|
+on|(jQuery 1.7+) jQuery.|(events: String, selector: String, data: Anything, handler(eventObject): Function): jQuery|
+on|(jQuery 1.7+) jQuery.|(events-map: Map, selector: String, data: Anything): jQuery|
+isNumeric|(jQuery 1.7+) [static] jQuery.|(value: Object): Boolean|
+focus|(jQuery 1.6+) jQuery.|
+pipe|(jQuery 1.6+) deferred.|(doneFilter: Function, failFilter: Function): Promise|
+pipe|(jQuery 1.7+) deferred.|(doneFilter: Function, failFilter: Function, progressFilter: Function): Promise|
+always|(jQuery 1.6+) deferred.|(alwaysCallbacks: Function, alwaysCallbacks: Function): Deferred|
+promise|(jQuery 1.6+) jQuery.|(type: String, target: Object): Promise|
+removeProp|(jQuery 1.6+) jQuery.|(propertyName: String): jQuery|
+prop|(jQuery 1.6+) jQuery.|(propertyName: String): String|
+prop|(jQuery 1.6+) jQuery.|(propertyName: String, value: String, Number, Boolean): jQuery|
+prop|(jQuery 1.6+) jQuery.|(map: Map): jQuery|
+prop|(jQuery 1.6+) jQuery.|(propertyName: String, function(index, oldPropertyValue): Function): jQuery|
+ajaxPrefilter|(jQuery 1.5+) [static] jQuery.|(dataTypes: String, handler(options, originalOptions, jqXHR): Function): void|
+holdReady|(jQuery 1.6+) [static] jQuery.|(hold: Boolean): void|
+hasData|(jQuery 1.5+) [static] jQuery.|(element: Element): Boolean|
+now|(jQuery 1.4.3+) [static] jQuery.|(): Number|
+jquery|(jQuery 1.0+) jQuery.||Type: String
+promise|(jQuery 1.5+) deferred.|(target: Object): Promise|
+cssHooks|(jQuery 1.4.3+) [static] jQuery.||Type: Object
+parseXML|(jQuery 1.5+) [static] jQuery.|(data: String): XMLDocument|
+when|(jQuery 1.5+) [static] jQuery.|(deferreds: Deferred): Promise|
+resolveWith|(jQuery 1.5+) deferred.|(context: Object, args: Array): Deferred|
+rejectWith|(jQuery 1.5+) deferred.|(context: Object, args: Array): Deferred|
+fail|(jQuery 1.5+) deferred.|(failCallbacks: Function, failCallbacks: Function): Deferred|
+done|(jQuery 1.5+) deferred.|(doneCallbacks: Function, doneCallbacks: Function): Deferred|
+then|(jQuery 1.5+) deferred.|(doneCallbacks: Function, failCallbacks: Function): Deferred|
+then|(jQuery 1.7+) deferred.|(doneCallbacks: Function, failCallbacks: Function, progressCallbacks: Function): Deferred|
+reject|(jQuery 1.5+) deferred.|(args: Object): Deferred|
+isRejected|(jQuery 1.5+deprecated) deferred.|(): Boolean|
+isResolved|(jQuery 1.5+deprecated) deferred.|(): Boolean|
+resolve|(jQuery 1.5+) deferred.|(args: Object): Deferred|
+sub|(jQuery 1.5+deprecated) [static] jQuery.|(): jQuery|
+fadeToggle|(jQuery 1.4.4+) jQuery.|(duration: String,Number, easing: String, callback: Function): jQuery|
+type|(jQuery 1.4.3+) [static] jQuery.|(obj: Object): String|
+isWindow|(jQuery 1.4.3+) [static] jQuery.|(obj: Object): boolean|
+toggle|(jQuery 1.0+) jQuery.|(handler(eventObject): Function, handler(eventObject): Function, handler(eventObject): Function): jQuery|
+interval|(jQuery 1.4.3+) [static] fx.||Type: Number
+namespace|(jQuery 1.4.3+) event.||Type: String
+undelegate|(jQuery 1.4.2+) jQuery.|(): jQuery|
+undelegate|(jQuery 1.4.2+) jQuery.|(selector: String, eventType: String): jQuery|
+undelegate|(jQuery 1.4.2+) jQuery.|(selector: String, eventType: String, handler(eventObject): Function): jQuery|
+undelegate|(jQuery 1.4.3+) jQuery.|(selector: String, events: Map): jQuery|
+undelegate|(jQuery 1.6+) jQuery.|(namespace: String): jQuery|
+delegate|(jQuery 1.4.2+) jQuery.|(selector: String, eventType: String, handler(eventObject): Function): jQuery|
+delegate|(jQuery 1.4.2+) jQuery.|(selector: String, eventType: String, eventData: Object, handler(eventObject): Function): jQuery|
+delegate|(jQuery 1.4.3+) jQuery.|(selector: String, events: Map): jQuery|
+error|(jQuery 1.4.1+) [static] jQuery.|(message: String): void|
+parseJSON|(jQuery 1.4.1+) [static] jQuery.|(json: String): Object|
+proxy|(jQuery 1.4+) [static] jQuery.|(function: Function, context: Object): Function|
+proxy|(jQuery 1.4+) [static] jQuery.|(context: Object, name: String): Function|
+focusout|(jQuery 1.4+) jQuery.|(handler(eventObject): Function): jQuery|
+focusout|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+focusin|(jQuery 1.4+) jQuery.|(handler(eventObject): Function): jQuery|
+focusin|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+has|(jQuery 1.4+) jQuery.|(selector: String): jQuery|
+has|(jQuery 1.4+) jQuery.|(contained: Element): jQuery|
+contains|(jQuery 1.4+) [static] jQuery.|(container: Element, contained: Element): Boolean|
+noop|(jQuery 1.4+) [static] jQuery.|(): Function|
+delay|(jQuery 1.4+) jQuery.|(duration: Integer, queueName: String): jQuery|
+parentsUntil|(jQuery 1.4+) jQuery.|(selector: Selector, filter: Selector): jQuery|
+parentsUntil|(jQuery 1.6+) jQuery.|(element: Element, filter: Selector): jQuery|
+prevUntil|(jQuery 1.4+) jQuery.|(selector: Selector, filter: Selector): jQuery|
+prevUntil|(jQuery 1.6+) jQuery.|(element: Element, filter: Selector): jQuery|
+nextUntil|(jQuery 1.4+) jQuery.|(selector: Selector, filter: Selector): jQuery|
+nextUntil|(jQuery 1.6+) jQuery.|(element: Element, filter: Selector): jQuery|
+isImmediatePropagationStopped|(jQuery 1.3+) event.|(): Boolean|
+stopImmediatePropagation|(jQuery 1.3+) event.|(): void|
+isPropagationStopped|(jQuery 1.3+) event.|(): Boolean|
+stopPropagation|(jQuery 1.0+) event.|(): void|
+isDefaultPrevented|(jQuery 1.3+) event.|(): Boolean|
+preventDefault|(jQuery 1.0+) event.|(): void|
+timeStamp|(jQuery 1.2.6+) event.||Type: Number
+result|(jQuery 1.3+) event.||Type: Object
+which|(jQuery 1.1.3+) event.||Type: Number
+pageY|(jQuery 1.0.4+) event.||Type: Number
+pageX|(jQuery 1.0.4+) event.||Type: Number
+currentTarget|(jQuery 1.3+) event.||Type: Element
+relatedTarget|(jQuery 1.1.4+) event.||Type: Element
+data|(jQuery 1.1+) event.||
+target|(jQuery 1.0+) event.||Type: Element
+type|(jQuery 1.0+) event.||Type: String
+off|(jQuery 1.3+) [static] fx.||Type: Boolean
+each|(jQuery 1.0+) jQuery.|(function(index, Element): Function): jQuery|
+pushStack|(jQuery 1.0+) jQuery.|(elements: Array): jQuery|
+pushStack|(jQuery 1.3+) jQuery.|(elements: Array, name: String, arguments: Array): jQuery|
+globalEval|(jQuery 1.0.4+) [static] jQuery.|(code: String): void|
+isXMLDoc|(jQuery 1.1.4+) [static] jQuery.|(node: Element): Boolean|
+removeData|(jQuery 1.2.3+) [static] jQuery.|(element: Element, name: String): jQuery|
+data|(jQuery 1.2.3+) [static] jQuery.|(element: Element, key: String, value: Object): Object|
+data|(jQuery 1.2.3+) [static] jQuery.|(element: Element, key: String): Object|
+data|(jQuery 1.4+) [static] jQuery.|(element: Element): Object|
+dequeue|(jQuery 1.3+) [static] jQuery.|(element: Element, queueName: String): void|
+queue|(jQuery 1.3+) [static] jQuery.|(element: Element, queueName: String): Array|
+queue|(jQuery 1.3+) [static] jQuery.|(element: Element, queueName: String, newQueue: Array): jQuery|
+queue|(jQuery 1.3+) [static] jQuery.|(element: Element, queueName: String, callback(): Function): jQuery|
+clearQueue|(jQuery 1.4+) jQuery.|(queueName: String): jQuery|
+toArray|(jQuery 1.4+) jQuery.|(): Array|
+isEmptyObject|(jQuery 1.4+) [static] jQuery.|(object: Object): Boolean|
+isPlainObject|(jQuery 1.4+) [static] jQuery.|(object: Object): Boolean|
+keydown|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+keydown|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+keydown|(jQuery 1.0+) jQuery.|(): jQuery|
+index|(jQuery 1.4+) jQuery.|(): Number|
+index|(jQuery 1.4+) jQuery.|(selector: Selector): Number|
+index|(jQuery 1.0+) jQuery.|(element: Element, jQuery): Number|
+removeData|(jQuery 1.2.3+) jQuery.|(name: String): jQuery|
+removeData|(jQuery 1.7+) jQuery.|(list: Array,String): jQuery|
+data|(jQuery 1.2.3+) jQuery.|(key: String, value: Object): jQuery|
+data|(jQuery 1.4.3+) jQuery.|(obj: Object): jQuery|
+data|(jQuery 1.2.3+) jQuery.|(key: String): Object|
+data|(jQuery 1.4+) jQuery.|(): Object|
+get|(jQuery 1.0+) jQuery.|(index: Number): Element, Array|
+size|(jQuery 1.0+) jQuery.|(): Number|
+noConflict|(jQuery 1.0+) [static] jQuery.|(removeAll: Boolean): Object|
+selected|(jQuery 1.0+) jQuery.|
+checked|(jQuery 1.0+) jQuery.|
+disabled|(jQuery 1.0+) jQuery.|
+enabled|(jQuery 1.0+) jQuery.|
+file|(jQuery 1.0+) jQuery.|
+button|(jQuery 1.0+) jQuery.|
+reset|(jQuery 1.0+) jQuery.|
+image|(jQuery 1.0+) jQuery.|
+submit|(jQuery 1.0+) jQuery.|
+checkbox|(jQuery 1.0+) jQuery.|
+radio|(jQuery 1.0+) jQuery.|
+password|(jQuery 1.0+) jQuery.|
+text|(jQuery 1.0+) jQuery.|
+input|(jQuery 1.0+) jQuery.|
+only-child|(jQuery 1.1.4+) jQuery.|
+last-child|(jQuery 1.1.4+) jQuery.|
+first-child|(jQuery 1.1.4+) jQuery.|
+nth-child|(jQuery 1.1.4+) jQuery.|
+attributeContainsPrefix|(jQuery 1.0+) jQuery.|
+attributeContainsWord|(jQuery 1.0+) jQuery.|
+attributeMultiple|(jQuery 1.0+) jQuery.|
+attributeContains|(jQuery 1.0+) jQuery.|
+attributeEndsWith|(jQuery 1.0+) jQuery.|
+attributeStartsWith|(jQuery 1.0+) jQuery.|
+attributeNotEqual|(jQuery 1.0+) jQuery.|
+attributeEquals|(jQuery 1.0+) jQuery.|
+attributeHas|(jQuery 1.0+) jQuery.|
+visible|(jQuery 1.0+) jQuery.|
+hidden|(jQuery 1.0+) jQuery.|
+parent|(jQuery 1.0+) jQuery.|
+has|(jQuery 1.1.4+) jQuery.|
+empty|(jQuery 1.0+) jQuery.|
+contains|(jQuery 1.1.4+) jQuery.|
+animated|(jQuery 1.2+) jQuery.|
+header|(jQuery 1.2+) jQuery.|
+lt|(jQuery 1.0+) jQuery.|
+gt|(jQuery 1.0+) jQuery.|
+eq|(jQuery 1.0+) jQuery.|
+odd|(jQuery 1.0+) jQuery.|
+even|(jQuery 1.0+) jQuery.|
+not|(jQuery 1.0+) jQuery.|
+last|(jQuery 1.0+) jQuery.|
+first|(jQuery 1.0+) jQuery.|
+next siblings|(jQuery 1.0+) jQuery.|
+next adjacent|(jQuery 1.0+) jQuery.|
+child|(jQuery 1.0+) jQuery.|
+descendant|(jQuery 1.0+) jQuery.|
+multiple|(jQuery 1.0+) jQuery.|
+all|(jQuery 1.0+) jQuery.|
+class|(jQuery 1.0+) jQuery.|
+element|(jQuery 1.0+) jQuery.|
+id|(jQuery 1.0+) jQuery.|
+scroll|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+scroll|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+scroll|(jQuery 1.0+) jQuery.|(): jQuery|
+resize|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+resize|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+resize|(jQuery 1.0+) jQuery.|(): jQuery|
+dequeue|(jQuery 1.2+) jQuery.|(queueName: String): jQuery|
+queue|(jQuery 1.2+) jQuery.|(queueName: String): Array|
+queue|(jQuery 1.2+) jQuery.|(queueName: String, newQueue: Array): jQuery|
+queue|(jQuery 1.2+) jQuery.|(queueName: String, callback( next ): Function): jQuery|
+keyup|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+keyup|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+keyup|(jQuery 1.0+) jQuery.|(): jQuery|
+keypress|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+keypress|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+keypress|(jQuery 1.0+) jQuery.|(): jQuery|
+submit|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+submit|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+submit|(jQuery 1.0+) jQuery.|(): jQuery|
+select|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+select|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+select|(jQuery 1.0+) jQuery.|(): jQuery|
+change|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+change|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+change|(jQuery 1.0+) jQuery.|(): jQuery|
+blur|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+blur|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+blur|(jQuery 1.0+) jQuery.|(): jQuery|
+focus|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+focus|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+focus|(jQuery 1.0+) jQuery.|(): jQuery|
+mousemove|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+mousemove|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+mousemove|(jQuery 1.0+) jQuery.|(): jQuery|
+hover|(jQuery 1.0+) jQuery.|(handlerIn(eventObject): Function, handlerOut(eventObject): Function): jQuery|
+hover|(jQuery 1.4+) jQuery.|(handlerInOut(eventObject): Function): jQuery|
+mouseleave|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+mouseleave|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+mouseleave|(jQuery 1.0+) jQuery.|(): jQuery|
+mouseenter|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+mouseenter|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+mouseenter|(jQuery 1.0+) jQuery.|(): jQuery|
+mouseout|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+mouseout|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+mouseout|(jQuery 1.0+) jQuery.|(): jQuery|
+mouseover|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+mouseover|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+mouseover|(jQuery 1.0+) jQuery.|(): jQuery|
+dblclick|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+dblclick|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+dblclick|(jQuery 1.0+) jQuery.|(): jQuery|
+click|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+click|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+click|(jQuery 1.0+) jQuery.|(): jQuery|
+mouseup|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+mouseup|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+mouseup|(jQuery 1.0+) jQuery.|(): jQuery|
+mousedown|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+mousedown|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+mousedown|(jQuery 1.0+) jQuery.|(): jQuery|
+error|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+error|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+unload|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+unload|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+load|(jQuery 1.0+) jQuery.|(handler(eventObject): Function): jQuery|
+load|(jQuery 1.4.3+) jQuery.|(eventData: Object, handler(eventObject): Function): jQuery|
+ready|(jQuery 1.0+) jQuery.|(handler: Function): jQuery|
+die|(jQuery 1.4.1+deprecated) jQuery.|(): jQuery|
+die|(jQuery 1.3+deprecated) jQuery.|(eventType: String, handler: String): jQuery|
+die|(jQuery 1.4.3+deprecated) jQuery.|(eventTypes: Map): jQuery|
+browser|(jQuery 1.0+) [static] jQuery.||Type: Map
+version|(jQuery 1.1.3+) [static] browser.||Type: String
+live|(jQuery 1.3+deprecated) jQuery.|(events: String, handler(eventObject): Function): jQuery|
+live|(jQuery 1.4+deprecated) jQuery.|(events: String, data: Object, handler(eventObject): Function): jQuery|
+live|(jQuery 1.4.3+deprecated) jQuery.|(events-map: Object): jQuery|
+triggerHandler|(jQuery 1.2+) jQuery.|(eventType: String, extraParameters: Array): Object|
+trigger|(jQuery 1.0+) jQuery.|(eventType: String, extraParameters: Object): jQuery|
+trigger|(jQuery 1.3+) jQuery.|(event: Event): jQuery|
+ajaxComplete|(jQuery 1.0+) jQuery.|(handler(event, XMLHttpRequest, ajaxOptions): Function): jQuery|
+one|(jQuery 1.1+) jQuery.|(events: String, data: Object, handler(eventObject): Function): jQuery|
+one|(jQuery 1.7+) jQuery.|(events: String, selector: String, data: Anything, handler(eventObject): Function): jQuery|
+one|(jQuery 1.7+) jQuery.|(events-map: Map, selector: String, data: Anything): jQuery|
+serializeArray|(jQuery 1.2+) jQuery.|(): Array|
+serialize|(jQuery 1.0+) jQuery.|(): String|
+ajaxSetup|(jQuery 1.1+) [static] jQuery.|(options: Options): void|
+ajaxSuccess|(jQuery 1.0+) jQuery.|(handler(event, XMLHttpRequest, ajaxOptions): Function): jQuery|
+ajaxStop|(jQuery 1.0+) jQuery.|(handler(): Function): jQuery|
+ajaxStart|(jQuery 1.0+) jQuery.|(handler(): Function): jQuery|
+ajaxSend|(jQuery 1.0+) jQuery.|(handler(event, jqXHR, ajaxOptions): Function): jQuery|
+ajaxError|(jQuery 1.0+) jQuery.|(handler(event, jqXHR, ajaxSettings, thrownError): Function): jQuery|
+unbind|(jQuery 1.0+) jQuery.|(eventType: String, handler(eventObject): Function): jQuery|
+unbind|(jQuery 1.4.3+) jQuery.|(eventType: String, false: Boolean): jQuery|
+unbind|(jQuery 1.0+) jQuery.|(event: Object): jQuery|
+bind|(jQuery 1.0+) jQuery.|(eventType: String, eventData: Object, handler(eventObject): Function): jQuery|
+bind|(jQuery 1.4.3+) jQuery.|(eventType: String, eventData: Object, preventBubble: Boolean): jQuery|
+bind|(jQuery 1.4+) jQuery.|(events: Object): jQuery|
+first|(jQuery 1.4+) jQuery.|(): jQuery|
+last|(jQuery 1.4+) jQuery.|(): jQuery|
+slice|(jQuery 1.1.4+) jQuery.|(start: Integer, end: Integer): jQuery|
+jQuery|(jQuery 1.0+) jQuery.|(selector: selector, context: Element, jQuery): jQuery|
+jQuery|(jQuery 1.0+) jQuery.|(element: Element): jQuery|
+jQuery|(jQuery 1.0+) jQuery.|(object: Object): jQuery|
+jQuery|(jQuery 1.0+) jQuery.|(elementArray: Array): jQuery|
+jQuery|(jQuery 1.0+) jQuery.|(jQuery object: Object): jQuery|
+jQuery|(jQuery 1.4+) jQuery.|(): jQuery|
+jQuery|(jQuery 1.0+) jQuery.|(html: String, ownerDocument: document): jQuery|
+jQuery|(jQuery 1.4+) jQuery.|(html: String, props: Object): jQuery|
+jQuery|(jQuery 1.0+) jQuery.|(callback: Function): jQuery|
+stop|(jQuery 1.2+) jQuery.|(clearQueue: Boolean, jumpToEnd: Boolean): jQuery|
+stop|(jQuery 1.7+) jQuery.|(queue: String, clearQueue: Boolean, jumpToEnd: Boolean): jQuery|
+end|(jQuery 1.0+) jQuery.|(): jQuery|
+andSelf|(jQuery 1.2+) jQuery.|(): jQuery|
+siblings|(jQuery 1.0+) jQuery.|(selector: Selector): jQuery|
+animate|(jQuery 1.0+) jQuery.|(properties: Map, duration: String,Number, easing: String, complete: Function): jQuery|
+animate|(jQuery 1.0+) jQuery.|(properties: Map, options: Map): jQuery|
+prevAll|(jQuery 1.2+) jQuery.|(selector: Selector): jQuery|
+prev|(jQuery 1.0+) jQuery.|(selector: Selector): jQuery|
+fadeTo|(jQuery 1.0+) jQuery.|(duration: String,Number, opacity: Number, callback: Callback): jQuery|
+fadeTo|(jQuery 1.4.3+) jQuery.|(duration: String,Number, opacity: Number, easing: String, callback: Callback): jQuery|
+fadeOut|(jQuery 1.0+) jQuery.|(duration: String,Number, callback: Callback): jQuery|
+fadeOut|(jQuery 1.4.3+) jQuery.|(duration: String,Number, easing: String, callback: Callback): jQuery|
+parents|(jQuery 1.0+) jQuery.|(selector: Selector): jQuery|
+fadeIn|(jQuery 1.0+) jQuery.|(duration: String,Number, callback: Callback): jQuery|
+fadeIn|(jQuery 1.4.3+) jQuery.|(duration: String,Number, easing: String, callback: Callback): jQuery|
+parent|(jQuery 1.0+) jQuery.|(selector: Selector): jQuery|
+offsetParent|(jQuery 1.2.6+) jQuery.|(): jQuery|
+slideToggle|(jQuery 1.0+) jQuery.|(duration: String,Number, callback: Callback): jQuery|
+slideToggle|(jQuery 1.4.3+) jQuery.|(duration: String,Number, easing: String, callback: Callback): jQuery|
+post|(jQuery 1.0+) [static] jQuery.|(url: String, data: Map, String, success(data, textStatus, jqXHR): Function, dataType: String): jqXHR|
+slideUp|(jQuery 1.0+) jQuery.|(duration: String,Number, callback: Callback): jQuery|
+slideUp|(jQuery 1.4.3+) jQuery.|(duration: String,Number, easing: String, callback: Callback): jQuery|
+nextAll|(jQuery 1.2+) jQuery.|(selector: String): jQuery|
+next|(jQuery 1.0+) jQuery.|(selector: Selector): jQuery|
+slideDown|(jQuery 1.0+) jQuery.|(duration: String,Number, callback: Callback): jQuery|
+slideDown|(jQuery 1.4.3+) jQuery.|(duration: String,Number, easing: String, callback: Callback): jQuery|
+find|(jQuery 1.0+) jQuery.|(selector: Selector): jQuery|
+find|(jQuery 1.6+) jQuery.|(jQuery object: Object): jQuery|
+find|(jQuery 1.6+) jQuery.|(element: Element): jQuery|
+getScript|(jQuery 1.0+) [static] jQuery.|(url: String, success(script, textStatus, jqXHR): Function): jqXHR|
+contents|(jQuery 1.2+) jQuery.|(): jQuery|
+closest|(jQuery 1.3+) jQuery.|(selector: Selector): jQuery|
+closest|(jQuery 1.4+) jQuery.|(selector: Selector, context: Element): jQuery|
+closest|(jQuery 1.6+) jQuery.|(jQuery object: jQuery): jQuery|
+closest|(jQuery 1.6+) jQuery.|(element: Element): jQuery|
+closest|(jQuery 1.4+deprecated) jQuery.|(selectors: Array, context: Element): Array|
+getJSON|(jQuery 1.0+) [static] jQuery.|(url: String, data: Map, success(data, textStatus, jqXHR): Function): jqXHR|
+get|(jQuery 1.0+) [static] jQuery.|(url: String, data: Map, String, success(data, textStatus, jqXHR): Function, dataType: String): jqXHR|
+load|(jQuery 1.0+) jQuery.|(url: String, data: Map, String, complete(responseText, textStatus, XMLHttpRequest): Function): jQuery|
+ajax|(jQuery 1.5+) [static] jQuery.|(url: String, settings: Map): jqXHR|
+ajax|(jQuery 1.0+) [static] jQuery.|(settings: Map): jqXHR|
+length|(jQuery 1.0+) jQuery.||Type: Number
+children|(jQuery 1.0+) jQuery.|(selector: Selector): jQuery|
+add|(jQuery 1.0+) jQuery.|(selector: Selector): jQuery|
+add|(jQuery 1.0+) jQuery.|(elements: Elements): jQuery|
+add|(jQuery 1.0+) jQuery.|(html: HTML): jQuery|
+add|(jQuery 1.3.2+) jQuery.|(jQuery object: jQuery object ): jQuery|
+add|(jQuery 1.4+) jQuery.|(selector: Selector, context: Element): jQuery|
+context|(jQuery 1.3+) jQuery.||Type: Element
+not|(jQuery 1.0+) jQuery.|(selector: Selector): jQuery|
+not|(jQuery 1.0+) jQuery.|(elements: Elements): jQuery|
+not|(jQuery 1.4+) jQuery.|(function(index): Function): jQuery|
+not|(jQuery 1.4+) jQuery.|(jQuery object: Object): jQuery|
+outerWidth|(jQuery 1.2.6+) jQuery.|(includeMargin: Boolean): Integer|
+outerHeight|(jQuery 1.2.6+) jQuery.|(includeMargin: Boolean): Integer|
+toggle|(jQuery 1.0+) jQuery.|(duration: String,Number, callback: Callback): jQuery|
+toggle|(jQuery 1.4.3+) jQuery.|(duration: String,Number, easing: String, callback: Callback): jQuery|
+toggle|(jQuery 1.3+) jQuery.|(showOrHide: Boolean): jQuery|
+innerWidth|(jQuery 1.2.6+) jQuery.|(): Integer|
+innerHeight|(jQuery 1.2.6+) jQuery.|(): Integer|
+param|(jQuery 1.2+) [static] jQuery.|(obj: Array, Object): String|
+param|(jQuery 1.4+) [static] jQuery.|(obj: Array, Object, traditional: Boolean): String|
+hide|(jQuery 1.0+) jQuery.|(): jQuery|
+hide|(jQuery 1.0+) jQuery.|(duration: String,Number, callback: Callback): jQuery|
+hide|(jQuery 1.4.3+) jQuery.|(duration: String,Number, easing: String, callback: Callback): jQuery|
+width|(jQuery 1.0+) jQuery.|(): Integer|
+width|(jQuery 1.0+) jQuery.|(value: String, Number): jQuery|
+width|(jQuery 1.4.1+) jQuery.|(function(index, width): Function): jQuery|
+height|(jQuery 1.0+) jQuery.|(): Integer|
+height|(jQuery 1.0+) jQuery.|(value: String, Number): jQuery|
+height|(jQuery 1.4.1+) jQuery.|(function(index, height): Function): jQuery|
+show|(jQuery 1.0+) jQuery.|(): jQuery|
+show|(jQuery 1.0+) jQuery.|(duration: String,Number, callback: Callback): jQuery|
+show|(jQuery 1.4.3+) jQuery.|(duration: String,Number, easing: String, callback: Callback): jQuery|
+scrollLeft|(jQuery 1.2.6+) jQuery.|(): Integer|
+scrollLeft|(jQuery 1.2.6+) jQuery.|(value: Number): jQuery|
+trim|(jQuery 1.0+) [static] jQuery.|(str: String): String|
+isFunction|(jQuery 1.2+) [static] jQuery.|(obj: Object): boolean|
+isArray|(jQuery 1.3+) [static] jQuery.|(obj: Object): boolean|
+unique|(jQuery 1.1.3+) [static] jQuery.|(array: Array): Array|
+merge|(jQuery 1.0+) [static] jQuery.|(first: Array, second: Array): Array|
+inArray|(jQuery 1.2+) [static] jQuery.|(value: Any, array: Array, fromIndex: Number): Number|
+map|(jQuery 1.0+) [static] jQuery.|(array: Array, callback(elementOfArray, indexInArray): Function): Array|
+map|(jQuery 1.6+) [static] jQuery.|(arrayOrObject: Array,Object, callback( value, indexOrKey ): Function): Array|
+makeArray|(jQuery 1.2+) [static] jQuery.|(obj: Object): Array|
+grep|(jQuery 1.0+) [static] jQuery.|(array: Array, function(elementOfArray, indexInArray): Function, invert: Boolean): Array|
+extend|(jQuery 1.0+) [static] jQuery.|(target: Object, object1: Object, objectN: Object): Object|
+extend|(jQuery 1.1.4+) [static] jQuery.|(deep: Boolean, target: Object, object1: Object, objectN: Object): Object|
+each|(jQuery 1.0+) [static] jQuery.|(collection: Object, callback(indexInArray, valueOfElement): Function): Object|
+boxModel|(jQuery 1.0+) [static] jQuery.||Type: Boolean
+scrollTop|(jQuery 1.2.6+) jQuery.|(): Integer|
+scrollTop|(jQuery 1.2.6+) jQuery.|(value: Number): jQuery|
+support|(jQuery 1.3+) [static] jQuery.||Type: Object
+position|(jQuery 1.2+) jQuery.|(): Object|
+offset|(jQuery 1.2+) jQuery.|(): Object|
+offset|(jQuery 1.4+) jQuery.|(coordinates: Object): jQuery|
+offset|(jQuery 1.4+) jQuery.|(function(index, coords): Function): jQuery|
+css|(jQuery 1.0+) jQuery.|(propertyName: String): String|
+css|(jQuery 1.0+) jQuery.|(propertyName: String, value: String, Number): jQuery|
+css|(jQuery 1.4+) jQuery.|(propertyName: String, function(index, value): Function): jQuery|
+css|(jQuery 1.0+) jQuery.|(map: Map): jQuery|
+unwrap|(jQuery 1.4+) jQuery.|(): jQuery|
+detach|(jQuery 1.4+) jQuery.|(selector: Selector): jQuery|
+clone|(jQuery 1.0+) jQuery.|(withDataAndEvents: Boolean): jQuery|
+clone|(jQuery 1.5+) jQuery.|(withDataAndEvents: Boolean, deepWithDataAndEvents: Boolean): jQuery|
+remove|(jQuery 1.0+) jQuery.|(selector: String): jQuery|
+empty|(jQuery 1.0+) jQuery.|(): jQuery|
+replaceAll|(jQuery 1.2+) jQuery.|(target: Selector): jQuery|
+replaceWith|(jQuery 1.2+) jQuery.|(newContent: String, Element, jQuery): jQuery|
+replaceWith|(jQuery 1.4+) jQuery.|(function: Function): jQuery|
+wrapInner|(jQuery 1.2+) jQuery.|(wrappingElement: String): jQuery|
+wrapInner|(jQuery 1.4+) jQuery.|(function(index): Function): jQuery|
+wrapAll|(jQuery 1.2+) jQuery.|(wrappingElement: String, Selector, Element, jQuery): jQuery|
+wrap|(jQuery 1.0+) jQuery.|(wrappingElement: String, Selector, Element, jQuery): jQuery|
+wrap|(jQuery 1.4+) jQuery.|(function(index): Function): jQuery|
+insertBefore|(jQuery 1.0+) jQuery.|(target: Selector, Element, jQuery): jQuery|
+before|(jQuery 1.0+) jQuery.|(content: String, Element, jQuery, content: String, Element, Array, jQuery): jQuery|
+before|(jQuery 1.4+) jQuery.|(function: Function): jQuery|
+insertAfter|(jQuery 1.0+) jQuery.|(target: Selector, Element, jQuery): jQuery|
+after|(jQuery 1.0+) jQuery.|(content: String, Element, jQuery, content: String, Element, Array, jQuery): jQuery|
+after|(jQuery 1.4+) jQuery.|(function(index): Function): jQuery|
+prependTo|(jQuery 1.0+) jQuery.|(target: Selector, Element, jQuery): jQuery|
+prepend|(jQuery 1.0+) jQuery.|(content: String, Element, jQuery, content: String, Element, jQuery): jQuery|
+prepend|(jQuery 1.4+) jQuery.|(function(index, html): Function): jQuery|
+appendTo|(jQuery 1.0+) jQuery.|(target: Selector, Element, jQuery): jQuery|
+append|(jQuery 1.0+) jQuery.|(content: String, Element, jQuery, content: String, Element, Array, jQuery): jQuery|
+append|(jQuery 1.4+) jQuery.|(function(index, html): Function): jQuery|
+val|(jQuery 1.0+) jQuery.|(): String, Number, Array|
+val|(jQuery 1.0+) jQuery.|(value: String): jQuery|
+val|(jQuery 1.4+) jQuery.|(function(index, value): Function): jQuery|
+text|(jQuery 1.0+) jQuery.|(): String|
+text|(jQuery 1.0+) jQuery.|(textString: String): jQuery|
+text|(jQuery 1.4+) jQuery.|(function(index, text): Function): jQuery|
+html|(jQuery 1.0+) jQuery.|(): String|
+html|(jQuery 1.0+) jQuery.|(htmlString: String): jQuery|
+html|(jQuery 1.4+) jQuery.|(function(index, oldhtml): Function): jQuery|
+map|(jQuery 1.2+) jQuery.|(callback(index, domElement): Function): jQuery|
+is|(jQuery 1.0+) jQuery.|(selector: Selector): Boolean|
+is|(jQuery 1.6+) jQuery.|(function(index): Function): Boolean|
+is|(jQuery 1.6+) jQuery.|(jQuery object: Object): Boolean|
+is|(jQuery 1.6+) jQuery.|(element: Element): Boolean|
+eq|(jQuery 1.1.2+) jQuery.|(index: Integer): jQuery|
+eq|(jQuery 1.4+) jQuery.|(-index: Integer): jQuery|
+filter|(jQuery 1.0+) jQuery.|(selector: Selector): jQuery|
+filter|(jQuery 1.0+) jQuery.|(function(index): Function): jQuery|
+filter|(jQuery 1.4+) jQuery.|(element: Element): jQuery|
+filter|(jQuery 1.4+) jQuery.|(jQuery object: Object): jQuery|
+toggleClass|(jQuery 1.0+) jQuery.|(className: String): jQuery|
+toggleClass|(jQuery 1.3+) jQuery.|(className: String, switch: Boolean): jQuery|
+toggleClass|(jQuery 1.4+) jQuery.|(switch: Boolean): jQuery|
+toggleClass|(jQuery 1.4+) jQuery.|(function(index, class, switch): Function, switch: Boolean): jQuery|
+removeClass|(jQuery 1.0+) jQuery.|(className: String): jQuery|
+removeClass|(jQuery 1.4+) jQuery.|(function(index, class): Function): jQuery|
+hasClass|(jQuery 1.2+) jQuery.|(className: String): Boolean|
+removeAttr|(jQuery 1.0+) jQuery.|(attributeName: String): jQuery|
+attr|(jQuery 1.0+) jQuery.|(attributeName: String): String|
+attr|(jQuery 1.0+) jQuery.|(attributeName: String, value: String,Number): jQuery|
+attr|(jQuery 1.0+) jQuery.|(map: Map): jQuery|
+attr|(jQuery 1.1+) jQuery.|(attributeName: String, function(index, attr): Function): jQuery|
+addClass|(jQuery 1.0+) jQuery.|(className: String): jQuery|
+addClass|(jQuery 1.4+) jQuery.|(function(index, currentClass): Function): jQuery|
