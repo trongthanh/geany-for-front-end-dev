@@ -1,0 +1,623 @@
+<!--
+   Standard: ECMAScript binding for the Level 3 Document Object Model
+                                Core definitions
+                                    ver. 1.1
+   Remarks:
+
+    default values
+      method:
+        static="false"    // (true/false) = static/non-static method
+        ECMA="true"       // (true/false) = supported/unsupported by ECMA standard
+      param:
+        mandatory="false" // (true/false) = mandatory/optional method parameter
+        infinite="false"  // (true/false) = in case of variable parameters number, e.g. (param1, [param2, [param3...)
+        ECMA="true"       // (true/false) = supported/unsupported by ECMA standard
+-->
+<Library>
+  <doc url="http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/core.html"/>
+
+  <class name="DOMImplementationRegistry">
+    <!-- properties -->
+
+    <!-- methods -->
+    <method name="getDOMImplementation">
+      <param name="features" mandatory="true" type="String"/>
+    </method>
+    <method name="getDOMImplementationList">
+      <param name="features" mandatory="true" type="String"/>
+    </method>
+  </class>
+
+  <class name="DOMException" url="#ID-17189187">
+    <!-- properties -->
+    <property name="code" type="Number"/>
+
+    <!-- methods -->
+  </class>
+
+  <class name="DOMStringList" url="#DOMStringList">
+    <!-- properties -->
+    <property name="length" attribute="ReadOnly" type="Number" url="#DOMStringList-length"/>
+
+    <!-- methods -->
+    <method name="item" returnType="String" url="#DOMStringList-item">
+      <param name="index" mandatory="true" type="Number"/>
+    </method>
+    <method name="contains" returnType="Boolean" url="#DOMStringList-contains">
+      <param name="str" mandatory="true" type="String"/>
+    </method>
+  </class>
+
+  <class name="NameList" url="#NameList">
+    <!-- properties -->
+    <property name="length" attribute="ReadOnly" type="Number" url="#NameList-length"/>
+
+    <!-- methods -->
+    <method name="getName" returnType="String" url="#NameList-getName">
+      <param name="index" mandatory="true" type="Number"/>
+    </method>
+    <method name="getNamespaceURI" returnType="String" url="#NameList-getNamespaceURI">
+      <param name="index" mandatory="true" type="Number"/>
+    </method>
+    <method name="contains" returnType="Boolean" url="#NameList-contains">
+      <param name="str" mandatory="true" type="String"/>
+    </method>
+    <method name="containsNS" returnType="Boolean" url="#NameList-containsNS">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="name" mandatory="true" type="String"/>
+    </method>
+  </class>
+
+  <class name="DOMImplementationList" url="#DOMImplementationList">
+    <!-- properties -->
+    <property name="length" attribute="ReadOnly" type="Number" url="#DOMImplementationList-length"/>
+
+    <!-- methods -->
+    <method name="item" returnType="DOMImplementation" url="#DOMImplementationList-item">
+      <param name="index" mandatory="true" type="Number"/>
+    </method>
+  </class>
+
+  <class name="DOMImplementationSource" url="#DOMImplementationSource">
+    <!-- properties -->
+
+    <!-- methods -->
+    <method name="getDOMImplementation" returnType="DOMImplementation" url="#ID-getDOMImpl">
+      <param name="features" mandatory="true" type="String"/>
+    </method>
+
+    <method name="getDOMImplementationList" returnType="DOMImplementationList" url="#ID-getDOMImpls">
+      <param name="features" mandatory="true" type="String"/>
+    </method>
+  </class>
+
+  <class name="DOMImplementation" url="#ID-102161490">
+    <!-- properties -->
+
+    <!-- methods -->
+    <method name="hasFeature" returnType="Boolean" url="#ID-5CED94D7">
+      <param name="feature" mandatory="true" type="String"/>
+      <param name="version" mandatory="true" type="String"/>
+    </method>
+    <method name="createDocumentType" returnType="DocumentType" throws="DOMException" url="l#Level-2-Core-DOM-createDocType">
+      <param name="qualifiedName" mandatory="true" type="String"/>
+      <param name="publicId" mandatory="true" type="String"/>
+      <param name="systemId" mandatory="true" type="String"/>
+    </method>
+    <method name="createDocument" returnType="Document" throws="DOMException" url="#Level-2-Core-DOM-createDocument">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="qualifiedName" mandatory="true" type="String"/>
+      <param name="doctype" mandatory="true" type="DocumentType"/>
+    </method>
+    <method name="getFeature" returnType="Object" url="#DOMImplementation3-getFeature">
+      <param name="feature" mandatory="true" type="String"/>
+      <param name="version" mandatory="true" type="String"/>
+    </method>
+  </class>
+
+  <class name="DocumentFragment" url="#ID-B63ED1A3" extends="Node">
+    <!-- properties -->
+
+    <!-- methods -->
+  </class>
+
+  <class name="Document" url="#i-Document" extends="Node">
+    <!-- properties -->
+    <property name="doctype" attribute="ReadOnly" type="DocumentType" url="#ID-B63ED1A31"/>
+    <property name="implementation" attribute="ReadOnly" type="DOMImplementation" url="#ID-1B793EBA"/>
+    <property name="documentElement" attribute="ReadOnly" type="Element" url="#ID-87CD092"/>
+    <property name="inputEncoding" attribute="ReadOnly" type="String" url="#Document3-inputEncoding"/>
+    <property name="xmlEncoding" attribute="ReadOnly" type="String" url="#Document3-encoding"/>
+    <property name="xmlStandalone" type="Boolean" throws="DOMException" url="#Document3-standalone"/>
+    <property name="xmlVersion" type="String" throws="DOMException" url="l#Document3-version"/>
+    <property name="strictErrorChecking" type="Boolean" url="#Document3-strictErrorChecking"/>
+    <property name="documentURI" type="String" url="#Document3-documentURI"/>
+    <property name="domConfig" attribute="ReadOnly" type="DOMConfiguration" url="#Document3-domConfig"/>
+
+    <!-- methods -->
+    <method name="createElement" returnType="Element" throws="DOMException" url="#ID-2141741547">
+      <param name="tagName" mandatory="true" type="String"/>
+    </method>
+    <method name="createDocumentFragment" returnType="DocumentFragment" url="#ID-35CB04B5"/>
+    <method name="createTextNode" returnType="Text" url="#ID-1975348127">
+      <param name="data" mandatory="true" type="String"/>
+    </method>
+    <method name="createComment" returnType="Comment" url="#ID-1334481328">
+      <param name="data" mandatory="true" type="String"/>
+    </method>
+    <method name="createCDATASection" returnType="CDATASection" throws="DOMException" url="#ID-D26C0AF8">
+      <param name="data" mandatory="true" type="String"/>
+    </method>
+    <method name="createProcessingInstruction" returnType="ProcessingInstruction" throws="DOMException" url="#ID-135944439">
+      <param name="target" mandatory="true" type="String"/>
+      <param name="data" mandatory="true" type="String"/>
+    </method>
+    <method name="createAttribute" returnType="Attr" throws="DOMException" url="#ID-1084891198">
+      <param name="name" mandatory="true" type="String"/>
+    </method>
+    <method name="createEntityReference" returnType="EntityReference" throws="DOMException" url="#ID-392B75AE">
+      <param name="name" mandatory="true" type="String"/>
+    </method>
+    <method name="getElementsByTagName" returnType="NodeList" url="#ID-A6C9094">
+      <param name="tagname" mandatory="true" type="String"/>
+    </method>
+    <method name="importNode" returnType="Node" throws="DOMException" url="#Core-Document-importNode">
+      <param name="importedNode" mandatory="true" type="Node"/>
+      <param name="deep" mandatory="true" type="Boolean"/>
+    </method>
+    <method name="createElementNS" returnType="Element" throws="DOMException" url="#ID-DocCrElNS">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="qualifiedName" mandatory="true" type="String"/>
+    </method>
+    <method name="createAttributeNS" returnType="Attr" throws="DOMException" url="#ID-DocCrAttrNS">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="qualifiedName" mandatory="true" type="String"/>
+    </method>
+    <method name="getElementsByTagNameNS" returnType="NodeList" url="#ID-getElBTNNS">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="localName" mandatory="true" type="String"/>
+    </method>
+    <method name="getElementById" returnType="Element" url="#ID-getElBId">
+      <param name="elementId" mandatory="true" type="String"/>
+    </method>
+    <method name="adoptNode" returnType="Node" throws="DOMException" url="#Document3-adoptNode">
+      <param name="source" mandatory="true" type="Node"/>
+    </method>
+    <method name="normalizeDocument" url="#Document3-normalizeDocument"/>
+    <method name="renameNode" returnType="Node" throws="DOMException" url="#Document3-renameNode">
+      <param name="n" mandatory="true" type="Node"/>
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="qualifiedName" mandatory="true" type="String"/>
+    </method>
+
+    <method name="nodeFromID" browser="ie" returnType="Node">
+      <param name="idString"/>
+    </method>
+
+    <method name="load" browser="IE">
+      <param name="filename" mandatory="true" type="String"/>
+    </method>
+
+    <method name="loadXML" browser="IE">
+      <param name="xmlString" mandatory="true" type="String"/>
+    </method>
+
+    <method name="save" browser="IE">
+      <param name="filename" mandatory="true" type="String"/>
+    </method>
+
+    <method name="setProperty" browser="IE">
+      <param name="name" mandatory="true" type="String"/>
+      <param name="value" mandatory="true" type="String"/>
+    </method>
+
+    <method name="selectSingleNode" browser="IE">
+      <param name="xpathExpression" mandatory="true" type="String"/>
+    </method>
+
+    <method name="selectNodes" browser="IE">
+      <param name="xpathExpression" mandatory="true" type="String"/>
+    </method>
+
+    <property name="parseError" browser="IE" type="IXMLDOMParseError"/>
+  </class>
+
+  <class name="IXMLDOMParseError" browser="IE">
+    <property name="reason" type="String"/>
+    <property name="errorCode" type="Number"/>
+  </class>
+
+  <class name="Node" url="#ID-1950641247">
+    <!-- properties -->
+    <property name="nodeName" attribute="ReadOnly" type="String" url="#ID-F68D095"/>
+    <property name="nodeValue" type="String" url="#ID-F68D080"/>
+    <property name="nodeType" attribute="ReadOnly" type="Number" url="#ID-111237558"/>
+    <property name="parentNode" attribute="ReadOnly" type="Node" url="#ID-1060184317"/>
+    <property name="childNodes" attribute="ReadOnly" type="NodeList" url="#ID-1451460987"/>
+    <property name="firstChild" attribute="ReadOnly" type="Node" url="#ID-169727388"/>
+    <property name="lastChild" attribute="ReadOnly" type="Node" url="#ID-61AD09FB"/>
+    <property name="previousSibling" attribute="ReadOnly" type="Node" url="#ID-640FB3C8"/>
+    <property name="nextSibling" attribute="ReadOnly" type="Node" url="#ID-6AC54C2F"/>
+    <property name="attributes" attribute="ReadOnly" type="NamedNodeMap" url="#ID-84CF096"/>
+    <property name="ownerDocument" attribute="ReadOnly" type="Document" url="#node-ownerDoc"/>
+    <property name="namespaceURI" attribute="ReadOnly" type="String" url="#ID-NodeNSname"/>
+    <property name="prefix" type="String" throws="DOMException" url="#ID-NodeNSPrefix"/>
+    <property name="localName" attribute="ReadOnly" type="String" url="#ID-NodeNSLocalN"/>
+    <property name="baseURI" attribute="ReadOnly" type="String" url="#Node3-baseURI"/>
+    <property name="textContent" type="String" throws="DOMException" url="#Node3-textContent"/>
+    <property name="xml" browser="ie" type="String" attribute="ReadOnly" />
+
+    <property name="ELEMENT_NODE" type="Number" attribute="ReadOnly" value="1" static="true"/>
+    <property name="ATTRIBUTE_NODE" type="Number" attribute="ReadOnly" value="2" static="true"/>
+    <property name="TEXT_NODE" type="Number" attribute="ReadOnly" value="3" static="true"/>
+    <property name="CDATA_SECTION_NODE" type="Number" attribute="ReadOnly" value="4" static="true"/>
+    <property name="ENTITY_SECTION_NODE" type="Number" attribute="ReadOnly" value="5" static="true"/>
+    <property name="ENTITY_NODE" type="Number" attribute="ReadOnly" value="6" static="true"/>
+    <property name="PROCESSING_INSTRUCTION_NODE" type="Number" attribute="ReadOnly" value="7" static="true"/>
+    <property name="COMMENT_NODE" type="Number" attribute="ReadOnly" value="8" static="true"/>
+    <property name="DOCUMENT_NODE" type="Number" attribute="ReadOnly" value="9" static="true"/>
+    <property name="DOCUMENT_TYPE_NODE" type="Number" attribute="ReadOnly" value="10" static="true"/>
+    <property name="DOCUMENT_FRAGMENT_NODE" type="Number" attribute="ReadOnly" value="11" static="true"/>
+    <property name="NOTATION_NODE" type="Number" attribute="ReadOnly" value="12" static="true"/>
+
+    <!-- methods -->
+    <method name="insertBefore" returnType="Node" throws="DOMException" url="#ID-952280727">
+      <param name="newChild" mandatory="true" type="Node"/>
+      <param name="refChild" mandatory="true" type="Node"/>
+    </method>
+    <method name="replaceChild" returnType="Node" throws="DOMException" url="#ID-785887307">
+      <param name="newChild" mandatory="true" type="Node"/>
+      <param name="refChild" mandatory="true" type="Node"/>
+    </method>
+    <method name="removeChild" returnType="Node" throws="DOMException" url="#ID-1734834066">
+      <param name="oldChild" mandatory="true" type="Node"/>
+    </method>
+    <method name="appendChild" returnType="Node" throws="DOMException" url="#ID-184E7107">
+      <param name="newChild" mandatory="true" type="Node"/>
+    </method>
+    <method name="hasChildNodes" returnType="Boolean" url="#ID-810594187"/>
+    <method name="cloneNode" returnType="Node" url="#ID-3A0ED0A4">
+      <param name="deep" mandatory="true" type="Boolean"/>
+    </method>
+    <method name="normalize" url="#ID-normalize"/>
+    <method name="isSupported" returnType="Boolean" url="#Level-2-Core-Node-supports">
+      <param name="feature" mandatory="true" type="String"/>
+      <param name="version" mandatory="true" type="String"/>
+    </method>
+    <method name="hasAttributes" returnType="Boolean" url="#ID-NodeHasAttrs"/>
+    <method name="compareDocumentPosition" returnType="Node" throws="DOMException" url="#Node3-compareDocumentPosition">
+      <param name="other" mandatory="true" type="Node"/>
+    </method>
+    <method name="isSameNode" returnType="Boolean" url="#Node3-isSameNode">
+      <param name="other" mandatory="true" type="Node"/>
+    </method>
+    <method name="lookupPrefix" returnType="String" url="l#Node3-lookupNamespacePrefix">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+    </method>
+    <method name="isDefaultNamespace" returnType="String" url="#Node3-isDefaultNamespace">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+    </method>
+    <method name="lookupNamespaceURI" returnType="String" url="l#Node3-lookupNamespaceURI">
+      <param name="prefix" mandatory="true" type="String"/>
+    </method>
+    <method name="isEqualNode" returnType="Boolean" url="#Node3-isEqualNode">
+      <param name="arg" mandatory="true" type="Node"/>
+    </method>
+    <method name="getFeature" returnType="Object" url="#Node3-getFeature">
+      <param name="feature" mandatory="true" type="String"/>
+      <param name="version" mandatory="true" type="String"/>
+    </method>
+    <method name="setUserData" url="#Node3-setUserData"> <!-- This function returns an object that implements the any type interface.-->
+      <param name="key" mandatory="true" type="String"/>
+      <param name="data" mandatory="true"/>
+      <!-- The data parameter is an object that implements the any type interface. -->
+      <param name="handler" mandatory="true" type="UserDataHandler"/>
+    </method>
+    <method name="getUserData" url="#Node3-getUserData"> <!-- This function returns an object that implements the any type interface.-->
+      <param name="key" mandatory="true" type="String"/>
+    </method>
+  </class>
+
+  <class name="NodeList" url="#ID-536297177">
+    <!-- properties -->
+    <property name="length" attribute="ReadOnly" type="Number" url="#ID-203510337"/>
+
+    <!-- methods -->
+    <method name="item" returnType="Node" url="#ID-844377136">
+      <param name="index" mandatory="true" type="Number"/>
+    </method>
+  </class>
+
+  <class name="NamedNodeMap" url="#ID-1780488922">
+    <!-- properties -->
+    <property name="length" attribute="ReadOnly" type="Number" url="#ID-6D0FB19E"/>
+
+    <!-- methods -->
+    <method name="getNamedItem" returnType="Node" url="#ID-1074577549">
+      <param name="name" mandatory="true" type="String"/>
+    </method>
+    <method name="setNamedItem" returnType="Node" url="#ID-1025163788">
+      <param name="arg" mandatory="true" type="Node"/>
+    </method>
+    <method name="removeNamedItem" returnType="Node" url="#ID-D58B193">
+      <param name="name" mandatory="true" type="String"/>
+    </method>
+    <method name="item" returnType="Node" url="#ID-349467F9">
+      <param name="index" mandatory="true" type="Number"/>
+    </method>
+    <method name="getNamedItemNS" returnType="Node" url="#ID-getNamedItemNS">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="localName" mandatory="true" type="String"/>
+    </method>
+    <method name="setNamedItemNS" returnType="Node" url="#ID-setNamedItemNS">
+      <param name="arg" mandatory="true" type="Node"/>
+    </method>
+    <method name="removeNamedItemNS" returnType="Node" url="#ID-removeNamedItemNS">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="localName" mandatory="true" type="String"/>
+    </method>
+  </class>
+
+  <class name="CharacterData" url="#ID-FF21A306" extends="Node">
+    <!-- properties -->
+    <property name="data" type="String" throws="DOMException" url="#ID-72AB8359"/>
+    <property name="length" attribute="ReadOnly" type="Number" url="#ID-7D61178C"/>
+
+    <!-- methods -->
+    <method name="substringData" returnType="String" throws="DOMException" url="#ID-6531BCCF">
+      <param name="offset" mandatory="true" type="Number"/>
+      <param name="count" mandatory="true" type="Number"/>
+    </method>
+    <method name="appendData" throws="DOMException" url="#ID-32791A2F">
+      <param name="arg" mandatory="true" type="String"/>
+    </method>
+    <method name="insertData" throws="DOMException" url="#ID-3EDB695F">
+      <param name="offset" mandatory="true" type="Number"/>
+      <param name="arg" mandatory="true" type="String"/>
+    </method>
+    <method name="deleteData" throws="DOMException" url="#ID-7C603781">
+      <param name="offset" mandatory="true" type="Number"/>
+      <param name="count" mandatory="true" type="Number"/>
+    </method>
+    <method name="replaceData" throws="DOMException" url="#ID-E5CBA7FB">
+      <param name="offset" mandatory="true" type="Number"/>
+      <param name="count" mandatory="true" type="Number"/>
+      <param name="arg" mandatory="true" type="String"/>
+    </method>
+  </class>
+
+  <class name="Attr" url="#ID-637646024" extends="Node">
+    <!-- properties -->
+    <property name="name" attribute="ReadOnly" type="String" url="#ID-1112119403"/>
+    <property name="specified" attribute="ReadOnly" type="Boolean" url="#ID-862529273"/>
+    <property name="value" attribute="ReadOnly" type="String" throws="DOMException" url="#ID-221662474"/>
+    <property name="ownerElement" attribute="ReadOnly" type="Element" url="#Attr-ownerElement"/>
+    <property name="schemaTypeInfo" attribute="ReadOnly" type="TypeInfo" url="#Attr-schemaTypeInfo"/>
+    <property name="isId" attribute="ReadOnly" type="Boolean" url="#Attr-isId"/>
+
+    <!-- methods -->
+  </class>
+
+  <class name="Element" url="#ID-745549614" extends="Node">
+    <!-- properties -->
+    <property name="tagName" attribute="ReadOnly" type="String" url="#ID-104682815"/>
+    <property name="schemaTypeInfo" attribute="ReadOnly" type="TypeInfo" url="#Element-schemaTypeInfo"/>
+
+    <!-- methods -->
+    <method name="getAttribute" returnType="String" url="#ID-666EE0F9">
+      <param name="name" mandatory="true" type="String"/>
+    </method>
+    <method name="setAttribute" throws="DOMException" url="#ID-F68F082">
+      <param name="name" mandatory="true" type="String"/>
+      <param name="value" mandatory="true" type="String"/>
+    </method>
+    <method name="removeAttribute" throws="DOMException" url="#ID-6D6AC0F9">
+      <param name="name" mandatory="true" type="String"/>
+    </method>
+    <method name="getAttributeNode" returnType="Attr" url="#ID-217A91B8">
+      <param name="name" mandatory="true" type="String"/>
+    </method>
+    <method name="setAttributeNode" returnType="Attr" throws="DOMException" url="#ID-887236154">
+      <param name="newAttr" mandatory="true" type="Attr"/>
+    </method>
+    <method name="removeAttributeNode" returnType="Attr" throws="DOMException" url="#ID-D589198">
+      <param name="oldAttr" mandatory="true" type="Attr"/>
+    </method>
+    <method name="getElementsByTagName" returnType="NodeList" url="#ID-1938918D">
+      <param name="name" mandatory="true" type="String"/>
+    </method>
+    <method name="getAttributeNS" returnType="String" throws="DOMException" url="#ID-ElGetAttrNS">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="localName" mandatory="true" type="String"/>
+    </method>
+    <method name="setAttributeNS" throws="DOMException" url="#ID-ElSetAttrNS">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="qualifiedName" mandatory="true" type="String"/>
+      <param name="value" mandatory="true" type="String"/>
+    </method>
+    <method name="removeAttributeNS" throws="DOMException" url="#ID-ElRemAtNS">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="localName" mandatory="true" type="String"/>
+    </method>
+    <method name="getAttributeNodeNS" throws="DOMException" url="#ID-ElGetAtNodeNS">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="localName" mandatory="true" type="String"/>
+    </method>
+    <method name="setAttributeNodeNS" throws="DOMException" url="#ID-ElSetAtNodeNS">
+      <param name="newAttr" mandatory="true" type="Attr"/>
+    </method>
+    <method name="getElementsByTagNameNS" returnType="NodeList" throws="DOMException" url="#ID-A6C90942">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="localName" mandatory="true" type="String"/>
+    </method>
+    <method name="hasAttribute" returnType="Boolean" url="#ID-ElHasAttr">
+      <param name="name" mandatory="true" type="String"/>
+    </method>
+    <method name="hasAttributeNS" returnType="Boolean" throws="DOMException" url="#ID-ElHasAttrNS">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="localName" mandatory="true" type="String"/>
+    </method>
+    <method name="setIdAttribute" throws="DOMException" url="#ID-ElSetIdAttr">
+      <param name="name" mandatory="true" type="String"/>
+      <param name="isId" mandatory="true" type="Boolean"/>
+    </method>
+    <method name="setIdAttributeNS" throws="DOMException" url="#ID-ElSetIdAttrNS">
+      <param name="namespaceURI" mandatory="true" type="String"/>
+      <param name="localName" mandatory="true" type="String"/>
+      <param name="isId" mandatory="true" type="Boolean"/>
+    </method>
+    <method name="setIdAttributeNode" throws="DOMException" url="#ID-ElSetIdAttrNode">
+      <param name="idAttr" mandatory="true" type="Attr"/>
+      <param name="isId" mandatory="true" type="Boolean"/>
+    </method>
+  </class>
+
+  <class name="Text" url="#ID-1312295772" extends="CharacterData">
+    <!-- properties -->
+    <property name="isElementContentWhitespace" attribute="ReadOnly" type="Boolean" url="#Text3-isElementContentWhitespace"/>
+    <property name="wholeText" attribute="ReadOnly" type="String" url="#Text3-wholeText"/>
+
+    <!-- methods -->
+    <method name="splitText" returnType="Text" url="#ID-38853C1D">
+      <param name="offset" mandatory="true" type="Number"/>
+    </method>
+    <method name="replaceWholeText" returnType="Text" url="#Text3-replaceWholeText">
+      <param name="content" mandatory="true" type="String"/>
+    </method>
+  </class>
+
+  <class name="Comment" url="#ID-1728279322" extends="CharacterData">
+    <!-- properties -->
+
+    <!-- methods -->
+  </class>
+
+  <class name="TypeInfo" url="#TypeInfo">
+    <!-- properties -->
+    <property name="typeName" attribute="ReadOnly" type="String" url="#TypeInfo-typeName"/>
+    <property name="typeNamespace" attribute="ReadOnly" type="String" url="#TypeInfo-typeNamespace"/>
+
+    <!-- methods -->
+    <method name="isDerivedFrom" returnType="Boolean" url="#TypeInfo-isDerivedFrom">
+      <param name="typeNamespaceArg" mandatory="true" type="String"/>
+      <param name="typeNameArg" mandatory="true" type="String"/>
+      <param name="derivationMethod" mandatory="true" type=" Number"/>
+    </method>
+  </class>
+
+  <class name="UserDataHandler" url="#UserDataHandler">
+    <!-- properties -->
+    <!-- methods -->
+    <method name="handle" url="#ID-handleUserDataEvent">
+      <param name="param1" mandatory="true" type="Number"/>
+      <param name="param2" mandatory="true" type="String"/>
+      <param name="param3" mandatory="true"/>
+      <!-- The third parameter is an object that implements the any type interface. -->
+      <param name="param4" mandatory="true" type="Node"/>
+      <param name="param5" mandatory="true" type="Node"/>
+    </method>
+  </class>
+
+  <class name="DOMError" url="#ERROR-Interfaces-DOMError">
+    <!-- properties -->
+    <property name="severity" mandatory="true" type="Number" url="#ERROR-DOMError-severity"/>
+    <property name="message" mandatory="true" type="String" url="#ERROR-DOMError-message"/>
+    <property name="type" mandatory="true" type="String" url="#ERROR-DOMError-type"/>
+    <property name="relatedException" mandatory="true" type="Object" url="#ERROR-DOMError-relatedException"/>
+    <property name="relatedData" mandatory="true" type="Object" url="#ERROR-DOMError-relatedData"/>
+    <property name="location" mandatory="true" type="DOMLocator" url="#ERROR-DOMError-location"/>
+
+    <!-- methods -->
+  </class>
+
+  <class name="DOMErrorHandler" url="#ERROR-Interfaces-DOMErrorHandler">
+    <method name="handler" returnType="Boolean" url="l#ID-ERRORS-DOMErrorHandler-handleError">
+      <param name="error" mandatory="true" type="DOMError"/>
+    </method>
+  </class>
+
+  <class name="DOMLocator" url="#Interfaces-DOMLocator">
+    <!-- properties -->
+    <property name="lineNumber" mandatory="true" type="Number" url="#DOMLocator-line-number"/>
+    <property name="columnNumber" mandatory="true" type="Number" url="#DOMLocator-column-number"/>
+    <property name="byteOffset" mandatory="true" type="Number" url="#DOMLocator-byteOffset"/>
+    <property name="utf16Offset" mandatory="true" type="Number" url="#DOMLocator-utf16Offset"/>
+    <property name="relatedNode" mandatory="true" type="Node" url="#DOMLocator-node"/>
+    <property name="uri" mandatory="true" type="String" url="#DOMLocator-uri"/>
+
+    <!-- methods -->
+  </class>
+
+  <class name="DOMConfiguration" url="#DOMConfiguration">
+    <!-- properties -->
+    <property name="parameterNames" mandatory="true" type="DOMStringList" url="#DOMConfiguration-parameterNames"/>
+
+    <!-- methods -->
+    <method name="setParameter" throws="DOMException" url="#DOMConfiguration-property">
+      <param name="name" mandatory="true" type="String"/>
+      <param name="value" mandatory="true"/>
+      <!-- The value parameter is an object that implements the any type interface. -->
+    </method>
+    <method name="getParameter" throws="DOMException"
+            url="#DOMConfiguration-getParameter"> <!-- This function returns an object that implements the any type interface. -->
+      <param name="name" mandatory="true" type="String"/>
+    </method>
+    <method name="canSetParameter" returnType="Boolean" url="#DOMConfiguration-canSetParameter">
+      <param name="name" mandatory="true" type="String"/>
+      <param name="value" mandatory="true"/>
+      <!-- The value parameter is an object that implements the any type interface. -->
+    </method>
+  </class>
+
+  <class name="CDATASection" url="#ID-667469212" extends="Text">
+    <!-- properties -->
+
+    <!-- methods -->
+  </class>
+
+  <class name="DocumentType" url="#ID-412266927" extends="Node">
+    <!-- properties -->
+    <property name="name" attribute="ReadOnly" type="String" url="#ID-1844763134"/>
+    <property name="entities" attribute="ReadOnly" type="NamedNodeMap" url="#ID-1788794630"/>
+    <property name="notations" attribute="ReadOnly" type="NamedNodeMap" url="#ID-D46829EF"/>
+    <property name="publicId" attribute="ReadOnly" type="String" url="#ID-Core-DocType-publicId"/>
+    <property name="systemId" attribute="ReadOnly" type="String" url="#ID-Core-DocType-systemId"/>
+    <property name="internalSubset" attribute="ReadOnly" type="String" url="#ID-Core-DocType-internalSubset"/>
+
+    <!-- methods -->
+  </class>
+
+  <class name="Notation" url="#ID-5431D1B9" extends="Node">
+    <!-- properties -->
+    <property name="publicId" attribute="ReadOnly" type="String" url="#ID-54F2B4D0"/>
+    <property name="systemId" attribute="ReadOnly" type="String" url="#ID-E8AAB1D0"/>
+
+    <!-- methods -->
+  </class>
+
+  <class name="Entity" url="#ID-527DCFF2" extends="Node">
+    <!-- properties -->
+    <property name="publicId" attribute="ReadOnly" type="String" url="#ID-D7303025"/>
+    <property name="systemId" attribute="ReadOnly" type="String" url="#ID-D7C29F3E"/>
+    <property name="notationName" attribute="ReadOnly" type="String" url="#ID-6ABAEB38"/>
+    <property name="inputEncoding" attribute="ReadOnly" type="String" url="#Entity3-inputEncoding"/>
+    <property name="xmlEncoding" attribute="ReadOnly" type="String" url="#Entity3-encoding"/>
+    <property name="xmlVersion" attribute="ReadOnly" type="String" url="#Entity3-version"/>
+
+    <!-- methods -->
+  </class>
+
+  <class name="EntityReference" url="#ID-11C98490" extends="Node">
+    <!-- properties -->
+
+    <!-- methods -->
+  </class>
+
+  <class name="ProcessingInstruction" url="#ID-1004215813" extends="Node">
+    <!-- properties -->
+    <property name="target" attribute="ReadOnly" type="String" url="#ID-1478689192"/>
+    <property name="data" type="String" throws="DOMException" url="#ID-837822393"/>
+
+    <!-- methods -->
+  </class>
+</Library>

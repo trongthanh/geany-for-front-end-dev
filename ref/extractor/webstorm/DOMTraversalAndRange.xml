@@ -1,0 +1,157 @@
+<!--
+   Standard: ECMAScript binding for the Level 2 Document Object Model
+                Traversal and Range Specification definitions
+                                    ver. 1.1
+
+   Remarks:
+
+    default values
+      method:
+        static="false"    // (true/false) = static/non-static method
+        ECMA="true"       // (true/false) = supported/unsupported by ECMA standard
+      param:
+        mandatory="false" // (true/false) = mandatory/optional method parameter
+        infinite="false"  // (true/false) = in case of variable parameters number, e.g. (param1, [param2, [param3...)
+        ECMA="true"       // (true/false) = supported/unsupported by ECMA standard
+-->
+<Library>
+    <url>
+        <address id="1" default="true" url="http://www.w3.org/TR/DOM-Level-2-Traversal-Range/"/>
+    </url>
+
+    <class name="NodeIterator" url="traversal.html#Traversal-NodeIterator">
+        <!-- properties -->
+        <property name="root" attribute="ReadOnly" type="Node"/>
+        <property name="whatToShow" attribute="ReadOnly" type="Number"/>
+        <property name="filter" attribute="ReadOnly" type="NodeFilter"/>
+        <property name="expandEntityReferences" attribute="ReadOnly" type="Boolean"/>
+
+        <!-- methods -->
+        <method name="nextNode" returnType="Node" throws="DOMException"/>
+        <method name="previousNode" returnType="Node" throws="DOMException"/>
+        <method name="detach"/>
+    </class>
+
+    <class name="NodeFilter" url="traversal.html#Traversal-NodeFilter">
+        <!-- properties -->
+
+        <!-- methods -->
+        <method name="NodeFilter" returnType="Number">
+           <param name="param" mandatory="true" type="Node"/>
+        </method>
+    </class>
+
+    <class name="TreeWalker" url="traversal.html#Traversal-TreeWalker">
+        <!-- properties -->
+
+        <!-- methods -->
+        <method name="parentNode" returnType="Node"/>
+        <method name="firstChild" returnType="Node"/>
+        <method name="lastChild" returnType="Node"/>
+        <method name="previousSibling" returnType="Node"/>
+        <method name="nextSibling" returnType="Node"/>
+        <method name="previousNode" returnType="Node"/>
+        <method name="nextNode" returnType="Node"/>
+    </class>
+
+    <class name="DocumentTraversal" url="traversal.html#Traversal-Document">
+        <!-- properties -->
+
+        <!-- methods -->
+        <method name="createNodeIterator" returnType="NodeIterator" throws="DOMException">
+            <param name="root" mandatory="true" type="Node"/>
+            <param name="whatToShow" mandatory="true" type="Number"/>
+            <param name="filter" mandatory="true" type="NodeFilter"/>
+            <param name="entityReferenceExpansion" mandatory="true" type="Boolean"/>
+        </method>
+        <method name="createTreeWalker" returnType="TreeWalker" throws="DOMException">
+            <param name="root" mandatory="true" type="Node"/>
+            <param name="whatToShow" mandatory="true" type="Number"/>
+            <param name="filter" mandatory="true" type="NodeFilter"/>
+            <param name="entityReferenceExpansion" mandatory="true" type="Boolean"/>
+        </method>
+    </class>
+
+    <class name="Range" url="ranges.html#Level-2-Range-idl">
+        <!-- properties -->
+        <property name="startContainer" attribute="ReadOnly" type="Node" throws="DOMException"/>
+        <property name="startOffset" attribute="ReadOnly" type="Number" throws="DOMException"/>
+        <property name="endContainer" attribute="ReadOnly" type="Node" throws="DOMException"/>
+        <property name="endOffset" attribute="ReadOnly" type="Number" throws="DOMException"/>
+        <property name="collapsed" attribute="ReadOnly" type="Boolean" throws="DOMException"/>
+        <property name="commonAncestorContainer" attribute="ReadOnly" type="Node" throws="DOMException"/>
+
+        <!-- methods -->
+        <method name="setStart" throws="RangeException, DOMException">
+            <param name="refNode" mandatory="true" type="Node"/>
+            <param name="offset" mandatory="true" type="Number"/>
+        </method>
+        <method name="setEnd" throws="RangeException, DOMException">
+            <param name="refNode" mandatory="true" type="Node"/>
+            <param name="offset" mandatory="true" type="Number"/>
+        </method>
+        <method name="setStartBefore" throws="RangeException, DOMException">
+            <param name="refNode" mandatory="true" type="Node"/>
+        </method>
+        <method name="setStartAfter" throws="RangeException, DOMException">
+            <param name="refNode" mandatory="true" type="Node"/>
+        </method>
+        <method name="setEndBefore" throws="RangeException, DOMException">
+            <param name="refNode" mandatory="true" type="Node"/>
+        </method>
+        <method name="setEndAfter" throws="RangeException, DOMException">
+            <param name="refNode" mandatory="true" type="Node"/>
+        </method>
+        <method name="collapse" throws="DOMException">
+            <param name="toStart" mandatory="true" type="Boolean"/>
+        </method>
+        <method name="selectNode" throws="RangeException, DOMException">
+            <param name="refNode" mandatory="true" type="Node"/>
+        </method>
+        <method name="selectNodeContents" throws="RangeException, DOMException">
+            <param name="refNode" mandatory="true" type="Node"/>
+        </method>
+        <method name="compareBoundaryPoints" returnType="Number" throws="DOMException">
+            <param name="how" mandatory="true" type="Number"/>
+            <param name="sourceRange" mandatory="true" type="Range"/>
+        </method>
+        <method name="deleteContents" throws="DOMException"/>
+        <method name="extractContents" returnType="DocumentFragment" throws="DOMException"/>
+        <method name="cloneContents" returnType="DocumentFragment" throws="DOMException"/>
+        <method name="insertNode" throws="DOMException, RangeException">
+            <param name="newNode" mandatory="true" type="Node"/>
+        </method>
+        <method name="surroundContents" throws="DOMException, RangeException">
+            <param name="newParent" mandatory="true" type="Node"/>
+        </method>
+        <method name="cloneRange" returnType="Range" throws="DOMException"/>
+        <method name="toString" returnType="String" throws="DOMException"/>
+        <method name="detach" throws="DOMException"/>
+
+       <method name="createContextualFragment" browser="Gecko">
+          <param name="tagString" mandatory="true" type="String"/>
+       </method>
+    </class>
+
+    <class name="DocumentRange" url="ranges.html#Level-2-DocumentRange-idl">
+        <!-- properties -->
+
+        <!-- methods -->
+        <method name="createRange" returnType="Range"/>
+    </class>
+
+    <class name="RangeException" url="ranges.html#RangeException">
+        <!-- properties -->
+        <property name="code" type="Number"/>
+
+        <!-- methods -->
+    </class>
+
+  <class name="Element">
+    <property attribute="ReadOnly" type="Element" name="firstElementChild" />
+    <property attribute="ReadOnly" type="Element" name="lastElementChild" />
+    <property attribute="ReadOnly" type="Element" name="previousElementSibling" />
+    <property attribute="ReadOnly" type="Element" name="nextElementSibling" />
+    <property attribute="ReadOnly" type="Number" name="childElementCount" />
+  </class>
+</Library>

@@ -1,0 +1,101 @@
+<!--
+   Standard: ECMAScript binding for the Level 3 Document Object Model
+                                XPath definitions
+                                    ver. 1.1
+   Remarks:
+
+    default values
+      method:
+        static="false"    // (true/false) = static/non-static method
+        ECMA="true"       // (true/false) = supported/unsupported by ECMA standard
+      param:
+        mandatory="false" // (true/false) = mandatory/optional method parameter
+        infinite="false"  // (true/false) = in case of variable parameters number, e.g. (param1, [param2, [param3...)
+        ECMA="true"       // (true/false) = supported/unsupported by ECMA standard
+-->
+
+<Library>
+    <doc url="http://www.w3.org/TR/2004/NOTE-DOM-Level-3-XPath-20040226/xpath.html"/>
+
+    <class name="XPathException" url="#XPathException" browser="Gecko">
+        <!-- properties -->
+        <property name="code" type="Number"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="XPathEvaluator" url="#XPathEvaluator" browser="Gecko">
+        <!-- properties -->
+
+        <!-- methods -->
+        <method name="createExpression" returnType="XPathExpression" throws="XPathException, DOMException">
+            <param name="expression" mandatory="true" type="String"/>
+            <param name="resolver" mandatory="true" type="XPathNSResolver"/>
+        </method>
+        <method name="createNSResolver" returnType="XPathNSResolver">
+            <param name="nodeResolver" mandatory="true" type="Node"/>
+        </method>
+        <method name="evaluate" returnType="Object" throws="XPathException, DOMException">
+            <param name="expression" mandatory="true" type="String"/>
+            <param name="contextNode" mandatory="true" type="Node"/>
+            <param name="resolver" mandatory="true" type="XPathNSResolver"/>
+            <param name="type" mandatory="true" type="Number"/>
+            <param name="result" mandatory="true" type="Object"/>
+        </method>
+    </class>
+
+    <class name="XPathExpression" url="#XPathExpression" browser="Gecko">
+        <!-- properties -->
+
+        <!-- methods -->
+        <method name="evaluate" returnType="Object" throws="XPathException, DOMException">
+            <param name="contextNode" mandatory="true" type="Node"/>
+            <param name="type" mandatory="true" type="Number"/>
+            <param name="result" mandatory="true" type="Object"/>
+        </method>
+    </class>
+
+    <class name="XPathNSResolver" url="#XPathNSResolver" browser="Gecko">
+        <!-- properties -->
+
+        <!-- methods -->
+        <method name="lookupNamespaceURI" returnType="String">
+            <param name="prefix" mandatory="true" type="String"/>
+        </method>
+    </class>
+
+    <class name="XPathResult" url="#XPathResult" browser="Gecko">
+        <!-- properties -->
+        <property name="resultType" mandatory="true" type="Number"/>
+        <property name="numberValue" mandatory="true" type="Number" throws="XPathException"/>
+        <property name="stringValue" mandatory="true" type="String" throws="XPathException"/>
+        <property name="booleanValue" mandatory="true" type="Boolean" throws="XPathException"/>
+        <property name="singleNodeValue" mandatory="true" type="Node" throws="XPathException"/>
+        <property name="invalidIteratorState" mandatory="true" type="Boolean"/>
+        <property name="snapshotLength" mandatory="true" type="Number" throws="XPathException"/>
+
+        <property name="ORDERED_NODE_SNAPSHOT_TYPE" type="Number" value="7" static="true"/>
+        <property name="ORDERED_NODE_ITERATOR_TYPE" type="Number" value="5" static="true"/>
+        <property name="ANY_TYPE" type="Number" value="0" static="true"/>
+        <property name="BOOLEAN_TYPE" type="Number" value="3" static="true"/>
+        <property name="NUMBER_TYPE" type="Number" value="1" static="true"/>
+        <property name="STRING_TYPE" type="Number" value="2" static="true"/>
+        <property name="FIRST_ORDERED_NODE_TYPE" type="Number" value="9" static="true"/>
+        <property name="ANY_UNORDERED_NODE_TYPE" type="Number" value="8" static="true"/>
+        <property name="UNORDERED_NODE_ITERATOR_TYPE" type="Number" value="4" static="true"/>
+        <property name="UNORDERED_NODE_SNAPSHOT_TYPE" type="Number" value="6" static="true"/>
+
+        <!-- methods -->
+        <method name="iterateNext" returnType="Node"/>
+        <method name="snapshotItem" returnType="Node" throws="XPathException, DOMException">
+            <param name="index" mandatory="true" type="Number"/>
+        </method>
+    </class>
+
+    <class name="XPathNamespace" url="#XPathNamespace" extends="Node" browser="Gecko">
+        <!-- properties -->
+        <property name="ownerElement" attribute="ReadOnly" type="Element"/>
+
+        <!-- methods -->
+    </class>
+</Library>

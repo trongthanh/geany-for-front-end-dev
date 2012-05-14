@@ -1,0 +1,962 @@
+<Library>
+    <class name="Blob">
+      <method name="slice" returnType="Blob">
+        <param name="start" type="Number" mandatory="false"/>
+        <param name="end" type="Number" mandatory="false"/>
+        <param name="contentType" type="String" mandatory="false"/>
+      </method>
+      <property name="size" readOnly="true" type="Number" />
+      <property name="type" readOnly="true" type="String" />
+    </class>
+    <class name="FileList">
+      <property name="length" readOnly="true" type="Number"/>
+      <!--todo typed array of File : item-->
+    </class>
+    <class name="HTMLInputElement" createStaticVar="false">
+      <property type="FileList" name="files" readOnly="true" />
+    </class>
+    <class name="File" extends="Blob">
+      <property name="name" type="String" readOnly="true"/>
+      <property name="lastModifiedDate" type="Date" readOnly="true" />
+    </class>
+    <class name="FileReader" extends="EventTarget">
+      <method name="readAsArrayBuffer" returnType="void">
+        <param name="blob" type="Blob"/>
+      </method>
+      <method name="readAsBinaryString" returnType="void">
+        <param name="blob" type="Blob"/>
+      </method>
+      <method name="readAsText" returnType="void">
+        <param name="blob" type="Blob"/>
+        <param name="encoding" type="String" mandatory="false"/>
+      </method>
+      <method name="readAsDataURL" returnType="void">
+        <param name="blob" type="Blob"/>
+      </method>
+      <method name="abort" returnType="void"/>
+      <property name="EMPTY" type="Number" readOnly="true" value="0" />
+      <property name="LOADING" type="Number" readOnly="true" value="1" />
+      <property name="DONE" type="Number" readOnly="true" value="2" />
+      <property name="readyState" type="Number" readOnly="true" />
+      <property name="result" type="Object" readOnly="true" />
+      <property name="error" type="Error" readOnly="true" />
+
+      <property name="onloadstart" type="Function" writeOnly="true" />
+      <property name="onprogress" type="Function" writeOnly="true" />
+      <property name="onload" type="Function" writeOnly="true" />
+      <property name="onabort" type="Function" writeOnly="true" />
+      <property name="onerror" type="Function" writeOnly="true" />
+      <property name="onloadend" type="Function" writeOnly="true" />
+    </class>
+    <class name="Node">
+      <property name="dataset" readOnly="true" type="Object" />
+    </class>
+
+    <class name="DatabaseCallback">
+      <method name="handleEvent" returnType="void">
+        <param name="database" mandatory="true" type="Database" />
+      </method>
+    </class>
+    <class name="Notification" extends="EventTarget">
+      <method name="show" returnType="void"/>
+      <method name="cancel" returnType="void"/>
+      <property name="ondisplay" type="Function" />
+      <property name="onerror" type="Function" />
+      <property name="onclose" type="Function" />
+    </class>
+
+    <class name="MediaError"/>
+  
+    <class name="HTMLMediaElement" extends="HTMLElement">
+      <property name="error" type="MediaError" readOnly="true"/>
+      <property name="src" type="String" />
+      <property name="currentSrc" type="String" readOnly="true"/>
+      
+      <property name="NETWORK_EMPTY" type="Number" readOnly="true" value="0"/>
+      <property name="NETWORK_IDLE" type="Number" readOnly="true" value="1"/>
+      <property name="NETWORK_LOADING" type="Number" readOnly="true" value="2"/>
+      <property name="NETWORK_NO_SOURCE" type="Number" readOnly="true" value="3"/>
+      <property name="networkState" type="Number" readOnly="true"/>
+      
+      <property name="preload" type="String" />
+      <property name="buffered" type="TimeRanges" readOnly="true"/>
+      <method name="load" returnType="void"/>
+      <method name="canPlayType" returnType="String">
+        <param name="type" type="String" mandatory="true"/>
+      </method>
+      
+      <property name="HAVE_NOTHING" type="Number" readOnly="true" value="0"/>
+      <property name="HAVE_METADATA" type="Number" readOnly="true" value="1"/>
+      <property name="HAVE_CURRENT_DATA" type="Number" readOnly="true" value="2"/>
+      <property name="HAVE_FUTURE_DATA" type="Number" readOnly="true" value="3"/>
+      <property name="HAVE_ENOUGH_DATA" type="Number" readOnly="true" value="4"/>
+      <property name="readyState" type="Number" readOnly="true"/>
+      <property name="seeking" type="Boolean" readOnly="true"/>
+      
+      <property name="currentTime" type="Number" />
+      <property name="startTime" type="Number" readOnly="true"/>
+      <property name="duration" type="Number" readOnly="true"/>
+      <property name="paused" type="Boolean" readOnly="true"/>
+      <property name="defaultPlaybackRate" type="Number" />
+      <property name="playbackRate" type="Number" />
+      <property name="played" type="TimeRanges" readOnly="true"/>
+      <property name="seekable" type="TimeRanges" readOnly="true"/>
+      <property name="ended" type="Boolean" readOnly="true"/>
+      <property name="autoplay" type="Boolean" />
+      <property name="loop" type="Boolean" />
+            
+      <method name="play" returnType="void"/>
+      <method name="pause" returnType="void"/>
+      
+      <property name="controls" type="Boolean" />
+      <property name="volume" type="Number" />
+      <property name="muted" type="Boolean" />
+      
+      <property name="tracks" type="Array" readOnly="true"/> <!--TimeTrack-->
+      <method name="addTrack" returnType="MutableTimedTrack">
+        <param name="label" mandatory="true" type="String"/>
+        <param name="kind" mandatory="true" type="String"/>
+        <param name="language" mandatory="true" type="String"/>
+      </method>
+    </class>
+    <class name="MediaError">
+      <property name="MEDIA_ERR_ABORTED" type="Number" readOnly="true" value="1"/>
+      <property name="MEDIA_ERR_NETWORK" type="Number" readOnly="true" value="2"/>
+      <property name="MEDIA_ERR_DECODE" type="Number" readOnly="true" value="3"/>
+      <property name="MEDIA_ERR_SRC_NOT_SUPPORTED" type="Number" readOnly="true" value="4"/>
+      
+      <property name="code" type="Number" readOnly="true"/>
+    </class>
+    <class name="TimeRanges">
+      <property name="length" type="Number" readOnly="true"/>
+      <method name="start" returnType="Number">
+        <param name="index" type="Number" mandatory="true"/>
+      </method>
+      <method name="end" returnType="Number">
+        <param name="index" type="Number" mandatory="true"/>
+      </method>
+    </class>
+    <class name="TimedTrack">
+      <property name="kind" type="String" readOnly="true"/>
+      <property name="label" type="String" readOnly="true"/>
+      <property name="language" type="String" readOnly="true"/>
+      
+      <property name="NONE" type="Number" readOnly="true" value="0"/>
+      <property name="LOADING" type="Number" readOnly="true" value="1"/>
+      <property name="LOADED" type="Number" readOnly="true" value="2"/>
+      <property name="ERROR" type="Number" readOnly="true" value="3"/>
+      <property name="readyState" type="Number" readOnly="true"/>
+      <property name="onload" type="Function" readOnly="true"/>
+      <property name="onerror" type="Function" readOnly="true"/>
+      
+      <property name="OFF" type="Number" readOnly="true" value="0"/>
+      <property name="HIDDEN" type="Number" readOnly="true" value="1"/>
+      <property name="SHOWING" type="Number" readOnly="true" value="2"/>
+      <property name="mode" type="Number" />
+      
+      <property name="cues" type="TimedTrackCueList" readOnly="true"/>
+      <property name="activeCues" type="TimedTrackCueList" readOnly="true"/>
+      <property name="onentercue" type="Function" readOnly="true"/>
+      <property name="onexitcue" type="Function" readOnly="true"/>
+    </class>
+    <class name="MutableTimedTrack" extends="TimedTrack">
+      <method name="addCue" returnType="void">
+        <param name="cue" mandatory="true" type="TimedTrackCue"/>
+      </method>
+      <method name="removeCue" returnType="void">
+        <param name="cue" mandatory="true" type="TimedTrackCue"/>
+      </method>
+    </class>
+    <class name="TimedTrackCue">
+      <property name="track" type="TimedTrack" readOnly="true"/>
+      <property name="id" type="String" readOnly="true"/>
+      <property name="startTime" type="Number" readOnly="true"/>
+      <property name="endTime" type="Number" readOnly="true"/>
+      <property name="pauseOnExit" type="Boolean" readOnly="true"/>
+      
+      <property name="direction" type="String" readOnly="true"/>
+      <property name="snapToLines" type="Boolean" readOnly="true"/>
+      <property name="linePosition" type="Number" readOnly="true"/>
+      <property name="textPosition" type="Number" readOnly="true"/>
+      <property name="size" type="Number" readOnly="true"/>
+      <property name="alignment" type="String" readOnly="true"/>
+      
+      <property name="voice" type="String" readOnly="true"/>
+      <method name="getCueAsSource" returnType="String"/>
+      <method name="getCueAsHTML" returnType="DocumentFragment"/>
+      <method name="TimedTrackCue" returnType="TimedTrackCue">
+        <param name="id" mandatory="true" type="String"/>
+        <param name="startTime" mandatory="true" type="Number"/>
+        <param name="endTime" mandatory="true" type="Number"/>
+        <param name="settings" mandatory="true" type="String"/>
+        <param name="text" mandatory="true" type="String"/>
+        <param name="pauseOnExit" type="Boolean"/>
+      </method>      
+    </class>
+    <class name="TimedTrackCueList">
+      <property name="length" type="Number" readOnly="true"/>
+      <method name="getCueById" returnType="TimedTrackCue">
+        <param name="id" type="String" mandatory="true"/>
+      </method>
+    </class>
+    <class name="HTMLVideoElement" extends="HTMLMediaElement">
+      <property name="width" type="Number" />
+      <property name="height" type="Number" />
+      <property name="videoWidth" type="Number" readOnly="true"/>
+      <property name="videoHeight" type="Number" readOnly="true" />
+      <property name="poster" type="String" />      
+    </class>
+    <class name="Database">
+      <method name="transaction">
+        <param name="callback" mandatory="true" type="SQLTransactionCallback|SQLTransactionSyncCallback|Function" />
+        <param name="errorCallback" type="SQLTransactionErrorCallback|Function" />
+        <param name="successCallback" type="SQLVoidCallback|Function" />
+      </method>
+      <method name="readTransaction">
+        <param name="callback" mandatory="true" type="SQLTransactionCallback|SQLTransactionSyncCallback|Function" />
+        <param name="errorCallback" type="SQLTransactionErrorCallback|Function" />
+        <param name="successCallback" type="SQLVoidCallback|Function" />
+      </method>
+      <property name="version" type="String" readOnly="true"/>
+      <method name="changeVersion">
+        <param name="oldVersion" mandatory="true" type="String" />
+        <param name="newVersion" mandatory="true" type="String" />
+        <param name="callback" type="SQLTransactionCallback|Function" />
+        <param name="errorCallback" type="SQLTransactionErrorCallback|Function" />
+        <param name="successCallback" type="SQLVoidCallback|Function" />
+      </method>
+    </class>
+  
+    <class name="SQLVoidCallback">
+      <method name="handleEvent" returnType="void"/>
+    </class>
+  
+    <class name="SQLTransactionCallback">
+      <method name="handleEvent" returnType="void">
+        <param name="transaction" type="SQLTransaction" />
+      </method>
+    </class>
+  
+    <class name="SQLTransactionErrorCallback">
+      <method name="handleEvent" returnType="void">
+        <param name="error" type="SQLError" />
+      </method>
+    </class>
+  
+    <class name="SQLTransaction">
+      <method name="executeSql" returnType="void">
+        <param name="sqlStatement" mandatory="true" type="String" />
+        <param name="arguments" type="Arguments" />
+        <param name="callback" type="SQLStatementCallback" />
+        <param name="errorCallback" type="SQLStatementErrorCallback" />
+      </method>
+    </class>
+  
+    <class name="SQLStatementCallback">
+      <method name="handleEvent" returnType="void">
+        <param name="transaction" type="SQLTransaction" />
+        <param name="resultSet" type="SQLResultSet" />
+      </method>
+    </class>
+  
+    <class name="SQLStatementErrorCallback">
+      <method name="handleEvent" returnType="Boolean">
+        <param name="transaction" type="SQLTransaction" />
+        <param name="error" type="SQLError" />
+      </method>
+    </class>
+  
+    <class name="SQLTransactionSyncCallback">
+      <method name="handleEvent" returnType="void">
+        <param name="transaction" type="SQLTransactionSync" />
+      </method>
+    </class>
+  
+    <class name="SQLTransactionSync">
+      <method name="executeSql" returnType="SQLResultSet">
+        <param name="sqlStatement" type="String" mandatory="true" />
+        <param name="arguments" type="Arguments"/>
+      </method>
+    </class>
+  
+    <class name="SQLResultSet">
+      <property name="insertId" type="Number" readOnly="true"/>
+      <property name="rowsAffected" type="Number" readOnly="true"/>
+      <property name="rows" type="SQLResultSetRowList" readOnly="true"/>
+    </class>
+  
+    <class name="SQLResultSetRowList">
+      <property name="length" type="Number" readOnly="true"/>
+      <method name="item">
+        <param name="index" type="Number" mandatory="true" />
+      </method>
+    </class>
+  
+    <class name="SQLError">
+      <property name="UNKNOWN_ERR" type="Number" readOnly="true" value="0"/>
+      <property name="DATABASE_ERR" type="Number" readOnly="true" value="1"/>
+      <property name="VERSION_ERR" type="Number" readOnly="true" value="2"/>
+      <property name="TOO_LARGE_ERR" type="Number" readOnly="true" value="3"/>
+      <property name="QUOTA_ERR" type="Number" readOnly="true" value="4"/>
+      <property name="SYNTAX_ERR" type="Number" readOnly="true" value="5"/>
+      <property name="CONSTRAINT_ERR" type="Number" readOnly="true" value="6"/>
+      <property name="TIMEOUT_ERR" type="Number" readOnly="true" value="7"/>
+      <property name="code" type="Number" readOnly="true" />
+      <property name="message" type="String" readOnly="true" />
+    </class>
+  
+    <class name="MessageEvent" extends="Event">
+      <property name="data" type="String" readOnly="true" />
+      <property name="origin" type="String" readOnly="true" />
+      <property name="lastEventId" type="String" readOnly="true" />
+      <property name="source" type="Window" readOnly="true" />
+
+      <property name="ports" type="MessagePortArray" readOnly="true"/>
+    </class>
+
+    <class name="History">
+      <property name="length" type="Number" readOnly="true"/>
+      <property name="state" type="Object" readOnly="true"/>
+
+      <method name="pushState" returnType="void">
+        <param name="data" type="Object"/>
+        <param name="title" type="String"/>
+        <param name="url" type="String" mandatory="false"/>
+      </method>
+      <method name="replaceState" returnType="void">
+        <param name="data" type="Object"/>
+        <param name="title" type="String"/>
+        <param name="url" type="String" mandatory="false"/>
+      </method>
+    </class>
+
+    <class name="Location">
+      <method name="assign" returnType="void">
+        <param name="url" type="String"/>
+      </method>
+      <method name="resolveURL" returnType="String">
+        <param name="url" type="String"/>
+      </method>
+    </class>
+
+    <class name="SQLException" extends="Error">
+      <property name="UNKNOWN_ERR" type="Number" readOnly="true" value="0"/>
+      <property name="DATABASE_ERR" type="Number" readOnly="true" value="1"/>
+      <property name="VERSION_ERR" type="Number" readOnly="true" value="2"/>
+      <property name="TOO_LARGE_ERR" type="Number" readOnly="true" value="3"/>
+      <property name="QUOTA_ERR" type="Number" readOnly="true" value="4"/>
+      <property name="SYNTAX_ERR" type="Number" readOnly="true" value="5"/>
+      <property name="CONSTRAINT_ERR" type="Number" readOnly="true" value="6"/>
+      <property name="TIMEOUT_ERR" type="Number" readOnly="true" value="7"/>
+      <property name="code" type="Number" readOnly="true" />
+      <property name="message" type="String" readOnly="true" />
+    </class>
+
+    <class name="HTMLImageElement" createStaticVar="false">
+      <property name="crossOrigin" type="String"/>
+    </class>
+
+    <class name="HTMLCanvasElement" extends="HtmlElement">
+      <property name="width" type="Number" />
+      <property name="height" type="Number" />
+      <method name="getContext" returnType="CanvasContext">
+        <param name="context" mandatory="true" type="String" />
+        <param name="args" mandatory="false" type="*" rest="true" />
+      </method>
+      <method name="toDataURL" returnType="String" >
+        <param name="string" type="String" />
+        <param name="args" />
+      </method>
+    </class>
+  
+    <class name="CanvasContext">
+      <property name="canvas" type="HTMLCanvasElement" readOnly="true"/> <!--back-reference to the canvas-->
+      <method name="save" />  <!--push state on state stack-->
+      <method name="restore" /> <!--pop state stack and restore state-->
+
+      <!--transformations (default transform is the identity matrix)-->
+      <method name="scale" >
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+      </method>
+
+      <method name="rotate" >
+        <param name="angle" mandatory="true" type="Number" />
+      </method>
+      <method name="translate" >
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+      </method>
+      
+      <method name="transform" >
+        <param name="m11" mandatory="true" type="Number" />
+        <param name="m12" mandatory="true" type="Number" />
+        <param name="m21" mandatory="true" type="Number" />
+        <param name="m22" mandatory="true" type="Number" />
+        <param name="dx" mandatory="true" type="Number" />
+        <param name="dy" mandatory="true" type="Number" />
+      </method>
+      
+      <method name="setTransform" >
+        <param name="m11" mandatory="true" type="Number" />
+        <param name="m12" mandatory="true" type="Number" />
+        <param name="m21" mandatory="true" type="Number" />
+        <param name="m22" mandatory="true" type="Number" />
+        <param name="dx" mandatory="true" type="Number" />
+        <param name="dy" mandatory="true" type="Number" />
+      </method>
+
+      <!--compositing-->
+      <property name="globalAlpha" type="Number" /> <!--(default 1.0)-->
+      <property name="globalCompositeOperation" type="String" />  <!--(default source-over)-->
+      <property name="fillStyle" />  <!--(default black)-->
+      <property name="strokeStyle" /> <!--(default black)-->
+      
+      <method name="createLinearGradient" returnType="CanvasGradient">
+        <param name="x0" mandatory="true" type="Number" />
+        <param name="y0" mandatory="true" type="Number" />
+        <param name="x1" mandatory="true" type="Number" />
+        <param name="y1" mandatory="true" type="Number" />
+      </method>
+      
+      <method name="createRadialGradient" returnType="CanvasGradient">
+        <param name="x0" mandatory="true" type="Number" />
+        <param name="y0" mandatory="true" type="Number" />
+        <param name="r0" mandatory="true" type="Number" />
+        <param name="x1" mandatory="true" type="Number" />
+        <param name="y1" mandatory="true" type="Number" />
+        <param name="r1" mandatory="true" type="Number" />
+      </method>
+      
+      <method name="createPattern" returnType="CanvasPattern">
+        <param name="image" mandatory="true" type="HTMLImageElement|HTMLCanvasElement|HTMLVideoElement" />
+        <param name="repetition" mandatory="true" type="String" />
+      </method>
+      
+      <!--line caps/joins-->
+      <property name="lineWidth" type="Number"/> <!--default 1-->
+      <property name="lineCap" type="String"/> <!--"butt", "round", "square" (default "butt")--> 
+      <property name="lineJoin" type="String"/> <!--"round", "bevel", "miter" (default "miter")--> 
+      <property name="miterLimit" type="Number"/> <!--(default 10)--> 
+      
+      <!--shadows-->
+      <property name="shadowOffsetX" type="Number"/> <!--(default 0)-->
+      <property name="shadowOffsetY" type="Number"/> <!--(default 0)-->
+      <property name="shadowBlur" type="Number"/> <!--(default 0)-->
+      <property name="shadowColor" type="String"/> <!--transparent black-->
+      
+      <!--rects-->
+      <method name="clearRect" >
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+        <param name="w" mandatory="true" type="Number" />
+        <param name="h" mandatory="true" type="Number" />
+      </method>
+      <method name="fillRect" >
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+        <param name="w" mandatory="true" type="Number" />
+        <param name="h" mandatory="true" type="Number" />
+      </method>
+      <method name="strokeRect" >
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+        <param name="w" mandatory="true" type="Number" />
+        <param name="h" mandatory="true" type="Number" />
+      </method>
+      
+      <!--path API-->
+      <method name="beginPath" />
+      <method name="closePath" />
+      <method name="moveTo" >
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+      </method>
+      <method name="lineTo" >
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+      </method>
+      
+      <method name="quadraticCurveTo" >
+        <param name="cpx" mandatory="true" type="Number" />
+        <param name="cpy" mandatory="true" type="Number" />
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+      </method>
+      
+      <method name="bezierCurveTo" >
+        <param name="cp1x" mandatory="true" type="Number" />
+        <param name="cp1y" mandatory="true" type="Number" />
+        <param name="cp2x" mandatory="true" type="Number" />
+        <param name="cp2y" mandatory="true" type="Number" />
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+      </method>
+      
+      <method name="arcTo" >
+        <param name="x1" mandatory="true" type="Number" />
+        <param name="y1" mandatory="true" type="Number" />
+        <param name="x2" mandatory="true" type="Number" />
+        <param name="y2" mandatory="true" type="Number" />
+        <param name="radius" mandatory="true" type="Number" />
+      </method>
+      
+      <method name="rect" >
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+        <param name="w" mandatory="true" type="Number" />
+        <param name="h" mandatory="true" type="Number" />
+      </method>
+      
+      <method name="arc" >
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+        <param name="radius" mandatory="true" type="Number" />
+        <param name="startAngle" mandatory="true" type="Number" />
+        <param name="endAngle" mandatory="true" type="Number" />
+        <param name="anticlockwise" mandatory="true" type="Boolean" />
+      </method>
+      
+      <method name="fill" />
+      <method name="stroke" />
+      <method name="clip" />
+      
+      <method name="isPointInPath" returnType="Boolean">
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+      </method>
+      
+      <!--focus management-->
+      <method name="drawFocusRing" >
+        <param name="element" mandatory="true" type="Element" />
+        <param name="xCaret" mandatory="true" type="Number" />
+        <param name="yCaret" mandatory="true" type="Number" />
+        <param name="canDrawCustom" type="Boolean" />
+      </method>
+      
+      <!--text-->
+      <property name="font" type="String"/> <!--default 10px sans-serif-->
+      <property name="textAlign" type="String"/> <!--"start", "end", "left", "right", "center" (default: "start")-->
+      <property name="textBaseline" type="String"/> <!--"top", "hanging", "middle", "alphabetic", "ideographic", "bottom" (default: "alphabetic")-->
+      
+      <method name="fillText" >
+        <param name="text" mandatory="true" type="String" />
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+        <param name="maxWidth" type="Number" />
+      </method>
+      
+      <method name="strokeText" >
+        <param name="text" mandatory="true" type="String" />
+        <param name="x" mandatory="true" type="Number" />
+        <param name="y" mandatory="true" type="Number" />
+        <param name="maxWidth" type="Number" />
+      </method>
+
+      <method name="measureText" returnType="TextMetrics">
+        <param name="text" mandatory="true" type="String" />
+      </method>
+      
+      <!--drawing images-->
+      <method name="drawImage" >
+        <param name="img_elem" mandatory="true" type="Element" /> <!--HTMLImageElement|HTMLCanvasElement|HTMLVideo-->
+        <param name="dx_or_sx" mandatory="true" type="Number" />
+        <param name="dy_or_sy" mandatory="true" type="Number" />
+        <param name="dw_or_sw" type="Number" />
+        <param name="dh_or_sh" type="Number" />
+        
+        <param name="dx" type="Number" />
+        <param name="dy" type="Number" />
+        <param name="dw" type="Number" />
+        <param name="dh" type="Number" />
+      </method>
+      <method name="createImageData" returnType="ImageData">
+        <param name="imagedata_or_sw" mandatory="true" type="ImageData|Number" />
+        <param name="sh" type="Number" />
+      </method>
+      <method name="getImageData" returnType="ImageData">
+        <param name="sx" mandatory="true" type="Number" />
+        <param name="sy" mandatory="true" type="Number" /> 
+        <param name="sw" mandatory="true" type="Number" />
+        <param name="sh" mandatory="true" type="Number" />
+      </method>
+      
+      <method name="putImageData">
+        <param name="image_data" mandatory="true" type="ImageData" />
+        <param name="dx" mandatory="true" type="Number" />
+        <param name="dy" mandatory="true" type="Number" /> 
+        <param name="dirtyX" type="Number" /> 
+        <param name="dirtyY" type="Number" /> 
+        <param name="dirtyWidth" type="Number" /> 
+        <param name="dirtyHeight" type="Number" /> 
+      </method>
+    </class>
+  <class name="CanvasGradient">
+    <method name="addColorStop">
+        <param name="offset" mandatory="true" type="Number" />
+        <param name="color" mandatory="true" type="String" /> 
+      </method>
+  </class>
+  <class name="ImageData">
+    <property name="data" type="CanvasPixelArray" readOnly="true"/>
+    <property name="width" type="Number" readOnly="true" />
+    <property name="height" type="Number" readOnly="true" />
+  </class>
+  <class name="CanvasPixelArray">
+    <property name="length" type="Number" readOnly="true" />
+  </class>
+  <class name="TextMetrics">
+    <property name="width" type="Number" readOnly="true" />
+  </class>
+  <class name="window" createStaticVar="false">
+    <method name="webkitRequestAnimationFrame" returnType="Number">
+      <param name="callback" type="Function" mandatory="true"/>
+      <param name="element" type="Element" mandatory="true"/>
+    </method>
+    <method name="webkitCancelRequestAnimationFrame" returnType="void">
+      <param name="handle" mandatory="true"/>
+    </method>
+    <method name="msRequestAnimationFrame" returnType="Number">
+      <param name="callback" type="Function" mandatory="true"/>
+    </method>
+    <method name="msCancelRequestAnimationFrame" returnType="void">
+      <param name="handle" mandatory="true"/>
+    </method>
+    <method name="oRequestAnimationFrame" returnType="Number">
+      <param name="callback" type="Function" mandatory="true"/>
+    </method>
+    <method name="oCancelRequestAnimationFrame" returnType="void">
+      <param name="handle" mandatory="true"/>
+    </method>
+
+    <method name="mozRequestAnimationFrame" returnType="Number">
+      <param name="callback" type="Function" mandatory="true"/>
+    </method>
+    <method name="mozCancelRequestAnimationFrame" returnType="void">
+      <param name="handle" mandatory="true"/>
+    </method>
+    <method name="requestAnimationFrame" returnType="Number">
+      <param name="callback" type="Function" mandatory="true"/>
+      <param name="element" type="Element" mandatory="true"/>
+    </method>
+
+    <method name="cancelRequestAnimationFrame" returnType="void">
+      <param name="handle" mandatory="true"/>
+    </method>
+
+    <method name="importScripts" returnType="void">
+      <param name="urls" type="String" rest="true" />
+    </method>
+    <property name="navigator" type="WorkerNavigator" readOnly="true" />
+    <method name="openDatabase" returnType="Database">
+        <param name="name" mandatory="true" type="String" />
+        <param name="version" mandatory="true" type="String" />
+        <param name="displayName" mandatory="true" type="String" />
+        <param name="estimatedSize" mandatory="true" type="Number" />
+        <param name="creationCallback" type="DatabaseCallback|Function" />
+      </method>
+    <method name="openDatabaseSync" returnType="Database">
+        <param name="name" mandatory="true" type="String" />
+        <param name="version" mandatory="true" type="String" />
+        <param name="displayName" mandatory="true" type="String" />
+        <param name="estimatedSize" mandatory="true" type="Number" />
+        <param name="creationCallback" type="DatabaseCallback|Function" />
+      </method>
+    <property name="localStorage" type="Storage" readOnly="true"/>
+    <property name="sessionStorage" type="Storage" readOnly="true"/>
+  </class>
+  <class name="WorkerNavigator"/>
+  <class name="AbstractWorker">
+    <property name="onerror" type="Function"/>
+  </class>
+  <class name="Worker" extends="AbstractWorker">
+    <method name="terminate" />
+    <method name="postMessage">
+      <param name="message" mandatory="true"/> 
+      <param name="ports" type="MessagePortArray"/> 
+    </method>
+    <property name="onmessage" type="Function"/>
+  </class>
+  <class name="SharedWorker" extends="AbstractWorker">
+    <property name="port" type="Function" readOnly="true"/>
+  </class>
+  
+  <class name="Storage">
+    <property name="length" type="Number" readOnly="true"/>
+    <method name="key" returnType="String">
+      <param name="index" mandatory="true" type="Number"/>
+    </method>
+    <method name="getItem" >
+      <param name="key" mandatory="true" type="String"/>
+    </method>
+    <method name="setItem" returnType="void">
+      <param name="key" mandatory="true" type="String"/>
+      <param name="data" mandatory="true" />
+    </method>
+    <method name="removeItem" returnType="void">
+      <param name="key" mandatory="true" type="String"/>
+    </method>
+    
+    <method name="clear" returnType="void"/>
+  </class>
+
+  <class name="WebSocket">
+    <property name="url" type="String" />
+    <property name="CONNECTING" type="Number" readOnly="true" value="0"/>
+    <property name="OPEN" type="Number" readOnly="true" value="1"/>
+    <property name="CLOSING" type="Number" readOnly="true" value="2"/>
+    <property name="CLOSED" type="Number" readOnly="true" value="3"/>
+    
+    <property name="readyState" type="Number" readOnly="true" />
+    <property name="bufferedAmount" type="Number" readOnly="true" />
+    <property name="onopen" type="Function" />
+    <property name="onmessage" type="Function" />
+    <property name="onerror" type="Function" />
+    <property name="onclose" type="Function" />
+    
+    <method name="send" returnType="Boolean">
+      <param name="data" mandatory="true" type="String"/>
+    </method>
+    <method name="close" returnType="void"/>
+  </class>
+  
+  <class name="ArrayBuffer" createStaticVar="false">
+    <method name="__constructor__">
+      <param name="length" mandatory="true" type="Number"/>
+    </method>
+    <property name="byteLength" type="Number"/>
+  </class>
+
+  <class name="DataView" createStaticVar="false">
+    <property name="buffer" type="ArrayBuffer" readOnly="true"/>
+    <property name="byteOffset" type="Number" readOnly="true"/>
+    <property name="byteLength" type="Number" readOnly="true"/>
+
+    <method name="__constructor__">
+      <param name="bufferOrArrayOrLength" mandatory="true"/>
+      <param name="byteOffset" type="Number"/>
+      <param name="length" type="Number"/>
+    </method>
+
+    <method name="getInt8" returnType="Number">
+      <param name="byteOffset" type="Number"/>
+    </method>
+  </class>
+
+  <class name="ArrayBufferView" createStaticVar="false">
+    <method name="__constructor__"/>
+    <property name="buffer" type="ArrayBuffer" readOnly="true"/>
+    <property name="byteOffset" type="Number" readOnly="true"/>
+    <property name="byteLength" type="Number" readOnly="true"/>
+  </class>
+  
+  <class name="Int8Array" extends="ArrayBufferView" createStaticVar="false">
+    <method name="__constructor__">
+      <param name="bufferOrArrayOrLength" mandatory="true"/>
+      <param name="byteOffset" type="Number"/>
+      <param name="length" type="Number"/>
+    </method>
+    <property name="length" readOnly="true" />
+    <property name="BYTES_PER_ELEMENT" readOnly="true" type="Number" value="8"/>
+
+    <method name="set" returnType="void">
+      <param name="array" type="$__Type__$" mandatory="true"/>
+      <param name="offset" type="Number"/>
+    </method>
+
+    <method name="subarray" returnType="$__Type__$">
+      <param name="begin" type="Number" mandatory="true"/>
+      <param name="end" type="Number"/>
+    </method>
+  </class>
+
+  <class name="Uint8Array" extends="ArrayBufferView" createStaticVar="false">
+    <method name="__constructor__">
+      <param name="bufferOrArrayOrLength" mandatory="true"/>
+      <param name="byteOffset" type="Number"/>
+      <param name="length" type="Number"/>
+    </method>
+    <property name="length" readOnly="true" />
+    <property name="BYTES_PER_ELEMENT" readOnly="true" type="Number" value="8"/>
+
+    <method name="set" returnType="void">
+      <param name="array" type="$__Type__$" mandatory="true"/>
+      <param name="offset" type="Number"/>
+    </method>
+
+    <method name="subarray" returnType="$__Type__$">
+      <param name="begin" type="Number" mandatory="true"/>
+      <param name="end" type="Number"/>
+    </method>
+  </class>
+  <class name="Int16Array" extends="ArrayBufferView" createStaticVar="false">
+    <method name="__constructor__">
+      <param name="bufferOrArrayOrLength" mandatory="true"/>
+      <param name="byteOffset" type="Number"/>
+      <param name="length" type="Number"/>
+    </method>
+    <property name="length" readOnly="true" />
+    <property name="BYTES_PER_ELEMENT" readOnly="true" type="Number" value="16"/>
+
+    <method name="set" returnType="void">
+      <param name="array" type="$__Type__$" mandatory="true"/>
+      <param name="offset" type="Number"/>
+    </method>
+
+    <method name="subarray" returnType="$__Type__$">
+      <param name="begin" type="Number" mandatory="true"/>
+      <param name="end" type="Number"/>
+    </method>
+  </class>
+  <class name="Uint16Array" extends="ArrayBufferView" createStaticVar="false">
+    <method name="__constructor__">
+      <param name="bufferOrArrayOrLength" mandatory="true"/>
+      <param name="byteOffset" type="Number"/>
+      <param name="length" type="Number"/>
+    </method>
+    <property name="length" readOnly="true" />
+    <property name="BYTES_PER_ELEMENT" readOnly="true" type="Number" value="16"/>
+
+    <method name="set" returnType="void">
+      <param name="array" type="$__Type__$" mandatory="true"/>
+      <param name="offset" type="Number"/>
+    </method>
+
+    <method name="subarray" returnType="$__Type__$">
+      <param name="begin" type="Number" mandatory="true"/>
+      <param name="end" type="Number"/>
+    </method>
+  </class>
+  <class name="Int32Array" extends="ArrayBufferView" createStaticVar="false">
+    <method name="__constructor__">
+      <param name="bufferOrArrayOrLength" mandatory="true"/>
+      <param name="byteOffset" type="Number"/>
+      <param name="length" type="Number"/>
+    </method>
+    <property name="length" readOnly="true" />
+    <property name="BYTES_PER_ELEMENT" readOnly="true" type="Number" value="32"/>
+
+    <method name="set" returnType="void">
+      <param name="array" type="$__Type__$" mandatory="true"/>
+      <param name="offset" type="Number"/>
+    </method>
+
+    <method name="subarray" returnType="$__Type__$">
+      <param name="begin" type="Number" mandatory="true"/>
+      <param name="end" type="Number"/>
+    </method>
+  </class>
+  <class name="Uint32Array" extends="ArrayBufferView" createStaticVar="false">
+    <method name="__constructor__">
+      <param name="bufferOrArrayOrLength" mandatory="true"/>
+      <param name="byteOffset" type="Number"/>
+      <param name="length" type="Number"/>
+    </method>
+    <property name="length" readOnly="true" />
+    <property name="BYTES_PER_ELEMENT" readOnly="true" type="Number" value="32"/>
+
+    <method name="set" returnType="void">
+      <param name="array" type="$__Type__$" mandatory="true"/>
+      <param name="offset" type="Number"/>
+    </method>
+
+    <method name="subarray" returnType="$__Type__$">
+      <param name="begin" type="Number" mandatory="true"/>
+      <param name="end" type="Number"/>
+    </method>
+  </class>
+
+  <class name="Float32Array" extends="ArrayBufferView" createStaticVar="false">
+    <method name="__constructor__">
+      <param name="bufferOrArrayOrLength" mandatory="true"/>
+      <param name="byteOffset" type="Number"/>
+      <param name="length" type="Number"/>
+    </method>
+    <property name="length" readOnly="true" />
+    <property name="BYTES_PER_ELEMENT" readOnly="true" type="Number" value="32"/>
+
+    <method name="set" returnType="void">
+      <param name="array" type="$__Type__$" mandatory="true"/>
+      <param name="offset" type="Number"/>
+    </method>
+
+    <method name="subarray" returnType="$__Type__$">
+      <param name="begin" type="Number" mandatory="true"/>
+      <param name="end" type="Number"/>
+    </method>
+  </class>
+
+  <class name="Float64Array" extends="ArrayBufferView" createStaticVar="false">
+    <method name="__constructor__">
+      <param name="bufferOrArrayOrLength" mandatory="true"/>
+      <param name="byteOffset" type="Number"/>
+      <param name="length" type="Number"/>
+    </method>
+    <property name="length" readOnly="true" />
+    <property name="BYTES_PER_ELEMENT" readOnly="true" type="Number" value="64"/>
+
+    <method name="set" returnType="void">
+      <param name="array" type="$__Type__$" mandatory="true"/>
+      <param name="offset" type="Number"/>
+    </method>
+
+    <method name="subarray" returnType="$__Type__$">
+      <param name="begin" type="Number" mandatory="true"/>
+      <param name="end" type="Number"/>
+    </method>
+  </class>
+  <class name="Geolocation">
+    <method name="getCurrentPosition" returnType="void">
+      <param name="successCallback" type="Function" mandatory="true"/>
+      <param name="errorCallback" type="Function" />
+      <param name="options" type="Object" />
+    </method>
+    <method name="watchPosition" returnType="Number">
+      <param name="successCallback" type="Function" mandatory="true"/>
+      <param name="errorCallback" type="Function" />
+      <param name="options" type="Object" />
+    </method>
+    <method name="clearWatch">
+      <param name="watchId" type="Number"/>
+    </method>
+  </class>
+  <class name="Navigator">
+    <property readOnly="true" name="geolocation" type="Geolocation" />
+  </class>
+  <class name="PositionOptions">
+    <property name="enableHighAccuracy" type="Boolean" />
+    <property name="timeout" type="Number" />
+    <property name="maximumAge" type="Number" />
+  </class>
+  <class name="Position">
+    <property name="coords" type="Coordinates" />
+    <property name="timestamp" type="Number" />
+  </class>
+  <class name="Coordinates">
+    <property name="latitude" type="Number" readOnly="true" />
+    <property name="longitude" type="Number" readOnly="true" />
+    <property name="altitude" type="Number" readOnly="true" />
+    <property name="accuracy" type="Number" readOnly="true" />
+    <property name="altitudeAccuracy" type="Number" readOnly="true" />
+    <property name="heading" type="Number" readOnly="true" />
+    <property name="speed" type="Number" readOnly="true" />
+  </class>
+  <class name="PositionError">
+    <property name="PERMISSION_DENIED" type="Number" readOnly="true" value="1" />
+    <property name="POSITION_UNAVAILABLE" type="Number" readOnly="true" value="2" />
+    <property name="TIMEOUT" type="Number" readOnly="true" value="3" />
+    <property name="code" type="Number" readOnly="true" />
+    <property name="message" type="String" readOnly="true" />
+  </class>
+
+  <class name="XMLHttpRequest" createStaticVar="false">
+    <property name="responseType" type="String" />
+    <property name="response" type="Object" />
+  </class>
+  <class name="FormData">
+    <method returnType="void" name="append">
+      <param name="name" mandatory="true" type="String"/>
+      <param name="value" mandatory="true"/>
+    </method>
+  </class>
+</Library>

@@ -1,0 +1,60 @@
+<!--
+   Standard: AJAX
+
+   Remarks:
+
+    default values
+      method:
+        static="false"    // (true/false) = static/non-static method
+        ECMA="true"       // (true/false) = supported/unsupported by ECMA standard
+      param:
+        mandatory="false" // (true/false) = mandatory/optional method parameter
+        infinite="false"  // (true/false) = in case of variable parameters number, e.g. (param1, [param2, [param3...)
+        ECMA="true"       // (true/false) = supported/unsupported by ECMA standard
+-->
+
+<Library>
+    <class name="window" createStaticVar="false">
+      <method name="ActiveXObject" returnType="XMLHttpRequest">
+        <param name="sName" type="String"/>
+      </method>
+    </class>
+
+    <class name="XMLHttpRequest" >
+        <property name="constructor" attribute="ReadOnly" url="#1206131"/>
+        
+        <!-- Function properties of Global Objects -->
+        <method name="abort" />
+        <method name="getAllResponseHeaders" returnType="String"/>
+        <method name="getResponseHeader" returnType="String">
+          <param name="headerName" mandatory="true" type="String"/>
+        </method>
+        <method name="overrideMimeType" browser="Gecko">
+          <param name="mimeType" mandatory="true" type="String"/>
+        </method>
+
+        <method name="open" >
+          <param name="method" mandatory="true" type="String"/>
+          <param name="url" mandatory="true" type="String"/>
+          <param name="async" type="Boolean"/>
+          <param name="username" type="String"/>
+          <param name="password" type="String"/>
+        </method>
+
+        <method name="send" returnType="void">
+          <param name="content" mandatory="true" type="String|FormData"/>
+        </method>
+
+        <method name="setRequestHeader" returnType="void">
+          <param name="label" mandatory="true" type="String"/>
+          <param name="value" mandatory="true" type="String"/>
+        </method>
+
+        <property name="onreadystatechange" type="Function" writeOnly="true"/>
+        <property name="readyState" type="Number"/>
+        <property name="responseText" type="String"/>
+        <property name="statusText" type="String"/>
+        <property name="status" type="Number"/>
+        <property name="responseXML" type="String"/>
+    </class>
+</Library>

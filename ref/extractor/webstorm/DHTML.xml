@@ -1,0 +1,1476 @@
+<!--
+   Standard: ECMAScript binding for the Level 2 Document Object Model HTML definitions
+-->
+
+<Library>
+    <doc url="http://www.w3.org/TR/2003/REC-DOM-Level-2-HTML-20030109/html.html"/>
+    <class name="Object" createStaticVar="false">
+      <method name="__defineGetter__" browser="Gecko">
+          <param name="propertyName" mandatory="true"/>
+          <param name="func" mandatory="true"/>
+      </method>
+
+      <method name="__defineSetter__" browser="Gecko">
+          <param name="propertyName" mandatory="true"/>
+          <param name="func" mandatory="true"/>
+      </method>
+
+      <method name="__lookupGetter__" browser="Gecko" returnType="Function">
+          <param name="propertyName" mandatory="true"/>
+      </method>
+
+      <method name="__lookupSetter__" browser="Gecko" returnType="Function">
+          <param name="propertyName" mandatory="true"/>
+      </method>
+
+      <method name="__proto__" browser="Gecko" returnType="Function">
+          <param name="propertyName" mandatory="true"/>
+      </method>
+    </class>
+    <class name="Image" extends="HTMLImageElement">
+      <property name="constructor" />
+      <property name="naturalWidth" browser="Gecko" type="Number"/>
+      <property name="naturalHeight" browser="Gecko" type="Number"/>
+    </class>
+    <class name="Navigator">
+      <property name="userAgent" type="String"/>
+      <property name="product" type="String"/>
+      <property name="appVersion" type="String"/>
+      <property name="appName" type="String"/>
+      <property name="appCodeName" type="String"/>
+      <property name="language" type="String"/>
+      <property name="systemLanguage" type="String" browser="IE"/>
+      <property name="userLanguage" type="String" browser="IE"/>
+      <property name="mimeTypes" type="Array"/>
+      <property name="platform" type="Array"/>
+      <property name="plugins" type="String"/>
+
+      <method name="taintEnabled" returnType="Boolean"/>
+      <method name="javaEnabled" returnType="Boolean"/>
+      <method name="preference" returnType="String">
+        <param name="prefName" type="String" mandatory="true"/>
+        <param name="prefValue" type="String" />
+      </method>
+    </class>
+
+    <class name="Screen">
+      <property name="width" type="Number"/>
+      <property name="height" type="Number"/>
+      <property name="availHeight" type="Number"/>
+      <property name="availWidth" type="Number"/>
+      <property name="pixelDepth" type="Number"/>
+      <property name="colorDepth" type="Number"/>
+    </class>
+  <class name="Option">
+    <property name="defaultSelected" type="Boolean"/>
+    <property name="selected" type="Boolean"/>
+    <property name="text" type="String"/>
+    <property name="value" type="String"/>
+  </class>
+  <class name="Location" >
+    <property name="href" type="String"/>
+    <property name="hash" type="String"/>
+    <property name="port" type="String"/>
+    <property name="host" type="String"/>
+    <property name="hostname" type="String"/>
+    <property name="pathname" type="String"/>
+    <property name="protocol" type="String"/>
+    <property name="port" type="String"/>
+    <property name="search" type="String"/>
+    <property name="target" type="String"/>
+
+    <method name="reload" returnType="void"/>
+      
+    <method name="replace" returnType="void">
+      <param name="url" mandatory="true" type="String"/>
+    </method>
+  </class>
+
+  <class name="XSLTProcessor" browser="Gecko">
+    <property name="constructor" />
+    <method name="importStylesheet">
+      <param name="domNode" type="Node" mandatory="true"/>
+    </method>
+    <method name="transformToDocument" returnType="Document">
+      <param name="domNode" type="Node" mandatory="true"/>
+    </method>
+    <method name="transformToFragment" returnType="DocumentFragment">
+      <param name="domToBeTransformed" type="Node" mandatory="true"/>
+      <param name="ownerDocument" type="Document" mandatory="true"/>
+    </method>
+  </class>
+
+  <class name="DOMParser" browser="Gecko">
+    <property name="constructor" />
+    <method name="parseFromString" returnType="Document">
+      <param name="stringToParse" type="String" mandatory="true"/>
+      <param name="contentType" type="String" mandatory="true"/>
+    </method>
+  </class>
+
+  <class name="XMLSerializer" browser="Gecko">
+    <property name="constructor" />
+    <method name="serializeToStream" >
+      <param name="domNode" type="Document" mandatory="true"/>
+      <param name="stream" type="Object" mandatory="true"/>
+      <param name="encoding" type="String" mandatory="true"/>
+    </method>
+    <method name="serializeToString" returnType="String">
+      <param name="domNode" type="Document" mandatory="true"/>
+    </method>
+  </class>
+
+  <class name="Event">
+    <property name="data" type="Object[]"/>
+    <property name="height" type="Number"/>
+    <property name="x" type="Number" browser="IE"/>
+    <property name="screenX" type="Number"/>
+    <property name="clientX" type="Number"/>
+    <property name="offsetX" type="Number" browser="IE"/>
+    <property name="layerX" type="Number" browser="Gecko"/>
+
+    <property name="fromElement" type="Object" browser="IE"/>
+    <property name="wheelDelta" type="Number" browser="IE"/>
+    <property name="repeat" type="Boolean" browser="IE"/>
+
+    <property name="pageX" type="Number"/>
+    <property name="y" type="Number" browser="IE"/>
+    <property name="screenY" type="Number"/>
+    <property name="clientY" type="Number"/>
+    <property name="offsetY" type="Number" browser="IE"/>
+    <property name="layerY" type="Number" browser="Gecko"/>
+    <property name="pageY" type="Number"/>
+    <property name="width" type="Number"/>
+    <property name="modifiers" type="Number"/>
+    <property name="keyCode" type="Number"/>
+
+    <property name="type" type="String"/>
+    <property name="which" type="Object"/>
+    <property name="srcElement" type="Object" browser="IE"/>
+    <property name="toElement" type="Object" browser="IE"/>
+
+    <property name="cancelBubble" type="Boolean" browser="IE"/>
+    <property name="returnValue" type="Boolean" browser="IE"/>
+    <property name="altKey" type="Boolean"/>
+    <property name="ctrlKey" type="Boolean"/>
+    <property name="shiftKey" type="Boolean"/>
+    <property name="button" type="Boolean"/>
+    <property name="charCode" type="String" browser="Gecko"/>
+
+    <property name="ABORT" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="BLUR" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="CLICK" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="CHANGE" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="DBLCLICK" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="DRAGDROP" type="Event" browser="Gecko" deprecated="true"/>
+
+    <property name="ERROR" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="FOCUS" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="KEYDOWN" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="KEYPRESS" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="KEYUP" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="LOAD" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="MOUSEDOWN" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="MOUSEMOVE" type="Event" browser="Gecko" deprecated="true"/>
+
+    <property name="MOUSEOUT" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="MOUSEOVER" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="MOUSEUP" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="MOVE" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="RESET" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="RESIZE" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="SELECT" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="SUBMIT" type="Event" browser="Gecko" deprecated="true"/>
+    <property name="UNLOAD" type="Event" browser="Gecko" deprecated="true"/>
+  </class>
+
+  <class name="Selection">
+    <property name="anchorNode" type="Node" browser="Gecko"/>
+    <property name="anchorOffset" type="Number" browser="Gecko"/>
+    <property name="focusNode" type="Node" browser="Gecko"/>
+    <property name="focusOffset" type="Number" browser="Gecko"/>
+    <property name="isCollapsed" type="Boolean" browser="Gecko"/>
+    <property name="rangeCount" type="Number" browser="Gecko"/>
+
+    <method name="getRangeAt" returnType="Range" browser="Gecko">
+      <param name="index" mandatory="true" type="Number"/>
+    </method>
+
+    <method name="collapse" returnType="void" browser="Gecko">
+      <param name="parentNode" mandatory="true" type="Node"/>
+      <param name="offset" mandatory="true" type="Number"/>
+    </method>
+
+    <method name="extend" returnType="void" browser="Gecko">
+      <param name="parentNode" mandatory="true" type="Node"/>
+      <param name="offset" mandatory="true" type="Number"/>
+    </method>
+
+    <method name="collapseToStart" returnType="void" browser="Gecko"/>
+    <method name="collapseToEnd" returnType="void" browser="Gecko"/>
+    <method name="selectAllChildren" returnType="void" browser="Gecko">
+      <param name="parentNode" mandatory="true" type="Node"/>
+    </method>
+    <method name="addRange" returnType="void" browser="Gecko">
+      <param name="range" mandatory="true" type="Range"/>
+    </method>
+    <method name="removeRange" returnType="void" browser="Gecko">
+      <param name="range" mandatory="true" type="Range"/>
+    </method>
+    <method name="removeAllRanges" returnType="void" browser="Gecko"/>
+    <method name="containsNode" returnType="Boolean" browser="Gecko">
+      <param name="node" mandatory="true" type="Node"/>
+      <param name="partlyContained" mandatory="true" type="Boolean"/>
+    </method>
+
+    <property name="type" browser="IE"/>
+    <method name="clear" returnType="Boolean" browser="IE"/>
+    <method name="empty" returnType="Boolean" browser="IE"/>
+    <method name="createRange" returnType="TextRange" browser="IE"/>
+  </class>
+
+  <class name="TextRange" browser="IE">
+    <property name="htmlText" type="String"/>
+    <property name="text" type="String"/>
+    <property name="boundingWidth" type="Number"/>
+    <property name="boundingHeight" type="Number"/>
+    <property name="boundingLeft" type="Number"/>
+    <property name="offsetLeft" type="Number"/>
+    <property name="boundingTop" type="Number"/>
+    <property name="offsetTop" type="Number"/>
+
+    <method name="getBookmark" returnType="String"/>
+    <method name="moveToBookmark" returnType="Boolean">
+      <param name="sBookmark" type="String"/>
+    </method>
+
+    <method name="collapse" returnType="void">
+      <param name="start" type="Boolean" />
+    </method>
+    <method name="expand" returnType="void">
+      <param name="unit" type="String" />
+    </method>
+
+    <method name="duplicate" returnType="TextRange"/>
+    <method name="select" returnType="void"/>
+    <method name="parentElement" returnType="Node" />
+
+    <method name="inRange" returnType="boolean">
+      <param name="other" mandatory="true" type="TextRange"/>
+    </method>
+    <method name="isEqual" returnType="boolean">
+      <param name="other" mandatory="true" type="TextRange"/>
+    </method>
+    <method name="scrollIntoView" returnType="void">
+      <param name="start" type="Boolean"/>
+    </method>
+    <method name="setEndPoint" returnType="void">
+      <param name="type" mandatory="true" type="String"/>
+      <param name="range" mandatory="true" type="TextRange"/>
+    </method>
+    <method name="compareEndPoint" returnType="void">
+      <param name="type" mandatory="true" type="String"/>
+      <param name="range" mandatory="true" type="TextRange"/>
+    </method>
+    <method name="move" returnType="void">
+      <param name="unit" mandatory="true" type="String"/>
+      <param name="count"  type="Number"/>
+    </method>
+    <method name="moveStart" returnType="void">
+      <param name="unit" mandatory="true" type="String"/>
+      <param name="count"  type="Number"/>
+    </method>
+    <method name="moveEnd" returnType="void">
+      <param name="unit" mandatory="true" type="String"/>
+      <param name="count"  type="Number"/>
+    </method>
+
+    <method name="pasteHTML" returnType="void">
+      <param name="htmlText" mandatory="true" type="String"/>
+    </method>
+
+    <method name="moveToElementText" returnType="void">
+      <param name="element" type="HTMLElement"/>
+    </method>
+
+    <method name="compareEndPoints" returnType="Number">
+      <param name="sType" type="String"/>
+      <param name="oRange" type="TextRange"/>
+    </method>
+  </class>
+
+  <class name="document">
+    <property name="selection" type="Selection" browser="IE"/>
+    <property name="namespaces" type="Array" browser="IE"/>
+    <property name="all" type="All" browser="IE"/>
+    <property name="styleSheets" type="Stylesheet[]" />
+
+    <method name="execCommand" returnType="Boolean" browser="IE">
+      <param name="sCommand" mandatory="true" type="String"/>
+      <param name="bUserInterface" type="Boolean"/>
+      <param name="vValue" type="Object"/>
+    </method>
+  </class>
+
+  <class name="CssRule">
+    <property name="selectorText" type="String" />
+  </class>
+
+  <class name="Stylesheet">
+    <property name="cssRules" type="CssRule[]" elementType="CssRule" browser="Gecko"/>
+    <property name="rules" type="CssRule[]" elementType="CssRule" browser="IE"/>
+    <property name="owningElement" type="HtmlElement" browser="IE"/>
+
+    <method name="addRule" returnType="void" browser="IE">
+      <param name="selector" mandatory="true" type="Object"/>
+      <param name="style" mandatory="true" type="Object"/>
+    </method>
+    <method name="insertRule" returnType="void" browser="Gecko">
+      <param name="ruleText" mandatory="true" type="Object"/>
+      <param name="index" mandatory="true" type="Number"/>
+    </method>
+
+    <method name="removeRule" returnType="void" browser="IE">
+      <param name="index" mandatory="true" type="Number"/>
+    </method>
+    <method name="deleteRule" returnType="void" browser="Gecko">
+      <param name="index" mandatory="true" type="Number"/>
+    </method>
+  </class>
+
+  <class name="MozillaSideBar" browser="Gecko">
+    <method name="addPanel" returnType="void">
+      <param name="title" mandatory="true" type="String"/>
+      <param name="url" mandatory="true" type="String"/>
+      <param name="param3" mandatory="true" type="String"/>
+    </method>
+  </class>
+
+  <class name="IEExternal" browser="IE">
+    <method name="AddFavorite" returnType="void">
+      <param name="title" mandatory="true" type="String"/>
+      <param name="url" type="String"/>
+    </method>
+  </class>
+
+  <class name="History">
+      <method name="back" returnType="void"/>
+      <method name="forward" returnType="void"/>
+      <method name="go" returnType="void">
+        <param name="count" type="Number" mandatory="true"/>
+      </method>
+  </class>
+
+  <class name="Console">
+    <method name="log" returnType="void"><param mandatory="true" name="message" rest="true" type="*"/></method><!--TODO: more-->
+  </class>
+  <class name="window" createStaticVar="false">
+      <property name="document" attribute="ReadOnly" type="HTMLDocument"/>
+      <property name="event" attribute="ReadOnly" type="Event"/>
+      <property name="navigator" attribute="ReadOnly" type="Navigator"/>
+      <property name="screen" attribute="ReadOnly" type="Screen"/>
+      <property name="location" attribute="ReadOnly" type="Location"/>
+      <property name="console" type="Console" browser="Opera"/>
+
+      <property name="frameElement" type="Object"/>
+      <property name="opener" type="window"/>
+      <property name="window" type="window"/>
+      <property name="parent" type="window"/>
+      <property name="top" type="window"/>
+
+      <property name="self" type="Object"/>
+      <property name="frames" type="Array"/>
+      <property name="innerHeight" type="Number"/>
+      <property name="innerWidth" type="Number"/>
+      <property name="outerHeight" type="Number"/>
+      <property name="outerWidth" type="Number"/>
+
+      <property name="screenLeft" type="Number" browser="IE"/>
+      <property name="screenTop" type="Number" browser="IE"/>
+
+      <property name="scrollX" type="Number"/>
+      <property name="scrollY" type="Number"/>
+      <property name="pageXOffset" type="Number"/>
+      <property name="pageYOffset" type="Number"/>
+      <property name="scrollMaxX" type="Number"/>
+      <property name="scrollMaxY" type="Number"/>
+      <property name="status" type="String"/>
+      <property name="defaultStatus" type="String"/>
+      <property name="toolbar" type="Object"/>
+      <property name="menubar" type="Object"/>
+      <property name="scrollbars" type="Object"/>
+      <property name="directories" type="Object"/>
+      <property name="history" type="History"/>
+
+      <property name="sidebar" type="MozillaSideBar" browser="Gecko"/>
+      <property name="external" type="IEExternal" browser="IE"/>
+      <property name="opera" type="Boolean" browser="Opera"/>
+
+      <method name="getSelection" returnType="Selection" browser="Gecko"/>
+      <property name="clipboardData" type="ClipboardData" browser="ie" ReadOnly="true"/>
+
+      <method name="open" returnType="window">
+        <param name="strUrl" type="String" />
+        <param name="strWindowName" type="String" />
+        <param name="strWindowFeatures" type="String" />
+        <param name="bReplace" type="Boolean" />
+      </method>
+
+      <method name="print" returnType="void"/>
+      <method name="alert" ECMA="false" url="http://msdn.microsoft.com/workshop/author/dhtml/reference/methods/alert.asp">
+          <param name="sMesssage" mandatory="true"/>
+      </method>
+      <method name="atob" browser="Gecko">
+          <param name="encodedData" mandatory="true"/>
+      </method>
+      <method name="btoa" browser="Gecko">
+          <param name="decodedData" mandatory="true"/>
+      </method>
+      <method name="confirm" ECMA="false" url="http://msdn.microsoft.com/workshop/author/dhtml/reference/methods/confirm.asp">
+          <param name="sMesssage" mandatory="true"/>
+      </method>
+      <method name="prompt" ECMA="false" url="http://msdn.microsoft.com/workshop/author/dhtml/reference/methods/prompt.asp">
+          <param name="sMessage" mandatory="true"/>
+          <param name="sDefaultValue"/>
+      </method>
+      <method name="clearInterval">
+        <param name="intervalId" type="Number" mandatory="true"/>
+      </method>
+      <method name="clearTimeout">
+        <param name="intervalId" type="Number" mandatory="true"/>
+      </method>
+      <method name="setInterval" returnType="Number">
+        <param name="vCode" mandatory="true" type="String|Function"/>
+        <param name="iMillis" mandatory="true" type="Number"/>
+      </method>
+      <method name="setTimeout" returnType="Number">
+        <param name="vCode" mandatory="true" type="String|Function"/>
+        <param name="iMillis" mandatory="true" type="Number"/>
+      </method>
+
+      <method name="captureEvents" returnType="void" browser="Gecko" deprecated="true">
+        <param name="eventType" mandatory="true" type="Event"/>
+      </method>
+      <method name="releaseEvents" returnType="void" browser="Gecko" deprecated="true">
+        <param name="eventType" mandatory="true" type="Event"/>
+      </method>
+      <method name="routeEvent" returnType="void" browser="Gecko" deprecated="true">
+        <param name="event" mandatory="true" type="Event"/>
+      </method>
+      <method name="preventBubble" returnType="void" browser="Gecko" deprecated="true">
+        <param name="event" mandatory="true" type="Event"/>
+      </method>
+
+      <method name="GetObject" returnType="Object" browser="IE" deprecated="true">
+        <param name="classOrPath" mandatory="true" type="String"/>
+        <param name="clazz" type="String"/>
+      </method>
+
+      <method name="ScriptEngine" returnType="String" browser="IE" />
+      <method name="ScriptEngineBuildVersion" returnType="String" browser="IE" />
+      <method name="ScriptEngineMajorVersion" returnType="String" browser="IE" />
+      <method name="ScriptEngineMinorVersion" returnType="String" browser="IE" />
+
+      <method name="scrollTo">
+        <param name="x" type="Number" mandatory="true"/>
+        <param name="y" type="Number" mandatory="true"/>
+      </method>
+
+      <method name="scrollBy">
+        <param name="xDelta" type="Number" mandatory="true"/>
+        <param name="yDelta" type="Number" mandatory="true"/>
+      </method>
+
+      <method name="moveTo">
+        <param name="x" type="Number" mandatory="true"/>
+        <param name="y" type="Number" mandatory="true"/>
+      </method>
+
+      <method name="moveBy">
+        <param name="xDelta" type="Number" mandatory="true"/>
+        <param name="yDelta" type="Number" mandatory="true"/>
+      </method>
+
+      <method name="resizeTo">
+        <param name="width" type="Number" mandatory="true"/>
+        <param name="height" type="Number" mandatory="true"/>
+      </method>
+
+      <method name="resizeBy">
+        <param name="widthDelta" type="Number" mandatory="true"/>
+        <param name="heightDelta" type="Number" mandatory="true"/>
+      </method>
+
+      <method name="getComputedStyle" returnType="CSSStyleDeclaration" browser="Gecko">
+        <param name="element" mandatory="true" type="Element"/>
+        <param name="pseudoElt" mandatory="true" type="String"/>
+      </method>
+
+      <method name="showModalDialog" returnType="Object" browser="IE">
+        <param name="sUrl" mandatory="true" type="String"/>
+        <param name="vArguments" type="Object"/>
+        <param name="sFeatures" type="String"/>
+      </method>
+
+      <method name="attachEvent" browser="IE">
+        <param name="type" mandatory="true" type="String"/>
+         <param name="listener" mandatory="true" type="Function"/>
+      </method>
+      <method name="detachEvent" browser="IE">
+        <param name="type" mandatory="true" type="String"/>
+         <param name="listener" mandatory="true" type="Function"/>
+      </method>
+
+      <method name="addEventListener" browser="Gecko">
+        <param name="type" mandatory="true" type="String"/>
+         <param name="listener" mandatory="true" type="Function"/>
+        <param name="useCapture" type="Boolean"/>
+      </method>
+      <method name="removeEventListener" browser="Gecko">
+        <param name="type" mandatory="true" type="String"/>
+         <param name="listener" mandatory="true" type="Function"/>
+        <param name="useCapture" type="Boolean"/>
+      </method>
+    
+      <method name="execScript" browser="IE">
+        <param name="sScript" mandatory="true" type="String"/>
+      </method>
+
+      <method name="CollectGarbage" browser="IE"/>
+      <property name="onload" type="Function" writeOnly="true" />
+      <property name="onunload" type="Function" writeOnly="true" />
+    </class>
+
+  <class name="ClipboardData" browser="ie">
+    <method name="setData" returnType="Boolean">
+      <param name="sDataFormat" type="String" mandatory="true"/>
+      <param name="sData" type="String" mandatory="true"/>
+    </method>
+    <method name="getData" returnType="String">
+      <param name="sDataFormat" type="String" mandatory="true"/>
+    </method>
+    <method name="clearData" returnType="Boolean">
+      <param name="sDataFormat" type="String"/>
+    </method>
+  </class>
+
+  <class name="Global">
+        <!-- Value properties of Global Objects in Browser Content -->
+        <property name="window" attribute="ReadOnly" type="window"/>
+
+        <!-- methods -->
+        <method name="escape" deprecated="true">
+          <param name="str" type="String"/>
+        </method>
+        <method name="unescape" deprecated="true">
+          <param name="str" type="String"/>
+        </method>
+    </class>
+
+
+  <class name="HTMLCollection" url="#ID-75708506">
+        <!-- properties -->
+        <property name="length" attribute="ReadOnly" type="Number" url="#ID-40057551"/>
+
+        <!-- methods -->
+        <method name="item" returnType="Node" url="#ID-33262535">
+            <param name="index" mandatory="true" type="Number"/>
+        </method>
+
+        <method name="namedItem" returnType="Node" url="#ID-21069976">
+            <param name="name" mandatory="true" type="String"/>
+        </method>
+    </class>
+
+    <class name="HTMLOptionsCollection" url="#HTMLOptionsCollection">
+        <!-- properties -->
+        <property name="length" attribute="ReadOnly" type="Number" throws="DOMException" url="#HTMLOptionsCollection-length"/>
+
+        <!-- methods -->
+        <method name="item" returnType="Node" url="#HTMLOptionsCollection-item">
+            <param name="index" mandatory="true" type="Number"/>
+        </method>
+
+        <method name="namedItem" returnType="Node" url="#HTMLOptionsCollection-namedItem">
+            <param name="name" mandatory="true" type="String"/>
+        </method>
+    </class>
+
+    <class name="HTMLDocument" extends="Document" url="#ID-26809268">
+        <!-- properties -->
+        <property name="title" type="String" url="#ID-18446827"/>
+        <property name="referrer" attribute="ReadOnly" type="String" url="#ID-95229140"/>
+        <property name="domain" attribute="ReadOnly" type="String" url="#ID-2250147"/>
+        <property name="URL" attribute="ReadOnly" type="String" url="#ID-46183437"/>
+        <property name="body" type="HTMLElement" url="#ID-56360201"/>
+        <property name="images" attribute="ReadOnly" type="HTMLCollection" url="#ID-90379117"/>
+        <property name="applets" attribute="ReadOnly" type="HTMLCollection" url="#ID-85113862"/>
+        <property name="links" attribute="ReadOnly" type="HTMLCollection" url="#ID-7068919"/>
+        <property name="forms" attribute="ReadOnly" type="HTMLCollection" url="#ID-1689064"/>
+        <property name="anchors" attribute="ReadOnly" type="HTMLCollection" url="#ID-7577272"/>
+        <property name="cookie" type="HTMLCollection" throws="DOMException" url="#ID-8747038"/>
+
+        <!-- methods -->
+        <method name="open" url="#ID-72161170"/>
+        <method name="close" url="#ID-98948567"/>
+        <method name="write" url="#ID-75233634">
+            <param name="text" mandatory="true" type="String"/>
+        </method>
+        <method name="writeln" url="#ID-35318390">
+            <param name="text" mandatory="true" type="String"/>
+        </method>
+        <method name="getElementsByName" returnType="NodeList" url="#ID-71555259">
+            <param name="elementName" mandatory="true" type="String"/>
+        </method>
+        <method name="getElementsByClassName" returnType="NodeList" browser="Gecko">
+            <param name="className" mandatory="true" type="String"/>
+        </method>
+
+        <property name="defaultView" type="DocumentView" browser="Gecko"/>
+        <property name="activeElement" type="DocumentView" browser="IE"/>
+        <property name="compatMode" type="String" />
+
+        <method name="createStyleSheet" returnType="Stylesheet" browser="IE"/>
+        <property name="parentWindow" type="window" browser="IE"/>
+
+        <method name="getBoxObjectFor" browser="Gecko" returnType="Node">
+            <param name="element" mandatory="true" type="HTMLElement"/>
+        </method>
+
+        <method name="querySelectorAll" browser="Gecko" returnType="NodeList">
+            <param name="string" mandatory="true" type="String"/>
+        </method>
+
+        <method name="querySelector" browser="Gecko" returnType="Node">
+            <param name="string" mandatory="true" type="String"/>
+        </method>
+
+        <method name="getAnonymousNodes" browser="Gecko" returnType="Node[]">
+            <param name="node" mandatory="true" type="HTMLElement"/>
+        </method>
+
+        <method name="getAnonymousElementByAttribute" browser="Gecko" returnType="NodeList">
+            <param name="node" mandatory="true" type="HTMLElement"/>
+            <param name="attrName" mandatory="true" type="String"/>
+            <param name="attrValue" mandatory="true" type="String"/>
+        </method>
+        <property name="commandDispatcher" type="CommandDispatcher" browser="Gecko"/>
+
+        <method name="elementFromPoint" browser="IE" returnType="HTMLElement">
+            <param name="iX" mandatory="true" type="Number"/>
+            <param name="iY" mandatory="true" type="Number"/>
+        </method>
+        <method name="createEventObject" browser="IE" returnType="Event">
+            <param name="oExistingEvent" type="Event"/>
+        </method>
+
+        <method name="captureEvents" returnType="void" browser="Gecko" deprecated="true">
+          <param name="eventType" mandatory="true" type="Event"/>
+        </method>
+        <method name="releaseEvents" returnType="void" browser="Gecko" deprecated="true">
+          <param name="eventType" mandatory="true" type="Event"/>
+        </method>
+        <method name="routeEvent" returnType="void" browser="Gecko" deprecated="true">
+          <param name="event" mandatory="true" type="Event"/>
+        </method>
+        <method name="preventBubble" returnType="void" browser="Gecko" deprecated="true">
+          <param name="event" mandatory="true" type="Event"/>
+        </method>
+        <property name="documentMode" type="Number" browser="IE"/>
+        <property name="onload" type="Function" writeOnly="true" />
+        <property name="onunload" type="Function" writeOnly="true" />
+    </class>
+
+    <class name="CommandDispatcher" browser="Gecko">
+        <property name="focusedElement" type="HTMLElement" />
+    </class>
+
+    <class name="DocumentView" browser="Gecko">
+      <method name="getComputedStyle" returnType="CssStyle">
+         <param name="element" mandatory="true" type="Node"/>
+         <param name="type" mandatory="true" type="String"/>
+      </method>
+    </class>
+
+    <class name="CssStyle" browser="Gecko">
+      <method name="getPropertyValue" returnType="String">
+         <param name="propertyName" mandatory="true" type="String"/>
+      </method>
+    </class>
+
+  <class name="HTMLElement" extends="Element" url="#ID-58190037">
+        <!-- properties -->
+        <property name="id" type="String" url="#ID-63534901"/>
+        <property name="title" type="String" url="#ID-78276800"/>
+        <property name="lang" type="String" url="#ID-59132807"/>
+        <property name="dir" type="String" url="#ID-52460740"/>
+        <property name="className" type="String" url="#ID-95362176"/>
+
+        <property name="children" type="HTMLElement[]" elementType="HTMLElement" browser="IE"/>
+
+        <property name="style" type="CSSStyleDeclaration" />
+        <property name="clientWidth" type="Number" />
+        <property name="clientHeight" type="Number" />
+        <property name="clientTop" type="Number" />
+        <property name="clientLeft" type="Number" />
+        <property name="innerHTML" type="String" />
+        <property name="innerText" type="String" browser="IE" />
+
+        <property name="offsetWidth" type="Number" />
+        <property name="offsetHeight" type="Number" />
+        <property name="offsetTop" type="Number" />
+        <property name="offsetLeft" type="Number" />
+        <property name="offsetParent" type="Number" />
+
+        <property name="scrollWidth" type="Number" />
+        <property name="scrollHeight" type="Number" />
+        <property name="scrollTop" type="Number" />
+        <property name="scrollLeft" type="Number" />
+        <property name="stylesheet" type="Stylesheet" />
+        <property name="sourceIndex" type="Number" attribute="ReadOnly" browser="IE"/>
+
+
+        <!-- methods -->
+      <property name="onblur" type="Function" writeOnly="true" />
+      <property name="onclick" type="Function" writeOnly="true" />
+      <property name="ondblclick" type="Function" writeOnly="true" />
+      <property name="onfocus" type="Function" writeOnly="true" />
+      <property name="onkeydown" type="Function" writeOnly="true" />
+      <property name="onkeyup" type="Function" writeOnly="true" />
+      <property name="onmouseup" type="Function" writeOnly="true" />
+      <property name="onmousedown" type="Function" writeOnly="true" />
+      <property name="onmouseout" type="Function" writeOnly="true" />
+      <property name="onmouseover" type="Function" writeOnly="true" />
+      <property name="onmousemove" type="Function" writeOnly="true" />
+      <property name="onresize" type="Function" writeOnly="true" />
+
+      <method name="insertAdjacentHTML" browser="IE">
+          <param name="position" mandatory="true" type="String"/>
+          <param name="htmlContent" mandatory="true" type="String"/>
+       </method>
+
+      <method name="doScroll" browser="IE">
+          <param name="sScrollAction" type="String"/>
+       </method>
+
+      <method name="insertAdjacentText" browser="IE">
+          <param name="position" mandatory="true" type="String"/>
+          <param name="textContent" mandatory="true" type="String"/>
+       </method>
+
+      <property name="currentStyle" browser="IE" type="IEElementStyle"/>
+      <property name="runtimeStyle" browser="IE" type="IEElementStyle"/>
+      <property name="filters" browser="IE" type="Array"/>
+
+      <method name="attachEvent" browser="IE">
+        <param name="type" mandatory="true" type="String"/>
+         <param name="listener" mandatory="true" type="Function"/>
+      </method>
+      <method name="detachEvent" browser="IE">
+        <param name="type" mandatory="true" type="String"/>
+         <param name="listener" mandatory="true" type="Function"/>
+      </method>
+      <method name="fireEvent" browser="IE">
+        <param name="type" mandatory="true" type="String"/>
+        <param name="event" type="Event"/>
+      </method>
+
+      <method name="addBehavior" browser="IE" returnType="Number">
+        <param name="sUrl" mandatory="true" type="String"/>
+      </method>
+
+      <method name="removeBehavior" browser="IE" returnType="Boolean">
+        <param name="sID" mandatory="true" type="Number"/>
+      </method>
+
+      <method name="getBoundingClientRect" browser="IE" returnType="TextRange"/>
+      <method name="showPopup" browser="Gecko"/>
+      <method name="hidePopup" browser="Gecko"/>
+      <property name="boxObject" browser="Gecko" type="HTMLElement"/>
+      <property name="propertyName" browser="IE" type="String"/>
+      <property name="isDisabled" browser="IE" type="Boolean"/>
+
+      <method name="setCapture" browser="IE">
+        <param name="bContainerCapture" type="Boolean"/>
+      </method>
+      <method name="releaseCapture" browser="IE"/>
+      <method name="clearAttributes" browser="IE"/>
+      <method name="mergeAttributes" browser="IE">
+        <param name="oSource" type="Object"/>
+        <param name="bPreserve" type="Boolean" mandatory="false" />
+      </method>
+  </class>
+
+    <class name="CSSStyleDeclaration">
+      <property name="cssText" type="String"/>
+      <property name="length" type="Number"/>
+      <property name="parentRule" type="CSSRule"/>
+      <method name="getPropertyCSSValue" returnType="CSSValue" type="static">
+        <param name="propertyName" mandatory="true" type="String"/>
+      </method>
+      <method name="getPropertyPriority" returnType="String" type="static">
+        <param name="propertyName" mandatory="true" type="String"/>
+      </method>
+      <method name="getPropertyValue" returnType="String" type="static">
+        <param name="propertyName" mandatory="true" type="String"/>
+      </method>
+      <method name="item" returnType="String" type="static">
+        <param name="index" mandatory="true" type="Number"/>
+      </method>
+      <method name="removeProperty" returnType="String" type="static">
+        <param name="propertyName" mandatory="true" type="String"/>
+      </method>
+      <method name="setProperty" returnType="void" type="static">
+        <param name="propertyName" mandatory="true" type="String"/>
+        <param name="value" mandatory="true" type="String"/>
+        <param name="priority" mandatory="true" type="String"/>
+      </method>
+    </class>
+  
+    <class name="IEElementStyle" extends="CSSStyleDeclaration" browser="IE">
+      <property name="hasLayout" type="Boolean" />
+    </class>
+
+    <class name="HTMLHtmlElement" extends="HTMLElement" url="#ID-33759296">
+        <!-- properties -->
+        <property name="version" type="String" url="#ID-9383775"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLHeadElement" extends="HTMLElement" url="#ID-77253168">
+        <!-- properties -->
+        <property name="profile" type="String" url="#ID-96921909"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLLinkElement" extends="HTMLElement" url="#ID-35143001">
+        <!-- properties -->
+        <property name="disabled" type="Boolean" url="#ID-87355129"/>
+        <property name="charset" type="String" url="#ID-63954491"/>
+        <property name="href" type="String" url="#ID-33532588"/>
+        <property name="hreflang" type="String" url="#ID-85145682"/>
+        <property name="media" type="String" url="#ID-75813125"/>
+        <property name="rel" type="String" url="#ID-41369587"/>
+        <property name="rev" type="String" url="#ID-40715461"/>
+        <property name="target" type="String" url="#ID-84183095"/>
+        <property name="type" type="String" url="#ID-32498296"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLTitleElement" extends="HTMLElement" url="#ID-79243169">
+        <!-- properties -->
+        <property name="text" type="String" url="#ID-77500413"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLMetaElement" extends="HTMLElement" url="#ID-37041454">
+        <!-- properties -->
+        <property name="content" type="String" url="#ID-87670826"/>
+        <property name="httpEquiv" type="String" url="#ID-77289449"/>
+        <property name="name" type="String" url="#ID-31037081"/>
+        <property name="scheme" type="String" url="#ID-35993789"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLBaseElement" extends="HTMLElement" url="#ID-73629039">
+        <!-- properties -->
+        <property name="href" type="String" url="#ID-65382887"/>
+        <property name="target" type="String" url="#ID-73844298"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLIsIndexElement" extends="HTMLElement" url="#ID-85283003">
+        <!-- properties -->
+        <property name="form" attribute="ReadOnly" type="HTMLFormElement" url="#ID-87069980"/>
+        <property name="prompt" type="String" url="#ID-33589862"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLStyleElement" extends="HTMLElement" url="#ID-16428977">
+        <!-- properties -->
+        <property name="disabled" type="Boolean" url="#ID-51162010"/>
+        <property name="media" type="String" url="#ID-76412738"/>
+        <property name="type" type="String" url="#ID-22472002"/>
+        <property name="styleSheet" type="Stylesheet" browser="IE"/>
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLBodyElement" extends="HTMLElement" url="#ID-62018039">
+        <!-- properties -->
+        <property name="aLink" type="String" url="#ID-59424581"/>
+        <property name="background" type="String" url="#ID-37574810"/>
+        <property name="bgColor" type="String" url="#ID-24940084"/>
+        <property name="link" type="String" url="#ID-7662206"/>
+        <property name="text" type="String" url="#ID-73714763"/>
+        <property name="vLink" type="String" url="#ID-83224305"/>
+
+        <!-- methods -->
+      <property name="onload" type="Function" writeOnly="true" />
+      <property name="onunload" type="Function" writeOnly="true" />
+    </class>
+
+    <class name="HTMLFormElement" url="#ID-40002357">
+        <!-- properties -->
+        <property name="elements" attribute="ReadOnly" type="HTMLCollection" url="#ID-76728479"/>
+        <property name="length" attribute="ReadOnly" type="Number" url="#HTML-HTMLFormElement-length"/>
+        <property name="name" type="String" url="#ID-22051454"/>
+        <property name="acceptCharset" type="String" url="#ID-19661795"/>
+        <property name="action" type="String" url="#ID-74049184"/>
+        <property name="enctype" type="String" url="#ID-84227810"/>
+        <property name="method" type="String" url="#ID-82545539"/>
+        <property name="target" type="String" url="#ID-6512890"/>
+
+        <!-- methods -->
+        <method name="submit" url="#ID-76767676"/>
+        <method name="reset" url="#ID-76767677"/>
+    </class>
+
+    <class name="HTMLSelectElement" extends="HTMLElement" url="#ID-94282980">
+        <!-- properties -->
+        <property name="type" attribute="ReadOnly" type="String" url="#ID-58783172"/>
+        <property name="selectedIndex" type="Number" url="#ID-85676760"/>
+        <property name="value" type="String" url="#ID-59351919"/>
+        <property name="length" type="Number" throws="DOMException" url="#ID-5933486"/>
+        <property name="form" attribute="ReadOnly" type="HTMLFormElement" url="#ID-20489458"/>
+        <property name="options" attribute="ReadOnly" type="HTMLOptionsCollection" url="#ID-30606413"/>
+        <property name="disabled" type="Boolean" url="#ID-79102918"/>
+        <property name="multiple" type="Boolean" url="#ID-13246613"/>
+        <property name="name" type="String" url="#ID-41636323"/>
+        <property name="size" type="Number" url="#ID-18293826"/>
+        <property name="tabIndex" type="Number" url="#ID-40676705"/>
+
+        <!-- methods -->
+        <method name="add" throws="DOMException" url="#ID-14493106">
+            <param name="element" mandatory="true" type="HTMLElement"/>
+            <param name="before" mandatory="true" type="HTMLElement"/>
+        </method>
+        <method name="remove" url="#ID-33404570">
+            <param name="index" mandatory="true" type="Number"/>
+        </method>
+        <method name="blur" url="#ID-28216144"/>
+        <method name="focus" url="#ID-32130014"/>
+    </class>
+
+    <class name="HTMLOptGroupElement" extends="HTMLElement" url="#ID-38450247">
+        <!-- properties -->
+        <property name="disabled" type="Boolean" url="#ID-15518803"/>
+        <property name="label" type="String" url="#ID-95806054"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLOptionElement" extends="HTMLElement" url="#ID-70901257">
+        <!-- properties -->
+        <property name="form" attribute="ReadOnly" type="HTMLFormElement" url="#ID-17116503"/>
+        <property name="defaultSelected" type="Boolean" url="#ID-37770574"/>
+        <property name="text" type="String" url="#ID-48154426"/>
+        <property name="index" type="Number" url="#ID-14038413"/>
+        <property name="disabled" type="Boolean" url="#ID-23482473"/>
+        <property name="label" type="String" url="#ID-40736115"/>
+        <property name="selected" type="Boolean" url="#ID-70874476"/>
+        <property name="value" type="String" url="#ID-6185554"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLInputElement" extends="HTMLElement" url="#ID-6043025">
+        <!-- properties -->
+        <property name="defaultValue" type="String" url="#ID-26091157"/>
+        <property name="defaultChecked" type="Boolean" url="#ID-20509171"/>
+        <property name="form" attribute="ReadOnly" type="HTMLFormElement" url="#ID-63239895"/>
+        <property name="accept" type="String" url="#ID-15328520"/>
+        <property name="accessKey" type="String" url="#ID-59914154"/>
+        <property name="align" type="String" url="#ID-96991182"/>
+        <property name="alt" type="String" url="#ID-92701314"/>
+        <property name="checked" type="Boolean" url="#ID-30233917"/>
+        <property name="disabled" type="Boolean" url="#ID-50886781"/>
+        <property name="maxLength" type="Number" url="#ID-54719353"/>
+        <property name="name" type="String" url="#ID-89658498"/>
+        <property name="readOnly" type="Boolean" url="#ID-88461592"/>
+        <property name="size" type="Number" url="#ID-79659438"/>
+        <property name="src" type="String" url="#ID-97320704"/>
+        <property name="tabIndex" type="Number" url="#ID-62176355"/>
+        <property name="type" type="String" url="#ID-62883744"/>
+        <property name="useMap" type="String" url="#ID-32463706"/>
+        <property name="value" type="String" url="#ID-49531485"/>
+
+        <!-- methods -->
+        <method name="blur" url="#ID-26838235"/>
+        <method name="focus" url="#ID-65996295"/>
+        <method name="select" url="#ID-34677168"/>
+        <method name="click" url="#ID-2651361"/>
+
+        <method name="setSelectionRange" browser="Gecko">
+          <param name="start" type="Number"/>
+          <param name="end" type="Number"/>
+        </method>
+        <property name="selectionStart" type="Number" />
+        <property name="selectionEnd" type="Number" />
+
+        <method name="createTextRange" returnType="TextRange" browser="IE"/>
+    </class>
+
+    <class name="HTMLTextAreaElement" extends="HTMLElement" url="#ID-24874179">
+        <!-- properties -->
+        <property name="defaultValue" type="String" url="#ID-36152213"/>
+        <property name="form" attribute="ReadOnly" type="HTMLFormElement" url="#ID-18911464"/>
+        <property name="accessKey" type="String" url="#ID-93102991"/>
+        <property name="cols" type="Number" url="#ID-51387225"/>
+        <property name="disabled" type="Boolean" url="#ID-98725443"/>
+        <property name="name" type="String" url="#ID-70715578"/>
+        <property name="readOnly" type="Boolean" url="#ID-39131423"/>
+        <property name="rows" type="Number" url="#ID-46975887"/>
+        <property name="tabIndex" type="Number" url="#ID-60363303"/>
+        <property name="type" type="String" url="#HTML-HTMLTextAreaElement-type"/>
+        <property name="value" type="String" url="#ID-70715579"/>
+
+        <!-- methods -->
+        <method name="blur" url="#ID-6750689"/>
+        <method name="focus" url="#ID-39055426"/>
+        <method name="select" url="#ID-48880622"/>
+    </class>
+
+    <class name="HTMLButtonElement" extends="HTMLElement" url="#ID-34812697">
+        <!-- properties -->
+        <property name="form" attribute="ReadOnly" type="HTMLFormElement" url="#ID-71254493"/>
+        <property name="accessKey" type="String" url="#ID-73169431"/>
+        <property name="disabled" type="Boolean" url="#ID-92757155"/>
+        <property name="name" type="String" url="#ID-11029910"/>
+        <property name="tabIndex" type="Number" url="#ID-39190908"/>
+        <property name="type" type="String" url="#ID-27430092"/>
+        <property name="value" type="String" url="#ID-72856782"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLLabelElement" extends="HTMLElement" url="#ID-13691394">
+        <!-- properties -->
+        <property name="form" attribute="ReadOnly" type="HTMLFormElement" url="#ID-32480901"/>
+        <property name="accessKey" type="String" url="#ID-43589892"/>
+        <property name="htmlFor" type="" url="#ID-96509813"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLFieldSetElement" extends="HTMLElement" url="#ID-7365882">
+        <!-- properties -->
+        <property name="form" attribute="ReadOnly" type="HTMLFormElement" url="#ID-75392630"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLLegendElement" extends="HTMLElement" url="#ID-21482039">
+        <!-- properties -->
+        <property name="form" attribute="ReadOnly" type="HTMLFormElement" url="#ID-29594519"/>
+        <property name="accessKey" type="String" url="#ID-11297832"/>
+        <property name="align" type="String" url="#ID-79538067"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLUListElement" extends="HTMLElement" url="#ID-86834457">
+        <!-- properties -->
+        <property name="compact" type="Boolean" url="#ID-39864178"/>
+        <property name="type" type="String" url="#ID-96874670"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLOListElement" extends="HTMLElement" url="#ID-58056027">
+        <!-- properties -->
+        <property name="compact" type="Boolean" url="#ID-76448506"/>
+        <property name="start" type="Number" url="#ID-14793325"/>
+        <property name="type" type="String" url="#ID-40971103"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLDListElement" extends="HTMLElement" url="#ID-52368974">
+        <!-- properties -->
+        <property name="compact" type="Boolean" url="#ID-21738539"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLDirectoryElement" extends="HTMLElement" url="#ID-71600284">
+        <!-- properties -->
+        <property name="compact" type="Boolean" url="#ID-75317739"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLMenuElement" extends="HTMLElement" url="#ID-72509186">
+        <!-- properties -->
+        <property name="compact" type="Boolean" url="#ID-68436464"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLLIElement" extends="HTMLElement" url="#ID-74680021">
+        <!-- properties -->
+        <property name="type" type="String" url="#ID-52387668"/>
+        <property name="value" type="Number" url="#ID-45496263"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLDivElement" extends="HTMLElement" url="#ID-22445964">
+        <!-- properties -->
+        <property name="align" type="String" url="#ID-70908791"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLParagraphElement" extends="HTMLElement" url="#ID-84675076">
+        <!-- properties -->
+        <property name="align" type="String" url="#ID-53465507"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLHeadingElement" extends="HTMLElement" url="#ID-43345119">
+        <!-- properties -->
+        <property name="align" type="String" url="#ID-6796462"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLQuoteElement" extends="HTMLElement" url="#ID-70319763">
+        <!-- properties -->
+        <property name="cite" type="String" url="#ID-53895598"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLPreElement" extends="HTMLElement" url="#ID-11383425">
+        <!-- properties -->
+        <property name="width" type="Number" url="#ID-13894083"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLBRElement" extends="HTMLElement" url="#ID-56836063">
+        <!-- properties -->
+        <property name="clear" type="String" url="#ID-82703081"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLBaseFontElement" extends="HTMLElement" url="#ID-32774408">
+        <!-- properties -->
+        <property name="color" type="String" url="#ID-87502302"/>
+        <property name="face" type="String" url="#ID-88128969"/>
+        <property name="size" type="Number" url="#ID-38930424"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLFontElement" extends="HTMLElement" url="#ID-43943847">
+        <!-- properties -->
+        <property name="color" type="String" url="#ID-53532975"/>
+        <property name="face" type="String" url="#ID-55715655"/>
+        <property name="size" type="String" url="#ID-90127284"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLHRElement" extends="HTMLElement" url="#ID-68228811">
+        <!-- properties -->
+        <property name="align" type="String" url="#ID-15235012"/>
+        <property name="noShade" type="Boolean" url="#ID-79813978"/>
+        <property name="size" type="String" url="#ID-77612587"/>
+        <property name="width" type="String" url="#ID-87744198"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLModElement" extends="HTMLElement" url="#ID-79359609">
+        <!-- properties -->
+        <property name="cite" type="String" url="#ID-75101708"/>
+        <property name="dateTime" type="String" url="#ID-88432678"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLAnchorElement" extends="HTMLElement" url="#ID-48250443">
+        <!-- properties -->
+        <property name="accessKey" type="String" url="#ID-89647724"/>
+        <property name="charset" type="String" url="#ID-67619266"/>
+        <property name="coords" type="String" url="#ID-92079539"/>
+        <property name="href" type="String" url="#ID-88517319"/>
+        <property name="hreflang" type="String" url="#ID-87358513"/>
+        <property name="name" type="String" url="#ID-32783304"/>
+        <property name="rel" type="String" url="#ID-3815891"/>
+        <property name="rev" type="String" url="#ID-58259771"/>
+        <property name="shape" type="String" url="#ID-49899808"/>
+        <property name="tabIndex" type="Number" url="#ID-41586466"/>
+        <property name="target" type="String" url="#ID-6414197"/>
+        <property name="type" type="String" url="#ID-63938221"/>
+
+        <!-- methods -->
+        <method name="blur" url="#ID-65068939"/>
+        <method name="focus" url="#ID-47150313"/>
+    </class>
+
+    <class name="HTMLImageElement" extends="HTMLElement" url="#ID-17701901">
+        <!-- properties -->
+        <property name="name" type="String" url="#ID-47534097"/>
+        <property name="align" type="String" url="#ID-3211094"/>
+        <property name="alt" type="String" url="#ID-95636861"/>
+        <property name="border" type="String" url="#ID-136671"/>
+        <property name="height" type="Number" url="#ID-91561496"/>
+        <property name="hspace" type="Number" url="#ID-53675471"/>
+        <property name="isMap" type="Boolean" url="#ID-58983880"/>
+        <property name="longDesc" type="String" url="#ID-77376969"/>
+        <property name="src" type="String" url="#ID-87762984"/>
+        <property name="useMap" type="String" url="#ID-35981181"/>
+        <property name="vspace" type="Number" url="#ID-85374897"/>
+        <property name="width" type="Number" url="#ID-13839076"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLObjectElement" extends="HTMLElement" url="#ID-9893177">
+        <!-- properties -->
+        <property name="form" attribute="ReadOnly" type="HTMLFormElement" url="#ID-46094773"/>
+        <property name="code" type="String" url="#ID-75241146"/>
+        <property name="align" type="String" url="#ID-16962097"/>
+        <property name="archive" type="String" url="#ID-47783837"/>
+        <property name="border" type="String" url="#ID-82818419"/>
+        <property name="codeBase" type="String" url="#ID-25709136"/>
+        <property name="codeType" type="String" url="#ID-19945008"/>
+        <property name="data" type="String" url="#ID-81766986"/>
+        <property name="declare" type="Boolean" url="#ID-942770"/>
+        <property name="height" type="String" url="#ID-88925838"/>
+        <property name="hspace" type="Number" url="#ID-17085376"/>
+        <property name="name" type="String" url="#ID-20110362"/>
+        <property name="standby" type="String" url="#ID-25039673"/>
+        <property name="tabIndex" type="Number" url="#ID-27083787"/>
+        <property name="type" type="String" url="#ID-91665621"/>
+        <property name="useMap" type="String" url="#ID-6649772"/>
+        <property name="vspace" type="Number" url="#ID-8682483"/>
+        <property name="width" type="String" url="#ID-38538620"/>
+        <property name="contentDocument" attribute="ReadOnly" type="Document" url="#ID-38538621"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLParamElement" extends="HTMLElement" url="#ID-64077273">
+        <!-- properties -->
+        <property name="name" type="String" url="#ID-59871447"/>
+        <property name="type" type="String" url="#ID-18179888"/>
+        <property name="value" type="String" url="#ID-77971357"/>
+        <property name="valueType" type="String" url="#ID-23931872"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLAppletElement" extends="HTMLElement" url="#ID-31006348">
+        <!-- properties -->
+        <property name="align" type="String" url="#ID-8049912"/>
+        <property name="alt" type="String" url="#ID-58610064"/>
+        <property name="archive" type="String" url="#ID-14476360"/>
+        <property name="code" type="String" url="#ID-61509645"/>
+        <property name="codeBase" type="String" url="#ID-6581160"/>
+        <property name="height" type="String" url="#ID-90184867"/>
+        <property name="hspace" type="Number" url="#ID-1567197"/>
+        <property name="name" type="String" url="#ID-39843695"/>
+        <property name="object" type="String" url="#ID-93681523"/>
+        <property name="vspace" type="Number" url="#ID-22637173"/>
+        <property name="width" type="String" url="#ID-16526327"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLMapElement" extends="HTMLElement" url="#ID-94109203">
+        <!-- properties -->
+        <property name="areas" attribute="ReadOnly" type="HTMLCollection" url="#ID-71838730"/>
+        <property name="name" type="String" url="#ID-52696514"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLAreaElement" extends="HTMLElement" url="#ID-26019118">
+        <!-- properties -->
+        <property name="accessKey" type="String" url="#ID-57944457"/>
+        <property name="alt" type="String" url="#ID-39775416"/>
+        <property name="coords" type="String" url="#ID-66021476"/>
+        <property name="href" type="String" url="#ID-34672936"/>
+        <property name="noHref" type="Boolean" url="#ID-61826871"/>
+        <property name="shape" type="String" url="#ID-85683271"/>
+        <property name="tabIndex" type="Number" url="#ID-8722121"/>
+        <property name="target" type="String" url="#ID-46054682"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLScriptElement" extends="HTMLElement" url="#ID-81598695">
+        <!-- properties -->
+        <property name="text" type="String" url="#ID-46872999"/>
+        <property name="htmlFor" type="String" url="#ID-66979266"/>
+        <property name="event" type="String" url="#ID-56700403"/>
+        <property name="charset" type="String" url="#ID-35305677"/>
+        <property name="defer" type="Boolean" url="#ID-93788534"/>
+        <property name="src" type="String" url="#ID-75147231"/>
+        <property name="type" type="String" url="#ID-30534818"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLTableElement" extends="HTMLElement" url="#ID-64060425">
+        <!-- properties -->
+        <property name="caption" type="HTMLTableCaptionElement" throws="DOMException" url="#ID-14594520"/>
+        <property name="tHead" type="HTMLTableSectionElement" throws="DOMException" url="#ID-9530944"/>
+        <property name="tFoot" type="HTMLTableSectionElement" throws="DOMException" url="#ID-64197097"/>
+        <property name="rows" attribute="ReadOnly" type="HTMLCollection" url="#ID-6156016"/>
+        <property name="tBodies" attribute="ReadOnly" type="HTMLCollection" url="#ID-63206416"/>
+        <property name="align" type="String" url="#ID-23180977"/>
+        <property name="bgColor" type="String" url="#ID-83532985"/>
+        <property name="border" type="String" url="#ID-50969400"/>
+        <property name="cellPadding" type="String" url="#ID-59162158"/>
+        <property name="cellSpacing" type="String" url="#ID-68907883"/>
+        <property name="frame" type="String" url="#ID-64808476"/>
+        <property name="rules" type="String" url="#ID-26347553"/>
+        <property name="summary" type="String" url="#ID-44998528"/>
+        <property name="width" type="String" url="#ID-77447361"/>
+
+        <!-- methods -->
+        <method name="createTHead" returnType="HTMLElement" url="#ID-70313345"/>
+        <method name="deleteTHead" url="#ID-38310198"/>
+        <method name="createTFoot" returnType="HTMLElement" url="#ID-8453710"/>
+        <method name="deleteTFoot" url="#ID-78363258"/>
+        <method name="createCaption" returnType="HTMLElement" url="#ID-96920263"/>
+        <method name="deleteCaption" url="#ID-22930071"/>
+        <method name="insertRow" returnType="HTMLElement" throws="DOMException" url="#ID-39872903">
+            <param name="index" mandatory="true" type="Number"/>
+        </method>
+        <method name="deleteRow" throws="DOMException" url="#ID-13114938">
+            <param name="index" mandatory="true" type="Number"/>
+        </method>
+    </class>
+
+    <class name="HTMLTableCaptionElement" extends="HTMLElement" url="#ID-12035137">
+        <!-- properties -->
+        <property name="align" type="String" url="#ID-79875068"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLTableColElement" extends="HTMLElement" url="#ID-84150186">
+        <!-- properties -->
+        <property name="align" type="String" url="#ID-31128447"/>
+        <property name="ch" type="String" url="#ID-9447412"/>
+        <property name="chOff" type="String" url="#ID-57779225"/>
+        <property name="span" type="Number" url="#ID-96511335"/>
+        <property name="vAlign" type="String" url="#ID-83291710"/>
+        <property name="width" type="String" url="#ID-25196799"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLTableSectionElement" extends="HTMLElement" url="#ID-67417573">
+        <!-- properties -->
+        <property name="align" type="String" url="#ID-40530119"/>
+        <property name="ch" type="String" url="#ID-83470012"/>
+        <property name="chOff" type="String" url="#ID-53459732"/>
+        <property name="vAlign" type="String" url="#ID-4379116"/>
+        <property name="rows" attribute="ReadOnly" type="HTMLCollection" url="#ID-52092650"/>
+
+        <!-- methods -->
+        <method name="insertRow" returnType="HTMLElement" throws="DOMException" url="#ID-93995626">
+            <param name="index" mandatory="true" type="Number"/>
+        </method>
+        <method name="deleteRow" throws="DOMException" url="#ID-5625626">
+            <param name="index" mandatory="true" type="Number"/>
+        </method>
+    </class>
+
+    <class name="HTMLTableRowElement" extends="HTMLElement" url="#ID-6986576">
+        <!-- properties -->
+        <property name="rowIndex" attribute="ReadOnly" type="Number" url="#ID-67347567"/>
+        <property name="sectionRowIndex" attribute="ReadOnly" type="Number" url="#ID-79105901"/>
+        <property name="cells" attribute="ReadOnly" type="HTMLCollection" url="#ID-67349879"/>
+        <property name="align" type="String" url="#ID-74098257"/>
+        <property name="bgColor" type="String" url="#ID-18161327"/>
+        <property name="ch" type="String" url="#ID-16230502"/>
+        <property name="chOff" type="String" url="#ID-68207461"/>
+        <property name="vAlign" type="String" url="#ID-90000058"/>
+
+        <!-- methods -->
+        <method name="insertCell" returnType="HTMLElement" throws="DOMException" url="#ID-68927016">
+            <param name="index" mandatory="true" type="Number"/>
+        </method>
+        <method name="deleteCell" throws="DOMException" url="#ID-11738598">
+            <param name="index" mandatory="true" type="Number"/>
+        </method>
+    </class>
+
+    <class name="HTMLTableCellElement" extends="HTMLElement" url="#ID-82915075">
+        <!-- properties -->
+        <property name="cellIndex" attribute="ReadOnly" type="Number" url="#ID-80748363"/>
+        <property name="abbr" type="String" url="#ID-74444037"/>
+        <property name="align" type="String" url="#ID-98433879"/>
+        <property name="axis" type="String" url="#ID-76554418"/>
+        <property name="bgColor" type="String" url="#ID-88135431"/>
+        <property name="ch" type="String" url="#ID-30914780"/>
+        <property name="chOff" type="String" url="#ID-20144310"/>
+        <property name="colSpan" type="Number" url="#ID-84645244"/>
+        <property name="headers" type="String" url="#ID-89104817"/>
+        <property name="height" type="String" url="#ID-83679212"/>
+        <property name="noWrap" type="Boolean" url="#ID-62922045"/>
+        <property name="rowSpan" type="Number" url="#ID-48237625"/>
+        <property name="scope" type="String" url="#ID-36139952"/>
+        <property name="vAlign" type="String" url="#ID-58284221"/>
+        <property name="width" type="String" url="#ID-27480795"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLFrameSetElement" extends="HTMLElement" url="#ID-82915075">
+        <!-- properties -->
+        <property name="cols" type="String" url="#ID-98869594"/>
+        <property name="rows" type="String" url="#ID-19739247"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLFrameElement" extends="HTMLElement" url="#ID-82915075">
+        <!-- properties -->
+        <property name="frameBorder" type="String" url="#ID-11858633"/>
+        <property name="longDesc" type="String" url="#ID-7836998"/>
+        <property name="marginHeight" type="String" url="#ID-55569778"/>
+        <property name="marginWidth" type="String" url="#ID-8369969"/>
+        <property name="name" type="String" url="#ID-91128709"/>
+        <property name="noResize" type="Boolean" url="#ID-80766578"/>
+        <property name="scrolling" type="String" url="#ID-45411424"/>
+        <property name="src" type="String" url="#ID-78799535"/>
+        <property name="contentDocument" attribute="ReadOnly" type="Document" url="#ID-78799536" browser="Gecko"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="HTMLIFrameElement" extends="HTMLElement" url="#ID-82915075">
+        <!-- properties -->
+        <property name="align" type="String" url="#ID-11309947"/>
+        <property name="frameBorder" type="String" url="#ID-22463410"/>
+        <property name="height" type="String" url="#ID-1678118"/>
+        <property name="longDesc" type="String" url="#ID-70472105"/>
+        <property name="marginHeight" type="String" url="#ID-91371294"/>
+        <property name="marginWidth" type="String" url="#ID-66486595"/>
+        <property name="name" type="String" url="#ID-96819659"/>
+        <property name="scrolling" type="String" url="#ID-36369822"/>
+        <property name="src" type="String" url="#ID-43933957"/>
+        <property name="width" type="String" url="#ID-67133005"/>
+        <property name="contentDocument" attribute="ReadOnly" type="Document" url="#ID-67133006"/>
+        <property name="contentWindow" attribute="ReadOnly" type="window" />
+
+        <!-- methods -->
+    </class>
+</Library>

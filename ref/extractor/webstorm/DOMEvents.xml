@@ -1,0 +1,318 @@
+<!--
+   Standard: ECMAScript binding for the Level 3 Document Object Model
+                              Events definitions
+                                    ver. 1.1
+   Remarks:
+
+    default values
+      method:
+        static="false"    // (true/false) = static/non-static method
+        ECMA="true"       // (true/false) = supported/unsupported by ECMA standard
+      param:
+        mandatory="false" // (true/false) = mandatory/optional method parameter
+        infinite="false"  // (true/false) = in case of variable parameters number, e.g. (param1, [param2, [param3...)
+        ECMA="true"       // (true/false) = supported/unsupported by ECMA standard
+-->
+<Library>
+    <url>
+        <address id="1" default="true" url="http://www.w3.org/TR/2003/NOTE-DOM-Level-3-Events-20031107/events.html"/>
+    </url>
+
+    <class name="Event" url="#Events-Event" browser="Gecko">
+        <!-- properties -->
+        <property name="type" attribute="ReadOnly" type="String"/>
+        <property name="target" attribute="ReadOnly" type="EventTarget"/>
+        <property name="currentTarget" attribute="ReadOnly" type="EventTarget"/>
+        <property name="eventPhase" attribute="ReadOnly" type="Number"/>
+        <property name="bubbles" attribute="ReadOnly" type="Boolean"/>
+        <property name="cancelable" attribute="ReadOnly" type="Boolean"/>
+        <property name="timeStamp" attribute="ReadOnly" type="Number"/>
+        <property name="namespaceURI" attribute="ReadOnly" type="String"/>
+
+        <!-- methods -->
+        <method name="stopPropagation"/>
+        <method name="preventDefault"/>
+        <method name="initEvent">
+            <param name="eventTypeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+        </method>
+        <method name="isCustom" returnType="Boolean"/>
+        <method name="stopImmediatePropagation"/>
+        <method name="isDefaultPrevented" returnType="Boolean"/>
+        <method name="initEventNS">
+            <param name="namespaceURIArg" mandatory="true" type="String"/>
+            <param name="eventTypeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+        </method>
+    </class>
+
+    <class name="EventTarget" url="#Events-EventTarget" browser="Gecko">
+        <!-- properties -->
+
+        <!-- methods -->
+        <method name="addEventListener">
+            <param name="type" mandatory="true" type="String"/>
+            <param name="listener" mandatory="true" type="EventListener|Function"/>
+            <param name="useCapture" type="Boolean"/>
+        </method>
+        <method name="removeEventListener">
+            <param name="type" mandatory="true" type="String"/>
+            <param name="listener" mandatory="true" type="EventListener|Function"/>
+            <param name="useCapture" type="Boolean"/>
+        </method>
+        <method name="dispatchEvent" returnType="Boolean" throws="EventException">
+            <param name="evt" mandatory="true" type="Event"/>
+        </method>
+        <method name="addEventListenerNS">
+            <param name="namespaceURI" mandatory="true" type="String"/>
+            <param name="type" mandatory="true" type="String"/>
+            <param name="listener" mandatory="true" type="EventListener"/>
+            <param name="useCapture" type="Boolean"/>
+            <param name="evtGroup" type="Object"/>
+        </method>
+        <method name="removeEventListenerNS">
+            <param name="namespaceURI" mandatory="true" type="String"/>
+            <param name="type" mandatory="true" type="String"/>
+            <param name="listener" mandatory="true" type="EventListener"/>
+            <param name="useCapture" type="Boolean"/>
+        </method>
+        <method name="willTriggerNS" returnType="Boolean">
+            <param name="namespaceURI" mandatory="true" type="String"/>
+            <param name="type" mandatory="true" type="String"/>
+        </method>
+        <method name="hasEventListenerNS" returnType="Boolean">
+            <param name="namespaceURI" mandatory="true" type="String"/>
+            <param name="type" mandatory="true" type="String"/>
+        </method>
+    </class>
+
+    <class name="EventListener" url="#Events-EventListener" browser="Gecko">
+       <method name="handleEvent">
+            <param name="evt" mandatory="true" type="Event"/>
+       </method>
+    </class>
+
+    <class name="EventException" url="#Events-EventException" browser="Gecko">
+        <!-- properties -->
+        <property name="code" type="Number"/>
+
+        <!-- methods -->
+    </class>
+
+    <class name="DocumentEvent" url="#Events-DocumentEvent" browser="Gecko">
+        <!-- properties -->
+
+        <!-- methods -->
+        <method name="createEvent" returnType="Event" throws="DOMException">
+            <param name="eventType" mandatory="true" type="String"/></method>
+        <method name="canDispatch" returnType="String">
+            <param name="namespaceURI" mandatory="true" type="String"/>
+            <param name="type" mandatory="true" type="String"/>
+        </method>
+    </class>
+
+    <class name="CustomEvent" url="#Events-CustomEvent" extends="Event" browser="Gecko">
+        <!-- properties -->
+
+        <!-- methods -->
+        <method name="setDispatchState">
+            <param name="target" mandatory="true" type="EventTarget"/>
+            <param name="phase" mandatory="true" type="Number"/>
+        </method>
+        <method name="isPropagationStopped" returnType="Boolean"/>
+        <method name="isImmediatePropagationStopped" returnType="Boolean"/>
+    </class>
+
+    <class name="UIEvent" url="#Events-UIEvent" extends="Event" browser="Gecko">
+        <!-- properties -->
+        <property name="view" attribute="ReadOnly" type="AbstractView"/>
+        <property name="detail" attribute="ReadOnly" type="Number"/>
+
+        <!-- methods -->
+        <method name="initUIEvent">
+            <param name="typeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+            <param name="viewArg" mandatory="true" type="AbstractView"/>
+            <param name="detailArg" mandatory="true" type="Number"/>
+        </method>
+        <method name="initUIEventNS">
+            <param name="namespaceURI" mandatory="true" type="String"/>
+            <param name="typeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+            <param name="viewArg" mandatory="true" type="AbstractView"/>
+            <param name="detailArg" mandatory="true" type="Number"/>
+        </method>
+    </class>
+
+    <class name="TextEvent" url="#Events-TextEvent" extends="UIEvent" browser="Gecko">
+        <!-- properties -->
+        <property name="data" attribute="ReadOnly" type="String"/>
+
+        <!-- methods -->
+        <method name="initTextEvent">
+            <param name="typeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+            <param name="viewArg" mandatory="true" type="AbstractView"/>
+            <param name="dataArg" mandatory="true" type="Number"/>
+        </method>
+        <method name="initTextEventNS">
+            <param name="namespaceURI" mandatory="true" type="String"/>
+            <param name="typeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+            <param name="viewArg" mandatory="true" type="AbstractView"/>
+            <param name="dataArg" mandatory="true" type="Number"/>
+        </method>
+    </class>
+
+    <class name="MouseEvent" url="#Events-MouseEvent" extends="UIEvent" browser="Gecko">
+        <!-- properties -->
+        <property name="screenX" attribute="ReadOnly" type="Number"/>
+        <property name="screenY" attribute="ReadOnly" type="Number"/>
+        <property name="clientX" attribute="ReadOnly" type="Number"/>
+        <property name="clientY" attribute="ReadOnly" type="Number"/>
+        <property name="ctrlKey" attribute="ReadOnly" type="Boolean"/>
+        <property name="shiftKey" attribute="ReadOnly" type="Boolean"/>
+        <property name="altKey" attribute="ReadOnly" type="Boolean"/>
+        <property name="metaKey" attribute="ReadOnly" type="Boolean"/>
+        <property name="button" attribute="ReadOnly" type="Number"/>
+        <property name="relatedTarget" attribute="ReadOnly" type="EventTarget"/>
+
+        <!-- methods -->
+        <method name="getModifierState" returnType="Boolean">
+            <param name="keyIdentifierArg" mandatory="true" type="String"/>
+        </method>
+        <method name="initMouseEvent" browser="Gecko">
+            <param name="typeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+            <param name="viewArg" mandatory="true" type="AbstractView"/>
+            <param name="detailArg" mandatory="true" type="Number"/>
+            <param name="screenXArg" mandatory="true" type="Number"/>
+            <param name="screenYArg" mandatory="true" type="Number"/>
+            <param name="clientXArg" mandatory="true" type="Number"/>
+            <param name="clientYArg" mandatory="true" type="Number"/>
+            <param name="ctrlKeyArg" mandatory="true" type="Boolean"/>
+            <param name="altKeyArg" mandatory="true" type="Boolean"/>
+            <param name="shiftKeyArg" mandatory="true" type="Boolean"/>
+            <param name="metaKeyArg" mandatory="true" type="Boolean"/>
+            <param name="buttonArg" mandatory="true" type="Number"/>
+            <param name="relatedTargetArg" mandatory="true" type="EventTarget"/>
+        </method>
+        <method name="initMouseEventNS">
+            <param name="namespaceURI" mandatory="true" type="String"/>
+            <param name="typeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+            <param name="viewArg" mandatory="true" type="AbstractView"/>
+            <param name="detailArg" mandatory="true" type="Number"/>
+            <param name="screenXArg" mandatory="true" type="Number"/>
+            <param name="screenYArg" mandatory="true" type="Number"/>
+            <param name="clientXArg" mandatory="true" type="Number"/>
+            <param name="clientYArg" mandatory="true" type="Number"/>
+            <param name="ctrlKeyArg" mandatory="true" type="Boolean"/>
+            <param name="altKeyArg" mandatory="true" type="Boolean"/>
+            <param name="shiftKeyArg" mandatory="true" type="Boolean"/>
+            <param name="metaKeyArg" mandatory="true" type="Boolean"/>
+            <param name="buttonArg" mandatory="true" type="Number"/>
+            <param name="relatedTargetArg" mandatory="true" type="EventTarget"/>
+       </method>
+    </class>
+
+    <class name="KeyboardEvent" url="#Events-KeyboardEvent" extends="UIEvent" browser="Gecko">
+        <!-- properties -->
+        <property name="keyIdentifier" attribute="ReadOnly" type="String"/>
+        <property name="keyLocation" attribute="ReadOnly" type="Number"/>
+        <property name="ctrlKey" attribute="ReadOnly" type="Boolean"/>
+        <property name="shiftKey" attribute="ReadOnly" type="Boolean"/>
+        <property name="altKey" attribute="ReadOnly" type="Boolean"/>
+        <property name="metaKey" attribute="ReadOnly" type="Boolean" browser="Gecko"/>
+
+        <!-- methods -->
+        <method name="getModifierState" returnType="Boolean">
+            <param name="keyIdentifierArg" mandatory="true" type="String"/>
+        </method>
+        <method name="initKeyboardEvent">
+            <param name="typeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+            <param name="viewArg" mandatory="true" type="AbstractView"/>
+            <param name="keyIdentifierArg" mandatory="true" type="String"/>
+            <param name="keyLocationArg" mandatory="true" type="Number"/>
+            <param name="modifiersList" mandatory="true" type="String"/>
+        </method>
+        <method name="initKeyboardEventNS">
+            <param name="namespaceURI" mandatory="true" type="String"/>
+            <param name="typeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+            <param name="viewArg" mandatory="true" type="AbstractView"/>
+            <param name="keyIdentifierArg" mandatory="true" type="String"/>
+            <param name="keyLocationArg" mandatory="true" type="Number"/>
+            <param name="modifiersList" mandatory="true" type="String"/>
+       </method>
+
+    </class>
+
+    <class name="MutationEvent" url="#Events-MutationEvent" extends="UIEvent" browser="Gecko">
+        <!-- properties -->
+        <property name="relatedNode" attribute="ReadOnly" type="Node"/>
+        <property name="prevValue" attribute="ReadOnly" type="String"/>
+        <property name="newValue" attribute="ReadOnly" type="String"/>
+        <property name="attrName" attribute="ReadOnly" type="String"/>
+        <property name="attrChange" attribute="ReadOnly" type="Number"/>
+
+        <!-- methods -->
+        <method name="initMutationEvent">
+            <param name="typeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+            <param name="relatedNodeArg" mandatory="true" type="Node"/>
+            <param name="prevValueArg" mandatory="true" type="String"/>
+            <param name="newValueArg" mandatory="true" type="String"/>
+            <param name="attrNameArg" mandatory="true" type="String"/>
+            <param name="attrChangeArg" mandatory="true" type="Number"/>
+        </method>
+        <method name="initMutationEventNS">
+            <param name="namespaceURI" mandatory="true" type="String"/>
+            <param name="typeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+            <param name="relatedNodeArg" mandatory="true" type="Node"/>
+            <param name="prevValueArg" mandatory="true" type="String"/>
+            <param name="newValueArg" mandatory="true" type="String"/>
+            <param name="attrNameArg" mandatory="true" type="String"/>
+            <param name="attrChangeArg" mandatory="true" type="Number"/>
+        </method>
+    </class>
+
+    <class name="MutationNameEvent" url="#Events-MutationNameEvent" extends="MutationEvent" browser="Gecko">
+        <!-- properties -->
+        <property name="prevNamespaceURI" attribute="ReadOnly" type="String"/>
+        <property name="prevNodeName" attribute="ReadOnly" type="String"/>
+
+        <!-- methods -->
+        <method name="initMutationNameEvent">
+            <param name="typeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+            <param name="relatedNodeArg" mandatory="true" type="Node"/>
+            <param name="prevNamespaceURIArg" mandatory="true" type="String"/>
+            <param name="prevNodeNameArg" mandatory="true" type="String"/>
+        </method>
+        <method name="initMutationNameEventNS">
+            <param name="namespaceURI" mandatory="true" type="String"/>
+            <param name="typeArg" mandatory="true" type="String"/>
+            <param name="canBubbleArg" mandatory="true" type="Boolean"/>
+            <param name="cancelableArg" mandatory="true" type="Boolean"/>
+            <param name="relatedNodeArg" mandatory="true" type="Node"/>
+            <param name="prevNamespaceURIArg" mandatory="true" type="String"/>
+            <param name="prevNodeNameArg" mandatory="true" type="String"/>
+        </method>
+    </class>
+</Library>

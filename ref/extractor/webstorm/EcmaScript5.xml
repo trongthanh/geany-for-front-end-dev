@@ -1,0 +1,113 @@
+<Library>
+    <class name="Object" createStaticVar="false">
+      <method name="isExtensible" returnType="Boolean" static="true">
+        <param name="object" mandatory="true" type="Object" />
+      </method>
+      <method name="preventExtensions" returnType="void" static="true">
+        <param name="obj" mandatory="true" type="Object" />
+      </method>
+      <method name="getOwnPropertyDescriptor" returnType="Object" static="true">
+        <param name="obj" mandatory="true" type="Object" />
+        <param name="prop" mandatory="true" type="String" />
+      </method>
+      <method name="defineProperty" returnType="void" static="true">
+        <param name="obj" mandatory="true" type="Object" />
+        <param name="prop" mandatory="true" type="String" />
+        <param name="desc" mandatory="true" type="Object" />
+      </method>
+      <method name="defineProperties" returnType="void" static="true">
+        <param name="obj" mandatory="true" type="Object" />
+        <param name="props" mandatory="true" type="Object" />
+      </method>
+      <method name="keys" returnType="Array" static="true">
+        <param name="obj" mandatory="true" type="Object" />
+      </method>
+      <method name="getOwnPropertyNames" returnType="Array" static="true">
+        <param name="obj" mandatory="true" type="Object" />
+      </method>
+      <method name="create" returnType="void" static="true">
+        <param name="proto" mandatory="true" type="Object" />
+        <param name="props" type="Object" />
+      </method>
+      <method name="getPrototypeOf" returnType="Object" static="true">
+        <param name="obj" mandatory="true" type="Object" />
+      </method>
+      <method name="seal" returnType="void" static="true">
+        <param name="obj" mandatory="true" type="Object" />
+      </method>
+      <method name="isSealed" returnType="Boolean" static="true">
+        <param name="obj" mandatory="true" type="Object" />
+      </method>
+      <method name="freeze" returnType="void" static="true">
+        <param name="obj" mandatory="true" type="Object" />
+      </method>
+      <method name="isFrozen" returnType="Boolean" static="true">
+        <param name="obj" mandatory="true" type="Object" />
+      </method>
+    </class>
+    <class name="Array" createStaticVar="false">
+      <method name="reduce" returnType="Object">
+        <param name="callback" mandatory="true" type="Function" />
+        <param name="initialValue" type="Object" />
+      </method>
+      <method name="reduceRight" returnType="Object">
+        <param name="callback" mandatory="true" type="Function" />
+        <param name="initialValue" type="Object" />
+      </method>
+      <method name="indexOf" returnType="int">
+        <param name="searchElement" mandatory="true" type="Object" />
+        <param name="fromIndex" type="int" />
+      </method>
+      <method name="lastIndexOf" returnType="int">
+        <param name="searchElement" mandatory="true" type="Object" />
+        <param name="fromIndex" type="int" />
+      </method>
+      <method name="every" returnType="boolean">
+        <param name="callback" mandatory="true" type="Function" />
+        <param name="thisObject" type="Object" />
+      </method>
+      <method name="filter" returnType="Array">
+        <param name="callback" mandatory="true" type="Function" />
+        <param name="thisObject" type="Object" />
+      </method>
+      <method name="forEach" returnType="void">
+        <param name="callback" mandatory="true" type="Function" />
+        <param name="thisObject" type="Object" />
+      </method>
+      <method name="map" returnType="Array">
+        <param name="callback" mandatory="true" type="Function" />
+        <param name="thisObject" type="Object" />
+      </method>
+      <method name="some" returnType="Boolean">
+        <param name="callback" mandatory="true" type="Function" />
+        <param name="thisObject" type="Object" />
+      </method>
+      <method name="isArray" returnType="Boolean">
+        <param name="object" mandatory="true" type="Object" />
+      </method>
+    </class>
+    <class name="String" createStaticVar="false">
+      <method name="trim" returnType="String"/>
+      <method name="toJSON" returnType="String"/>
+    </class>
+    <class name="Date" createStaticVar="false">
+      <method name="toISOString" returnType="String"/>
+    </class>
+    <class name="Function" createStaticVar="false">
+      <method name="bind">
+        <param name="thisArg" mandatory="true"/>
+        <param name="arg" rest="true"  type="*"/>
+      </method>
+    </class>
+    <class name="JSON" extends="Object">
+      <property name="constructor" />
+      <method name="stringify" static="true">
+        <param name="value" mandatory="true" type="Object"/>
+        <param name="replacer" type="Function"/>
+        <param name="space" type="Number|String"/>
+      </method>
+      <method name="parse" static="true">
+        <param name="jsonString" mandatory="true" type="String"/>
+      </method>
+    </class>
+</Library>

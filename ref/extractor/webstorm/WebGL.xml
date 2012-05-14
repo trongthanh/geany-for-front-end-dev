@@ -1,0 +1,1169 @@
+<Library>
+  <class name="WebGLContextAttributes" createStaticVar="false">
+    <property name="alpha" type="Boolean" defaultValue="true"/>
+    <property name="depth" type="Boolean" defaultValue="true" />
+    <property name="stencil" type="Boolean" defaultValue="false" />
+    <property name="antialias" type="Boolean" defaultValue="true"/>
+    <property name="premultipliedAlpha" type="Boolean" defaultValue="true"/>
+    <property name="preserveDrawingBuffer" type="Boolean" defaultValue="false" />
+  </class>
+
+  <class name="WebGLObject" createStaticVar="false" />
+  <class name="WebGLBuffer" extends="WebGLObject" createStaticVar="false" />
+  <class name="WebGLFramebuffer" extends="WebGLObject" createStaticVar="false" />
+  <class name="WebGLProgram" extends="WebGLObject" createStaticVar="false" />
+  <class name="WebGLRenderbuffer" extends="WebGLObject" createStaticVar="false" />
+  <class name="WebGLShader" extends="WebGLObject" createStaticVar="false" />
+  <class name="WebGLTexture" extends="WebGLObject" createStaticVar="false" />
+  <class name="WebGLUniformLocation" createStaticVar="false" />
+  <class name="WebGLActiveInfo" createStaticVar="false">
+    <property name="size" type="Number" readOnly="true" />
+    <property name="type" type="Number" readOnly="true" />
+    <property name="name" type="String" readOnly="true" />
+  </class>
+
+  <class name="WebGLRenderingContext" createStaticVar="true">
+    <!-- ClearBufferMask  -->
+    <property name="DEPTH_BUFFER_BIT" type="Number" value="0x00000100" readOnly="true"/>
+    <property name="STENCIL_BUFFER_BIT" type="Number" value="0x00000400" readOnly="true" />
+    <property name="COLOR_BUFFER_BIT" type="Number" value="0x00004000" readOnly="true" />
+
+    <!-- BeginMode  -->
+    <property name="POINTS" type="Number" value="0x0000" readOnly="true" />
+    <property name="LINES" type="Number" value="0x0001" readOnly="true" />
+    <property name="LINE_LOOP" type="Number" value="0x0002" readOnly="true" />
+    <property name="LINE_STRIP" type="Number" value="0x0003" readOnly="true" />
+    <property name="TRIANGLES" type="Number" value="0x0004" readOnly="true" />
+    <property name="TRIANGLE_STRIP" type="Number" value="0x0005" readOnly="true" />
+    <property name="TRIANGLE_FAN" type="Number" value="0x0006" readOnly="true" />
+
+    <!-- AlphaFunction (not supported in ES20)  -->
+    <!--      NEVER  -->
+    <!--      LESS  -->
+    <!--      EQUAL  -->
+    <!--      LEQUAL  -->
+    <!--      GREATER  -->
+    <!--      NOTEQUAL  -->
+    <!--      GEQUAL  -->
+    <!--      ALWAYS  -->
+
+    <!-- BlendingFactorDest  -->
+    <property name="ZERO" type="Number" value="0" readOnly="true" />
+    <property name="ONE" type="Number" value="1" readOnly="true" />
+    <property name="SRC_COLOR" type="Number" value="0x0300" readOnly="true" />
+    <property name="ONE_MINUS_SRC_COLOR" type="Number" value="0x0301" readOnly="true" />
+    <property name="SRC_ALPHA" type="Number" value="0x0302" readOnly="true" />
+    <property name="ONE_MINUS_SRC_ALPHA" type="Number" value="0x0303" readOnly="true" />
+    <property name="DST_ALPHA" type="Number" value="0x0304" readOnly="true" />
+    <property name="ONE_MINUS_DST_ALPHA" type="Number" value="0x0305" readOnly="true" />
+
+    <!-- BlendingFactorSrc  -->
+    <!--      ZERO  -->
+    <!--      ONE  -->
+    <property name="DST_COLOR" type="Number" value="0x0306" readOnly="true" />
+    <property name="ONE_MINUS_DST_COLOR" type="Number" value="0x0307" readOnly="true" />
+    <property name="SRC_ALPHA_SATURATE" type="Number" value="0x0308" readOnly="true" />
+    <!--      SRC_ALPHA  -->
+    <!--      ONE_MINUS_SRC_ALPHA  -->
+    <!--      DST_ALPHA  -->
+    <!--      ONE_MINUS_DST_ALPHA  -->
+
+    <!-- BlendEquationSeparate  -->
+    <property name="FUNC_ADD" type="Number" value="0x8006" readOnly="true" />
+    <property name="BLEND_EQUATION" type="Number" value="0x8009" readOnly="true" />
+    <property name="BLEND_EQUATION_RGB" type="Number" value="0x8009" readOnly="true" />   <!-- same as BLEND_EQUATION  -->
+    <property name="BLEND_EQUATION_ALPHA" type="Number" value="0x883D" readOnly="true" />
+
+    <!-- BlendSubtract  -->
+    <property name="FUNC_SUBTRACT" type="Number" value="0x800A" readOnly="true" />
+    <property name="FUNC_REVERSE_SUBTRACT" type="Number" value="0x800B" readOnly="true" />
+
+    <!-- Separate Blend Functions  -->
+    <property name="BLEND_DST_RGB" type="Number" value="0x80C8" readOnly="true" />
+    <property name="BLEND_SRC_RGB" type="Number" value="0x80C9" readOnly="true" />
+    <property name="BLEND_DST_ALPHA" type="Number" value="0x80CA" readOnly="true" />
+    <property name="BLEND_SRC_ALPHA" type="Number" value="0x80CB" readOnly="true" />
+    <property name="CONSTANT_COLOR" type="Number" value="0x8001" readOnly="true" />
+    <property name="ONE_MINUS_CONSTANT_COLOR" type="Number" value="0x8002" readOnly="true" />
+    <property name="CONSTANT_ALPHA" type="Number" value="0x8003" readOnly="true" />
+    <property name="ONE_MINUS_CONSTANT_ALPHA" type="Number" value="0x8004" readOnly="true" />
+    <property name="BLEND_COLOR" type="Number" value="0x8005" readOnly="true" />
+
+    <!-- Buffer Objects  -->
+    <property name="ARRAY_BUFFER" type="Number" value="0x8892" readOnly="true" />
+    <property name="ELEMENT_ARRAY_BUFFER" type="Number" value="0x8893" readOnly="true" />
+    <property name="ARRAY_BUFFER_BINDING" type="Number" value="0x8894" readOnly="true" />
+    <property name="ELEMENT_ARRAY_BUFFER_BINDING" type="Number" value="0x8895" readOnly="true" />
+
+    <property name="STREAM_DRAW" type="Number" value="0x88E0" readOnly="true" />
+    <property name="STATIC_DRAW" type="Number" value="0x88E4" readOnly="true" />
+    <property name="DYNAMIC_DRAW" type="Number" value="0x88E8" readOnly="true" />
+
+    <property name="BUFFER_SIZE" type="Number" value="0x8764" readOnly="true" />
+    <property name="BUFFER_USAGE" type="Number" value="0x8765" readOnly="true" />
+
+    <property name="CURRENT_VERTEX_ATTRIB" type="Number" value="0x8626" readOnly="true" />
+
+    <!-- CullFaceMode  -->
+    <property name="FRONT" type="Number" value="0x0404" readOnly="true" />
+    <property name="BACK" type="Number" value="0x0405" readOnly="true" />
+    <property name="FRONT_AND_BACK" type="Number" value="0x0408" readOnly="true" />
+
+    <!-- DepthFunction  -->
+    <!--      NEVER  -->
+    <!--      LESS  -->
+    <!--      EQUAL  -->
+    <!--      LEQUAL  -->
+    <!--      GREATER  -->
+    <!--      NOTEQUAL  -->
+    <!--      GEQUAL  -->
+    <!--      ALWAYS  -->
+
+    <!-- EnableCap  -->
+    <!-- TEXTURE_2D  -->
+    <property name="CULL_FACE" type="Number" value="0x0B44" readOnly="true" />
+    <property name="BLEND" type="Number" value="0x0BE2" readOnly="true" />
+    <property name="DITHER" type="Number" value="0x0BD0" readOnly="true" />
+    <property name="STENCIL_TEST" type="Number" value="0x0B90" readOnly="true" />
+    <property name="DEPTH_TEST" type="Number" value="0x0B71" readOnly="true" />
+    <property name="SCISSOR_TEST" type="Number" value="0x0C11" readOnly="true" />
+    <property name="POLYGON_OFFSET_FILL" type="Number" value="0x8037" readOnly="true" />
+    <property name="SAMPLE_ALPHA_TO_COVERAGE" type="Number" value="0x809E" readOnly="true" />
+    <property name="SAMPLE_COVERAGE" type="Number" value="0x80A0" readOnly="true" />
+
+    <!-- ErrorCode  -->
+    <property name="NO_ERROR" type="Number" value="0" readOnly="true" />
+    <property name="INVALID_ENUM" type="Number" value="0x0500" readOnly="true" />
+    <property name="INVALID_VALUE" type="Number" value="0x0501" readOnly="true" />
+    <property name="INVALID_OPERATION" type="Number" value="0x0502" readOnly="true" />
+    <property name="OUT_OF_MEMORY" type="Number" value="0x0505" readOnly="true" />
+
+    <!-- FrontFaceDirection  -->
+    <property name="CW" type="Number" value="0x0900" readOnly="true" />
+    <property name="CCW" type="Number" value="0x0901" readOnly="true" />
+
+    <!-- GetPName  -->
+    <property name="LINE_WIDTH" type="Number" value="0x0B21" readOnly="true" />
+    <property name="ALIASED_POINT_SIZE_RANGE" type="Number" value="0x846D" readOnly="true" />
+    <property name="ALIASED_LINE_WIDTH_RANGE" type="Number" value="0x846E" readOnly="true" />
+    <property name="CULL_FACE_MODE" type="Number" value="0x0B45" readOnly="true" />
+    <property name="FRONT_FACE" type="Number" value="0x0B46" readOnly="true" />
+    <property name="DEPTH_RANGE" type="Number" value="0x0B70" readOnly="true" />
+    <property name="DEPTH_WRITEMASK" type="Number" value="0x0B72" readOnly="true" />
+    <property name="DEPTH_CLEAR_VALUE" type="Number" value="0x0B73" readOnly="true" />
+    <property name="DEPTH_FUNC" type="Number" value="0x0B74" readOnly="true" />
+    <property name="STENCIL_CLEAR_VALUE" type="Number" value="0x0B91" readOnly="true" />
+    <property name="STENCIL_FUNC" type="Number" value="0x0B92" readOnly="true" />
+    <property name="STENCIL_FAIL" type="Number" value="0x0B94" readOnly="true" />
+    <property name="STENCIL_PASS_DEPTH_FAIL" type="Number" value="0x0B95" readOnly="true" />
+    <property name="STENCIL_PASS_DEPTH_PASS" type="Number" value="0x0B96" readOnly="true" />
+    <property name="STENCIL_REF" type="Number" value="0x0B97" readOnly="true" />
+    <property name="STENCIL_VALUE_MASK" type="Number" value="0x0B93" readOnly="true" />
+    <property name="STENCIL_WRITEMASK" type="Number" value="0x0B98" readOnly="true" />
+    <property name="STENCIL_BACK_FUNC" type="Number" value="0x8800" readOnly="true" />
+    <property name="STENCIL_BACK_FAIL" type="Number" value="0x8801" readOnly="true" />
+    <property name="STENCIL_BACK_PASS_DEPTH_FAIL" type="Number" value="0x8802" readOnly="true" />
+    <property name="STENCIL_BACK_PASS_DEPTH_PASS" type="Number" value="0x8803" readOnly="true" />
+    <property name="STENCIL_BACK_REF" type="Number" value="0x8CA3" readOnly="true" />
+    <property name="STENCIL_BACK_VALUE_MASK" type="Number" value="0x8CA4" readOnly="true" />
+    <property name="STENCIL_BACK_WRITEMASK" type="Number" value="0x8CA5" readOnly="true" />
+    <property name="VIEWPORT" type="Number" value="0x0BA2" readOnly="true" />
+    <property name="SCISSOR_BOX" type="Number" value="0x0C10" readOnly="true" />
+    <!--      SCISSOR_TEST  -->
+    <property name="COLOR_CLEAR_VALUE" type="Number" value="0x0C22" readOnly="true" />
+    <property name="COLOR_WRITEMASK" type="Number" value="0x0C23" readOnly="true" />
+    <property name="UNPACK_ALIGNMENT" type="Number" value="0x0CF5" readOnly="true" />
+    <property name="PACK_ALIGNMENT" type="Number" value="0x0D05" readOnly="true" />
+    <property name="MAX_TEXTURE_SIZE" type="Number" value="0x0D33" readOnly="true" />
+    <property name="MAX_VIEWPORT_DIMS" type="Number" value="0x0D3A" readOnly="true" />
+    <property name="SUBPIXEL_BITS" type="Number" value="0x0D50" readOnly="true" />
+    <property name="RED_BITS" type="Number" value="0x0D52" readOnly="true" />
+    <property name="GREEN_BITS" type="Number" value="0x0D53" readOnly="true" />
+    <property name="BLUE_BITS" type="Number" value="0x0D54" readOnly="true" />
+    <property name="ALPHA_BITS" type="Number" value="0x0D55" readOnly="true" />
+    <property name="DEPTH_BITS" type="Number" value="0x0D56" readOnly="true" />
+    <property name="STENCIL_BITS" type="Number" value="0x0D57" readOnly="true" />
+    <property name="POLYGON_OFFSET_UNITS" type="Number" value="0x2A00" readOnly="true" />
+    <!--      POLYGON_OFFSET_FILL  -->
+    <property name="POLYGON_OFFSET_FACTOR" type="Number" value="0x8038" readOnly="true" />
+    <property name="TEXTURE_BINDING_2D" type="Number" value="0x8069" readOnly="true" />
+    <property name="SAMPLE_BUFFERS" type="Number" value="0x80A8" readOnly="true" />
+    <property name="SAMPLES" type="Number" value="0x80A9" readOnly="true" />
+    <property name="SAMPLE_COVERAGE_VALUE" type="Number" value="0x80AA" readOnly="true" />
+    <property name="SAMPLE_COVERAGE_INVERT" type="Number" value="0x80AB" readOnly="true" />
+
+    <!-- GetTextureParameter  -->
+    <!--      TEXTURE_MAG_FILTER  -->
+    <!--      TEXTURE_MIN_FILTER  -->
+    <!--      TEXTURE_WRAP_S  -->
+    <!--      TEXTURE_WRAP_T  -->
+
+    <property name="NUM_COMPRESSED_TEXTURE_FORMATS" type="Number" value="0x86A2" readOnly="true" />
+    <property name="COMPRESSED_TEXTURE_FORMATS" type="Number" value="0x86A3" readOnly="true" />
+
+    <!-- HintMode  -->
+    <property name="DONT_CARE" type="Number" value="0x1100" readOnly="true" />
+    <property name="FASTEST" type="Number" value="0x1101" readOnly="true" />
+    <property name="NICEST" type="Number" value="0x1102" readOnly="true" />
+
+    <!-- HintTarget  -->
+    <property name="GENERATE_MIPMAP_HINT" type="Number" value="0x8192" readOnly="true" />
+
+    <!-- DataType  -->
+    <property name="BYTE" type="Number" value="0x1400" readOnly="true" />
+    <property name="UNSIGNED_BYTE" type="Number" value="0x1401" readOnly="true" />
+    <property name="SHORT" type="Number" value="0x1402" readOnly="true" />
+    <property name="UNSIGNED_SHORT" type="Number" value="0x1403" readOnly="true" />
+    <property name="INT" type="Number" value="0x1404" readOnly="true" />
+    <property name="UNSIGNED_INT" type="Number" value="0x1405" readOnly="true" />
+    <property name="FLOAT" type="Number" value="0x1406" readOnly="true" />
+
+    <!-- PixelFormat  -->
+    <property name="DEPTH_COMPONENT" type="Number" value="0x1902" readOnly="true" />
+    <property name="ALPHA" type="Number" value="0x1906" readOnly="true" />
+    <property name="RGB" type="Number" value="0x1907" readOnly="true" />
+    <property name="RGBA" type="Number" value="0x1908" readOnly="true" />
+    <property name="LUMINANCE" type="Number" value="0x1909" readOnly="true" />
+    <property name="LUMINANCE_ALPHA" type="Number" value="0x190A" readOnly="true" />
+
+    <!-- PixelType  -->
+    <!--      UNSIGNED_BYTE  -->
+    <property name="UNSIGNED_SHORT_4_4_4_4" type="Number" value="0x8033" readOnly="true" />
+    <property name="UNSIGNED_SHORT_5_5_5_1" type="Number" value="0x8034" readOnly="true" />
+    <property name="UNSIGNED_SHORT_5_6_5" type="Number" value="0x8363" readOnly="true" />
+
+    <!-- Shaders  -->
+    <property name="FRAGMENT_SHADER" type="Number" value="0x8B30" readOnly="true" />
+    <property name="VERTEX_SHADER" type="Number" value="0x8B31" readOnly="true" />
+    <property name="MAX_VERTEX_ATTRIBS" type="Number" value="0x8869" readOnly="true" />
+    <property name="MAX_VERTEX_UNIFORM_VECTORS" type="Number" value="0x8DFB" readOnly="true" />
+    <property name="MAX_VARYING_VECTORS" type="Number" value="0x8DFC" readOnly="true" />
+    <property name="MAX_COMBINED_TEXTURE_IMAGE_UNITS" type="Number" value="0x8B4D" readOnly="true" />
+    <property name="MAX_VERTEX_TEXTURE_IMAGE_UNITS" type="Number" value="0x8B4C" readOnly="true" />
+    <property name="MAX_TEXTURE_IMAGE_UNITS" type="Number" value="0x8872" readOnly="true" />
+    <property name="MAX_FRAGMENT_UNIFORM_VECTORS" type="Number" value="0x8DFD" readOnly="true" />
+    <property name="SHADER_TYPE" type="Number" value="0x8B4F" readOnly="true" />
+    <property name="DELETE_STATUS" type="Number" value="0x8B80" readOnly="true" />
+    <property name="LINK_STATUS" type="Number" value="0x8B82" readOnly="true" />
+    <property name="VALIDATE_STATUS" type="Number" value="0x8B83" readOnly="true" />
+    <property name="ATTACHED_SHADERS" type="Number" value="0x8B85" readOnly="true" />
+    <property name="ACTIVE_UNIFORMS" type="Number" value="0x8B86" readOnly="true" />
+    <property name="ACTIVE_ATTRIBUTES" type="Number" value="0x8B89" readOnly="true" />
+    <property name="SHADING_LANGUAGE_VERSION" type="Number" value="0x8B8C" readOnly="true" />
+    <property name="CURRENT_PROGRAM" type="Number" value="0x8B8D" readOnly="true" />
+
+    <!-- StencilFunction  -->
+    <property name="NEVER" type="Number" value="0x0200" readOnly="true" />
+    <property name="LESS" type="Number" value="0x0201" readOnly="true" />
+    <property name="EQUAL" type="Number" value="0x0202" readOnly="true" />
+    <property name="LEQUAL" type="Number" value="0x0203" readOnly="true" />
+    <property name="GREATER" type="Number" value="0x0204" readOnly="true" />
+    <property name="NOTEQUAL" type="Number" value="0x0205" readOnly="true" />
+    <property name="GEQUAL" type="Number" value="0x0206" readOnly="true" />
+    <property name="ALWAYS" type="Number" value="0x0207" readOnly="true" />
+
+    <!-- StencilOp  -->
+    <!--      ZERO  -->
+    <property name="KEEP" type="Number" value="0x1E00" readOnly="true" />
+    <property name="REPLACE" type="Number" value="0x1E01" readOnly="true" />
+    <property name="INCR" type="Number" value="0x1E02" readOnly="true" />
+    <property name="DECR" type="Number" value="0x1E03" readOnly="true" />
+    <property name="INVERT" type="Number" value="0x150A" readOnly="true" />
+    <property name="INCR_WRAP" type="Number" value="0x8507" readOnly="true" />
+    <property name="DECR_WRAP" type="Number" value="0x8508" readOnly="true" />
+
+    <!-- StringName  -->
+    <property name="VENDOR" type="Number" value="0x1F00" readOnly="true" />
+    <property name="RENDERER" type="Number" value="0x1F01" readOnly="true" />
+    <property name="VERSION" type="Number" value="0x1F02" readOnly="true" />
+
+    <!-- TextureMagFilter  -->
+    <property name="NEAREST" type="Number" value="0x2600" readOnly="true" />
+    <property name="LINEAR" type="Number" value="0x2601" readOnly="true" />
+
+    <!-- TextureMinFilter  -->
+    <!--      NEAREST  -->
+    <!--      LINEAR  -->
+    <property name="NEAREST_MIPMAP_NEAREST" type="Number" value="0x2700" readOnly="true" />
+    <property name="LINEAR_MIPMAP_NEAREST" type="Number" value="0x2701" readOnly="true" />
+    <property name="NEAREST_MIPMAP_LINEAR" type="Number" value="0x2702" readOnly="true" />
+    <property name="LINEAR_MIPMAP_LINEAR" type="Number" value="0x2703" readOnly="true" />
+
+    <!-- TextureParameterName  -->
+    <property name="TEXTURE_MAG_FILTER" type="Number" value="0x2800" readOnly="true" />
+    <property name="TEXTURE_MIN_FILTER" type="Number" value="0x2801" readOnly="true" />
+    <property name="TEXTURE_WRAP_S" type="Number" value="0x2802" readOnly="true" />
+    <property name="TEXTURE_WRAP_T" type="Number" value="0x2803" readOnly="true" />
+
+    <!-- TextureTarget  -->
+    <property name="TEXTURE_2D" type="Number" value="0x0DE1" readOnly="true" />
+    <property name="TEXTURE" type="Number" value="0x1702" readOnly="true" />
+
+    <property name="TEXTURE_CUBE_MAP" type="Number" value="0x8513" readOnly="true" />
+    <property name="TEXTURE_BINDING_CUBE_MAP" type="Number" value="0x8514" readOnly="true" />
+    <property name="TEXTURE_CUBE_MAP_POSITIVE_X" type="Number" value="0x8515" readOnly="true" />
+    <property name="TEXTURE_CUBE_MAP_NEGATIVE_X" type="Number" value="0x8516" readOnly="true" />
+    <property name="TEXTURE_CUBE_MAP_POSITIVE_Y" type="Number" value="0x8517" readOnly="true" />
+    <property name="TEXTURE_CUBE_MAP_NEGATIVE_Y" type="Number" value="0x8518" readOnly="true" />
+    <property name="TEXTURE_CUBE_MAP_POSITIVE_Z" type="Number" value="0x8519" readOnly="true" />
+    <property name="TEXTURE_CUBE_MAP_NEGATIVE_Z" type="Number" value="0x851A" readOnly="true" />
+    <property name="MAX_CUBE_MAP_TEXTURE_SIZE" type="Number" value="0x851C" readOnly="true" />
+
+    <!-- TextureUnit  -->
+    <property name="TEXTURE0" type="Number" value="0x84C0" readOnly="true" />
+    <property name="TEXTURE1" type="Number" value="0x84C1" readOnly="true" />
+    <property name="TEXTURE2" type="Number" value="0x84C2" readOnly="true" />
+    <property name="TEXTURE3" type="Number" value="0x84C3" readOnly="true" />
+    <property name="TEXTURE4" type="Number" value="0x84C4" readOnly="true" />
+    <property name="TEXTURE5" type="Number" value="0x84C5" readOnly="true" />
+    <property name="TEXTURE6" type="Number" value="0x84C6" readOnly="true" />
+    <property name="TEXTURE7" type="Number" value="0x84C7" readOnly="true" />
+    <property name="TEXTURE8" type="Number" value="0x84C8" readOnly="true" />
+    <property name="TEXTURE9" type="Number" value="0x84C9" readOnly="true" />
+    <property name="TEXTURE10" type="Number" value="0x84CA" readOnly="true" />
+    <property name="TEXTURE11" type="Number" value="0x84CB" readOnly="true" />
+    <property name="TEXTURE12" type="Number" value="0x84CC" readOnly="true" />
+    <property name="TEXTURE13" type="Number" value="0x84CD" readOnly="true" />
+    <property name="TEXTURE14" type="Number" value="0x84CE" readOnly="true" />
+    <property name="TEXTURE15" type="Number" value="0x84CF" readOnly="true" />
+    <property name="TEXTURE16" type="Number" value="0x84D0" readOnly="true" />
+    <property name="TEXTURE17" type="Number" value="0x84D1" readOnly="true" />
+    <property name="TEXTURE18" type="Number" value="0x84D2" readOnly="true" />
+    <property name="TEXTURE19" type="Number" value="0x84D3" readOnly="true" />
+    <property name="TEXTURE20" type="Number" value="0x84D4" readOnly="true" />
+    <property name="TEXTURE21" type="Number" value="0x84D5" readOnly="true" />
+    <property name="TEXTURE22" type="Number" value="0x84D6" readOnly="true" />
+    <property name="TEXTURE23" type="Number" value="0x84D7" readOnly="true" />
+    <property name="TEXTURE24" type="Number" value="0x84D8" readOnly="true" />
+    <property name="TEXTURE25" type="Number" value="0x84D9" readOnly="true" />
+    <property name="TEXTURE26" type="Number" value="0x84DA" readOnly="true" />
+    <property name="TEXTURE27" type="Number" value="0x84DB" readOnly="true" />
+    <property name="TEXTURE28" type="Number" value="0x84DC" readOnly="true" />
+    <property name="TEXTURE29" type="Number" value="0x84DD" readOnly="true" />
+    <property name="TEXTURE30" type="Number" value="0x84DE" readOnly="true" />
+    <property name="TEXTURE31" type="Number" value="0x84DF" readOnly="true" />
+    <property name="ACTIVE_TEXTURE" type="Number" value="0x84E0" readOnly="true" />
+
+    <!-- TextureWrapMode  -->
+    <property name="REPEAT" type="Number" value="0x2901" readOnly="true" />
+    <property name="CLAMP_TO_EDGE" type="Number" value="0x812F" readOnly="true" />
+    <property name="MIRRORED_REPEAT" type="Number" value="0x8370" readOnly="true" />
+
+    <!-- Uniform Types  -->
+    <property name="FLOAT_VEC2" type="Number" value="0x8B50" readOnly="true" />
+    <property name="FLOAT_VEC3" type="Number" value="0x8B51" readOnly="true" />
+    <property name="FLOAT_VEC4" type="Number" value="0x8B52" readOnly="true" />
+    <property name="INT_VEC2" type="Number" value="0x8B53" readOnly="true" />
+    <property name="INT_VEC3" type="Number" value="0x8B54" readOnly="true" />
+    <property name="INT_VEC4" type="Number" value="0x8B55" readOnly="true" />
+    <property name="BOOL" type="Number" value="0x8B56" readOnly="true" />
+    <property name="BOOL_VEC2" type="Number" value="0x8B57" readOnly="true" />
+    <property name="BOOL_VEC3" type="Number" value="0x8B58" readOnly="true" />
+    <property name="BOOL_VEC4" type="Number" value="0x8B59" readOnly="true" />
+    <property name="FLOAT_MAT2" type="Number" value="0x8B5A" readOnly="true" />
+    <property name="FLOAT_MAT3" type="Number" value="0x8B5B" readOnly="true" />
+    <property name="FLOAT_MAT4" type="Number" value="0x8B5C" readOnly="true" />
+    <property name="SAMPLER_2D" type="Number" value="0x8B5E" readOnly="true" />
+    <property name="SAMPLER_CUBE" type="Number" value="0x8B60" readOnly="true" />
+
+    <!-- Vertex Arrays  -->
+    <property name="VERTEX_ATTRIB_ARRAY_ENABLED" type="Number" value="0x8622" readOnly="true" />
+    <property name="VERTEX_ATTRIB_ARRAY_SIZE" type="Number" value="0x8623" readOnly="true" />
+    <property name="VERTEX_ATTRIB_ARRAY_STRIDE" type="Number" value="0x8624" readOnly="true" />
+    <property name="VERTEX_ATTRIB_ARRAY_TYPE" type="Number" value="0x8625" readOnly="true" />
+    <property name="VERTEX_ATTRIB_ARRAY_NORMALIZED" type="Number" value="0x886A" readOnly="true" />
+    <property name="VERTEX_ATTRIB_ARRAY_POINTER" type="Number" value="0x8645" readOnly="true" />
+    <property name="VERTEX_ATTRIB_ARRAY_BUFFER_BINDING" type="Number" value="0x889F" readOnly="true" />
+
+    <!-- Shader Source  -->
+    <property name="COMPILE_STATUS" type="Number" value="0x8B81" readOnly="true" />
+
+    <!-- Shader Precision-Specified Types  -->
+    <property name="LOW_FLOAT" type="Number" value="0x8DF0" readOnly="true" />
+    <property name="MEDIUM_FLOAT" type="Number" value="0x8DF1" readOnly="true" />
+    <property name="HIGH_FLOAT" type="Number" value="0x8DF2" readOnly="true" />
+    <property name="LOW_INT" type="Number" value="0x8DF3" readOnly="true" />
+    <property name="MEDIUM_INT" type="Number" value="0x8DF4" readOnly="true" />
+    <property name="HIGH_INT" type="Number" value="0x8DF5" readOnly="true" />
+
+    <!-- Framebuffer Object.  -->
+    <property name="FRAMEBUFFER" type="Number" value="0x8D40" readOnly="true" />
+    <property name="RENDERBUFFER" type="Number" value="0x8D41" readOnly="true" />
+
+    <property name="RGBA4" type="Number" value="0x8056" readOnly="true" />
+    <property name="RGB5_A1" type="Number" value="0x8057" readOnly="true" />
+    <property name="RGB565" type="Number" value="0x8D62" readOnly="true" />
+    <property name="DEPTH_COMPONENT16" type="Number" value="0x81A5" readOnly="true" />
+    <property name="STENCIL_INDEX" type="Number" value="0x1901" readOnly="true" />
+    <property name="STENCIL_INDEX8" type="Number" value="0x8D48" readOnly="true" />
+    <property name="DEPTH_STENCIL" type="Number" value="0x84F9" readOnly="true" />
+
+    <property name="RENDERBUFFER_WIDTH" type="Number" value="0x8D42" readOnly="true" />
+    <property name="RENDERBUFFER_HEIGHT" type="Number" value="0x8D43" readOnly="true" />
+    <property name="RENDERBUFFER_INTERNAL_FORMAT" type="Number" value="0x8D44" readOnly="true" />
+    <property name="RENDERBUFFER_RED_SIZE" type="Number" value="0x8D50" readOnly="true" />
+    <property name="RENDERBUFFER_GREEN_SIZE" type="Number" value="0x8D51" readOnly="true" />
+    <property name="RENDERBUFFER_BLUE_SIZE" type="Number" value="0x8D52" readOnly="true" />
+    <property name="RENDERBUFFER_ALPHA_SIZE" type="Number" value="0x8D53" readOnly="true" />
+    <property name="RENDERBUFFER_DEPTH_SIZE" type="Number" value="0x8D54" readOnly="true" />
+    <property name="RENDERBUFFER_STENCIL_SIZE" type="Number" value="0x8D55" readOnly="true" />
+
+    <property name="FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE" type="Number" value="0x8CD0" readOnly="true" />
+    <property name="FRAMEBUFFER_ATTACHMENT_OBJECT_NAME" type="Number" value="0x8CD1" readOnly="true" />
+    <property name="FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL" type="Number" value="0x8CD2" readOnly="true" />
+    <property name="FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE" type="Number" value="0x8CD3" readOnly="true" />
+
+    <property name="COLOR_ATTACHMENT0" type="Number" value="0x8CE0" readOnly="true" />
+    <property name="DEPTH_ATTACHMENT" type="Number" value="0x8D00" readOnly="true" />
+    <property name="STENCIL_ATTACHMENT" type="Number" value="0x8D20" readOnly="true" />
+    <property name="DEPTH_STENCIL_ATTACHMENT" type="Number" value="0x821A" readOnly="true" />
+
+    <property name="NONE" type="Number" value="0" readOnly="true" />
+
+    <property name="FRAMEBUFFER_COMPLETE" type="Number" value="0x8CD5" readOnly="true" />
+    <property name="FRAMEBUFFER_INCOMPLETE_ATTACHMENT" type="Number" value="0x8CD6" readOnly="true" />
+    <property name="FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT" type="Number" value="0x8CD7" readOnly="true" />
+    <property name="FRAMEBUFFER_INCOMPLETE_DIMENSIONS" type="Number" value="0x8CD9" readOnly="true" />
+    <property name="FRAMEBUFFER_UNSUPPORTED" type="Number" value="0x8CDD" readOnly="true" />
+
+    <property name="FRAMEBUFFER_BINDING" type="Number" value="0x8CA6" readOnly="true" />
+    <property name="RENDERBUFFER_BINDING" type="Number" value="0x8CA7" readOnly="true" />
+    <property name="MAX_RENDERBUFFER_SIZE" type="Number" value="0x84E8" readOnly="true" />
+
+    <property name="INVALID_FRAMEBUFFER_OPERATION" type="Number" value="0x0506" readOnly="true" />
+
+    <!-- WebGL-specific enums  -->
+    <property name="UNPACK_FLIP_Y_WEBGL" type="Number" value="0x9240" readOnly="true" />
+    <property name="UNPACK_PREMULTIPLY_ALPHA_WEBGL" type="Number" value="0x9241" readOnly="true" />
+    <property name="CONTEXT_LOST_WEBGL" type="Number" value="0x9242" readOnly="true" />
+    <property name="UNPACK_COLORSPACE_CONVERSION_WEBGL" type="Number" value="0x9243" readOnly="true" />
+    <property name="BROWSER_DEFAULT_WEBGL" type="Number" value="0x9244" readOnly="true" />
+
+    <property name="canvas" type="HTMLCanvasElement" readOnly="true" />
+    <property name="drawingBufferWidth" type="Number" readOnly="true" />
+    <property name="drawingBufferHeight" type="Number" readOnly="true" />
+    <method name="getContextAttributes" returnType="WebGLContextAttributes" />
+    <method name="isContextLost" returnType="Boolean" />
+    <method name="getSupportedExtensions" returnType="Array[String"/>
+    
+    <method name="getExtension" returnType="*">
+      <param name="name" type="String" mandatory="true"/>
+    </method>
+
+    <method name="activeTexture" returnType="void">
+      <param name="texture" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="attachShader" returnType="void">
+      <param name="program" type="WebGLProgram" mandatory="true"/>
+      <param name="shader" type="WebGLShader" mandatory="true"/>
+    </method>
+
+    <method name="bindAttribLocation" returnType="void">
+      <param name="program" type="WebGLProgram" mandatory="true"/>
+      <param name="index" type="Number" mandatory="true"/>
+      <param name="name" type="String" mandatory="true"/>
+    </method>
+
+    <method name="bindBuffer" returnType="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="buffer" type="WebGLBuffer" mandatory="true"/>
+    </method>
+
+    <method name="bindFramebuffer" returnType="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="framebuffer" type="WebGLFramebuffer" mandatory="true"/>
+    </method>
+
+    <method name="bindRenderbuffer" returnType="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="renderbuffer" type="WebGLRenderbuffer" mandatory="true"/>
+    </method>
+
+    <method name="bindTexture" returnType="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="texture" type="WebGLTexture" mandatory="true"/>
+    </method>
+
+    <method name="blendColor" returnType="void">
+      <param name="red" mandatory="true" type="Number"/>
+      <param name="green" mandatory="true" type="Number"/>
+      <param name="blue" mandatory="true" type="Number"/>
+      <param name="alpha" mandatory="true" type="Number"/>
+    </method>
+
+    <method name="blendEquation" returnType="void">
+      <param type="Number" name="mode" mandatory="true"/>
+    </method>
+    <method name="blendEquationSeparate" type="void">
+      <param name="modeRGB" type="Number" mandatory="true"/>
+      <param name="modeAlpha" type="Number" mandatory="true"/>
+    </method>
+    <method name="blendFunc" type="void">
+      <param name="sfactor" type="Number" mandatory="true"/>
+      <param name="dfactor" type="Number" mandatory="true"/>
+    </method>
+    <method name="blendFuncSeparate" returnType="void">
+      <param name="srcRGB" mandatory="true" type="Number"/>
+      <param name="dstRGB" mandatory="true" type="Number"/>
+      <param name="srcAlpha" mandatory="true" type="Number"/>
+      <param name="dstAlpha" mandatory="true" type="Number"/>
+    </method>
+
+    <method name="bufferData" type="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="size" type="Number" mandatory="true"/>
+      <param name="usage" type="Number" mandatory="true"/>
+    </method>
+    <method name="bufferData" type="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="data" type="ArrayBufferView" mandatory="true"/>
+      <param name="usage" type="Number" mandatory="true"/>
+    </method>
+    <method name="bufferData" type="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="data" type="ArrayBuffer" mandatory="true"/>
+      <param name="usage" type="Number" mandatory="true"/>
+    </method>
+    <method name="bufferSubData" type="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="offset" type="Number" mandatory="true"/>
+      <param name="data" type="ArrayBufferView" mandatory="true"/>
+    </method>
+    <method name="bufferSubData" type="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="offset" type="Number" mandatory="true"/>
+      <param name="data" type="ArrayBuffer" mandatory="true"/>
+    </method>
+
+    <method name="checkFramebufferStatus" returnType="Number">
+      <param type="Number" name="target" mandatory="true"/>
+    </method>
+    <method name="clear" returnType="void">
+      <param type="GLbitfield" name="mask" mandatory="true"/>
+    </method>
+
+    <method name="clearColor" returnType="void">
+      <param name="red" mandatory="true" type="Number"/>
+      <param name="green" mandatory="true" type="Number"/>
+      <param name="blue" mandatory="true" type="Number"/>
+      <param name="alpha" mandatory="true" type="Number"/>
+    </method>
+
+    <method name="clearDepth" returnType="void">
+      <param type="Number" name="depth" mandatory="true"/>
+    </method>
+    <method name="clearStencil" returnType="void">
+      <param type="Number" name="s" mandatory="true"/>
+    </method>
+    <method name="colorMask" returnType="void">
+      <param name="red" mandatory="true" type="boolean"/>
+      <param name="green" mandatory="true" type="boolean"/>
+      <param name="blue" mandatory="true" type="boolean"/>
+      <param name="alpha" mandatory="true" type="boolean"/>
+    </method>
+
+    <method name="compileShader" returnType="void">
+      <param type="WebGLShader" name="shader"/>
+    </method>
+
+    <method name="copyTexImage2D" returnType="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="level" type="Number" mandatory="true"/>
+      <param name="internalformat" type="Number" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+      <param name="width" type="Number" mandatory="true"/>
+      <param name="height" type="Number" mandatory="true"/>
+      <param name="border" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="copyTexSubImage2D" returnType="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="level" type="Number" mandatory="true"/>
+      <param name="xoffset" type="Number" mandatory="true"/>
+      <param name="yoffset" type="Number" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+      <param name="width" type="Number" mandatory="true"/>
+      <param name="height" type="Number" mandatory="true"/>
+    </method>        
+
+    <method name="createBuffer" returnType="WebGLBuffer"/>
+    <method name="createFramebuffer" returnType="WebGLFramebuffer"/>
+    <method name="createProgram" returnType="WebGLProgram"/>
+    <method name="createRenderbuffer" returnType="WebGLRenderbuffer"/>
+    <method name="createShader" returnType="WebGLShader">
+      <param name="type" type="Number" mandatory="true"/>
+    </method>
+    <method name="createTexture" returnType="WebGLTexture"/>
+
+    <method name="cullFace" returnType="void">
+      <param type="Number" name="mode" mandatory="true"/>
+    </method>
+
+    <method name="deleteBuffer" returnType="void">
+      <param name="buffer" type="WebGLBuffer" mandatory="true"/>
+    </method>
+    <method name="deleteFramebuffer" returnType="void">
+      <param name="framebuffer" type="WebGLRenderbuffer" mandatory="true"/>
+    </method>
+    <method name="deleteProgram" returnType="void">
+      <param name="program" type="WebGLProgram" mandatory="true"/>
+    </method>
+    <method name="deleteRenderbuffer" returnType="void">
+      <param name="renderbuffer" type="WebGLRenderbuffer" mandatory="true"/>
+    </method>
+    <method name="deleteShader" returnType="void">
+      <param name="shader" type="WebGLShader" mandatory="true"/>
+    </method>
+    <method name="deleteTexture" returnType="void">
+      <param name="texture" type="WebGLTexture" mandatory="true"/>
+    </method>
+
+    <method name="depthFunc" returnType="void">
+      <param type="Number" name="func" mandatory="true"/>
+    </method>
+    <method name="depthMask" returnType="void">
+      <param type="boolean" name="flag" mandatory="true"/>
+    </method>
+    <method name="depthRange" type="void">
+      <param name="zNear" type="Number" mandatory="true"/>
+      <param name="zFar" type="Number" mandatory="true"/>
+    </method>
+    <method name="detachShader" type="void">
+      <param name="program" type="WebGLProgram" mandatory="true"/>
+      <param name="shader" type="WebGLShader" mandatory="true"/>
+    </method>
+    <method name="disable" returnType="void">
+      <param type="Number" name="cap" mandatory="true"/>
+    </method>
+    <method name="disableVertexAttribArray" returnType="void">
+      <param type="Number" name="index" mandatory="true"/>
+    </method>
+    <method name="drawArrays" type="void">
+      <param name="mode" type="Number" mandatory="true"/>
+      <param name="first" type="Number" mandatory="true"/>
+      <param name="count" type="Number" mandatory="true"/>
+    </method>
+    
+    <method name="drawElements" returnType="void">
+      <param name="mode" mandatory="true" type="Number"/>
+      <param name="count" mandatory="true" type="Number"/>
+      <param name="type" mandatory="true" type="Number"/>
+      <param name="offset" mandatory="true" type="Number"/>
+    </method>
+
+    <method name="enable" returnType="void">
+      <param type="Number" name="cap" mandatory="true"/>
+    </method>
+    <method name="enableVertexAttribArray" returnType="void">
+      <param type="Number" name="index" mandatory="true"/>
+    </method>
+    <method name="finish" returnType="void"/>
+    <method name="flush" returnType="void"/>
+    
+    <method name="framebufferRenderbuffer" returnType="void">
+      <param type="Number" name="target" mandatory="true"/>
+      <param type="Number" name="attachment" mandatory="true"/>
+      <param type="Number" name="renderbuffertarget" mandatory="true"/>
+      <param type="WebGLRenderbuffer" name="renderbuffer" mandatory="true"/>
+    </method>
+    <method name="framebufferTexture2D" returnType="void">
+      <param type="Number" name="target" mandatory="true"/>
+      <param type="Number" name="attachment" mandatory="true"/>
+      <param type="Number" name="textarget" mandatory="true"/>
+      <param type="WebGLTexture" name="texture" mandatory="true"/>
+      <param type="Number" name="level" mandatory="true"/>
+    </method>
+
+    <method name="frontFace" returnType="void">
+      <param type="Number" name="mode" mandatory="true"/>
+    </method>
+
+    <method name="generateMipmap" returnType="void">
+      <param type="Number" name="target" mandatory="true"/>
+    </method>
+
+    <method name="getActiveAttrib" type="WebGLActiveInfo">
+      <param name="program" type="WebGLProgram" mandatory="true"/>
+      <param name="index" type="Number" mandatory="true"/>
+    </method>
+    <method name="getActiveUniform" type="WebGLActiveInfo">
+      <param name="program" type="WebGLProgram" mandatory="true"/>
+      <param name="index" type="Number" mandatory="true"/>
+    </method>
+    <property name="getAttachedShaders" type="Array[WebGLShader" value="WebGLProgram" readOnly="true" />
+
+    <method name="getAttribLocation" type="Number">
+      <param name="program" type="WebGLProgram" mandatory="true"/>
+      <param name="name" type="String" mandatory="true"/>
+    </method>
+
+    <method name="getParameter" returnType="*">
+      <param type="Number" name="pname" mandatory="true"/>
+    </method>
+    <method name="getBufferParameter" type="any">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="pname" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="getError" returnType="Number" />
+
+    <method name="getFramebufferAttachmentParameter" type="any">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="attachment" type="Number" mandatory="true"/>
+      <param name="pname" type="Number" mandatory="true"/>
+    </method>
+    <method name="getProgramParameter" type="any">
+      <param name="program" type="WebGLProgram" mandatory="true"/>
+      <param name="pname" type="Number" mandatory="true"/>
+    </method>
+    <method name="getProgramInfoLog" returnType="String">
+      <param type="WebGLProgram" name="program" mandatory="true"/>
+    </method>
+    <method name="getRenderbufferParameter" type="any">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="pname" type="Number" mandatory="true"/>
+    </method>
+    <method name="getShaderParameter" type="any">
+      <param name="shader" type="WebGLShader" mandatory="true"/>
+      <param name="pname" type="Number" mandatory="true"/>
+    </method>
+    <method name="getShaderInfoLog" returnType="String">
+      <param type="WebGLShader" name="shader" mandatory="true"/>
+    </method>
+
+    <method name="getShaderSource" returnType="String">
+      <param type="WebGLShader" name="shader" mandatory="true"/>
+    </method>
+
+    <method name="getTexParameter" type="any">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="pname" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="getUniform" type="any">
+      <param name="program" type="WebGLProgram" mandatory="true"/>
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+    </method>
+
+    <method name="getUniformLocation" type="WebGLUniformLocation">
+      <param name="program" type="WebGLProgram" mandatory="true"/>
+      <param name="name" type="String" mandatory="true"/>
+    </method>
+
+    <method name="getVertexAttrib" type="any">
+      <param name="index" type="Number" mandatory="true"/>
+      <param name="pname" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="getVertexAttribOffset" type="Number">
+      <param name="index" type="Number" mandatory="true"/>
+      <param name="pname" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="hint" type="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="mode" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="isBuffer" returnType="boolean">
+      <param type="WebGLBuffer" name="buffer" mandatory="true"/>
+    </method>
+    <method name="isEnabled" returnType="boolean">
+      <param type="Number" name="cap" mandatory="true"/>
+    </method>
+    <method name="isFramebuffer" returnType="boolean">
+      <param type="WebGLFramebuffer" name="framebuffer" mandatory="true"/>
+    </method>
+    <method name="isProgram" returnType="boolean">
+      <param type="WebGLProgram" name="program" mandatory="true"/>
+    </method>
+    <method name="isRenderbuffer" returnType="boolean">
+      <param type="WebGLRenderbuffer" name="renderbuffer" mandatory="true"/>
+    </method>
+    <method name="isShader" returnType="boolean">
+      <param type="WebGLShader" name="shader" mandatory="true"/>
+    </method>
+    <method name="isTexture" returnType="boolean">
+      <param type="WebGLTexture" name="texture" mandatory="true"/>
+    </method>
+    <method name="lineWidth" returnType="void">
+      <param type="Number" name="width" mandatory="true"/>
+    </method>
+    <method name="linkProgram" returnType="void">
+      <param type="WebGLProgram" name="program" mandatory="true"/>
+    </method>
+    <method name="pixelStorei" type="void">
+      <param name="pname" type="Number" mandatory="true"/>
+      <param name="param" type="Number" mandatory="true"/>
+    </method>
+    <method name="polygonOffset" type="void">
+      <param name="factor" type="Number" mandatory="true"/>
+      <param name="units" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="readPixels" type="void">
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+      <param name="width" type="Number" mandatory="true"/>
+      <param name="height" type="Number" mandatory="true"/>
+      <param name="format" type="Number" mandatory="true"/>
+      <param name="type" type="Number" mandatory="true"/>
+      <param name="pixels" type="ArrayBufferView" mandatory="true"/>
+    </method>
+
+    <method name="renderbufferStorage" type="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="internalformat" type="Number" mandatory="true"/>
+      <param name="width" type="Number" mandatory="true"/>
+      <param name="height" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="sampleCoverage" type="void">
+      <param name="value" type="Number"/>
+      <param name="invert" type="boolean" mandatory="true"/>
+    </method>
+
+    <method name="scissor" type="void">
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+      <param name="width" type="Number" mandatory="true"/>
+      <param name="height" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="shaderSource" type="void">
+      <param name="shader" type="WebGLShader" mandatory="true"/>
+      <param name="source" type="String" mandatory="true"/>
+    </method>
+
+    <method name="stencilFunc" type="void">
+      <param name="func" type="Number" mandatory="true"/>
+      <param name="ref" type="Number" mandatory="true"/>
+      <param name="mask" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="stencilFuncSeparate" type="void">
+      <param name="face" type="Number" mandatory="true"/>
+      <param name="func" type="Number" mandatory="true"/>
+      <param name="ref" type="Number" mandatory="true"/>
+      <param name="mask" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="stencilMask" returnType="void">
+      <param type="Number" name="mask" mandatory="true"/>
+    </method>
+    <method name="stencilMaskSeparate" type="void">
+      <param name="face" type="Number" mandatory="true"/>
+      <param name="mask" type="Number" mandatory="true"/>
+    </method>
+    <method name="stencilOp" type="void">
+      <param name="fail" type="Number" mandatory="true"/>
+      <param name="zfail" type="Number" mandatory="true"/>
+      <param name="zpass" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="stencilOpSeparate" type="void">
+      <param name="face" type="Number" mandatory="true"/>
+      <param name="fail" type="Number" mandatory="true"/>
+      <param name="zfail" type="Number" mandatory="true"/>
+      <param name="zpass" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="texImage2D" type="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="level" type="Number" mandatory="true"/>
+      <param name="internalformat" type="Number" mandatory="true"/>
+      <param name="width" type="Number" mandatory="true"/>
+      <param name="height" type="Number" mandatory="true"/>
+      <param name="border" type="Number" mandatory="true"/>
+      <param name="format" type="Number" mandatory="true"/>
+      <param name="type" type="Number" mandatory="true"/>
+      <param name="pixels" type="ArrayBufferView" mandatory="true"/>
+    </method>    
+
+    <method name="texImage2D" type="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="level" type="Number" mandatory="true"/>
+      <param name="internalformat" type="Number" mandatory="true"/>
+      <param name="format" type="Number" mandatory="true"/>
+      <param name="type" type="Number" mandatory="true"/>
+      <param name="pixelsImageCanvasOrVideo" type="ImageData|HTMLImageElement|HTMLCanvasElement|HTMLVideoElement" mandatory="true"/>
+    </method>
+
+    <method name="texParameterf" type="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="pname" type="Number" mandatory="true"/>
+      <param name="param" type="Number" mandatory="true"/>
+    </method>
+    <method name="texParameteri" type="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="pname" type="Number" mandatory="true"/>
+      <param name="param" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="texSubImage2D" type="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="level" type="Number" mandatory="true"/>
+      <param name="xoffset" type="Number" mandatory="true"/>
+      <param name="yoffset" type="Number" mandatory="true"/>
+      <param name="width" type="Number" mandatory="true"/>
+      <param name="height" type="Number" mandatory="true"/>
+      <param name="format" type="Number" mandatory="true"/>
+      <param name="type" type="Number" mandatory="true"/>
+      <param name="pixels" type="ArrayBufferView" mandatory="true"/>
+    </method>    
+
+    <method name="texSubImage2D" type="void">
+      <param name="target" type="Number" mandatory="true"/>
+      <param name="level" type="Number" mandatory="true"/>
+      <param name="xoffset" type="Number" mandatory="true"/>
+      <param name="yoffset" type="Number" mandatory="true"/>
+      <param name="format" type="Number" mandatory="true"/>
+      <param name="type" type="Number" mandatory="true"/>
+      <param name="pixelsImageCanvasOrVideo" type="ImageData|HTMLImageElement|HTMLCanvasElement|HTMLVideoElement" mandatory="true"/>
+    </method>
+
+    <method name="uniform1f" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+    </method>
+    <method name="uniform1fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Float32Array" mandatory="true"/>
+    </method>
+    <method name="uniform1fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Array[Number"/>
+    </method>
+    <method name="uniform1i" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+    </method>
+    <method name="uniform1iv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Int32Array" mandatory="true"/>
+    </method>
+    <method name="uniform1iv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Array[Number"/>
+    </method>
+    <method name="uniform2f" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+    </method>
+    <method name="uniform2fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Float32Array" mandatory="true"/>
+    </method>
+    <method name="uniform2fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Array[Number"/>
+    </method>
+    <method name="uniform2i" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+    </method>
+    <method name="uniform2iv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Int32Array" mandatory="true"/>
+    </method>
+    <method name="uniform2iv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Array[Number" mandatory="true"/>
+    </method>
+
+    <method name="uniform3f" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+      <param name="z" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="uniform3fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Float32Array" mandatory="true"/>
+    </method>
+    <method name="uniform3fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Array[Number" mandatory="true"/>
+    </method>
+
+    <method name="uniform3i" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+      <param name="z" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="uniform3iv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Int32Array" mandatory="true"/>
+    </method>
+    <method name="uniform3iv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Array[Number" mandatory="true"/>
+    </method>
+
+    <method name="uniform4f" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+      <param name="z" type="Number" mandatory="true"/>
+      <param name="w" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="uniform4fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Float32Array" mandatory="true"/>
+    </method>
+    <method name="uniform4fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Array[Number" mandatory="true"/>
+    </method>
+
+    <method name="uniform4i" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+      <param name="z" type="Number" mandatory="true"/>
+      <param name="w" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="uniform4iv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Int32Array" mandatory="true"/>
+    </method>
+    <method name="uniform4iv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="v" type="Array[Number" mandatory="true"/>
+    </method>
+
+    <method name="uniformMatrix2fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="transpose" type="boolean" mandatory="true"/>
+      <param name="value" type="Float32Array" mandatory="true"/>
+    </method>
+
+    <method name="uniformMatrix2fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="transpose" type="boolean" mandatory="true"/>
+      <param name="value" type="Array[Number" mandatory="true"/>
+    </method>
+    <method name="uniformMatrix3fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="transpose" type="boolean" mandatory="true"/>
+      <param name="value" type="Float32Array" mandatory="true"/>
+    </method>
+    <method name="uniformMatrix3fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="transpose" type="boolean" mandatory="true"/>
+      <param name="value" type="Array[Number" mandatory="true"/>
+    </method>
+    <method name="uniformMatrix4fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="transpose" type="boolean" mandatory="true"/>
+      <param name="value" type="Float32Array" mandatory="true"/>
+    </method>
+    <method name="uniformMatrix4fv" type="void">
+      <param name="location" type="WebGLUniformLocation" mandatory="true"/>
+      <param name="transpose" type="boolean" mandatory="true"/>
+      <param name="value" type="Array[Number" mandatory="true"/>
+    </method>
+
+    <method name="useProgram" returnType="void">
+      <param name="program" type="WebGLProgram" mandatory="true"/>
+    </method>
+
+    <method name="validateProgram" returnType="void">
+      <param name="program" type="WebGLProgram" mandatory="true"/>
+    </method>
+
+    <method name="vertexAttrib1f" type="void">
+      <param name="indx" type="Number" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+    </method>
+    <method name="vertexAttrib1fv" type="void">
+      <param name="indx" type="Number" mandatory="true"/>
+      <param name="values" type="Float32Array" mandatory="true"/>
+    </method>
+    <method name="vertexAttrib1fv" type="void">
+      <param name="indx" type="Number" mandatory="true"/>
+      <param name="values" type="Array[Number" mandatory="true"/>
+    </method>
+    <method name="vertexAttrib2f" type="void">
+      <param name="indx" type="Number" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+    </method>
+    <method name="vertexAttrib2fv" type="void">
+      <param name="indx" type="Number" mandatory="true"/>
+      <param name="values" type="Float32Array" mandatory="true"/>
+    </method>
+    <method name="vertexAttrib2fv" type="void">
+      <param name="indx" type="Number" mandatory="true"/>
+      <param name="values" type="Array[Number" mandatory="true"/>
+    </method>
+
+    <method name="vertexAttrib3f" type="void">
+      <param name="indx" type="Number" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+      <param name="z" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="vertexAttrib3fv" type="void">
+      <param name="indx" type="Number" mandatory="true"/>
+      <param name="values" type="Float32Array" mandatory="true"/>
+    </method>
+    <method name="vertexAttrib3fv" type="void">
+      <param name="indx" type="Number" mandatory="true"/>
+      <param name="values" type="Array[Number" mandatory="true"/>
+    </method>
+
+    <method name="vertexAttrib4f" type="void">
+      <param name="indx" type="Number" mandatory="true"/>
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+      <param name="z" type="Number" mandatory="true"/>
+      <param name="w" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="vertexAttrib4fv" type="void">
+      <param name="indx" type="Number" mandatory="true"/>
+      <param name="values" type="Float32Array" mandatory="true"/>
+    </method>
+    <method name="vertexAttrib4fv" type="void">
+      <param name="indx" type="Number" mandatory="true"/>
+      <param name="values" type="Array[Number" mandatory="true"/>
+    </method>
+
+    <method name="vertexAttribPointer" type="void">
+      <param name="indx" type="Number" mandatory="true"/>
+      <param name="size" type="Number" mandatory="true"/>
+      <param name="type" type="Number" mandatory="true"/>
+      <param name="normalized" type="boolean" mandatory="true"/>
+      <param name="stride" type="Number" mandatory="true"/>
+      <param name="offset" type="Number" mandatory="true"/>
+    </method>
+
+    <method name="viewport" returnType="void">
+      <param name="x" type="Number" mandatory="true"/>
+      <param name="y" type="Number" mandatory="true"/>
+      <param name="width" type="Number" mandatory="true"/>
+      <param name="height" type="Number" mandatory="true"/>
+    </method>    
+  </class>
+  <class name="WebGLContextEvent" extends="Event" createStaticVar="false">
+    <property name="statusMessage" type="String" readOnly="true"/>
+    <method name="initWebGLContextEvent" returnType="void">
+      <param name="typeArg" type="String" mandatory="true"/>
+      <param name="canBubbleArg" type="Boolean" mandatory="true"/>
+      <param name="cancelableArg" type="Boolean" mandatory="true"/>
+      <param name="statusMessageArg" type="String" mandatory="true"/>
+    </method>
+  </class>
+</Library>
