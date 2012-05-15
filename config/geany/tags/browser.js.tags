@@ -235,8 +235,8 @@ stopImmediatePropagation|Event.|(): void|
 isDefaultPrevented|Event.|(): Boolean|
 initEventNS|Event.|(namespaceURIArg: String, eventTypeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean): void|
 ## EventTarget
-addEventListener|EventTarget.|(type: String, listener: EventListener|Function, useCapture: Boolean): void|
-removeEventListener|EventTarget.|(type: String, listener: EventListener|Function, useCapture: Boolean): void|
+addEventListener|EventTarget.|(type: String, listener: EventListener/Function, useCapture: Boolean): void|
+removeEventListener|EventTarget.|(type: String, listener: EventListener/Function, useCapture: Boolean): void|
 dispatchEvent|EventTarget.|(evt: Event): Boolean|
 addEventListenerNS|EventTarget.|(namespaceURI: String, type: String, listener: EventListener, useCapture: Boolean, evtGroup: Object): void|
 removeEventListenerNS|EventTarget.|(namespaceURI: String, type: String, listener: EventListener, useCapture: Boolean): void|
@@ -538,8 +538,8 @@ confirm|window.|(sMesssage: *): void|
 prompt|window.|(sMessage: *, sDefaultValue: *): void|
 clearInterval|window.|(intervalId: Number): void|
 clearTimeout|window.|(intervalId: Number): void|
-setInterval|window.|(vCode: String|Function, iMillis: Number): Number|
-setTimeout|window.|(vCode: String|Function, iMillis: Number): Number|
+setInterval|window.|(vCode: String/Function, iMillis: Number): Number|
+setTimeout|window.|(vCode: String/Function, iMillis: Number): Number|
 captureEvents|(browser Gecko) window.|(eventType: Event): void|
 releaseEvents|(browser Gecko) window.|(eventType: Event): void|
 routeEvent|(browser Gecko) window.|(event: Event): void|
@@ -1067,7 +1067,7 @@ getAllResponseHeaders|XMLHttpRequest.|(): String|
 getResponseHeader|XMLHttpRequest.|(headerName: String): String|
 overrideMimeType|(browser Gecko) XMLHttpRequest.|(mimeType: String): void|
 open|XMLHttpRequest.|(method: String, url: String, async: Boolean, username: String, password: String): void|
-send|XMLHttpRequest.|(content: String|FormData): void|
+send|XMLHttpRequest.|(content: String/FormData): void|
 setRequestHeader|XMLHttpRequest.|(label: String, value: String): void|
 onreadystatechange|XMLHttpRequest.||Type: Function
 readyState|XMLHttpRequest.||Type: Number
@@ -1212,10 +1212,10 @@ videoWidth|HTMLVideoElement.||Type: Number
 videoHeight|HTMLVideoElement.||Type: Number
 poster|HTMLVideoElement.||Type: String
 ## Database
-transaction|Database.|(callback: SQLTransactionCallback|SQLTransactionSyncCallback|Function, errorCallback: SQLTransactionErrorCallback|Function, successCallback: SQLVoidCallback|Function): void|
-readTransaction|Database.|(callback: SQLTransactionCallback|SQLTransactionSyncCallback|Function, errorCallback: SQLTransactionErrorCallback|Function, successCallback: SQLVoidCallback|Function): void|
+transaction|Database.|(callback: SQLTransactionCallback/SQLTransactionSyncCallback|Function, errorCallback: SQLTransactionErrorCallback/Function, successCallback: SQLVoidCallback/Function): void|
+readTransaction|Database.|(callback: SQLTransactionCallback/SQLTransactionSyncCallback|Function, errorCallback: SQLTransactionErrorCallback/Function, successCallback: SQLVoidCallback/Function): void|
 version|Database.||Type: String
-changeVersion|Database.|(oldVersion: String, newVersion: String, callback: SQLTransactionCallback|Function, errorCallback: SQLTransactionErrorCallback|Function, successCallback: SQLVoidCallback|Function): void|
+changeVersion|Database.|(oldVersion: String, newVersion: String, callback: SQLTransactionCallback/Function, errorCallback: SQLTransactionErrorCallback/Function, successCallback: SQLVoidCallback/Function): void|
 ## SQLVoidCallback
 handleEvent|SQLVoidCallback.|(): void|
 ## SQLTransactionCallback
@@ -1297,7 +1297,7 @@ fillStyle|CanvasContext.||
 strokeStyle|CanvasContext.||
 createLinearGradient|CanvasContext.|(x0: Number, y0: Number, x1: Number, y1: Number): CanvasGradient|
 createRadialGradient|CanvasContext.|(x0: Number, y0: Number, r0: Number, x1: Number, y1: Number, r1: Number): CanvasGradient|
-createPattern|CanvasContext.|(image: HTMLImageElement|HTMLCanvasElement|HTMLVideoElement, repetition: String): CanvasPattern|
+createPattern|CanvasContext.|(image: HTMLImageElement/HTMLCanvasElement|HTMLVideoElement, repetition: String): CanvasPattern|
 lineWidth|CanvasContext.||Type: Number
 lineCap|CanvasContext.||Type: String
 lineJoin|CanvasContext.||Type: String
@@ -1330,7 +1330,7 @@ fillText|CanvasContext.|(text: String, x: Number, y: Number, maxWidth: Number): 
 strokeText|CanvasContext.|(text: String, x: Number, y: Number, maxWidth: Number): void|
 measureText|CanvasContext.|(text: String): TextMetrics|
 drawImage|CanvasContext.|(img_elem: Element, dx_or_sx: Number, dy_or_sy: Number, dw_or_sw: Number, dh_or_sh: Number, dx: Number, dy: Number, dw: Number, dh: Number): void|
-createImageData|CanvasContext.|(imagedata_or_sw: ImageData|Number, sh: Number): ImageData|
+createImageData|CanvasContext.|(imagedata_or_sw: ImageData/Number, sh: Number): ImageData|
 getImageData|CanvasContext.|(sx: Number, sy: Number, sw: Number, sh: Number): ImageData|
 putImageData|CanvasContext.|(image_data: ImageData, dx: Number, dy: Number, dirtyX: Number, dirtyY: Number, dirtyWidth: Number, dirtyHeight: Number): void|
 ## CanvasGradient
@@ -1356,8 +1356,8 @@ requestAnimationFrame|window.|(callback: Function, element: Element): Number|
 cancelRequestAnimationFrame|window.|(handle: *): void|
 importScripts|window.|(urls: String): void|
 navigator|window.||Type: WorkerNavigator
-openDatabase|window.|(name: String, version: String, displayName: String, estimatedSize: Number, creationCallback: DatabaseCallback|Function): Database|
-openDatabaseSync|window.|(name: String, version: String, displayName: String, estimatedSize: Number, creationCallback: DatabaseCallback|Function): Database|
+openDatabase|window.|(name: String, version: String, displayName: String, estimatedSize: Number, creationCallback: DatabaseCallback/Function): Database|
+openDatabaseSync|window.|(name: String, version: String, displayName: String, estimatedSize: Number, creationCallback: DatabaseCallback/Function): Database|
 localStorage|window.||Type: Storage
 sessionStorage|window.||Type: Storage
 ## WorkerNavigator

@@ -49,7 +49,7 @@ function fileReadHandler(err, data) {
 }
 
 function writeFile(fileLines) {
-  fs.writeFile('browser.js.tags', fileLines, function (err) {
+  fs.writeFile('../../config/geany/tags/browser.js.tags', fileLines, function (err) {
     if (err) throw err;
     console.log('It\'s saved!');
   });
@@ -138,7 +138,7 @@ function parseClass(xml) {
       var returnTypeAttr = node.attr('returnType'),
           returnType = returnTypeAttr ? returnTypeAttr.value() : 'void',
           params = node.find('param'),
-          param;
+          param, paramType;
 
       tagLine += '(';
       //iterate param list
@@ -150,7 +150,12 @@ function parseClass(xml) {
         tagLine += param.attr('name').value();
         //type
         tagLine += ': ';
-        tagLine += param.attr('type') ? param.attr('type').value() : '*';
+
+        paramType = param.attr('type') ? param.attr('type').value() : '*';
+        //avoid using OR shorthand | which is considered a column in Geany tag files
+        paramType = paramType.replace('|', '/');  
+
+        tagLine += paramType;
       }
       tagLine += '): ' + returnType + '|';
     }

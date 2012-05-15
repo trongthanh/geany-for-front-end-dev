@@ -74,9 +74,10 @@ To learn more about Geany's tags, refer to [this section](http://www.geany.org/m
 - **tags/std.js.tags**: Code hinting for standard Javascript API. [incompleted]
 - **tags/browser.js.tags**: Code hinting for Browser and DOM objects Javascript (with latest HTML5 specs). (renamed from dom.js.tags)
 - **tags/styles.js.tags**: This file supplement JS property names of CSSStyleDeclaration object which are directly converted from the stadard CSS property names.
-- **tags/mootools-core.js.tags**: (Extra) Code hinting for JS Mootools 1.4 framework
+- **tags/mootools-core.js.tags**: (Optional) Code hinting for JS Mootools 1.4 framework
+- **tags/jquery.js.tags**: (Optional) Code hinting for jQuery 1.7 framework
 
-Source of references: [MDN](https://developer.mozilla.org/en/JavaScript/Reference), [JavaScript Kit](http://www.javascriptkit.com/jsref/), [Mootools Doc](http://mootools.net/docs/core)
+Source of references: [MDN](https://developer.mozilla.org/en/JavaScript/Reference), [JavaScript Kit](http://www.javascriptkit.com/jsref/), [Mootools Doc](http://mootools.net/docs/core), [jQuery API](http://api.jquery.com/)
 
 ### How To:
 
