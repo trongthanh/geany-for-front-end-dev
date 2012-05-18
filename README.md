@@ -59,7 +59,9 @@ Language specific syntax highlighting are defined in filetype definition files i
 - **filedefs/filetypes.css**: This file lets Geany highlight latest CSS keywords properly. It contains up-to-date standard CSS1/2/3 as well as browser specific keywords. Besides, minor coloring rules have been patched to make CSS3 & prefixed keywords distinct from CSS1/2 ones.  
     ![Better CSS highlighting](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/css-highlighting.png)
 
-    Source of reference: [meiert.com](http://meiert.com/en/indices/css-properties/)
+- **filedefs/filetypes.html**: This file justify coloring of HTML tags. For now, I just added the lower-case "doctype" to make it valid syntax.
+
+    Source of reference: [CSS properties](http://meiert.com/en/indices/css-properties/)
 
 ## 3. Code Hinting
 
@@ -86,7 +88,7 @@ Source of references: [MDN](https://developer.mozilla.org/en/JavaScript/Referenc
   - press Up/Down to select a keyword; 
   - press Enter to complete the whole keyword;
   - press Tab to complete a word portion 
-  - press press escape to close the pop  
+  - press Escape to close the popup  
     ![JS code hinting](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/js-code-hinting.png)
 - For function keywords, there is function parameters hint box to be displayed as soon as you type in function call bracket "(".
 - You can call this parameters hint box by pressing Ctrl-Shift-Space while the cursor is within brackets.
@@ -102,6 +104,7 @@ I'm using the "Dark" color scheme from above theme sets to make the screenshots.
 ### Additional plugins:
 I recommend you to enable these plugins in from the plugin manager (menu Tools > Plugin Manager):
 
+- Addons ([info](http://plugins.geany.org/addons.html)) - possible useful features: tasks list, mark word occurences, bookmark lines
 - XML Snippets ([info](http://plugins.geany.org/xmlsnippets.html))
 - HTML Characters (built-in)
 - Tree Browser ([info](http://plugins.geany.org/treebrowser.html)  
