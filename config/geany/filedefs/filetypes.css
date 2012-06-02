@@ -6,8 +6,8 @@ comment=comment
 tag=tag
 class=class
 pseudoclass=class
-unknown_pseudoclass=class
-unknown_identifier=class
+unknown_pseudoclass=default
+unknown_identifier=default
 operator=operator
 identifier=keyword_1
 doublestring=string_1
@@ -17,7 +17,7 @@ value=value
 id=number
 #identifier2=keyword_2
 identifier2=keyword_1
-important=extra
+important=entity
 directive=preprocessor
 #identifier3=keyword_3
 identifier3=keyword_2
@@ -26,7 +26,7 @@ pseudoelement=element
 extended_identifier=keyword_2
 extended_pseudoclass=class
 extended_pseudoelement=element
-media=string_3
+media=regex
 
 [keywords]
 # CSS 1 properties
