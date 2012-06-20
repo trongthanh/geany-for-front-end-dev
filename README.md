@@ -132,7 +132,7 @@ You may also want to change these key binding to make Geany behave similarly to 
 > Note: **&lt;Primary&gt;** is actually Ctrl on Linux/Windows
 
 ### Using [JSHint](http://www.jshint.com) with Geany:
-- Visit this [Wiki page](wiki/Using-JSHint-with-Geany).
+- Visit this [Wiki page](https://github.com/trongthanh/geany-for-front-end-dev/wiki/Using-JSHint-with-Geany).
 
 -----------------------------------
 
