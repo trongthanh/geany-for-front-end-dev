@@ -3,7 +3,7 @@
 
 [keywords]
 # all items must be in one line
-primary=break case catch const continue default delete do each else false finally for function get if in Infinity instanceof let NaN new null return set switch this throw true try typeof undefined var void while with yield prototype
+primary=break case catch const class continue debugger default delete do else enum export extends finally for function if implements import in instanceof interface let new package private protected public return static super switch this throw try typeof var while with yield false NaN null true undefined void
 secondary=Array Boolean Date Function Math Number Object String RegExp EvalError Error RangeError ReferenceError SyntaxError TypeError URIError prototype decodeURI decodeURIComponent encodeURI encodeURIComponent eval isFinite isNaN parseFloat parseInt
 
 [settings]
@@ -11,7 +11,7 @@ secondary=Array Boolean Date Function Math Number Object String RegExp EvalError
 extension=js
 
 # the following characters are these which a "word" can contains, see documentation
-wordchars=$_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+wordchars=_-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
 
 # single comments, like # in this file
 comment_single=//
@@ -42,4 +42,8 @@ context_action_cmd=
 compiler=
 run=
 
-
+[build-menu]
+FT_00_LB=JSHint
+FT_00_CM=jshint %f
+FT_00_WD=%d
+error_regex=(.+): line ([0-9]+)
