@@ -42,13 +42,11 @@ With snippets, you can complete a whole block of code from short string like `if
 
 ### How To:
 
-To insert snippets into code editor, type the snippet keywords and press Tab. (For current Geany, no hinting popup will be displayed).
+To insert snippets into code editor, type the snippet keywords and press **Tab**. (For current Geany, no hinting popup will be displayed).
 
-Supported snippets in this package:
-`if`, `else`, `for`, `forin`, `while`, `do`, `switch`, `try`, `function` (NEW), `copyright` (NEW), 
-`author` (NEW). 
+For best use of snippets, you should set the keybinding "Move cursor in snippet" in Preference. Suggestion: &lt;Primary&gt;bracketright "]"
 
-Please edit your 'author' name and 'copyright' at [Default] section in snippet.conf. If you use install.sh, it will prompt you to enter text for those snippets.
+Supported snippets in this package: [see snippet.conf](https://github.com/trongthanh/geany-for-front-end-dev/blob/master/config/geany/snippets.conf), JavaScript section. Please edit your 'author' name and 'copyright' at [Default] section.
 
 ## 2. Keywords Highlighting
 
@@ -59,9 +57,11 @@ Language specific syntax highlighting are defined in filetype definition files i
 - **filedefs/filetypes.css**: This file lets Geany highlight latest CSS keywords properly. It contains up-to-date standard CSS1/2/3 as well as browser specific keywords. Besides, minor coloring rules have been patched to make CSS3 & prefixed keywords distinct from CSS1/2 ones.  
     ![Better CSS highlighting](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/css-highlighting.png)
 
-- **filedefs/filetypes.html**: This file justify coloring of HTML tags. For now, I just added the lower-case "doctype" to make it valid syntax.
-
     Source of reference: [CSS properties](http://meiert.com/en/indices/css-properties/)
+
+- **filedefs/filetypes.html**: This file justify coloring of HTML tags.
+- **filedefs/filetypes.javascript**: This file justify coloring of JavaScript keywords.
+- **filedefs/filetypes.common**: [Experiment] Removing dash (-) from whispace characters. So in some filetype definitions, if adding dash to wordchars property, it will be treated as part of word. For e.g. you can now double click to select whole string like "background-color".
 
 ## 3. Code Hinting
 
@@ -104,7 +104,7 @@ I'm using the "Dark" color scheme from above theme sets to make the screenshots.
 ### Additional plugins:
 I recommend you to enable these plugins in from the plugin manager (menu Tools > Plugin Manager):
 
-- Addons ([info](http://plugins.geany.org/addons.html)) - possible useful features: tasks list, mark word occurences, bookmark lines
+- Addons ([info](http://plugins.geany.org/addons.html)) - possible useful features: tasks list, mark word occurences, bookmark lines, enclose selection
 - XML Snippets ([info](http://plugins.geany.org/xmlsnippets.html))
 - HTML Characters (built-in)
 - Tree Browser ([info](http://plugins.geany.org/treebrowser.html)  
@@ -123,66 +123,29 @@ Go to Preferences of Geany (shortcut Ctrl-Alt-P), do:
 
 ![Editor completion preferences](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/editor-completion-preferences.png)
 
-You may also want to change these key binding to make Geany behave similarly to SublimeText or Webstorm
+You may also want to change these key bindings to make Geany behave similarly to other popular editors: Key Bindings >
 
-- Key Bindings > Format > Toggle line commentation: &lt;Primary&gt;slash
-- Key Bindings > Editor > Move line(s) up: &lt;Primary&gt;&lt;Shift&gt;Up
-- Key Bindings > Editor > Move line(s) down: &lt;Primary&gt;&lt;Shift&gt;Down
+- File > Save as: &lt;Primary&gt;&lt;Shift&gt;s
+- File > Save all: &lt;Primary&gt;&lt;Alt&gt;s
+- Format > Toggle line commentation: &lt;Primary&gt;slash
+- Editor > Delete Current Line(s): &lt;Primary&gt;&lt;Shift&gt;k
+- Editor > Transpose Current Line(s): &lt;Primary&gt;t
+- Editor > Complete word: &lt;Shift&gt;space
+- Editor > Move line(s) up: &lt;Primary&gt;&lt;Shift&gt;Up
+- Editor > Move line(s) down: &lt;Primary&gt;&lt;Shift&gt;Down
+- Search > Find Next: F3
+- Search > Find Previous: &lt;Shift&gt;F3
+- Go to > Go to Line: &lt;Primary&gt;g
 
 > Note: **&lt;Primary&gt;** is actually Ctrl on Linux/Windows
+
+More key bindings from my own settings is in the file `keybindings.conf`. (Copy it to your Geany's user folder)
 
 ### Using [JSHint](http://www.jshint.com) with Geany:
 - Visit this [Wiki page](https://github.com/trongthanh/geany-for-front-end-dev/wiki/Using-JSHint-with-Geany).
 
 -----------------------------------
 
-# Creator's Guide
-
-My patching files generally comply to the [Geany mannual](http://www.geany.org/manual/current/index.html) except some tweaks in the tags files.
-
-## Tags file
-
-As explained in the mannual, each entry of the tag file:
-
-> ```shell
-> basename|string|(string path [, string suffix])|
-> ```
-> The first field is the tag name (usually a function name).  
-> The second field is the type of the return value.  
-> The third field is the argument list for this tag.  
-> The fourth field is the description for this tag but currently unused and should be left empty.
-
-I have come up with my own convention (or tweak) to show extra info of the JS functions:
-
-```shell
-function_name | [(library_name)] [[static]] [attached_symbol.] | ([param1[: Type1][, ..., paramN[: TypeN]]])[: Return_Type] |
-```
-Basically, the first field is still the property or function name.  
-The second field comprises of: name of the library (e.g. Mootools), static or not, and lastly, the Class that function is attached to.  
-The third field contains optional parameters with/without type and the function returned type. The ": Type" notation is borrowed from ActionScript. If you leave this field empty, the symbol is considered property, not function, and it has different color in the hinting list.
-
-For example:
-
-```
-slice|Array.|(begin: number[, end: number]): Array|
-```
-
-The hint popup will show like this:
-
-<table>
-  <tr>
-    <td>Array. slice (begin: number[, end: number]): Array</td>
-  </tr>
-</table>
-
-And `setProperty|(Mootools 1.4) Element.|(name, value)|` will be output as:
-
-<table>
-  <tr>
-    <td>(Mootools 1.4) Element. setProperty (name, value)</td>
-  </tr>
-</table>
-
-That is the best notation format I can think of for the function hint with current limitations of Geany. For property names, there's no way to show extra info of them exept the name.
-
-When Geany is improved and can handle tags better, I will revise and adapt this convention.
+# Contribution
+If you'd like to help adding more tags file, snippets and enhancement to this bundle, feel free to fork and send me pull request.
+For adding tags files, please read my [creator's guide](https://github.com/trongthanh/geany-for-front-end-dev/wiki/Creator's-Guide) first.
