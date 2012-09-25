@@ -3,15 +3,16 @@
 
 [keywords]
 # all items must be in one line
-primary=break case catch const class continue debugger default delete do else enum export extends finally for function if implements import in instanceof interface let new package private protected public return static super switch this throw try typeof var while with yield false NaN null true undefined void
-secondary=Array Boolean Date Function Math Number Object String RegExp EvalError Error RangeError ReferenceError SyntaxError TypeError URIError prototype decodeURI decodeURIComponent encodeURI encodeURIComponent eval isFinite isNaN parseFloat parseInt constructor
+primary=break case catch const class continue debugger default delete do else enum export extends finally for if implements import in instanceof interface let new package private protected public return static super switch this throw try typeof while with yield false NaN null true undefined void
+secondary=function var Array Boolean Date Function Math Number Object String RegExp EvalError Error RangeError ReferenceError SyntaxError TypeError URIError prototype decodeURI decodeURIComponent encodeURI encodeURIComponent eval isFinite isNaN parseFloat parseInt constructor
+docComment=author deprecated exception param return see serial serialData serialField since throws todo version
 
 [settings]
 # default extension used when saving files
 extension=js
 
 # the following characters are these which a "word" can contains, see documentation
-wordchars=_-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+wordchars=$_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
 
 # single comments, like # in this file
 comment_single=//

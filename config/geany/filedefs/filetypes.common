@@ -3,6 +3,6 @@
 [settings]
 # which characters should be skipped when moving (or included when deleting) to word boundaries
 # should always include space and tab (\s\t)
-whitespace_chars=\s\t!\"#$%&'()*+,./:;<=>?@[\\]^`{|}~
+whitespace_chars=\s\t!\"#%&'()*+,./:;<=>?@[\\]^`{|}~
 
 
