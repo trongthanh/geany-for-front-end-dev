@@ -3,11 +3,14 @@
 
 [keywords]
 # all items must be in one line
-primary=break case catch const class continue debugger default delete do else enum export extends finally for if implements import in instanceof interface let new package private protected public return static super switch this throw try typeof while with yield false NaN null true undefined void
-secondary=function var Array Boolean Date Function Math Number Object String RegExp EvalError Error RangeError ReferenceError SyntaxError TypeError URIError prototype decodeURI decodeURIComponent encodeURI encodeURIComponent eval isFinite isNaN parseFloat parseInt constructor
-docComment=author deprecated exception param return see serial serialData serialField since throws todo version
+primary=break case catch const class continue debugger default delete do else enum export extends finally for if implements import in instanceof interface let new package private protected public return static super switch throw try typeof while with yield false NaN null true undefined void
+secondary=function var constructor prototype
+classes=Array Boolean Date Function Math Number Object String RegExp EvalError Error RangeError ReferenceError SyntaxError TypeError URIError decodeURI decodeURIComponent encodeURI encodeURIComponent eval isFinite isNaN parseFloat parseInt console document navigator window this
 
 [settings]
+# experimenting ActionScript lexer for Javascript, better syntax highlighting
+lexer_filetype=ActionScript
+
 # default extension used when saving files
 extension=js
 
