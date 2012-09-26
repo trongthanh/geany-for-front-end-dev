@@ -4,19 +4,19 @@
 getDOMImplementation|DOMImplementationRegistry.|(features: String): void|
 getDOMImplementationList|DOMImplementationRegistry.|(features: String): void|
 ## DOMException
-code|DOMException.||
+code|DOMException.||Type: Number
 ## DOMStringList
-length|DOMStringList.||
+length|DOMStringList.||Type: Number
 item|DOMStringList.|(index: Number): String|
 contains|DOMStringList.|(str: String): Boolean|
 ## NameList
-length|NameList.||
+length|NameList.||Type: Number
 getName|NameList.|(index: Number): String|
 getNamespaceURI|NameList.|(index: Number): String|
 contains|NameList.|(str: String): Boolean|
 containsNS|NameList.|(namespaceURI: String, name: String): Boolean|
 ## DOMImplementationList
-length|DOMImplementationList.||
+length|DOMImplementationList.||Type: Number
 item|DOMImplementationList.|(index: Number): DOMImplementation|
 ## DOMImplementationSource
 getDOMImplementation|DOMImplementationSource.|(features: String): DOMImplementation|
@@ -28,16 +28,16 @@ createDocument|DOMImplementation.|(namespaceURI: String, qualifiedName: String, 
 getFeature|DOMImplementation.|(feature: String, version: String): Object|
 ## DocumentFragment
 ## Document
-doctype|Document.||
-implementation|Document.||
-documentElement|Document.||
-inputEncoding|Document.||
-xmlEncoding|Document.||
-xmlStandalone|Document.||
-xmlVersion|Document.||
-strictErrorChecking|Document.||
-documentURI|Document.||
-domConfig|Document.||
+doctype|Document.||Type: DocumentType
+implementation|Document.||Type: DOMImplementation
+documentElement|Document.||Type: Element
+inputEncoding|Document.||Type: String
+xmlEncoding|Document.||Type: String
+xmlStandalone|Document.||Type: Boolean
+xmlVersion|Document.||Type: String
+strictErrorChecking|Document.||Type: Boolean
+documentURI|Document.||Type: String
+domConfig|Document.||Type: DOMConfiguration
 createElement|Document.|(tagName: String): Element|
 createDocumentFragment|Document.|(): DocumentFragment|
 createTextNode|Document.|(data: String): Text|
@@ -62,40 +62,40 @@ save|(browser IE) Document.|(filename: String): void|
 setProperty|(browser IE) Document.|(name: String, value: String): void|
 selectSingleNode|(browser IE) Document.|(xpathExpression: String): void|
 selectNodes|(browser IE) Document.|(xpathExpression: String): void|
-parseError|(browser IE) Document.||
+parseError|(browser IE) Document.||Type: IXMLDOMParseError
 ## IXMLDOMParseError
-reason|IXMLDOMParseError.||
-errorCode|IXMLDOMParseError.||
+reason|IXMLDOMParseError.||Type: String
+errorCode|IXMLDOMParseError.||Type: Number
 ## Node
-nodeName|Node.||
-nodeValue|Node.||
-nodeType|Node.||
-parentNode|Node.||
-childNodes|Node.||
-firstChild|Node.||
-lastChild|Node.||
-previousSibling|Node.||
-nextSibling|Node.||
-attributes|Node.||
-ownerDocument|Node.||
-namespaceURI|Node.||
-prefix|Node.||
-localName|Node.||
-baseURI|Node.||
-textContent|Node.||
-xml|(browser ie) Node.||
-ELEMENT_NODE|[static] Node.||
-ATTRIBUTE_NODE|[static] Node.||
-TEXT_NODE|[static] Node.||
-CDATA_SECTION_NODE|[static] Node.||
-ENTITY_SECTION_NODE|[static] Node.||
-ENTITY_NODE|[static] Node.||
-PROCESSING_INSTRUCTION_NODE|[static] Node.||
-COMMENT_NODE|[static] Node.||
-DOCUMENT_NODE|[static] Node.||
-DOCUMENT_TYPE_NODE|[static] Node.||
-DOCUMENT_FRAGMENT_NODE|[static] Node.||
-NOTATION_NODE|[static] Node.||
+nodeName|Node.||Type: String
+nodeValue|Node.||Type: String
+nodeType|Node.||Type: Number
+parentNode|Node.||Type: Node
+childNodes|Node.||Type: NodeList
+firstChild|Node.||Type: Node
+lastChild|Node.||Type: Node
+previousSibling|Node.||Type: Node
+nextSibling|Node.||Type: Node
+attributes|Node.||Type: NamedNodeMap
+ownerDocument|Node.||Type: Document
+namespaceURI|Node.||Type: String
+prefix|Node.||Type: String
+localName|Node.||Type: String
+baseURI|Node.||Type: String
+textContent|Node.||Type: String
+xml|(browser ie) Node.||Type: String
+ELEMENT_NODE|[static] Node.||Type: Number
+ATTRIBUTE_NODE|[static] Node.||Type: Number
+TEXT_NODE|[static] Node.||Type: Number
+CDATA_SECTION_NODE|[static] Node.||Type: Number
+ENTITY_SECTION_NODE|[static] Node.||Type: Number
+ENTITY_NODE|[static] Node.||Type: Number
+PROCESSING_INSTRUCTION_NODE|[static] Node.||Type: Number
+COMMENT_NODE|[static] Node.||Type: Number
+DOCUMENT_NODE|[static] Node.||Type: Number
+DOCUMENT_TYPE_NODE|[static] Node.||Type: Number
+DOCUMENT_FRAGMENT_NODE|[static] Node.||Type: Number
+NOTATION_NODE|[static] Node.||Type: Number
 insertBefore|Node.|(newChild: Node, refChild: Node): Node|
 replaceChild|Node.|(newChild: Node, refChild: Node): Node|
 removeChild|Node.|(oldChild: Node): Node|
@@ -115,10 +115,10 @@ getFeature|Node.|(feature: String, version: String): Object|
 setUserData|Node.|(key: String, data: *, handler: UserDataHandler): void|
 getUserData|Node.|(key: String): void|
 ## NodeList
-length|NodeList.||
+length|NodeList.||Type: Number
 item|NodeList.|(index: Number): Node|
 ## NamedNodeMap
-length|NamedNodeMap.||
+length|NamedNodeMap.||Type: Number
 getNamedItem|NamedNodeMap.|(name: String): Node|
 setNamedItem|NamedNodeMap.|(arg: Node): Node|
 removeNamedItem|NamedNodeMap.|(name: String): Node|
@@ -127,23 +127,23 @@ getNamedItemNS|NamedNodeMap.|(namespaceURI: String, localName: String): Node|
 setNamedItemNS|NamedNodeMap.|(arg: Node): Node|
 removeNamedItemNS|NamedNodeMap.|(namespaceURI: String, localName: String): Node|
 ## CharacterData
-data|CharacterData.||
-length|CharacterData.||
+data|CharacterData.||Type: String
+length|CharacterData.||Type: Number
 substringData|CharacterData.|(offset: Number, count: Number): String|
 appendData|CharacterData.|(arg: String): void|
 insertData|CharacterData.|(offset: Number, arg: String): void|
 deleteData|CharacterData.|(offset: Number, count: Number): void|
 replaceData|CharacterData.|(offset: Number, count: Number, arg: String): void|
 ## Attr
-name|Attr.||
-specified|Attr.||
-value|Attr.||
-ownerElement|Attr.||
-schemaTypeInfo|Attr.||
-isId|Attr.||
+name|Attr.||Type: String
+specified|Attr.||Type: Boolean
+value|Attr.||Type: String
+ownerElement|Attr.||Type: Element
+schemaTypeInfo|Attr.||Type: TypeInfo
+isId|Attr.||Type: Boolean
 ## Element
-tagName|Element.||
-schemaTypeInfo|Element.||
+tagName|Element.||Type: String
+schemaTypeInfo|Element.||Type: TypeInfo
 getAttribute|Element.|(name: String): String|
 setAttribute|Element.|(name: String, value: String): void|
 removeAttribute|Element.|(name: String): void|
@@ -163,70 +163,70 @@ setIdAttribute|Element.|(name: String, isId: Boolean): void|
 setIdAttributeNS|Element.|(namespaceURI: String, localName: String, isId: Boolean): void|
 setIdAttributeNode|Element.|(idAttr: Attr, isId: Boolean): void|
 ## Text
-isElementContentWhitespace|Text.||
-wholeText|Text.||
+isElementContentWhitespace|Text.||Type: Boolean
+wholeText|Text.||Type: String
 splitText|Text.|(offset: Number): Text|
 replaceWholeText|Text.|(content: String): Text|
 ## Comment
 ## TypeInfo
-typeName|TypeInfo.||
-typeNamespace|TypeInfo.||
+typeName|TypeInfo.||Type: String
+typeNamespace|TypeInfo.||Type: String
 isDerivedFrom|TypeInfo.|(typeNamespaceArg: String, typeNameArg: String, derivationMethod:  Number): Boolean|
 ## UserDataHandler
 handle|UserDataHandler.|(param1: Number, param2: String, param3: *, param4: Node, param5: Node): void|
 ## DOMError
-severity|DOMError.||
-message|DOMError.||
-type|DOMError.||
-relatedException|DOMError.||
-relatedData|DOMError.||
-location|DOMError.||
+severity|DOMError.||Type: Number
+message|DOMError.||Type: String
+type|DOMError.||Type: String
+relatedException|DOMError.||Type: Object
+relatedData|DOMError.||Type: Object
+location|DOMError.||Type: DOMLocator
 ## DOMErrorHandler
 handler|DOMErrorHandler.|(error: DOMError): Boolean|
 ## DOMLocator
-lineNumber|DOMLocator.||
-columnNumber|DOMLocator.||
-byteOffset|DOMLocator.||
-utf16Offset|DOMLocator.||
-relatedNode|DOMLocator.||
-uri|DOMLocator.||
+lineNumber|DOMLocator.||Type: Number
+columnNumber|DOMLocator.||Type: Number
+byteOffset|DOMLocator.||Type: Number
+utf16Offset|DOMLocator.||Type: Number
+relatedNode|DOMLocator.||Type: Node
+uri|DOMLocator.||Type: String
 ## DOMConfiguration
-parameterNames|DOMConfiguration.||
+parameterNames|DOMConfiguration.||Type: DOMStringList
 setParameter|DOMConfiguration.|(name: String, value: *): void|
 getParameter|DOMConfiguration.|(name: String): void|
 canSetParameter|DOMConfiguration.|(name: String, value: *): Boolean|
 ## CDATASection
 ## DocumentType
-name|DocumentType.||
-entities|DocumentType.||
-notations|DocumentType.||
-publicId|DocumentType.||
-systemId|DocumentType.||
-internalSubset|DocumentType.||
+name|DocumentType.||Type: String
+entities|DocumentType.||Type: NamedNodeMap
+notations|DocumentType.||Type: NamedNodeMap
+publicId|DocumentType.||Type: String
+systemId|DocumentType.||Type: String
+internalSubset|DocumentType.||Type: String
 ## Notation
-publicId|Notation.||
-systemId|Notation.||
+publicId|Notation.||Type: String
+systemId|Notation.||Type: String
 ## Entity
-publicId|Entity.||
-systemId|Entity.||
-notationName|Entity.||
-inputEncoding|Entity.||
-xmlEncoding|Entity.||
-xmlVersion|Entity.||
+publicId|Entity.||Type: String
+systemId|Entity.||Type: String
+notationName|Entity.||Type: String
+inputEncoding|Entity.||Type: String
+xmlEncoding|Entity.||Type: String
+xmlVersion|Entity.||Type: String
 ## EntityReference
 ## ProcessingInstruction
-target|ProcessingInstruction.||
-data|ProcessingInstruction.||
+target|ProcessingInstruction.||Type: String
+data|ProcessingInstruction.||Type: String
 # Extract from: DOMEvents.xml
 ## Event
-type|Event.||
-target|Event.||
-currentTarget|Event.||
-eventPhase|Event.||
-bubbles|Event.||
-cancelable|Event.||
-timeStamp|Event.||
-namespaceURI|Event.||
+type|Event.||Type: String
+target|Event.||Type: EventTarget
+currentTarget|Event.||Type: EventTarget
+eventPhase|Event.||Type: Number
+bubbles|Event.||Type: Boolean
+cancelable|Event.||Type: Boolean
+timeStamp|Event.||Type: Number
+namespaceURI|Event.||Type: String
 stopPropagation|Event.|(): void|
 preventDefault|Event.|(): void|
 initEvent|Event.|(eventTypeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean): void|
@@ -245,7 +245,7 @@ hasEventListenerNS|EventTarget.|(namespaceURI: String, type: String): Boolean|
 ## EventListener
 handleEvent|EventListener.|(evt: Event): void|
 ## EventException
-code|EventException.||
+code|EventException.||Type: Number
 ## DocumentEvent
 createEvent|DocumentEvent.|(eventType: String): Event|
 canDispatch|DocumentEvent.|(namespaceURI: String, type: String): String|
@@ -254,49 +254,49 @@ setDispatchState|CustomEvent.|(target: EventTarget, phase: Number): void|
 isPropagationStopped|CustomEvent.|(): Boolean|
 isImmediatePropagationStopped|CustomEvent.|(): Boolean|
 ## UIEvent
-view|UIEvent.||
-detail|UIEvent.||
+view|UIEvent.||Type: AbstractView
+detail|UIEvent.||Type: Number
 initUIEvent|UIEvent.|(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: AbstractView, detailArg: Number): void|
 initUIEventNS|UIEvent.|(namespaceURI: String, typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: AbstractView, detailArg: Number): void|
 ## TextEvent
-data|TextEvent.||
+data|TextEvent.||Type: String
 initTextEvent|TextEvent.|(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: AbstractView, dataArg: Number): void|
 initTextEventNS|TextEvent.|(namespaceURI: String, typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: AbstractView, dataArg: Number): void|
 ## MouseEvent
-screenX|MouseEvent.||
-screenY|MouseEvent.||
-clientX|MouseEvent.||
-clientY|MouseEvent.||
-ctrlKey|MouseEvent.||
-shiftKey|MouseEvent.||
-altKey|MouseEvent.||
-metaKey|MouseEvent.||
-button|MouseEvent.||
-relatedTarget|MouseEvent.||
+screenX|MouseEvent.||Type: Number
+screenY|MouseEvent.||Type: Number
+clientX|MouseEvent.||Type: Number
+clientY|MouseEvent.||Type: Number
+ctrlKey|MouseEvent.||Type: Boolean
+shiftKey|MouseEvent.||Type: Boolean
+altKey|MouseEvent.||Type: Boolean
+metaKey|MouseEvent.||Type: Boolean
+button|MouseEvent.||Type: Number
+relatedTarget|MouseEvent.||Type: EventTarget
 getModifierState|MouseEvent.|(keyIdentifierArg: String): Boolean|
 initMouseEvent|(browser Gecko) MouseEvent.|(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: AbstractView, detailArg: Number, screenXArg: Number, screenYArg: Number, clientXArg: Number, clientYArg: Number, ctrlKeyArg: Boolean, altKeyArg: Boolean, shiftKeyArg: Boolean, metaKeyArg: Boolean, buttonArg: Number, relatedTargetArg: EventTarget): void|
 initMouseEventNS|MouseEvent.|(namespaceURI: String, typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: AbstractView, detailArg: Number, screenXArg: Number, screenYArg: Number, clientXArg: Number, clientYArg: Number, ctrlKeyArg: Boolean, altKeyArg: Boolean, shiftKeyArg: Boolean, metaKeyArg: Boolean, buttonArg: Number, relatedTargetArg: EventTarget): void|
 ## KeyboardEvent
-keyIdentifier|KeyboardEvent.||
-keyLocation|KeyboardEvent.||
-ctrlKey|KeyboardEvent.||
-shiftKey|KeyboardEvent.||
-altKey|KeyboardEvent.||
-metaKey|(browser Gecko) KeyboardEvent.||
+keyIdentifier|KeyboardEvent.||Type: String
+keyLocation|KeyboardEvent.||Type: Number
+ctrlKey|KeyboardEvent.||Type: Boolean
+shiftKey|KeyboardEvent.||Type: Boolean
+altKey|KeyboardEvent.||Type: Boolean
+metaKey|(browser Gecko) KeyboardEvent.||Type: Boolean
 getModifierState|KeyboardEvent.|(keyIdentifierArg: String): Boolean|
 initKeyboardEvent|KeyboardEvent.|(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: AbstractView, keyIdentifierArg: String, keyLocationArg: Number, modifiersList: String): void|
 initKeyboardEventNS|KeyboardEvent.|(namespaceURI: String, typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, viewArg: AbstractView, keyIdentifierArg: String, keyLocationArg: Number, modifiersList: String): void|
 ## MutationEvent
-relatedNode|MutationEvent.||
-prevValue|MutationEvent.||
-newValue|MutationEvent.||
-attrName|MutationEvent.||
-attrChange|MutationEvent.||
+relatedNode|MutationEvent.||Type: Node
+prevValue|MutationEvent.||Type: String
+newValue|MutationEvent.||Type: String
+attrName|MutationEvent.||Type: String
+attrChange|MutationEvent.||Type: Number
 initMutationEvent|MutationEvent.|(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, relatedNodeArg: Node, prevValueArg: String, newValueArg: String, attrNameArg: String, attrChangeArg: Number): void|
 initMutationEventNS|MutationEvent.|(namespaceURI: String, typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, relatedNodeArg: Node, prevValueArg: String, newValueArg: String, attrNameArg: String, attrChangeArg: Number): void|
 ## MutationNameEvent
-prevNamespaceURI|MutationNameEvent.||
-prevNodeName|MutationNameEvent.||
+prevNamespaceURI|MutationNameEvent.||Type: String
+prevNodeName|MutationNameEvent.||Type: String
 initMutationNameEvent|MutationNameEvent.|(typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, relatedNodeArg: Node, prevNamespaceURIArg: String, prevNodeNameArg: String): void|
 initMutationNameEventNS|MutationNameEvent.|(namespaceURI: String, typeArg: String, canBubbleArg: Boolean, cancelableArg: Boolean, relatedNodeArg: Node, prevNamespaceURIArg: String, prevNodeNameArg: String): void|
 # Extract from: DHTML.xml
@@ -308,46 +308,46 @@ __lookupSetter__|(browser Gecko) Object.|(propertyName: *): Function|
 __proto__|(browser Gecko) Object.|(propertyName: *): Function|
 ## Image
 constructor|Image.||
-naturalWidth|(browser Gecko) Image.||
-naturalHeight|(browser Gecko) Image.||
+naturalWidth|(browser Gecko) Image.||Type: Number
+naturalHeight|(browser Gecko) Image.||Type: Number
 ## Navigator
-userAgent|Navigator.||
-product|Navigator.||
-appVersion|Navigator.||
-appName|Navigator.||
-appCodeName|Navigator.||
-language|Navigator.||
-systemLanguage|(browser IE) Navigator.||
-userLanguage|(browser IE) Navigator.||
-mimeTypes|Navigator.||
-platform|Navigator.||
-plugins|Navigator.||
+userAgent|Navigator.||Type: String
+product|Navigator.||Type: String
+appVersion|Navigator.||Type: String
+appName|Navigator.||Type: String
+appCodeName|Navigator.||Type: String
+language|Navigator.||Type: String
+systemLanguage|(browser IE) Navigator.||Type: String
+userLanguage|(browser IE) Navigator.||Type: String
+mimeTypes|Navigator.||Type: Array
+platform|Navigator.||Type: Array
+plugins|Navigator.||Type: String
 taintEnabled|Navigator.|(): Boolean|
 javaEnabled|Navigator.|(): Boolean|
 preference|Navigator.|(prefName: String, prefValue: String): String|
 ## Screen
-width|Screen.||
-height|Screen.||
-availHeight|Screen.||
-availWidth|Screen.||
-pixelDepth|Screen.||
-colorDepth|Screen.||
+width|Screen.||Type: Number
+height|Screen.||Type: Number
+availHeight|Screen.||Type: Number
+availWidth|Screen.||Type: Number
+pixelDepth|Screen.||Type: Number
+colorDepth|Screen.||Type: Number
 ## Option
-defaultSelected|Option.||
-selected|Option.||
-text|Option.||
-value|Option.||
+defaultSelected|Option.||Type: Boolean
+selected|Option.||Type: Boolean
+text|Option.||Type: String
+value|Option.||Type: String
 ## Location
-href|Location.||
-hash|Location.||
-port|Location.||
-host|Location.||
-hostname|Location.||
-pathname|Location.||
-protocol|Location.||
-port|Location.||
-search|Location.||
-target|Location.||
+href|Location.||Type: String
+hash|Location.||Type: String
+port|Location.||Type: String
+host|Location.||Type: String
+hostname|Location.||Type: String
+pathname|Location.||Type: String
+protocol|Location.||Type: String
+port|Location.||Type: String
+search|Location.||Type: String
+target|Location.||Type: String
 reload|Location.|(): void|
 replace|Location.|(url: String): void|
 ## XSLTProcessor
@@ -363,67 +363,67 @@ constructor|XMLSerializer.||
 serializeToStream|XMLSerializer.|(domNode: Document, stream: Object, encoding: String): void|
 serializeToString|XMLSerializer.|(domNode: Document): String|
 ## Event
-data|Event.||
-height|Event.||
-x|(browser IE) Event.||
-screenX|Event.||
-clientX|Event.||
-offsetX|(browser IE) Event.||
-layerX|(browser Gecko) Event.||
-fromElement|(browser IE) Event.||
-wheelDelta|(browser IE) Event.||
-repeat|(browser IE) Event.||
-pageX|Event.||
-y|(browser IE) Event.||
-screenY|Event.||
-clientY|Event.||
-offsetY|(browser IE) Event.||
-layerY|(browser Gecko) Event.||
-pageY|Event.||
-width|Event.||
-modifiers|Event.||
-keyCode|Event.||
-type|Event.||
-which|Event.||
-srcElement|(browser IE) Event.||
-toElement|(browser IE) Event.||
-cancelBubble|(browser IE) Event.||
-returnValue|(browser IE) Event.||
-altKey|Event.||
-ctrlKey|Event.||
-shiftKey|Event.||
-button|Event.||
-charCode|(browser Gecko) Event.||
-ABORT|(browser Gecko) Event.||
-BLUR|(browser Gecko) Event.||
-CLICK|(browser Gecko) Event.||
-CHANGE|(browser Gecko) Event.||
-DBLCLICK|(browser Gecko) Event.||
-DRAGDROP|(browser Gecko) Event.||
-ERROR|(browser Gecko) Event.||
-FOCUS|(browser Gecko) Event.||
-KEYDOWN|(browser Gecko) Event.||
-KEYPRESS|(browser Gecko) Event.||
-KEYUP|(browser Gecko) Event.||
-LOAD|(browser Gecko) Event.||
-MOUSEDOWN|(browser Gecko) Event.||
-MOUSEMOVE|(browser Gecko) Event.||
-MOUSEOUT|(browser Gecko) Event.||
-MOUSEOVER|(browser Gecko) Event.||
-MOUSEUP|(browser Gecko) Event.||
-MOVE|(browser Gecko) Event.||
-RESET|(browser Gecko) Event.||
-RESIZE|(browser Gecko) Event.||
-SELECT|(browser Gecko) Event.||
-SUBMIT|(browser Gecko) Event.||
-UNLOAD|(browser Gecko) Event.||
+data|Event.||Type: Object[]
+height|Event.||Type: Number
+x|(browser IE) Event.||Type: Number
+screenX|Event.||Type: Number
+clientX|Event.||Type: Number
+offsetX|(browser IE) Event.||Type: Number
+layerX|(browser Gecko) Event.||Type: Number
+fromElement|(browser IE) Event.||Type: Object
+wheelDelta|(browser IE) Event.||Type: Number
+repeat|(browser IE) Event.||Type: Boolean
+pageX|Event.||Type: Number
+y|(browser IE) Event.||Type: Number
+screenY|Event.||Type: Number
+clientY|Event.||Type: Number
+offsetY|(browser IE) Event.||Type: Number
+layerY|(browser Gecko) Event.||Type: Number
+pageY|Event.||Type: Number
+width|Event.||Type: Number
+modifiers|Event.||Type: Number
+keyCode|Event.||Type: Number
+type|Event.||Type: String
+which|Event.||Type: Object
+srcElement|(browser IE) Event.||Type: Object
+toElement|(browser IE) Event.||Type: Object
+cancelBubble|(browser IE) Event.||Type: Boolean
+returnValue|(browser IE) Event.||Type: Boolean
+altKey|Event.||Type: Boolean
+ctrlKey|Event.||Type: Boolean
+shiftKey|Event.||Type: Boolean
+button|Event.||Type: Boolean
+charCode|(browser Gecko) Event.||Type: String
+ABORT|(browser Gecko) Event.||Type: Event
+BLUR|(browser Gecko) Event.||Type: Event
+CLICK|(browser Gecko) Event.||Type: Event
+CHANGE|(browser Gecko) Event.||Type: Event
+DBLCLICK|(browser Gecko) Event.||Type: Event
+DRAGDROP|(browser Gecko) Event.||Type: Event
+ERROR|(browser Gecko) Event.||Type: Event
+FOCUS|(browser Gecko) Event.||Type: Event
+KEYDOWN|(browser Gecko) Event.||Type: Event
+KEYPRESS|(browser Gecko) Event.||Type: Event
+KEYUP|(browser Gecko) Event.||Type: Event
+LOAD|(browser Gecko) Event.||Type: Event
+MOUSEDOWN|(browser Gecko) Event.||Type: Event
+MOUSEMOVE|(browser Gecko) Event.||Type: Event
+MOUSEOUT|(browser Gecko) Event.||Type: Event
+MOUSEOVER|(browser Gecko) Event.||Type: Event
+MOUSEUP|(browser Gecko) Event.||Type: Event
+MOVE|(browser Gecko) Event.||Type: Event
+RESET|(browser Gecko) Event.||Type: Event
+RESIZE|(browser Gecko) Event.||Type: Event
+SELECT|(browser Gecko) Event.||Type: Event
+SUBMIT|(browser Gecko) Event.||Type: Event
+UNLOAD|(browser Gecko) Event.||Type: Event
 ## Selection
-anchorNode|(browser Gecko) Selection.||
-anchorOffset|(browser Gecko) Selection.||
-focusNode|(browser Gecko) Selection.||
-focusOffset|(browser Gecko) Selection.||
-isCollapsed|(browser Gecko) Selection.||
-rangeCount|(browser Gecko) Selection.||
+anchorNode|(browser Gecko) Selection.||Type: Node
+anchorOffset|(browser Gecko) Selection.||Type: Number
+focusNode|(browser Gecko) Selection.||Type: Node
+focusOffset|(browser Gecko) Selection.||Type: Number
+isCollapsed|(browser Gecko) Selection.||Type: Boolean
+rangeCount|(browser Gecko) Selection.||Type: Number
 getRangeAt|(browser Gecko) Selection.|(index: Number): Range|
 collapse|(browser Gecko) Selection.|(parentNode: Node, offset: Number): void|
 extend|(browser Gecko) Selection.|(parentNode: Node, offset: Number): void|
@@ -439,14 +439,14 @@ clear|(browser IE) Selection.|(): Boolean|
 empty|(browser IE) Selection.|(): Boolean|
 createRange|(browser IE) Selection.|(): TextRange|
 ## TextRange
-htmlText|TextRange.||
-text|TextRange.||
-boundingWidth|TextRange.||
-boundingHeight|TextRange.||
-boundingLeft|TextRange.||
-offsetLeft|TextRange.||
-boundingTop|TextRange.||
-offsetTop|TextRange.||
+htmlText|TextRange.||Type: String
+text|TextRange.||Type: String
+boundingWidth|TextRange.||Type: Number
+boundingHeight|TextRange.||Type: Number
+boundingLeft|TextRange.||Type: Number
+offsetLeft|TextRange.||Type: Number
+boundingTop|TextRange.||Type: Number
+offsetTop|TextRange.||Type: Number
 getBookmark|TextRange.|(): String|
 moveToBookmark|TextRange.|(sBookmark: String): Boolean|
 collapse|TextRange.|(start: Boolean): void|
@@ -466,17 +466,17 @@ pasteHTML|TextRange.|(htmlText: String): void|
 moveToElementText|TextRange.|(element: HTMLElement): void|
 compareEndPoints|TextRange.|(sType: String, oRange: TextRange): Number|
 ## document
-selection|(browser IE) document.||
-namespaces|(browser IE) document.||
-all|(browser IE) document.||
-styleSheets|document.||
+selection|(browser IE) document.||Type: Selection
+namespaces|(browser IE) document.||Type: Array
+all|(browser IE) document.||Type: All
+styleSheets|document.||Type: Stylesheet[]
 execCommand|(browser IE) document.|(sCommand: String, bUserInterface: Boolean, vValue: Object): Boolean|
 ## CssRule
-selectorText|CssRule.||
+selectorText|CssRule.||Type: String
 ## Stylesheet
-cssRules|(browser Gecko) Stylesheet.||
-rules|(browser IE) Stylesheet.||
-owningElement|(browser IE) Stylesheet.||
+cssRules|(browser Gecko) Stylesheet.||Type: CssRule[]
+rules|(browser IE) Stylesheet.||Type: CssRule[]
+owningElement|(browser IE) Stylesheet.||Type: HtmlElement
 addRule|(browser IE) Stylesheet.|(selector: Object, style: Object): void|
 insertRule|(browser Gecko) Stylesheet.|(ruleText: Object, index: Number): void|
 removeRule|(browser IE) Stylesheet.|(index: Number): void|
@@ -492,43 +492,43 @@ go|History.|(count: Number): void|
 ## Console
 log|Console.|(message: *): void|
 ## window
-document|window.||
-event|window.||
-navigator|window.||
-screen|window.||
-location|window.||
-console|(browser Opera) window.||
-frameElement|window.||
-opener|window.||
-window|window.||
-parent|window.||
-top|window.||
-self|window.||
-frames|window.||
-innerHeight|window.||
-innerWidth|window.||
-outerHeight|window.||
-outerWidth|window.||
-screenLeft|(browser IE) window.||
-screenTop|(browser IE) window.||
-scrollX|window.||
-scrollY|window.||
-pageXOffset|window.||
-pageYOffset|window.||
-scrollMaxX|window.||
-scrollMaxY|window.||
-status|window.||
-defaultStatus|window.||
-toolbar|window.||
-menubar|window.||
-scrollbars|window.||
-directories|window.||
-history|window.||
-sidebar|(browser Gecko) window.||
-external|(browser IE) window.||
-opera|(browser Opera) window.||
+document|window.||Type: HTMLDocument
+event|window.||Type: Event
+navigator|window.||Type: Navigator
+screen|window.||Type: Screen
+location|window.||Type: Location
+console|(browser Opera) window.||Type: Console
+frameElement|window.||Type: Object
+opener|window.||Type: window
+window|window.||Type: window
+parent|window.||Type: window
+top|window.||Type: window
+self|window.||Type: Object
+frames|window.||Type: Array
+innerHeight|window.||Type: Number
+innerWidth|window.||Type: Number
+outerHeight|window.||Type: Number
+outerWidth|window.||Type: Number
+screenLeft|(browser IE) window.||Type: Number
+screenTop|(browser IE) window.||Type: Number
+scrollX|window.||Type: Number
+scrollY|window.||Type: Number
+pageXOffset|window.||Type: Number
+pageYOffset|window.||Type: Number
+scrollMaxX|window.||Type: Number
+scrollMaxY|window.||Type: Number
+status|window.||Type: String
+defaultStatus|window.||Type: String
+toolbar|window.||Type: Object
+menubar|window.||Type: Object
+scrollbars|window.||Type: Object
+directories|window.||Type: Object
+history|window.||Type: History
+sidebar|(browser Gecko) window.||Type: MozillaSideBar
+external|(browser IE) window.||Type: IEExternal
+opera|(browser Opera) window.||Type: Boolean
 getSelection|(browser Gecko) window.|(): Selection|
-clipboardData|(browser ie) window.||
+clipboardData|(browser ie) window.||Type: ClipboardData
 open|window.|(strUrl: String, strWindowName: String, strWindowFeatures: String, bReplace: Boolean): window|
 print|window.|(): void|
 alert|window.|(sMesssage: *): void|
@@ -563,111 +563,111 @@ addEventListener|(browser Gecko) window.|(type: String, listener: Function, useC
 removeEventListener|(browser Gecko) window.|(type: String, listener: Function, useCapture: Boolean): void|
 execScript|(browser IE) window.|(sScript: String): void|
 CollectGarbage|(browser IE) window.|(): void|
-onload|window.||
-onunload|window.||
+onload|window.||Type: Function
+onunload|window.||Type: Function
 ## ClipboardData
 setData|ClipboardData.|(sDataFormat: String, sData: String): Boolean|
 getData|ClipboardData.|(sDataFormat: String): String|
 clearData|ClipboardData.|(sDataFormat: String): Boolean|
 ## Global
-window|Global.||
+window|Global.||Type: window
 escape|Global.|(str: String): void|
 unescape|Global.|(str: String): void|
 ## HTMLCollection
-length|HTMLCollection.||
+length|HTMLCollection.||Type: Number
 item|HTMLCollection.|(index: Number): Node|
 namedItem|HTMLCollection.|(name: String): Node|
 ## HTMLOptionsCollection
-length|HTMLOptionsCollection.||
+length|HTMLOptionsCollection.||Type: Number
 item|HTMLOptionsCollection.|(index: Number): Node|
 namedItem|HTMLOptionsCollection.|(name: String): Node|
 ## HTMLDocument
-title|HTMLDocument.||
-referrer|HTMLDocument.||
-domain|HTMLDocument.||
-URL|HTMLDocument.||
-body|HTMLDocument.||
-images|HTMLDocument.||
-applets|HTMLDocument.||
-links|HTMLDocument.||
-forms|HTMLDocument.||
-anchors|HTMLDocument.||
-cookie|HTMLDocument.||
+title|HTMLDocument.||Type: String
+referrer|HTMLDocument.||Type: String
+domain|HTMLDocument.||Type: String
+URL|HTMLDocument.||Type: String
+body|HTMLDocument.||Type: HTMLElement
+images|HTMLDocument.||Type: HTMLCollection
+applets|HTMLDocument.||Type: HTMLCollection
+links|HTMLDocument.||Type: HTMLCollection
+forms|HTMLDocument.||Type: HTMLCollection
+anchors|HTMLDocument.||Type: HTMLCollection
+cookie|HTMLDocument.||Type: HTMLCollection
 open|HTMLDocument.|(): void|
 close|HTMLDocument.|(): void|
 write|HTMLDocument.|(text: String): void|
 writeln|HTMLDocument.|(text: String): void|
 getElementsByName|HTMLDocument.|(elementName: String): NodeList|
 getElementsByClassName|(browser Gecko) HTMLDocument.|(className: String): NodeList|
-defaultView|(browser Gecko) HTMLDocument.||
-activeElement|(browser IE) HTMLDocument.||
-compatMode|HTMLDocument.||
+defaultView|(browser Gecko) HTMLDocument.||Type: DocumentView
+activeElement|(browser IE) HTMLDocument.||Type: DocumentView
+compatMode|HTMLDocument.||Type: String
 createStyleSheet|(browser IE) HTMLDocument.|(): Stylesheet|
-parentWindow|(browser IE) HTMLDocument.||
+parentWindow|(browser IE) HTMLDocument.||Type: window
 getBoxObjectFor|(browser Gecko) HTMLDocument.|(element: HTMLElement): Node|
 querySelectorAll|(browser Gecko) HTMLDocument.|(string: String): NodeList|
 querySelector|(browser Gecko) HTMLDocument.|(string: String): Node|
 getAnonymousNodes|(browser Gecko) HTMLDocument.|(node: HTMLElement): Node[]|
 getAnonymousElementByAttribute|(browser Gecko) HTMLDocument.|(node: HTMLElement, attrName: String, attrValue: String): NodeList|
-commandDispatcher|(browser Gecko) HTMLDocument.||
+commandDispatcher|(browser Gecko) HTMLDocument.||Type: CommandDispatcher
 elementFromPoint|(browser IE) HTMLDocument.|(iX: Number, iY: Number): HTMLElement|
 createEventObject|(browser IE) HTMLDocument.|(oExistingEvent: Event): Event|
 captureEvents|(browser Gecko) HTMLDocument.|(eventType: Event): void|
 releaseEvents|(browser Gecko) HTMLDocument.|(eventType: Event): void|
 routeEvent|(browser Gecko) HTMLDocument.|(event: Event): void|
 preventBubble|(browser Gecko) HTMLDocument.|(event: Event): void|
-documentMode|(browser IE) HTMLDocument.||
-onload|HTMLDocument.||
-onunload|HTMLDocument.||
+documentMode|(browser IE) HTMLDocument.||Type: Number
+onload|HTMLDocument.||Type: Function
+onunload|HTMLDocument.||Type: Function
 ## CommandDispatcher
-focusedElement|CommandDispatcher.||
+focusedElement|CommandDispatcher.||Type: HTMLElement
 ## DocumentView
 getComputedStyle|DocumentView.|(element: Node, type: String): CssStyle|
 ## CssStyle
 getPropertyValue|CssStyle.|(propertyName: String): String|
 ## HTMLElement
-id|HTMLElement.||
-title|HTMLElement.||
-lang|HTMLElement.||
-dir|HTMLElement.||
-className|HTMLElement.||
-children|(browser IE) HTMLElement.||
-style|HTMLElement.||
-clientWidth|HTMLElement.||
-clientHeight|HTMLElement.||
-clientTop|HTMLElement.||
-clientLeft|HTMLElement.||
-innerHTML|HTMLElement.||
-innerText|(browser IE) HTMLElement.||
-offsetWidth|HTMLElement.||
-offsetHeight|HTMLElement.||
-offsetTop|HTMLElement.||
-offsetLeft|HTMLElement.||
-offsetParent|HTMLElement.||
-scrollWidth|HTMLElement.||
-scrollHeight|HTMLElement.||
-scrollTop|HTMLElement.||
-scrollLeft|HTMLElement.||
-stylesheet|HTMLElement.||
-sourceIndex|(browser IE) HTMLElement.||
-onblur|HTMLElement.||
-onclick|HTMLElement.||
-ondblclick|HTMLElement.||
-onfocus|HTMLElement.||
-onkeydown|HTMLElement.||
-onkeyup|HTMLElement.||
-onmouseup|HTMLElement.||
-onmousedown|HTMLElement.||
-onmouseout|HTMLElement.||
-onmouseover|HTMLElement.||
-onmousemove|HTMLElement.||
-onresize|HTMLElement.||
+id|HTMLElement.||Type: String
+title|HTMLElement.||Type: String
+lang|HTMLElement.||Type: String
+dir|HTMLElement.||Type: String
+className|HTMLElement.||Type: String
+children|(browser IE) HTMLElement.||Type: HTMLElement[]
+style|HTMLElement.||Type: CSSStyleDeclaration
+clientWidth|HTMLElement.||Type: Number
+clientHeight|HTMLElement.||Type: Number
+clientTop|HTMLElement.||Type: Number
+clientLeft|HTMLElement.||Type: Number
+innerHTML|HTMLElement.||Type: String
+innerText|(browser IE) HTMLElement.||Type: String
+offsetWidth|HTMLElement.||Type: Number
+offsetHeight|HTMLElement.||Type: Number
+offsetTop|HTMLElement.||Type: Number
+offsetLeft|HTMLElement.||Type: Number
+offsetParent|HTMLElement.||Type: Number
+scrollWidth|HTMLElement.||Type: Number
+scrollHeight|HTMLElement.||Type: Number
+scrollTop|HTMLElement.||Type: Number
+scrollLeft|HTMLElement.||Type: Number
+stylesheet|HTMLElement.||Type: Stylesheet
+sourceIndex|(browser IE) HTMLElement.||Type: Number
+onblur|HTMLElement.||Type: Function
+onclick|HTMLElement.||Type: Function
+ondblclick|HTMLElement.||Type: Function
+onfocus|HTMLElement.||Type: Function
+onkeydown|HTMLElement.||Type: Function
+onkeyup|HTMLElement.||Type: Function
+onmouseup|HTMLElement.||Type: Function
+onmousedown|HTMLElement.||Type: Function
+onmouseout|HTMLElement.||Type: Function
+onmouseover|HTMLElement.||Type: Function
+onmousemove|HTMLElement.||Type: Function
+onresize|HTMLElement.||Type: Function
 insertAdjacentHTML|(browser IE) HTMLElement.|(position: String, htmlContent: String): void|
 doScroll|(browser IE) HTMLElement.|(sScrollAction: String): void|
 insertAdjacentText|(browser IE) HTMLElement.|(position: String, textContent: String): void|
-currentStyle|(browser IE) HTMLElement.||
-runtimeStyle|(browser IE) HTMLElement.||
-filters|(browser IE) HTMLElement.||
+currentStyle|(browser IE) HTMLElement.||Type: IEElementStyle
+runtimeStyle|(browser IE) HTMLElement.||Type: IEElementStyle
+filters|(browser IE) HTMLElement.||Type: Array
 attachEvent|(browser IE) HTMLElement.|(type: String, listener: Function): void|
 detachEvent|(browser IE) HTMLElement.|(type: String, listener: Function): void|
 fireEvent|(browser IE) HTMLElement.|(type: String, event: Event): void|
@@ -676,17 +676,17 @@ removeBehavior|(browser IE) HTMLElement.|(sID: Number): Boolean|
 getBoundingClientRect|(browser IE) HTMLElement.|(): TextRange|
 showPopup|(browser Gecko) HTMLElement.|(): void|
 hidePopup|(browser Gecko) HTMLElement.|(): void|
-boxObject|(browser Gecko) HTMLElement.||
-propertyName|(browser IE) HTMLElement.||
-isDisabled|(browser IE) HTMLElement.||
+boxObject|(browser Gecko) HTMLElement.||Type: HTMLElement
+propertyName|(browser IE) HTMLElement.||Type: String
+isDisabled|(browser IE) HTMLElement.||Type: Boolean
 setCapture|(browser IE) HTMLElement.|(bContainerCapture: Boolean): void|
 releaseCapture|(browser IE) HTMLElement.|(): void|
 clearAttributes|(browser IE) HTMLElement.|(): void|
 mergeAttributes|(browser IE) HTMLElement.|(oSource: Object, bPreserve: Boolean): void|
 ## CSSStyleDeclaration
-cssText|CSSStyleDeclaration.||
-length|CSSStyleDeclaration.||
-parentRule|CSSStyleDeclaration.||
+cssText|CSSStyleDeclaration.||Type: String
+length|CSSStyleDeclaration.||Type: Number
+parentRule|CSSStyleDeclaration.||Type: CSSRule
 getPropertyCSSValue|[static] CSSStyleDeclaration.|(propertyName: String): CSSValue|
 getPropertyPriority|[static] CSSStyleDeclaration.|(propertyName: String): String|
 getPropertyValue|[static] CSSStyleDeclaration.|(propertyName: String): String|
@@ -694,291 +694,291 @@ item|[static] CSSStyleDeclaration.|(index: Number): String|
 removeProperty|[static] CSSStyleDeclaration.|(propertyName: String): String|
 setProperty|[static] CSSStyleDeclaration.|(propertyName: String, value: String, priority: String): void|
 ## IEElementStyle
-hasLayout|IEElementStyle.||
+hasLayout|IEElementStyle.||Type: Boolean
 ## HTMLHtmlElement
-version|HTMLHtmlElement.||
+version|HTMLHtmlElement.||Type: String
 ## HTMLHeadElement
-profile|HTMLHeadElement.||
+profile|HTMLHeadElement.||Type: String
 ## HTMLLinkElement
-disabled|HTMLLinkElement.||
-charset|HTMLLinkElement.||
-href|HTMLLinkElement.||
-hreflang|HTMLLinkElement.||
-media|HTMLLinkElement.||
-rel|HTMLLinkElement.||
-rev|HTMLLinkElement.||
-target|HTMLLinkElement.||
-type|HTMLLinkElement.||
+disabled|HTMLLinkElement.||Type: Boolean
+charset|HTMLLinkElement.||Type: String
+href|HTMLLinkElement.||Type: String
+hreflang|HTMLLinkElement.||Type: String
+media|HTMLLinkElement.||Type: String
+rel|HTMLLinkElement.||Type: String
+rev|HTMLLinkElement.||Type: String
+target|HTMLLinkElement.||Type: String
+type|HTMLLinkElement.||Type: String
 ## HTMLTitleElement
-text|HTMLTitleElement.||
+text|HTMLTitleElement.||Type: String
 ## HTMLMetaElement
-content|HTMLMetaElement.||
-httpEquiv|HTMLMetaElement.||
-name|HTMLMetaElement.||
-scheme|HTMLMetaElement.||
+content|HTMLMetaElement.||Type: String
+httpEquiv|HTMLMetaElement.||Type: String
+name|HTMLMetaElement.||Type: String
+scheme|HTMLMetaElement.||Type: String
 ## HTMLBaseElement
-href|HTMLBaseElement.||
-target|HTMLBaseElement.||
+href|HTMLBaseElement.||Type: String
+target|HTMLBaseElement.||Type: String
 ## HTMLIsIndexElement
-form|HTMLIsIndexElement.||
-prompt|HTMLIsIndexElement.||
+form|HTMLIsIndexElement.||Type: HTMLFormElement
+prompt|HTMLIsIndexElement.||Type: String
 ## HTMLStyleElement
-disabled|HTMLStyleElement.||
-media|HTMLStyleElement.||
-type|HTMLStyleElement.||
-styleSheet|(browser IE) HTMLStyleElement.||
+disabled|HTMLStyleElement.||Type: Boolean
+media|HTMLStyleElement.||Type: String
+type|HTMLStyleElement.||Type: String
+styleSheet|(browser IE) HTMLStyleElement.||Type: Stylesheet
 ## HTMLBodyElement
-aLink|HTMLBodyElement.||
-background|HTMLBodyElement.||
-bgColor|HTMLBodyElement.||
-link|HTMLBodyElement.||
-text|HTMLBodyElement.||
-vLink|HTMLBodyElement.||
-onload|HTMLBodyElement.||
-onunload|HTMLBodyElement.||
+aLink|HTMLBodyElement.||Type: String
+background|HTMLBodyElement.||Type: String
+bgColor|HTMLBodyElement.||Type: String
+link|HTMLBodyElement.||Type: String
+text|HTMLBodyElement.||Type: String
+vLink|HTMLBodyElement.||Type: String
+onload|HTMLBodyElement.||Type: Function
+onunload|HTMLBodyElement.||Type: Function
 ## HTMLFormElement
-elements|HTMLFormElement.||
-length|HTMLFormElement.||
-name|HTMLFormElement.||
-acceptCharset|HTMLFormElement.||
-action|HTMLFormElement.||
-enctype|HTMLFormElement.||
-method|HTMLFormElement.||
-target|HTMLFormElement.||
+elements|HTMLFormElement.||Type: HTMLCollection
+length|HTMLFormElement.||Type: Number
+name|HTMLFormElement.||Type: String
+acceptCharset|HTMLFormElement.||Type: String
+action|HTMLFormElement.||Type: String
+enctype|HTMLFormElement.||Type: String
+method|HTMLFormElement.||Type: String
+target|HTMLFormElement.||Type: String
 submit|HTMLFormElement.|(): void|
 reset|HTMLFormElement.|(): void|
 ## HTMLSelectElement
-type|HTMLSelectElement.||
-selectedIndex|HTMLSelectElement.||
-value|HTMLSelectElement.||
-length|HTMLSelectElement.||
-form|HTMLSelectElement.||
-options|HTMLSelectElement.||
-disabled|HTMLSelectElement.||
-multiple|HTMLSelectElement.||
-name|HTMLSelectElement.||
-size|HTMLSelectElement.||
-tabIndex|HTMLSelectElement.||
+type|HTMLSelectElement.||Type: String
+selectedIndex|HTMLSelectElement.||Type: Number
+value|HTMLSelectElement.||Type: String
+length|HTMLSelectElement.||Type: Number
+form|HTMLSelectElement.||Type: HTMLFormElement
+options|HTMLSelectElement.||Type: HTMLOptionsCollection
+disabled|HTMLSelectElement.||Type: Boolean
+multiple|HTMLSelectElement.||Type: Boolean
+name|HTMLSelectElement.||Type: String
+size|HTMLSelectElement.||Type: Number
+tabIndex|HTMLSelectElement.||Type: Number
 add|HTMLSelectElement.|(element: HTMLElement, before: HTMLElement): void|
 remove|HTMLSelectElement.|(index: Number): void|
 blur|HTMLSelectElement.|(): void|
 focus|HTMLSelectElement.|(): void|
 ## HTMLOptGroupElement
-disabled|HTMLOptGroupElement.||
-label|HTMLOptGroupElement.||
+disabled|HTMLOptGroupElement.||Type: Boolean
+label|HTMLOptGroupElement.||Type: String
 ## HTMLOptionElement
-form|HTMLOptionElement.||
-defaultSelected|HTMLOptionElement.||
-text|HTMLOptionElement.||
-index|HTMLOptionElement.||
-disabled|HTMLOptionElement.||
-label|HTMLOptionElement.||
-selected|HTMLOptionElement.||
-value|HTMLOptionElement.||
+form|HTMLOptionElement.||Type: HTMLFormElement
+defaultSelected|HTMLOptionElement.||Type: Boolean
+text|HTMLOptionElement.||Type: String
+index|HTMLOptionElement.||Type: Number
+disabled|HTMLOptionElement.||Type: Boolean
+label|HTMLOptionElement.||Type: String
+selected|HTMLOptionElement.||Type: Boolean
+value|HTMLOptionElement.||Type: String
 ## HTMLInputElement
-defaultValue|HTMLInputElement.||
-defaultChecked|HTMLInputElement.||
-form|HTMLInputElement.||
-accept|HTMLInputElement.||
-accessKey|HTMLInputElement.||
-align|HTMLInputElement.||
-alt|HTMLInputElement.||
-checked|HTMLInputElement.||
-disabled|HTMLInputElement.||
-maxLength|HTMLInputElement.||
-name|HTMLInputElement.||
-readOnly|HTMLInputElement.||
-size|HTMLInputElement.||
-src|HTMLInputElement.||
-tabIndex|HTMLInputElement.||
-type|HTMLInputElement.||
-useMap|HTMLInputElement.||
-value|HTMLInputElement.||
+defaultValue|HTMLInputElement.||Type: String
+defaultChecked|HTMLInputElement.||Type: Boolean
+form|HTMLInputElement.||Type: HTMLFormElement
+accept|HTMLInputElement.||Type: String
+accessKey|HTMLInputElement.||Type: String
+align|HTMLInputElement.||Type: String
+alt|HTMLInputElement.||Type: String
+checked|HTMLInputElement.||Type: Boolean
+disabled|HTMLInputElement.||Type: Boolean
+maxLength|HTMLInputElement.||Type: Number
+name|HTMLInputElement.||Type: String
+readOnly|HTMLInputElement.||Type: Boolean
+size|HTMLInputElement.||Type: Number
+src|HTMLInputElement.||Type: String
+tabIndex|HTMLInputElement.||Type: Number
+type|HTMLInputElement.||Type: String
+useMap|HTMLInputElement.||Type: String
+value|HTMLInputElement.||Type: String
 blur|HTMLInputElement.|(): void|
 focus|HTMLInputElement.|(): void|
 select|HTMLInputElement.|(): void|
 click|HTMLInputElement.|(): void|
 setSelectionRange|(browser Gecko) HTMLInputElement.|(start: Number, end: Number): void|
-selectionStart|HTMLInputElement.||
-selectionEnd|HTMLInputElement.||
+selectionStart|HTMLInputElement.||Type: Number
+selectionEnd|HTMLInputElement.||Type: Number
 createTextRange|(browser IE) HTMLInputElement.|(): TextRange|
 ## HTMLTextAreaElement
-defaultValue|HTMLTextAreaElement.||
-form|HTMLTextAreaElement.||
-accessKey|HTMLTextAreaElement.||
-cols|HTMLTextAreaElement.||
-disabled|HTMLTextAreaElement.||
-name|HTMLTextAreaElement.||
-readOnly|HTMLTextAreaElement.||
-rows|HTMLTextAreaElement.||
-tabIndex|HTMLTextAreaElement.||
-type|HTMLTextAreaElement.||
-value|HTMLTextAreaElement.||
+defaultValue|HTMLTextAreaElement.||Type: String
+form|HTMLTextAreaElement.||Type: HTMLFormElement
+accessKey|HTMLTextAreaElement.||Type: String
+cols|HTMLTextAreaElement.||Type: Number
+disabled|HTMLTextAreaElement.||Type: Boolean
+name|HTMLTextAreaElement.||Type: String
+readOnly|HTMLTextAreaElement.||Type: Boolean
+rows|HTMLTextAreaElement.||Type: Number
+tabIndex|HTMLTextAreaElement.||Type: Number
+type|HTMLTextAreaElement.||Type: String
+value|HTMLTextAreaElement.||Type: String
 blur|HTMLTextAreaElement.|(): void|
 focus|HTMLTextAreaElement.|(): void|
 select|HTMLTextAreaElement.|(): void|
 ## HTMLButtonElement
-form|HTMLButtonElement.||
-accessKey|HTMLButtonElement.||
-disabled|HTMLButtonElement.||
-name|HTMLButtonElement.||
-tabIndex|HTMLButtonElement.||
-type|HTMLButtonElement.||
-value|HTMLButtonElement.||
+form|HTMLButtonElement.||Type: HTMLFormElement
+accessKey|HTMLButtonElement.||Type: String
+disabled|HTMLButtonElement.||Type: Boolean
+name|HTMLButtonElement.||Type: String
+tabIndex|HTMLButtonElement.||Type: Number
+type|HTMLButtonElement.||Type: String
+value|HTMLButtonElement.||Type: String
 ## HTMLLabelElement
-form|HTMLLabelElement.||
-accessKey|HTMLLabelElement.||
-htmlFor|HTMLLabelElement.||
+form|HTMLLabelElement.||Type: HTMLFormElement
+accessKey|HTMLLabelElement.||Type: String
+htmlFor|HTMLLabelElement.||Type: 
 ## HTMLFieldSetElement
-form|HTMLFieldSetElement.||
+form|HTMLFieldSetElement.||Type: HTMLFormElement
 ## HTMLLegendElement
-form|HTMLLegendElement.||
-accessKey|HTMLLegendElement.||
-align|HTMLLegendElement.||
+form|HTMLLegendElement.||Type: HTMLFormElement
+accessKey|HTMLLegendElement.||Type: String
+align|HTMLLegendElement.||Type: String
 ## HTMLUListElement
-compact|HTMLUListElement.||
-type|HTMLUListElement.||
+compact|HTMLUListElement.||Type: Boolean
+type|HTMLUListElement.||Type: String
 ## HTMLOListElement
-compact|HTMLOListElement.||
-start|HTMLOListElement.||
-type|HTMLOListElement.||
+compact|HTMLOListElement.||Type: Boolean
+start|HTMLOListElement.||Type: Number
+type|HTMLOListElement.||Type: String
 ## HTMLDListElement
-compact|HTMLDListElement.||
+compact|HTMLDListElement.||Type: Boolean
 ## HTMLDirectoryElement
-compact|HTMLDirectoryElement.||
+compact|HTMLDirectoryElement.||Type: Boolean
 ## HTMLMenuElement
-compact|HTMLMenuElement.||
+compact|HTMLMenuElement.||Type: Boolean
 ## HTMLLIElement
-type|HTMLLIElement.||
-value|HTMLLIElement.||
+type|HTMLLIElement.||Type: String
+value|HTMLLIElement.||Type: Number
 ## HTMLDivElement
-align|HTMLDivElement.||
+align|HTMLDivElement.||Type: String
 ## HTMLParagraphElement
-align|HTMLParagraphElement.||
+align|HTMLParagraphElement.||Type: String
 ## HTMLHeadingElement
-align|HTMLHeadingElement.||
+align|HTMLHeadingElement.||Type: String
 ## HTMLQuoteElement
-cite|HTMLQuoteElement.||
+cite|HTMLQuoteElement.||Type: String
 ## HTMLPreElement
-width|HTMLPreElement.||
+width|HTMLPreElement.||Type: Number
 ## HTMLBRElement
-clear|HTMLBRElement.||
+clear|HTMLBRElement.||Type: String
 ## HTMLBaseFontElement
-color|HTMLBaseFontElement.||
-face|HTMLBaseFontElement.||
-size|HTMLBaseFontElement.||
+color|HTMLBaseFontElement.||Type: String
+face|HTMLBaseFontElement.||Type: String
+size|HTMLBaseFontElement.||Type: Number
 ## HTMLFontElement
-color|HTMLFontElement.||
-face|HTMLFontElement.||
-size|HTMLFontElement.||
+color|HTMLFontElement.||Type: String
+face|HTMLFontElement.||Type: String
+size|HTMLFontElement.||Type: String
 ## HTMLHRElement
-align|HTMLHRElement.||
-noShade|HTMLHRElement.||
-size|HTMLHRElement.||
-width|HTMLHRElement.||
+align|HTMLHRElement.||Type: String
+noShade|HTMLHRElement.||Type: Boolean
+size|HTMLHRElement.||Type: String
+width|HTMLHRElement.||Type: String
 ## HTMLModElement
-cite|HTMLModElement.||
-dateTime|HTMLModElement.||
+cite|HTMLModElement.||Type: String
+dateTime|HTMLModElement.||Type: String
 ## HTMLAnchorElement
-accessKey|HTMLAnchorElement.||
-charset|HTMLAnchorElement.||
-coords|HTMLAnchorElement.||
-href|HTMLAnchorElement.||
-hreflang|HTMLAnchorElement.||
-name|HTMLAnchorElement.||
-rel|HTMLAnchorElement.||
-rev|HTMLAnchorElement.||
-shape|HTMLAnchorElement.||
-tabIndex|HTMLAnchorElement.||
-target|HTMLAnchorElement.||
-type|HTMLAnchorElement.||
+accessKey|HTMLAnchorElement.||Type: String
+charset|HTMLAnchorElement.||Type: String
+coords|HTMLAnchorElement.||Type: String
+href|HTMLAnchorElement.||Type: String
+hreflang|HTMLAnchorElement.||Type: String
+name|HTMLAnchorElement.||Type: String
+rel|HTMLAnchorElement.||Type: String
+rev|HTMLAnchorElement.||Type: String
+shape|HTMLAnchorElement.||Type: String
+tabIndex|HTMLAnchorElement.||Type: Number
+target|HTMLAnchorElement.||Type: String
+type|HTMLAnchorElement.||Type: String
 blur|HTMLAnchorElement.|(): void|
 focus|HTMLAnchorElement.|(): void|
 ## HTMLImageElement
-name|HTMLImageElement.||
-align|HTMLImageElement.||
-alt|HTMLImageElement.||
-border|HTMLImageElement.||
-height|HTMLImageElement.||
-hspace|HTMLImageElement.||
-isMap|HTMLImageElement.||
-longDesc|HTMLImageElement.||
-src|HTMLImageElement.||
-useMap|HTMLImageElement.||
-vspace|HTMLImageElement.||
-width|HTMLImageElement.||
+name|HTMLImageElement.||Type: String
+align|HTMLImageElement.||Type: String
+alt|HTMLImageElement.||Type: String
+border|HTMLImageElement.||Type: String
+height|HTMLImageElement.||Type: Number
+hspace|HTMLImageElement.||Type: Number
+isMap|HTMLImageElement.||Type: Boolean
+longDesc|HTMLImageElement.||Type: String
+src|HTMLImageElement.||Type: String
+useMap|HTMLImageElement.||Type: String
+vspace|HTMLImageElement.||Type: Number
+width|HTMLImageElement.||Type: Number
 ## HTMLObjectElement
-form|HTMLObjectElement.||
-code|HTMLObjectElement.||
-align|HTMLObjectElement.||
-archive|HTMLObjectElement.||
-border|HTMLObjectElement.||
-codeBase|HTMLObjectElement.||
-codeType|HTMLObjectElement.||
-data|HTMLObjectElement.||
-declare|HTMLObjectElement.||
-height|HTMLObjectElement.||
-hspace|HTMLObjectElement.||
-name|HTMLObjectElement.||
-standby|HTMLObjectElement.||
-tabIndex|HTMLObjectElement.||
-type|HTMLObjectElement.||
-useMap|HTMLObjectElement.||
-vspace|HTMLObjectElement.||
-width|HTMLObjectElement.||
-contentDocument|HTMLObjectElement.||
+form|HTMLObjectElement.||Type: HTMLFormElement
+code|HTMLObjectElement.||Type: String
+align|HTMLObjectElement.||Type: String
+archive|HTMLObjectElement.||Type: String
+border|HTMLObjectElement.||Type: String
+codeBase|HTMLObjectElement.||Type: String
+codeType|HTMLObjectElement.||Type: String
+data|HTMLObjectElement.||Type: String
+declare|HTMLObjectElement.||Type: Boolean
+height|HTMLObjectElement.||Type: String
+hspace|HTMLObjectElement.||Type: Number
+name|HTMLObjectElement.||Type: String
+standby|HTMLObjectElement.||Type: String
+tabIndex|HTMLObjectElement.||Type: Number
+type|HTMLObjectElement.||Type: String
+useMap|HTMLObjectElement.||Type: String
+vspace|HTMLObjectElement.||Type: Number
+width|HTMLObjectElement.||Type: String
+contentDocument|HTMLObjectElement.||Type: Document
 ## HTMLParamElement
-name|HTMLParamElement.||
-type|HTMLParamElement.||
-value|HTMLParamElement.||
-valueType|HTMLParamElement.||
+name|HTMLParamElement.||Type: String
+type|HTMLParamElement.||Type: String
+value|HTMLParamElement.||Type: String
+valueType|HTMLParamElement.||Type: String
 ## HTMLAppletElement
-align|HTMLAppletElement.||
-alt|HTMLAppletElement.||
-archive|HTMLAppletElement.||
-code|HTMLAppletElement.||
-codeBase|HTMLAppletElement.||
-height|HTMLAppletElement.||
-hspace|HTMLAppletElement.||
-name|HTMLAppletElement.||
-object|HTMLAppletElement.||
-vspace|HTMLAppletElement.||
-width|HTMLAppletElement.||
+align|HTMLAppletElement.||Type: String
+alt|HTMLAppletElement.||Type: String
+archive|HTMLAppletElement.||Type: String
+code|HTMLAppletElement.||Type: String
+codeBase|HTMLAppletElement.||Type: String
+height|HTMLAppletElement.||Type: String
+hspace|HTMLAppletElement.||Type: Number
+name|HTMLAppletElement.||Type: String
+object|HTMLAppletElement.||Type: String
+vspace|HTMLAppletElement.||Type: Number
+width|HTMLAppletElement.||Type: String
 ## HTMLMapElement
-areas|HTMLMapElement.||
-name|HTMLMapElement.||
+areas|HTMLMapElement.||Type: HTMLCollection
+name|HTMLMapElement.||Type: String
 ## HTMLAreaElement
-accessKey|HTMLAreaElement.||
-alt|HTMLAreaElement.||
-coords|HTMLAreaElement.||
-href|HTMLAreaElement.||
-noHref|HTMLAreaElement.||
-shape|HTMLAreaElement.||
-tabIndex|HTMLAreaElement.||
-target|HTMLAreaElement.||
+accessKey|HTMLAreaElement.||Type: String
+alt|HTMLAreaElement.||Type: String
+coords|HTMLAreaElement.||Type: String
+href|HTMLAreaElement.||Type: String
+noHref|HTMLAreaElement.||Type: Boolean
+shape|HTMLAreaElement.||Type: String
+tabIndex|HTMLAreaElement.||Type: Number
+target|HTMLAreaElement.||Type: String
 ## HTMLScriptElement
-text|HTMLScriptElement.||
-htmlFor|HTMLScriptElement.||
-event|HTMLScriptElement.||
-charset|HTMLScriptElement.||
-defer|HTMLScriptElement.||
-src|HTMLScriptElement.||
-type|HTMLScriptElement.||
+text|HTMLScriptElement.||Type: String
+htmlFor|HTMLScriptElement.||Type: String
+event|HTMLScriptElement.||Type: String
+charset|HTMLScriptElement.||Type: String
+defer|HTMLScriptElement.||Type: Boolean
+src|HTMLScriptElement.||Type: String
+type|HTMLScriptElement.||Type: String
 ## HTMLTableElement
-caption|HTMLTableElement.||
-tHead|HTMLTableElement.||
-tFoot|HTMLTableElement.||
-rows|HTMLTableElement.||
-tBodies|HTMLTableElement.||
-align|HTMLTableElement.||
-bgColor|HTMLTableElement.||
-border|HTMLTableElement.||
-cellPadding|HTMLTableElement.||
-cellSpacing|HTMLTableElement.||
-frame|HTMLTableElement.||
-rules|HTMLTableElement.||
-summary|HTMLTableElement.||
-width|HTMLTableElement.||
+caption|HTMLTableElement.||Type: HTMLTableCaptionElement
+tHead|HTMLTableElement.||Type: HTMLTableSectionElement
+tFoot|HTMLTableElement.||Type: HTMLTableSectionElement
+rows|HTMLTableElement.||Type: HTMLCollection
+tBodies|HTMLTableElement.||Type: HTMLCollection
+align|HTMLTableElement.||Type: String
+bgColor|HTMLTableElement.||Type: String
+border|HTMLTableElement.||Type: String
+cellPadding|HTMLTableElement.||Type: String
+cellSpacing|HTMLTableElement.||Type: String
+frame|HTMLTableElement.||Type: String
+rules|HTMLTableElement.||Type: String
+summary|HTMLTableElement.||Type: String
+width|HTMLTableElement.||Type: String
 createTHead|HTMLTableElement.|(): HTMLElement|
 deleteTHead|HTMLTableElement.|(): void|
 createTFoot|HTMLTableElement.|(): HTMLElement|
@@ -988,75 +988,75 @@ deleteCaption|HTMLTableElement.|(): void|
 insertRow|HTMLTableElement.|(index: Number): HTMLElement|
 deleteRow|HTMLTableElement.|(index: Number): void|
 ## HTMLTableCaptionElement
-align|HTMLTableCaptionElement.||
+align|HTMLTableCaptionElement.||Type: String
 ## HTMLTableColElement
-align|HTMLTableColElement.||
-ch|HTMLTableColElement.||
-chOff|HTMLTableColElement.||
-span|HTMLTableColElement.||
-vAlign|HTMLTableColElement.||
-width|HTMLTableColElement.||
+align|HTMLTableColElement.||Type: String
+ch|HTMLTableColElement.||Type: String
+chOff|HTMLTableColElement.||Type: String
+span|HTMLTableColElement.||Type: Number
+vAlign|HTMLTableColElement.||Type: String
+width|HTMLTableColElement.||Type: String
 ## HTMLTableSectionElement
-align|HTMLTableSectionElement.||
-ch|HTMLTableSectionElement.||
-chOff|HTMLTableSectionElement.||
-vAlign|HTMLTableSectionElement.||
-rows|HTMLTableSectionElement.||
+align|HTMLTableSectionElement.||Type: String
+ch|HTMLTableSectionElement.||Type: String
+chOff|HTMLTableSectionElement.||Type: String
+vAlign|HTMLTableSectionElement.||Type: String
+rows|HTMLTableSectionElement.||Type: HTMLCollection
 insertRow|HTMLTableSectionElement.|(index: Number): HTMLElement|
 deleteRow|HTMLTableSectionElement.|(index: Number): void|
 ## HTMLTableRowElement
-rowIndex|HTMLTableRowElement.||
-sectionRowIndex|HTMLTableRowElement.||
-cells|HTMLTableRowElement.||
-align|HTMLTableRowElement.||
-bgColor|HTMLTableRowElement.||
-ch|HTMLTableRowElement.||
-chOff|HTMLTableRowElement.||
-vAlign|HTMLTableRowElement.||
+rowIndex|HTMLTableRowElement.||Type: Number
+sectionRowIndex|HTMLTableRowElement.||Type: Number
+cells|HTMLTableRowElement.||Type: HTMLCollection
+align|HTMLTableRowElement.||Type: String
+bgColor|HTMLTableRowElement.||Type: String
+ch|HTMLTableRowElement.||Type: String
+chOff|HTMLTableRowElement.||Type: String
+vAlign|HTMLTableRowElement.||Type: String
 insertCell|HTMLTableRowElement.|(index: Number): HTMLElement|
 deleteCell|HTMLTableRowElement.|(index: Number): void|
 ## HTMLTableCellElement
-cellIndex|HTMLTableCellElement.||
-abbr|HTMLTableCellElement.||
-align|HTMLTableCellElement.||
-axis|HTMLTableCellElement.||
-bgColor|HTMLTableCellElement.||
-ch|HTMLTableCellElement.||
-chOff|HTMLTableCellElement.||
-colSpan|HTMLTableCellElement.||
-headers|HTMLTableCellElement.||
-height|HTMLTableCellElement.||
-noWrap|HTMLTableCellElement.||
-rowSpan|HTMLTableCellElement.||
-scope|HTMLTableCellElement.||
-vAlign|HTMLTableCellElement.||
-width|HTMLTableCellElement.||
+cellIndex|HTMLTableCellElement.||Type: Number
+abbr|HTMLTableCellElement.||Type: String
+align|HTMLTableCellElement.||Type: String
+axis|HTMLTableCellElement.||Type: String
+bgColor|HTMLTableCellElement.||Type: String
+ch|HTMLTableCellElement.||Type: String
+chOff|HTMLTableCellElement.||Type: String
+colSpan|HTMLTableCellElement.||Type: Number
+headers|HTMLTableCellElement.||Type: String
+height|HTMLTableCellElement.||Type: String
+noWrap|HTMLTableCellElement.||Type: Boolean
+rowSpan|HTMLTableCellElement.||Type: Number
+scope|HTMLTableCellElement.||Type: String
+vAlign|HTMLTableCellElement.||Type: String
+width|HTMLTableCellElement.||Type: String
 ## HTMLFrameSetElement
-cols|HTMLFrameSetElement.||
-rows|HTMLFrameSetElement.||
+cols|HTMLFrameSetElement.||Type: String
+rows|HTMLFrameSetElement.||Type: String
 ## HTMLFrameElement
-frameBorder|HTMLFrameElement.||
-longDesc|HTMLFrameElement.||
-marginHeight|HTMLFrameElement.||
-marginWidth|HTMLFrameElement.||
-name|HTMLFrameElement.||
-noResize|HTMLFrameElement.||
-scrolling|HTMLFrameElement.||
-src|HTMLFrameElement.||
-contentDocument|(browser Gecko) HTMLFrameElement.||
+frameBorder|HTMLFrameElement.||Type: String
+longDesc|HTMLFrameElement.||Type: String
+marginHeight|HTMLFrameElement.||Type: String
+marginWidth|HTMLFrameElement.||Type: String
+name|HTMLFrameElement.||Type: String
+noResize|HTMLFrameElement.||Type: Boolean
+scrolling|HTMLFrameElement.||Type: String
+src|HTMLFrameElement.||Type: String
+contentDocument|(browser Gecko) HTMLFrameElement.||Type: Document
 ## HTMLIFrameElement
-align|HTMLIFrameElement.||
-frameBorder|HTMLIFrameElement.||
-height|HTMLIFrameElement.||
-longDesc|HTMLIFrameElement.||
-marginHeight|HTMLIFrameElement.||
-marginWidth|HTMLIFrameElement.||
-name|HTMLIFrameElement.||
-scrolling|HTMLIFrameElement.||
-src|HTMLIFrameElement.||
-width|HTMLIFrameElement.||
-contentDocument|HTMLIFrameElement.||
-contentWindow|HTMLIFrameElement.||
+align|HTMLIFrameElement.||Type: String
+frameBorder|HTMLIFrameElement.||Type: String
+height|HTMLIFrameElement.||Type: String
+longDesc|HTMLIFrameElement.||Type: String
+marginHeight|HTMLIFrameElement.||Type: String
+marginWidth|HTMLIFrameElement.||Type: String
+name|HTMLIFrameElement.||Type: String
+scrolling|HTMLIFrameElement.||Type: String
+src|HTMLIFrameElement.||Type: String
+width|HTMLIFrameElement.||Type: String
+contentDocument|HTMLIFrameElement.||Type: Document
+contentWindow|HTMLIFrameElement.||Type: window
 # Extract from: AJAX.xml
 ## window
 ActiveXObject|window.|(sName: String): XMLHttpRequest|
@@ -1069,152 +1069,152 @@ overrideMimeType|(browser Gecko) XMLHttpRequest.|(mimeType: String): void|
 open|XMLHttpRequest.|(method: String, url: String, async: Boolean, username: String, password: String): void|
 send|XMLHttpRequest.|(content: String/FormData): void|
 setRequestHeader|XMLHttpRequest.|(label: String, value: String): void|
-onreadystatechange|XMLHttpRequest.||
-readyState|XMLHttpRequest.||
-responseText|XMLHttpRequest.||
-statusText|XMLHttpRequest.||
-status|XMLHttpRequest.||
-responseXML|XMLHttpRequest.||
+onreadystatechange|XMLHttpRequest.||Type: Function
+readyState|XMLHttpRequest.||Type: Number
+responseText|XMLHttpRequest.||Type: String
+statusText|XMLHttpRequest.||Type: String
+status|XMLHttpRequest.||Type: Number
+responseXML|XMLHttpRequest.||Type: String
 # Extract from: HTML5.xml
 ## Blob
 slice|Blob.|(start: Number, end: Number, contentType: String): Blob|
-size|Blob.||
-type|Blob.||
+size|Blob.||Type: Number
+type|Blob.||Type: String
 ## FileList
-length|FileList.||
+length|FileList.||Type: Number
 ## HTMLInputElement
-files|HTMLInputElement.||
+files|HTMLInputElement.||Type: FileList
 ## File
-name|File.||
-lastModifiedDate|File.||
+name|File.||Type: String
+lastModifiedDate|File.||Type: Date
 ## FileReader
 readAsArrayBuffer|FileReader.|(blob: Blob): void|
 readAsBinaryString|FileReader.|(blob: Blob): void|
 readAsText|FileReader.|(blob: Blob, encoding: String): void|
 readAsDataURL|FileReader.|(blob: Blob): void|
 abort|FileReader.|(): void|
-EMPTY|FileReader.||
-LOADING|FileReader.||
-DONE|FileReader.||
-readyState|FileReader.||
-result|FileReader.||
-error|FileReader.||
-onloadstart|FileReader.||
-onprogress|FileReader.||
-onload|FileReader.||
-onabort|FileReader.||
-onerror|FileReader.||
-onloadend|FileReader.||
+EMPTY|FileReader.||Type: Number
+LOADING|FileReader.||Type: Number
+DONE|FileReader.||Type: Number
+readyState|FileReader.||Type: Number
+result|FileReader.||Type: Object
+error|FileReader.||Type: Error
+onloadstart|FileReader.||Type: Function
+onprogress|FileReader.||Type: Function
+onload|FileReader.||Type: Function
+onabort|FileReader.||Type: Function
+onerror|FileReader.||Type: Function
+onloadend|FileReader.||Type: Function
 ## Node
-dataset|Node.||
+dataset|Node.||Type: Object
 ## DatabaseCallback
 handleEvent|DatabaseCallback.|(database: Database): void|
 ## Notification
 show|Notification.|(): void|
 cancel|Notification.|(): void|
-ondisplay|Notification.||
-onerror|Notification.||
-onclose|Notification.||
+ondisplay|Notification.||Type: Function
+onerror|Notification.||Type: Function
+onclose|Notification.||Type: Function
 ## MediaError
 ## HTMLMediaElement
-error|HTMLMediaElement.||
-src|HTMLMediaElement.||
-currentSrc|HTMLMediaElement.||
-NETWORK_EMPTY|HTMLMediaElement.||
-NETWORK_IDLE|HTMLMediaElement.||
-NETWORK_LOADING|HTMLMediaElement.||
-NETWORK_NO_SOURCE|HTMLMediaElement.||
-networkState|HTMLMediaElement.||
-preload|HTMLMediaElement.||
-buffered|HTMLMediaElement.||
+error|HTMLMediaElement.||Type: MediaError
+src|HTMLMediaElement.||Type: String
+currentSrc|HTMLMediaElement.||Type: String
+NETWORK_EMPTY|HTMLMediaElement.||Type: Number
+NETWORK_IDLE|HTMLMediaElement.||Type: Number
+NETWORK_LOADING|HTMLMediaElement.||Type: Number
+NETWORK_NO_SOURCE|HTMLMediaElement.||Type: Number
+networkState|HTMLMediaElement.||Type: Number
+preload|HTMLMediaElement.||Type: String
+buffered|HTMLMediaElement.||Type: TimeRanges
 load|HTMLMediaElement.|(): void|
 canPlayType|HTMLMediaElement.|(type: String): String|
-HAVE_NOTHING|HTMLMediaElement.||
-HAVE_METADATA|HTMLMediaElement.||
-HAVE_CURRENT_DATA|HTMLMediaElement.||
-HAVE_FUTURE_DATA|HTMLMediaElement.||
-HAVE_ENOUGH_DATA|HTMLMediaElement.||
-readyState|HTMLMediaElement.||
-seeking|HTMLMediaElement.||
-currentTime|HTMLMediaElement.||
-startTime|HTMLMediaElement.||
-duration|HTMLMediaElement.||
-paused|HTMLMediaElement.||
-defaultPlaybackRate|HTMLMediaElement.||
-playbackRate|HTMLMediaElement.||
-played|HTMLMediaElement.||
-seekable|HTMLMediaElement.||
-ended|HTMLMediaElement.||
-autoplay|HTMLMediaElement.||
-loop|HTMLMediaElement.||
+HAVE_NOTHING|HTMLMediaElement.||Type: Number
+HAVE_METADATA|HTMLMediaElement.||Type: Number
+HAVE_CURRENT_DATA|HTMLMediaElement.||Type: Number
+HAVE_FUTURE_DATA|HTMLMediaElement.||Type: Number
+HAVE_ENOUGH_DATA|HTMLMediaElement.||Type: Number
+readyState|HTMLMediaElement.||Type: Number
+seeking|HTMLMediaElement.||Type: Boolean
+currentTime|HTMLMediaElement.||Type: Number
+startTime|HTMLMediaElement.||Type: Number
+duration|HTMLMediaElement.||Type: Number
+paused|HTMLMediaElement.||Type: Boolean
+defaultPlaybackRate|HTMLMediaElement.||Type: Number
+playbackRate|HTMLMediaElement.||Type: Number
+played|HTMLMediaElement.||Type: TimeRanges
+seekable|HTMLMediaElement.||Type: TimeRanges
+ended|HTMLMediaElement.||Type: Boolean
+autoplay|HTMLMediaElement.||Type: Boolean
+loop|HTMLMediaElement.||Type: Boolean
 play|HTMLMediaElement.|(): void|
 pause|HTMLMediaElement.|(): void|
-controls|HTMLMediaElement.||
-volume|HTMLMediaElement.||
-muted|HTMLMediaElement.||
-tracks|HTMLMediaElement.||
+controls|HTMLMediaElement.||Type: Boolean
+volume|HTMLMediaElement.||Type: Number
+muted|HTMLMediaElement.||Type: Boolean
+tracks|HTMLMediaElement.||Type: Array
 addTrack|HTMLMediaElement.|(label: String, kind: String, language: String): MutableTimedTrack|
 ## MediaError
-MEDIA_ERR_ABORTED|MediaError.||
-MEDIA_ERR_NETWORK|MediaError.||
-MEDIA_ERR_DECODE|MediaError.||
-MEDIA_ERR_SRC_NOT_SUPPORTED|MediaError.||
-code|MediaError.||
+MEDIA_ERR_ABORTED|MediaError.||Type: Number
+MEDIA_ERR_NETWORK|MediaError.||Type: Number
+MEDIA_ERR_DECODE|MediaError.||Type: Number
+MEDIA_ERR_SRC_NOT_SUPPORTED|MediaError.||Type: Number
+code|MediaError.||Type: Number
 ## TimeRanges
-length|TimeRanges.||
+length|TimeRanges.||Type: Number
 start|TimeRanges.|(index: Number): Number|
 end|TimeRanges.|(index: Number): Number|
 ## TimedTrack
-kind|TimedTrack.||
-label|TimedTrack.||
-language|TimedTrack.||
-NONE|TimedTrack.||
-LOADING|TimedTrack.||
-LOADED|TimedTrack.||
-ERROR|TimedTrack.||
-readyState|TimedTrack.||
-onload|TimedTrack.||
-onerror|TimedTrack.||
-OFF|TimedTrack.||
-HIDDEN|TimedTrack.||
-SHOWING|TimedTrack.||
-mode|TimedTrack.||
-cues|TimedTrack.||
-activeCues|TimedTrack.||
-onentercue|TimedTrack.||
-onexitcue|TimedTrack.||
+kind|TimedTrack.||Type: String
+label|TimedTrack.||Type: String
+language|TimedTrack.||Type: String
+NONE|TimedTrack.||Type: Number
+LOADING|TimedTrack.||Type: Number
+LOADED|TimedTrack.||Type: Number
+ERROR|TimedTrack.||Type: Number
+readyState|TimedTrack.||Type: Number
+onload|TimedTrack.||Type: Function
+onerror|TimedTrack.||Type: Function
+OFF|TimedTrack.||Type: Number
+HIDDEN|TimedTrack.||Type: Number
+SHOWING|TimedTrack.||Type: Number
+mode|TimedTrack.||Type: Number
+cues|TimedTrack.||Type: TimedTrackCueList
+activeCues|TimedTrack.||Type: TimedTrackCueList
+onentercue|TimedTrack.||Type: Function
+onexitcue|TimedTrack.||Type: Function
 ## MutableTimedTrack
 addCue|MutableTimedTrack.|(cue: TimedTrackCue): void|
 removeCue|MutableTimedTrack.|(cue: TimedTrackCue): void|
 ## TimedTrackCue
-track|TimedTrackCue.||
-id|TimedTrackCue.||
-startTime|TimedTrackCue.||
-endTime|TimedTrackCue.||
-pauseOnExit|TimedTrackCue.||
-direction|TimedTrackCue.||
-snapToLines|TimedTrackCue.||
-linePosition|TimedTrackCue.||
-textPosition|TimedTrackCue.||
-size|TimedTrackCue.||
-alignment|TimedTrackCue.||
-voice|TimedTrackCue.||
+track|TimedTrackCue.||Type: TimedTrack
+id|TimedTrackCue.||Type: String
+startTime|TimedTrackCue.||Type: Number
+endTime|TimedTrackCue.||Type: Number
+pauseOnExit|TimedTrackCue.||Type: Boolean
+direction|TimedTrackCue.||Type: String
+snapToLines|TimedTrackCue.||Type: Boolean
+linePosition|TimedTrackCue.||Type: Number
+textPosition|TimedTrackCue.||Type: Number
+size|TimedTrackCue.||Type: Number
+alignment|TimedTrackCue.||Type: String
+voice|TimedTrackCue.||Type: String
 getCueAsSource|TimedTrackCue.|(): String|
 getCueAsHTML|TimedTrackCue.|(): DocumentFragment|
 TimedTrackCue|TimedTrackCue.|(id: String, startTime: Number, endTime: Number, settings: String, text: String, pauseOnExit: Boolean): TimedTrackCue|
 ## TimedTrackCueList
-length|TimedTrackCueList.||
+length|TimedTrackCueList.||Type: Number
 getCueById|TimedTrackCueList.|(id: String): TimedTrackCue|
 ## HTMLVideoElement
-width|HTMLVideoElement.||
-height|HTMLVideoElement.||
-videoWidth|HTMLVideoElement.||
-videoHeight|HTMLVideoElement.||
-poster|HTMLVideoElement.||
+width|HTMLVideoElement.||Type: Number
+height|HTMLVideoElement.||Type: Number
+videoWidth|HTMLVideoElement.||Type: Number
+videoHeight|HTMLVideoElement.||Type: Number
+poster|HTMLVideoElement.||Type: String
 ## Database
 transaction|Database.|(callback: SQLTransactionCallback/SQLTransactionSyncCallback|Function, errorCallback: SQLTransactionErrorCallback/Function, successCallback: SQLVoidCallback/Function): void|
 readTransaction|Database.|(callback: SQLTransactionCallback/SQLTransactionSyncCallback|Function, errorCallback: SQLTransactionErrorCallback/Function, successCallback: SQLVoidCallback/Function): void|
-version|Database.||
+version|Database.||Type: String
 changeVersion|Database.|(oldVersion: String, newVersion: String, callback: SQLTransactionCallback/Function, errorCallback: SQLTransactionErrorCallback/Function, successCallback: SQLVoidCallback/Function): void|
 ## SQLVoidCallback
 handleEvent|SQLVoidCallback.|(): void|
@@ -1233,57 +1233,57 @@ handleEvent|SQLTransactionSyncCallback.|(transaction: SQLTransactionSync): void|
 ## SQLTransactionSync
 executeSql|SQLTransactionSync.|(sqlStatement: String, arguments: Arguments): SQLResultSet|
 ## SQLResultSet
-insertId|SQLResultSet.||
-rowsAffected|SQLResultSet.||
-rows|SQLResultSet.||
+insertId|SQLResultSet.||Type: Number
+rowsAffected|SQLResultSet.||Type: Number
+rows|SQLResultSet.||Type: SQLResultSetRowList
 ## SQLResultSetRowList
-length|SQLResultSetRowList.||
+length|SQLResultSetRowList.||Type: Number
 item|SQLResultSetRowList.|(index: Number): void|
 ## SQLError
-UNKNOWN_ERR|SQLError.||
-DATABASE_ERR|SQLError.||
-VERSION_ERR|SQLError.||
-TOO_LARGE_ERR|SQLError.||
-QUOTA_ERR|SQLError.||
-SYNTAX_ERR|SQLError.||
-CONSTRAINT_ERR|SQLError.||
-TIMEOUT_ERR|SQLError.||
-code|SQLError.||
-message|SQLError.||
+UNKNOWN_ERR|SQLError.||Type: Number
+DATABASE_ERR|SQLError.||Type: Number
+VERSION_ERR|SQLError.||Type: Number
+TOO_LARGE_ERR|SQLError.||Type: Number
+QUOTA_ERR|SQLError.||Type: Number
+SYNTAX_ERR|SQLError.||Type: Number
+CONSTRAINT_ERR|SQLError.||Type: Number
+TIMEOUT_ERR|SQLError.||Type: Number
+code|SQLError.||Type: Number
+message|SQLError.||Type: String
 ## MessageEvent
-data|MessageEvent.||
-origin|MessageEvent.||
-lastEventId|MessageEvent.||
-source|MessageEvent.||
-ports|MessageEvent.||
+data|MessageEvent.||Type: String
+origin|MessageEvent.||Type: String
+lastEventId|MessageEvent.||Type: String
+source|MessageEvent.||Type: Window
+ports|MessageEvent.||Type: MessagePortArray
 ## History
-length|History.||
-state|History.||
+length|History.||Type: Number
+state|History.||Type: Object
 pushState|History.|(data: Object, title: String, url: String): void|
 replaceState|History.|(data: Object, title: String, url: String): void|
 ## Location
 assign|Location.|(url: String): void|
 resolveURL|Location.|(url: String): String|
 ## SQLException
-UNKNOWN_ERR|SQLException.||
-DATABASE_ERR|SQLException.||
-VERSION_ERR|SQLException.||
-TOO_LARGE_ERR|SQLException.||
-QUOTA_ERR|SQLException.||
-SYNTAX_ERR|SQLException.||
-CONSTRAINT_ERR|SQLException.||
-TIMEOUT_ERR|SQLException.||
-code|SQLException.||
-message|SQLException.||
+UNKNOWN_ERR|SQLException.||Type: Number
+DATABASE_ERR|SQLException.||Type: Number
+VERSION_ERR|SQLException.||Type: Number
+TOO_LARGE_ERR|SQLException.||Type: Number
+QUOTA_ERR|SQLException.||Type: Number
+SYNTAX_ERR|SQLException.||Type: Number
+CONSTRAINT_ERR|SQLException.||Type: Number
+TIMEOUT_ERR|SQLException.||Type: Number
+code|SQLException.||Type: Number
+message|SQLException.||Type: String
 ## HTMLImageElement
-crossOrigin|HTMLImageElement.||
+crossOrigin|HTMLImageElement.||Type: String
 ## HTMLCanvasElement
-width|HTMLCanvasElement.||
-height|HTMLCanvasElement.||
+width|HTMLCanvasElement.||Type: Number
+height|HTMLCanvasElement.||Type: Number
 getContext|HTMLCanvasElement.|(context: String, args: *): CanvasContext|
 toDataURL|HTMLCanvasElement.|(string: String, args: *): String|
 ## CanvasContext
-canvas|CanvasContext.||
+canvas|CanvasContext.||Type: HTMLCanvasElement
 save|CanvasContext.|(): void|
 restore|CanvasContext.|(): void|
 scale|CanvasContext.|(x: Number, y: Number): void|
@@ -1291,21 +1291,21 @@ rotate|CanvasContext.|(angle: Number): void|
 translate|CanvasContext.|(x: Number, y: Number): void|
 transform|CanvasContext.|(m11: Number, m12: Number, m21: Number, m22: Number, dx: Number, dy: Number): void|
 setTransform|CanvasContext.|(m11: Number, m12: Number, m21: Number, m22: Number, dx: Number, dy: Number): void|
-globalAlpha|CanvasContext.||
-globalCompositeOperation|CanvasContext.||
+globalAlpha|CanvasContext.||Type: Number
+globalCompositeOperation|CanvasContext.||Type: String
 fillStyle|CanvasContext.||
 strokeStyle|CanvasContext.||
 createLinearGradient|CanvasContext.|(x0: Number, y0: Number, x1: Number, y1: Number): CanvasGradient|
 createRadialGradient|CanvasContext.|(x0: Number, y0: Number, r0: Number, x1: Number, y1: Number, r1: Number): CanvasGradient|
 createPattern|CanvasContext.|(image: HTMLImageElement/HTMLCanvasElement|HTMLVideoElement, repetition: String): CanvasPattern|
-lineWidth|CanvasContext.||
-lineCap|CanvasContext.||
-lineJoin|CanvasContext.||
-miterLimit|CanvasContext.||
-shadowOffsetX|CanvasContext.||
-shadowOffsetY|CanvasContext.||
-shadowBlur|CanvasContext.||
-shadowColor|CanvasContext.||
+lineWidth|CanvasContext.||Type: Number
+lineCap|CanvasContext.||Type: String
+lineJoin|CanvasContext.||Type: String
+miterLimit|CanvasContext.||Type: Number
+shadowOffsetX|CanvasContext.||Type: Number
+shadowOffsetY|CanvasContext.||Type: Number
+shadowBlur|CanvasContext.||Type: Number
+shadowColor|CanvasContext.||Type: String
 clearRect|CanvasContext.|(x: Number, y: Number, w: Number, h: Number): void|
 fillRect|CanvasContext.|(x: Number, y: Number, w: Number, h: Number): void|
 strokeRect|CanvasContext.|(x: Number, y: Number, w: Number, h: Number): void|
@@ -1323,9 +1323,9 @@ stroke|CanvasContext.|(): void|
 clip|CanvasContext.|(): void|
 isPointInPath|CanvasContext.|(x: Number, y: Number): Boolean|
 drawFocusRing|CanvasContext.|(element: Element, xCaret: Number, yCaret: Number, canDrawCustom: Boolean): void|
-font|CanvasContext.||
-textAlign|CanvasContext.||
-textBaseline|CanvasContext.||
+font|CanvasContext.||Type: String
+textAlign|CanvasContext.||Type: String
+textBaseline|CanvasContext.||Type: String
 fillText|CanvasContext.|(text: String, x: Number, y: Number, maxWidth: Number): void|
 strokeText|CanvasContext.|(text: String, x: Number, y: Number, maxWidth: Number): void|
 measureText|CanvasContext.|(text: String): TextMetrics|
@@ -1336,13 +1336,13 @@ putImageData|CanvasContext.|(image_data: ImageData, dx: Number, dy: Number, dirt
 ## CanvasGradient
 addColorStop|CanvasGradient.|(offset: Number, color: String): void|
 ## ImageData
-data|ImageData.||
-width|ImageData.||
-height|ImageData.||
+data|ImageData.||Type: CanvasPixelArray
+width|ImageData.||Type: Number
+height|ImageData.||Type: Number
 ## CanvasPixelArray
-length|CanvasPixelArray.||
+length|CanvasPixelArray.||Type: Number
 ## TextMetrics
-width|TextMetrics.||
+width|TextMetrics.||Type: Number
 ## window
 webkitRequestAnimationFrame|window.|(callback: Function, element: Element): Number|
 webkitCancelRequestAnimationFrame|window.|(handle: *): void|
@@ -1355,101 +1355,101 @@ mozCancelRequestAnimationFrame|window.|(handle: *): void|
 requestAnimationFrame|window.|(callback: Function, element: Element): Number|
 cancelRequestAnimationFrame|window.|(handle: *): void|
 importScripts|window.|(urls: String): void|
-navigator|window.||
+navigator|window.||Type: WorkerNavigator
 openDatabase|window.|(name: String, version: String, displayName: String, estimatedSize: Number, creationCallback: DatabaseCallback/Function): Database|
 openDatabaseSync|window.|(name: String, version: String, displayName: String, estimatedSize: Number, creationCallback: DatabaseCallback/Function): Database|
-localStorage|window.||
-sessionStorage|window.||
+localStorage|window.||Type: Storage
+sessionStorage|window.||Type: Storage
 ## WorkerNavigator
 ## AbstractWorker
-onerror|AbstractWorker.||
+onerror|AbstractWorker.||Type: Function
 ## Worker
 terminate|Worker.|(): void|
 postMessage|Worker.|(message: *, ports: MessagePortArray): void|
-onmessage|Worker.||
+onmessage|Worker.||Type: Function
 ## SharedWorker
-port|SharedWorker.||
+port|SharedWorker.||Type: Function
 ## Storage
-length|Storage.||
+length|Storage.||Type: Number
 key|Storage.|(index: Number): String|
 getItem|Storage.|(key: String): void|
 setItem|Storage.|(key: String, data: *): void|
 removeItem|Storage.|(key: String): void|
 clear|Storage.|(): void|
 ## WebSocket
-url|WebSocket.||
-CONNECTING|WebSocket.||
-OPEN|WebSocket.||
-CLOSING|WebSocket.||
-CLOSED|WebSocket.||
-readyState|WebSocket.||
-bufferedAmount|WebSocket.||
-onopen|WebSocket.||
-onmessage|WebSocket.||
-onerror|WebSocket.||
-onclose|WebSocket.||
+url|WebSocket.||Type: String
+CONNECTING|WebSocket.||Type: Number
+OPEN|WebSocket.||Type: Number
+CLOSING|WebSocket.||Type: Number
+CLOSED|WebSocket.||Type: Number
+readyState|WebSocket.||Type: Number
+bufferedAmount|WebSocket.||Type: Number
+onopen|WebSocket.||Type: Function
+onmessage|WebSocket.||Type: Function
+onerror|WebSocket.||Type: Function
+onclose|WebSocket.||Type: Function
 send|WebSocket.|(data: String): Boolean|
 close|WebSocket.|(): void|
 ## ArrayBuffer
 __constructor__|ArrayBuffer.|(length: Number): void|
-byteLength|ArrayBuffer.||
+byteLength|ArrayBuffer.||Type: Number
 ## DataView
-buffer|DataView.||
-byteOffset|DataView.||
-byteLength|DataView.||
+buffer|DataView.||Type: ArrayBuffer
+byteOffset|DataView.||Type: Number
+byteLength|DataView.||Type: Number
 __constructor__|DataView.|(bufferOrArrayOrLength: *, byteOffset: Number, length: Number): void|
 getInt8|DataView.|(byteOffset: Number): Number|
 ## ArrayBufferView
 __constructor__|ArrayBufferView.|(): void|
-buffer|ArrayBufferView.||
-byteOffset|ArrayBufferView.||
-byteLength|ArrayBufferView.||
+buffer|ArrayBufferView.||Type: ArrayBuffer
+byteOffset|ArrayBufferView.||Type: Number
+byteLength|ArrayBufferView.||Type: Number
 ## Int8Array
 __constructor__|Int8Array.|(bufferOrArrayOrLength: *, byteOffset: Number, length: Number): void|
 length|Int8Array.||
-BYTES_PER_ELEMENT|Int8Array.||
+BYTES_PER_ELEMENT|Int8Array.||Type: Number
 set|Int8Array.|(array: $__Type__$, offset: Number): void|
 subarray|Int8Array.|(begin: Number, end: Number): $__Type__$|
 ## Uint8Array
 __constructor__|Uint8Array.|(bufferOrArrayOrLength: *, byteOffset: Number, length: Number): void|
 length|Uint8Array.||
-BYTES_PER_ELEMENT|Uint8Array.||
+BYTES_PER_ELEMENT|Uint8Array.||Type: Number
 set|Uint8Array.|(array: $__Type__$, offset: Number): void|
 subarray|Uint8Array.|(begin: Number, end: Number): $__Type__$|
 ## Int16Array
 __constructor__|Int16Array.|(bufferOrArrayOrLength: *, byteOffset: Number, length: Number): void|
 length|Int16Array.||
-BYTES_PER_ELEMENT|Int16Array.||
+BYTES_PER_ELEMENT|Int16Array.||Type: Number
 set|Int16Array.|(array: $__Type__$, offset: Number): void|
 subarray|Int16Array.|(begin: Number, end: Number): $__Type__$|
 ## Uint16Array
 __constructor__|Uint16Array.|(bufferOrArrayOrLength: *, byteOffset: Number, length: Number): void|
 length|Uint16Array.||
-BYTES_PER_ELEMENT|Uint16Array.||
+BYTES_PER_ELEMENT|Uint16Array.||Type: Number
 set|Uint16Array.|(array: $__Type__$, offset: Number): void|
 subarray|Uint16Array.|(begin: Number, end: Number): $__Type__$|
 ## Int32Array
 __constructor__|Int32Array.|(bufferOrArrayOrLength: *, byteOffset: Number, length: Number): void|
 length|Int32Array.||
-BYTES_PER_ELEMENT|Int32Array.||
+BYTES_PER_ELEMENT|Int32Array.||Type: Number
 set|Int32Array.|(array: $__Type__$, offset: Number): void|
 subarray|Int32Array.|(begin: Number, end: Number): $__Type__$|
 ## Uint32Array
 __constructor__|Uint32Array.|(bufferOrArrayOrLength: *, byteOffset: Number, length: Number): void|
 length|Uint32Array.||
-BYTES_PER_ELEMENT|Uint32Array.||
+BYTES_PER_ELEMENT|Uint32Array.||Type: Number
 set|Uint32Array.|(array: $__Type__$, offset: Number): void|
 subarray|Uint32Array.|(begin: Number, end: Number): $__Type__$|
 ## Float32Array
 __constructor__|Float32Array.|(bufferOrArrayOrLength: *, byteOffset: Number, length: Number): void|
 length|Float32Array.||
-BYTES_PER_ELEMENT|Float32Array.||
+BYTES_PER_ELEMENT|Float32Array.||Type: Number
 set|Float32Array.|(array: $__Type__$, offset: Number): void|
 subarray|Float32Array.|(begin: Number, end: Number): $__Type__$|
 ## Float64Array
 __constructor__|Float64Array.|(bufferOrArrayOrLength: *, byteOffset: Number, length: Number): void|
 length|Float64Array.||
-BYTES_PER_ELEMENT|Float64Array.||
+BYTES_PER_ELEMENT|Float64Array.||Type: Number
 set|Float64Array.|(array: $__Type__$, offset: Number): void|
 subarray|Float64Array.|(begin: Number, end: Number): $__Type__$|
 ## Geolocation
@@ -1457,30 +1457,30 @@ getCurrentPosition|Geolocation.|(successCallback: Function, errorCallback: Funct
 watchPosition|Geolocation.|(successCallback: Function, errorCallback: Function, options: Object): Number|
 clearWatch|Geolocation.|(watchId: Number): void|
 ## Navigator
-geolocation|Navigator.||
+geolocation|Navigator.||Type: Geolocation
 ## PositionOptions
-enableHighAccuracy|PositionOptions.||
-timeout|PositionOptions.||
-maximumAge|PositionOptions.||
+enableHighAccuracy|PositionOptions.||Type: Boolean
+timeout|PositionOptions.||Type: Number
+maximumAge|PositionOptions.||Type: Number
 ## Position
-coords|Position.||
-timestamp|Position.||
+coords|Position.||Type: Coordinates
+timestamp|Position.||Type: Number
 ## Coordinates
-latitude|Coordinates.||
-longitude|Coordinates.||
-altitude|Coordinates.||
-accuracy|Coordinates.||
-altitudeAccuracy|Coordinates.||
-heading|Coordinates.||
-speed|Coordinates.||
+latitude|Coordinates.||Type: Number
+longitude|Coordinates.||Type: Number
+altitude|Coordinates.||Type: Number
+accuracy|Coordinates.||Type: Number
+altitudeAccuracy|Coordinates.||Type: Number
+heading|Coordinates.||Type: Number
+speed|Coordinates.||Type: Number
 ## PositionError
-PERMISSION_DENIED|PositionError.||
-POSITION_UNAVAILABLE|PositionError.||
-TIMEOUT|PositionError.||
-code|PositionError.||
-message|PositionError.||
+PERMISSION_DENIED|PositionError.||Type: Number
+POSITION_UNAVAILABLE|PositionError.||Type: Number
+TIMEOUT|PositionError.||Type: Number
+code|PositionError.||Type: Number
+message|PositionError.||Type: String
 ## XMLHttpRequest
-responseType|XMLHttpRequest.||
-response|XMLHttpRequest.||
+responseType|XMLHttpRequest.||Type: String
+response|XMLHttpRequest.||Type: Object
 ## FormData
 append|FormData.|(name: String, value: *): void|
