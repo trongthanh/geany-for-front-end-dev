@@ -10,9 +10,9 @@ This package is a collection of configuration files to enhance Geany's source co
 
 ## Installing latest Geany build
 
-These config files were tested with the dev build of Geany, version 1.22. Although they may also work for latest stable build 0.21.
+These config files were tested with the latest version of Geany, 1.22.
 
-Binary builds for latest Geany in Linux & Windows can be found [here](http://nightly.geany.org).
+Binary builds for latest Geany in Linux & Windows can be found [here](http://www.geany.org/Download/Releases).
 
 ## How to install these supplement files
 
@@ -21,7 +21,7 @@ Binary builds for latest Geany in Linux & Windows can be found [here](http://nig
     - I have written an **install.sh** script to conveniently install the files on Linux:
 
         Open terminal and cd to the source of this project. Then
-       
+
         ```shell
         chmod +x install.sh
         ./install.sh
@@ -38,7 +38,7 @@ With snippets, you can complete a whole block of code from short string like `if
 
 ### The file:
 
-- **snippets.conf**: The javascript section of this file has been modified so that braces are inserted and alignments are made according to common Javascript convention.
+- **snippets.conf**: The javascript section of this file has been modified so that braces are inserted and alignments are made according to common Javascript conventions. In addition, a few commonly used snippets are added. ([See snippets.conf](https://github.com/trongthanh/geany-for-front-end-dev/blob/master/config/geany/snippets.conf) for available entries.) I'm considering adding more snippets for HTML and CSS as well.
 
 ### How To:
 
@@ -46,7 +46,7 @@ To insert snippets into code editor, type the snippet keywords and press **Tab**
 
 For best use of snippets, you should set the keybinding "Move cursor in snippet" in Preference. Suggestion: &lt;Primary&gt;bracketright "]"
 
-Supported snippets in this package: [see snippet.conf](https://github.com/trongthanh/geany-for-front-end-dev/blob/master/config/geany/snippets.conf), JavaScript section. Please edit your 'author' name and 'copyright' at [Default] section.
+Some snippets (for e.g. `header`) make use of the Template items in Preferences (developer name, year...), so it is advised that you fill them up with your details.
 
 ## 2. Keywords Highlighting
 
@@ -54,14 +54,14 @@ Language specific syntax highlighting are defined in filetype definition files i
 
 ### The files:
 
-- **filedefs/filetypes.css**: This file lets Geany highlight latest CSS keywords properly. It contains up-to-date standard CSS1/2/3 as well as browser specific keywords. Besides, minor coloring rules have been patched to make CSS3 & prefixed keywords distinct from CSS1/2 ones.  
+- **filedefs/filetypes.css**: This file lets Geany highlight latest CSS keywords properly. It contains up-to-date standard CSS1/2/3 as well as browser specific keywords. Besides, minor coloring rules have been patched to make CSS3 & prefixed keywords distinct from CSS1/2 ones.
     ![Better CSS highlighting](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/css-highlighting.png)
 
     Source of reference: [CSS properties](http://meiert.com/en/indices/css-properties/)
 
 - **filedefs/filetypes.html**: This file justify coloring of HTML tags.
-- **filedefs/filetypes.javascript**: This file justify coloring of JavaScript keywords.
-- **filedefs/filetypes.common**: [Experiment] Removing dash (-) from whispace characters. So in some filetype definitions, if adding dash to wordchars property, it will be treated as part of word. For e.g. you can now double click to select whole string like "background-color".
+- **filedefs/filetypes.javascript**: This file justify coloring of JavaScript keywords. **[NEW]** I have hacked it to use ActionScript lexer to achieve more variety in the keywords coloring and enhance the syntax highlighting.
+- **filedefs/filetypes.common**: [Experiment] Removing dash (-) and sollar sign ($) from whispace characters. So in some filetype definitions, if adding those charaters to wordchars property, it will be treated as part of word. For e.g. you can now double click to select whole string like "background-color" in CSS.
 
 ## 3. Code Hinting
 
@@ -83,23 +83,24 @@ Source of references: [MDN](https://developer.mozilla.org/en/JavaScript/Referenc
 
 ### How To:
 
-- Type at least 1 character and press Ctrl-Space to display the auto-completion popup. OR type in the first 4 characters of the keyword. (These number of characters can be changed in preference). 
-- While the auto-completion popup appear, you can: 
-  - press Up/Down to select a keyword; 
+- Type at least 1 character and press Ctrl-Space to display the auto-completion popup. OR type in the first 4 characters of the keyword. (These number of characters can be changed in preference).
+- While the auto-completion popup appear, you can:
+  - press Up/Down to select a keyword;
   - press Enter to complete the whole keyword;
-  - press Tab to complete a word portion 
-  - press Escape to close the popup  
+  - press Tab to complete a word portion
+  - press Escape to close the popup
     ![JS code hinting](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/js-code-hinting.png)
 - For function keywords, there is function parameters hint box to be displayed as soon as you type in function call bracket "(".
 - You can call this parameters hint box by pressing Ctrl-Shift-Space while the cursor is within brackets.
-- If a function keyword has duplicated entries, the hinting box will be shown with arrow button to select.  
+- If a function keyword has duplicated entries, the hinting box will be shown with arrow button to select.
   ![JS function parameter hinting](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/js-function-hinting.png)
 
 ## 4. Additional settings for ease of use
 
 ### Additional color schemes:
-Visit [this github project](https://github.com/codebrainz/geany-themes) to download more color schemes for Geany 1.22+.  
-I'm using the "Dark" color scheme from above theme sets to make the screenshots.
+Visit [this github project](https://github.com/codebrainz/geany-themes) to download more color schemes for Geany 1.22+.
+
+Besides, I have adapted my favorite color scheme - Monokai - to Geany and committed to the bundle. You can find it in the config/geany/colorschemes folder. Here's a [sample screenshot](https://github.com/trongthanh/geany-for-front-end-dev/raw/master/ref/img/monokai-colorscheme.png)
 
 ### Additional plugins:
 I recommend you to enable these plugins in from the plugin manager (menu Tools > Plugin Manager):
@@ -107,7 +108,7 @@ I recommend you to enable these plugins in from the plugin manager (menu Tools >
 - Addons ([info](http://plugins.geany.org/addons.html)) - possible useful features: tasks list, mark word occurences, bookmark lines, enclose selection
 - XML Snippets ([info](http://plugins.geany.org/xmlsnippets.html))
 - HTML Characters (built-in)
-- Tree Browser ([info](http://plugins.geany.org/treebrowser.html)  
+- Tree Browser ([info](http://plugins.geany.org/treebrowser.html)
 Note: Remember to access the plugin settings to change its "External open command" to the file explorer of your OS (Nautilus/Finder/Explorer...)
 - Geany Lipsum ([info](http://plugins.geany.org/geanylipsum.html))
 
@@ -130,7 +131,6 @@ You may also want to change these key bindings to make Geany behave similarly to
 - Format > Toggle line commentation: &lt;Primary&gt;slash
 - Editor > Delete Current Line(s): &lt;Primary&gt;&lt;Shift&gt;k
 - Editor > Transpose Current Line(s): &lt;Primary&gt;t
-- Editor > Complete word: &lt;Shift&gt;space
 - Editor > Move line(s) up: &lt;Primary&gt;&lt;Shift&gt;Up
 - Editor > Move line(s) down: &lt;Primary&gt;&lt;Shift&gt;Down
 - Search > Find Next: F3
