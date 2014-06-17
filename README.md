@@ -25,7 +25,7 @@ Binary builds for latest Geany in Linux & Windows can be found [here](http://www
         ```shell
         chmod +x install.sh
         ./install.sh
-```
+        ```
 - For other OS, refer to [this manual](http://www.geany.org/manual/current/index.html#configuration-file-paths) to identify user's config folder.
 
 -----------------------------------
